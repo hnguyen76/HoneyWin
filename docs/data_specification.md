@@ -1,184 +1,212 @@
-# FORGE RDE/PMO mock data specification
+# Data specification — FORGE RDE/PMO synthetic portfolio
 
-## 1. Nguồn yêu cầu và mục tiêu
+## 1. Purpose and source context
 
-Specification này chuyển trực tiếp context trong file `honeywell_forge_interview_context.md` đang mở thành một bộ mock data Power BI-ready cho portfolio/phỏng vấn Senior Advanced Data Analyst. Dữ liệu hoàn toàn giả lập, không phải dữ liệu nội bộ Honeywell.
+This specification converts the supplied `honeywell_forge_interview_context.md`
+into a Power BI- and Streamlit-ready synthetic portfolio for a Senior Advanced
+Data Analyst interview demonstration. The data is entirely simulated and is not
+Honeywell internal data.
 
-Business flow được hỗ trợ:
+Supported analytical flow:
 
-`SAP-style source data → data quality → star schema → DAX/KPI → root cause → recommendation → PMO decision`
+`Source-style records → governed semantic model → KPI/variance analysis → root-cause drill path → recommended action`
 
-Các nhóm phân tích bắt buộc:
+Required analysis areas:
 
-- Financial management và project cost.
-- Labor utilization và time-entry compliance.
-- Workforce/capacity planning theo team, skill, location và month.
-- Milestone, risk, issue và project governance.
-- Portfolio exception reporting và drill-through đến root cause.
+- Financial management and project cost.
+- Labor utilization and time-entry compliance.
+- Workforce and capacity planning by month, team, skill, and location.
+- Milestone, risk, issue, and project governance.
+- Portfolio exception reporting with cross-table root-cause evidence.
 
-## 2. Cấu hình mặc định đã chốt
+## 2. Default configuration
 
-| Thuộc tính | Giá trị | Lý do/quy ước |
-|---|---:|---|
-| Random seed | `20250810` | Fixed seed; chạy lại cùng config phải tạo byte-identical CSV. |
-| Data range | `2024-01-01`–`2025-12-31` | Đúng 24 calendar months. |
-| Data as-of date | `2025-06-30` | Tách actual/forecast để EAC và workforce forecast có ý nghĩa. |
-| Fiscal calendar | January–December | File nguồn yêu cầu chốt fiscal calendar nhưng không chỉ định tháng bắt đầu; dùng calendar year và ghi rõ assumption. |
-| RDE projects | 25 | Business key `FORGE-001`–`FORGE-025`. |
-| Employees/contractors | 120 | Business key `EMP-0001`–`EMP-0120`. |
-| Labor fact size | 8,000–20,000 | Một record chuẩn cho mỗi employee–project–week đang active, cộng một số duplicate cố ý. |
-| CSV tables | 11 | Đúng danh sách trong file nguồn. |
-| Business anomalies | 7 | Có signal, root cause, drill path, recommendation và estimated impact. |
-| Hours/FTE/month | 160 | Assumption minh bạch cho workforce capacity. |
-| Scheduled hours/workday | 8 | Dùng để tính scheduled, available và PTO hours. |
+| Attribute | Default | Rationale / convention |
+|---|---|---|
+| Random seed | `20250810` | The same configuration must produce byte-identical CSV files. |
+| Data range | `2024-01-01`–`2025-12-31` | Exactly 24 calendar months. |
+| Data as-of date | `2025-06-30` | Separates actual and forecast periods for EAC and workforce planning. |
+| Fiscal calendar | January–December | The source requires a defined fiscal calendar but does not prescribe a start month. |
+| Projects | 25 | Within the requested 20–30 range. |
+| Employees / contractors | 120 | Within the requested 80–150 range. |
+| Labor fact size | 8,000–20,000 | Active employee–project–week entries plus controlled duplicates. |
+| CSV tables | 11 | Exact required table list. |
+| Business anomalies | 7 | Each has a signal, root cause, drill path, recommendation, and impact. |
+| Hours per FTE per month | 160 | Explicit workforce-capacity assumption. |
+| Scheduled hours per workday | 8 | Used for scheduled, available, and PTO hours. |
 
-Mọi assumption không được định nghĩa cụ thể trong file nguồn đều được ghi trong tài liệu này và không được trình bày như dữ liệu Honeywell thật.
+Assumptions not prescribed by the source are documented here and are never
+presented as real company facts.
 
-## 3. Thiết kế mô hình
+## 3. Model design
 
-### 3.1 Grain và vai trò bảng
+### 3.1 Table grains and expected volume
 
-| Table | Grain | Expected rows |
+| Table | Grain | Default rows / range |
 |---|---|---:|
-| `DimDate` | Một calendar date | 731 |
-| `DimProject` | Một RDE project | 25 |
-| `DimEmployee` | Một employee/contractor | 120 |
-| `DimTeam` | Một engineering team | 8 |
-| `DimSkill` | Một skill | 8 |
-| `BridgeEmployeeSkill` | Một employee–skill effective assignment | 120–360 |
-| `FactLabor` | Một employee–project–week time entry | 8,000–20,000 |
-| `FactFinancial` | Một project–month–cost category | Tối đa 2,400 |
-| `FactMilestone` | Một project–milestone | 125–300 |
-| `FactWorkforcePlan` | Một month–team–skill–location | Khoảng 768 |
-| `FactRiskIssue` | Một project–risk/issue | Khoảng 75–175 |
+| `DimDate` | Calendar date | 731 |
+| `DimProject` | RDE project | 25 |
+| `DimEmployee` | Employee or contractor | 120 |
+| `DimTeam` | Engineering team | 8 |
+| `DimSkill` | Workforce skill | 8 |
+| `BridgeEmployeeSkill` | Effective employee–skill assignment | 120–360; final 216 |
+| `FactLabor` | Employee–project–week time entry | 8,000–20,000; final 8,172 raw |
+| `FactFinancial` | Project–month–cost category | Up to 2,400; final 1,180 |
+| `FactMilestone` | Project milestone | 125–300; final 201 |
+| `FactWorkforcePlan` | Month–team–skill–location snapshot | Approximately 768 |
+| `FactRiskIssue` | Project risk or issue | Approximately 75–175; final 118 |
 
 ### 3.2 Relationship rules
 
-Power BI relationship mặc định là one-to-many, single direction từ dimension sang fact/bridge. Không tạo relationship fact-to-fact.
+Power BI relationships are one-to-many and single-direction from a dimension to
+a fact or bridge. No fact-to-fact relationship is allowed.
 
-| From (one) | To (many) | Key | Active relationship |
-|---|---|---|---|
-| `DimDate` | `FactLabor` | `DateKey` → `WeekStartDateKey` | Yes |
-| `DimDate` | `FactFinancial` | `DateKey` → `MonthStartDateKey` | Yes |
-| `DimDate` | `FactWorkforcePlan` | `DateKey` → `MonthStartDateKey` | Yes |
-| `DimDate` | `FactMilestone` | `DateKey` → `PlannedDateKey` | Yes |
-| `DimDate` | `FactMilestone` | `DateKey` → `ForecastDateKey` | No; role-playing |
-| `DimDate` | `FactRiskIssue` | `DateKey` → `IdentifiedDateKey` | Yes |
-| `DimDate` | `FactRiskIssue` | `DateKey` → `DueDateKey` | No; role-playing |
-| `DimProject` | `FactLabor` | `ProjectKey` | Yes |
-| `DimProject` | `FactFinancial` | `ProjectKey` | Yes |
-| `DimProject` | `FactMilestone` | `ProjectKey` | Yes |
-| `DimProject` | `FactRiskIssue` | `ProjectKey` | Yes |
-| `DimEmployee` | `FactLabor` | `EmployeeKey` | Yes |
-| `DimEmployee` | `BridgeEmployeeSkill` | `EmployeeKey` | Yes |
-| `DimTeam` | `DimEmployee` | `TeamKey` | Yes |
-| `DimTeam` | `DimProject` | `TeamKey` → `PrimaryTeamKey` | No; avoids an ambiguous labor path |
-| `DimTeam` | `FactWorkforcePlan` | `TeamKey` | Yes |
-| `DimSkill` | `DimEmployee` | `SkillKey` → `PrimarySkillKey` | No; avoids an ambiguous bridge path |
-| `DimSkill` | `BridgeEmployeeSkill` | `SkillKey` | Yes |
-| `DimSkill` | `FactWorkforcePlan` | `SkillKey` | Yes |
+Canonical active paths:
 
-Surrogate keys là integer ổn định. Business keys (`ProjectID`, `EmployeeID`, `TeamID`, `SkillID`) được giữ để trace về source-style records. Nullable `ActualDateKey`/`ClosedDateKey` vẫn được QA như foreign key trong CSV nhưng không tạo live Power BI relationship vì Python connector biểu diễn blank dưới dạng text.
+- `DimDate[DateKey]` → labor week, financial month, milestone planned date,
+  workforce month, and risk identified date.
+- `DimProject[ProjectKey]` → labor, financial, milestone, and risk facts.
+- `DimEmployee[EmployeeKey]` → labor and employee-skill bridge.
+- `DimTeam[TeamKey]` → employee and workforce plan.
+- `DimSkill[SkillKey]` → employee-skill bridge and workforce plan.
 
-## 4. Business definitions và reconciliation rules
+Inactive alternate paths:
 
-### 4.1 Labor
+- Milestone forecast date.
+- Risk due date.
+- Project primary team.
+- Employee primary skill.
 
-- `ScheduledHours`: working days trong tuần × 8, sau khi loại holiday nhưng trước PTO.
+The alternate project-team and employee-primary-skill paths remain inactive to
+avoid ambiguous routes into labor and bridge facts. Nullable milestone actual
+and risk closed keys are still foreign-key validated in CSV, but the Python
+connector emits blank nullable keys as text, so those two relationships are not
+created in the live model.
+
+Surrogate keys are stable integers. Business keys (`ProjectID`, `EmployeeID`,
+`TeamID`, and `SkillID`) remain available for source-style traceability.
+
+## 4. Business definitions and reconciliation rules
+
+### 4.1 Labor utilization
+
+- `ScheduledHours`: working-day hours after holidays and before PTO.
 - `AvailableHours = ScheduledHours - PTOHours`.
-- `ProjectHours`: toàn bộ productive/project hours, đã bao gồm `OvertimeHours`.
-- `NonProjectHours`: admin, training, internal meeting hoặc bench.
-- Reconciliation: `ProjectHours + NonProjectHours = AvailableHours + OvertimeHours`.
-- `Utilization % = SUM(ProjectHours) / SUM(AvailableHours)`.
-- `Utilization Gap = Utilization % - weighted target utilization %`; âm nghĩa là dưới target.
-- `ActualLaborCost = (ProjectHours - OvertimeHours) × StandardLaborRate + OvertimeHours × StandardLaborRate × OvertimeRateMultiplier`.
-- `SubmissionStatus = Late` khi `SubmissionDate` sau Chủ nhật kết thúc tuần hơn 2 ngày.
-- Overtime nằm trong numerator nhưng không cộng vào available-hours denominator; vì vậy utilization có thể lớn hơn 100% và phải được đọc cùng overtime.
-- 169 employee-weeks được tách hợp lệ qua hai projects; scheduled/available/PTO/project/non-project/overtime được phân bổ, không nhân đôi capacity.
+- `ProjectHours`: all productive/project hours, including overtime.
+- `NonProjectHours`: administration, training, internal meetings, or bench time.
+- `Utilization % = ProjectHours / AvailableHours`.
+- `Weighted Utilization Target % = SUM(AvailableHours × employee target) / SUM(AvailableHours)`.
+- `Utilization Gap = Utilization % - Weighted Utilization Target %`; negative is below target.
+- `SubmissionStatus = Late` when submission occurs more than two days after the
+  Sunday ending the work week.
+- Overtime is included in the numerator but not added to the available-hours
+  denominator, so utilization can exceed 100% and must be read with overtime.
+- 169 employee-weeks are validly split across two projects. Scheduled,
+  available, PTO, project, non-project, and overtime hours are allocated rather
+  than duplicated.
 
-### 4.2 Financial
+### 4.2 Financial and project cost
 
 - `ActualCostAmount = ActualLaborCost + ActualMaterialCost + ActualOtherCost`.
-- `EAC = ActualCostAmount + ForecastToComplete` ở additive monthly/category grain.
-- `Forecast Variance $ = Approved Budget - EAC`; số âm là unfavorable/over budget.
-- `Forecast Variance % = Forecast Variance $ / Approved Budget`.
+- Row-level `EAC = ActualCostAmount + ForecastToComplete`.
+- Project/portfolio `EAC` uses actual plus forecast across the full timeline.
+- `Forecast Variance $ = Approved Budget - EAC`; negative is unfavorable.
 - `Budget Consumed % = Actual Cost / Approved Budget`.
-- `BudgetAmount` được phase theo month/category và reconcile về `DimProject[ApprovedBudget]`.
-- `ActualLaborCost` trong financial phải reconcile với valid, deduplicated `FactLabor[ActualLaborCost]` theo project/month. Duplicate/missing time-entry rows được phát hiện trước khi reconciliation.
-- `PeriodType = Actual` đến data as-of month; các tháng sau là `Forecast`.
+- `Project Completion %` is approved-budget-weighted percent complete.
+- `Budget vs Completion Gap = Budget Consumed % - Project Completion %`.
+- Monthly/category `BudgetAmount` reconciles to `DimProject[ApprovedBudget]`.
+- Financial actual labor cost reconciles to valid, deduplicated labor cost by
+  project and month. Duplicate or incomplete time entries are removed first.
+- `PeriodType = Actual` through the data as-of month and `Forecast` afterward.
 
-### 4.3 Workforce
+### 4.3 Workforce and capacity
 
-- `Capacity Gap FTE = ActualFTE - RequiredFTE`; âm là thiếu capacity.
+- `Capacity Gap FTE = ActualFTE - RequiredFTE`; negative is a shortage.
 - `OpenDemandFTE = MAX(RequiredFTE - ActualFTE, 0)`.
-- `Demand Coverage % = ActualFTE / RequiredFTE`.
 - `AvailableCapacityHours = ActualFTE × 160`.
 - `RequiredCapacityHours = RequiredFTE × 160`.
-- `ContractorFTE` là subset của `ActualFTE`.
+- Workforce KPI measures average monthly snapshots across the selected period;
+  they do not sum headcount across months.
+- `ContractorFTE` is a subset of `ActualFTE`.
 
-### 4.4 Schedule, risk và health
+### 4.4 Schedule, risk, and project health
 
-- `ScheduleVarianceDays = ForecastDate - PlannedDate`.
-- On-time milestone: actual date không sau planned date; milestone chưa hoàn thành dùng forecast date.
-- `RiskScore = Probability × Impact`, mỗi thành phần theo scale 1–5.
-- Health rule minh bạch, worst-status-wins:
-  - **Red**: EAC over budget >10%, critical milestone delay >30 ngày, utilization gap < -12 percentage points, hoặc critical risk chưa có mitigation.
-  - **Amber**: EAC over budget 3–10%, milestone delay 8–30 ngày, hoặc utilization gap < -5 percentage points.
-  - **Green**: trong tolerance.
+- A completed milestone is on time when its actual date is no later than its
+  planned date; an incomplete milestone uses its forecast date.
+- `RiskScore = Probability × Impact`, with each component on a 1–5 scale.
+- Health uses a transparent worst-status-wins rule:
+  - **Red**: EAC over budget by more than 10%; critical milestone delay over 30
+    days; utilization gap below -12 percentage points; or an open/monitoring
+    critical risk whose mitigation has not started.
+  - **Amber**: EAC over budget by 3–10%; milestone delay of 8–30 days;
+    utilization gap below -5 percentage points; or overdue governance action.
+  - **Green**: no red or amber condition.
+- A separate budget-consumption red flag applies when spend leads completion by
+  at least 15 percentage points.
 
-### 4.5 Realism controls
+## 5. Realism controls
 
-- Project start dates là irregular day-level dates; program/manager/sponsor/team assignments dùng weighted demand logic thay vì round-robin.
-- Approved budgets dùng $5K approval granularity với project-specific category mix và front/bell/back-loaded phase curves.
-- Employee hire/exit timing, location, contractor mix, rates và utilization targets thay đổi theo team; tên là synthetic pseudonyms.
-- Labor utilization có employee persistence, seasonality, team demand, quarter-hour entry grain, varied PTO/overtime, three entry sources và occasional multi-project weeks.
-- Milestone templates thay đổi theo program; forecast variance có project-level schedule signal, 28 distinct names, 41 variance values và rolling update dates.
-- Risk probability/status/mitigation phụ thuộc lifecycle; 85 distinct contextual titles thay cho một title cố định mỗi category.
-- Workforce actual FTE phản ánh hire/exit/partial-month/leave; required FTE là smoothed trend và demand chỉ phân bổ vào staffed or designated hub locations.
+- Project starts use irregular day-level dates. Program, manager, sponsor, and
+  team assignments use weighted demand rather than round-robin allocation.
+- Approved budgets use $5,000 approval granularity, project-specific cost mixes,
+  and front-, bell-, or back-loaded monthly phase curves.
+- Hire/exit timing, locations, contractor mix, rates, and utilization targets
+  vary by team; resource names are synthetic pseudonyms.
+- Labor includes persistent employee behavior, seasonality, team demand,
+  quarter-hour entry increments, varied PTO/overtime, three entry sources, and
+  occasional multi-project weeks.
+- Milestones use program-specific templates, project schedule signals, 28
+  distinct names, 41 schedule-variance values, and rolling update dates.
+- Risk probability, status, and mitigation follow lifecycle logic; 85 contextual
+  titles replace fixed repeated category titles.
+- Workforce actual FTE reflects hires, exits, partial months, and leave. Required
+  FTE is a smoothed demand series allocated only to staffed or designated hubs.
 
-## 5. Controlled anomaly specification
+## 6. Controlled anomaly scenarios
 
-| ID | Signal phải thấy | Root cause được chứng minh ở bảng khác | Drill path | Recommendation/impact |
+| ID | Required signal | Cross-table root cause | Drill path | Recommended action / impact |
 |---|---|---|---|---|
-| `A01` | `FORGE-001` complete 55%, consumed 70%; EAC đúng $400K trên approved budget. | Critical milestone delay làm contractor/overtime và committed cost tăng. | Project → financial category/month → labor employee/week → milestone. | Reforecast, khóa scope, thay contractor bằng employee phù hợp; tránh/giảm phần overrun dự kiến. |
-| `A02` | Quality Assurance utilization khoảng 68% so với target 85% trong Jan–Jun 2025. | Available hours vẫn bình thường nhưng project assignment thấp và non-project/bench cao; không dùng dữ liệu performance để quy lỗi cá nhân. | Team → employee → week → assigned project/time mix. | Reallocate QA, điều chỉnh assignment/schedule và cải thiện demand planning. |
-| `A03` | Jul–Dec 2025: Software 25/30 FTE, Data 12/14; Systems 18/17, Mechanical 22/19. | Primary/bridge skills cho thấy excess capacity không có skill adjacency đủ để lấp toàn bộ shortage. | Month → skill → team/location → employee skill bridge. | Cross-train Mechanical/Systems, contractor ngắn hạn, hiring nếu gap kéo dài. |
-| `A04` | `FORGE-004` có critical milestone forecast trễ 45 ngày và forecast end date bị đẩy. | Risk/issue dependency mở và committed material/contractor cost tăng sau delay. | Project → critical milestone → linked risk category → financial month/category. | Escalate dependency, recovery plan và milestone owner accountability. |
-| `A05` | `FORGE-009` total labor hours gần plan nhưng labor cost unfavorable >15%. | Contractor share và overtime mix cao hơn plan sau Mar 2025. | Project → labor cost category → employment type → overtime week. | Điều chỉnh rate mix, cap overtime và chuyển việc phù hợp về employee. |
-| `A06` | KPI labor thay đổi trước/sau cleansing. | 15 duplicate natural time-entry keys, 12 missing project-hours/cost rows và late submissions. | QA result → LaborRecordID → employee/project/week. | Deduplicate, reject incomplete rows, time-entry validation và compliance follow-up. |
-| `A07` | `FORGE-007` complete 48% nhưng consumed 68% budget. | Front-loaded material/other spend và burn rate cao hơn progress; tách khỏi A01 để minh họa budget-consumption red flag. | Project → financial month/category → milestone completion. | Spend gate, scope review và reforecast sớm. |
+| `A01` | `FORGE-001`: 55% complete, 70% consumed, EAC $400K above approved budget. | Critical milestone delay increases contractor/overtime and committed cost. | Project → financial month/category → labor employee/week → milestone. | Reforecast, control scope, and replace suitable contractor work with employees. |
+| `A02` | QA utilization near 68% versus an 85% target in Jan–Jun 2025. | Normal availability but low project allocation and high non-project/bench time. | Team → employee → week → project/time mix. | Reallocate QA, improve assignments and demand planning; do not infer individual performance. |
+| `A03` | Jul–Dec 2025: Software 25/30 FTE, Data 12/14; Systems 18/17, Mechanical 22/19. | Skill adjacency prevents excess capacity from filling the full shortage. | Month → skill → team/location → employee-skill bridge. | Cross-train adjacent skills, use short-term contractors, or hire if the gap persists. |
+| `A04` | `FORGE-004` has a 45-day critical milestone delay and a later forecast finish. | Open dependency plus higher committed material/contractor cost. | Project → critical milestone → risk category → financial month/category. | Escalate the dependency and assign recovery-plan accountability. |
+| `A05` | `FORGE-009` labor hours are near plan but labor cost is more than 15% unfavorable. | Contractor and overtime rate mix increases after March 2025. | Project → labor cost category → employment type → overtime week. | Change rate mix, cap overtime, and move suitable work to employees. |
+| `A06` | Labor KPIs change before versus after cleansing. | 15 duplicate natural keys, 12 incomplete rows, and 297 late submissions. | QA result → LaborRecordID → employee/project/week. | Deduplicate, reject incomplete rows, validate entry, and follow up on compliance. |
+| `A07` | `FORGE-007` is 48% complete but has consumed 68% of budget. | Front-loaded material/other spend and burn ahead of progress. | Project → financial month/category → milestone completion. | Apply a spend gate, review scope, and reforecast early. |
 
-Anomaly là deterministic business scenarios, không phải các outlier random độc lập.
+These are deterministic business scenarios, not independent random outliers.
 
-## 6. CSV contract
+## 7. File contract
 
-- Encoding UTF-8, có header, delimiter comma, line ending `LF`.
-- Date format ISO `YYYY-MM-DD`; month key luôn là ngày đầu tháng.
-- Boolean lưu `0`/`1` để Power Query dễ cast.
-- Decimal dùng dấu chấm; hours/FTE làm tròn 2 chữ số; currency làm tròn 2 chữ số.
-- Empty string biểu diễn nullable value; không dùng chuỗi `NULL`, `N/A` cho numeric/date.
-- Record order deterministic theo natural grain; CSV writer dùng `lineterminator="\n"`.
-- Các lỗi DQ cố ý chỉ nằm trong `FactLabor`; dimension key và relationship còn lại phải hợp lệ.
+- UTF-8 encoding, header row, comma delimiter, and `LF` line endings.
+- ISO date format `YYYY-MM-DD`; month keys always use the first of the month.
+- Boolean values stored as `0`/`1` for straightforward Power Query casting.
+- Decimal point separator; hours/FTE and currency rounded to two decimals.
+- Empty string represents a nullable value; no `NULL` or `N/A` token is used for
+  numeric or date fields.
+- Deterministic natural-grain ordering; CSV writer uses `lineterminator="\n"`.
+- Controlled data-quality defects are limited to `FactLabor`. Dimension keys and
+  all other relationships remain valid.
 
-## 7. Generation order
+## 8. Deterministic generation sequence
 
-1. `DimDate`, `DimTeam`, `DimSkill`.
-2. `DimProject`, `DimEmployee`, `BridgeEmployeeSkill`.
-3. Project plan/budget và workforce demand baseline.
-4. `FactLabor` từ employee availability/assignment; cài labor anomalies.
-5. `FactFinancial` reconcile về labor và project budget; cài cost anomalies.
-6. `FactMilestone`, `FactRiskIssue`; cài schedule/risk relationships.
-7. Cài controlled DQ defects cuối cùng để không làm sai baseline reconciliation.
-8. Xuất 11 CSV, manifest/checksum và chạy quality suite.
+1. Load and validate configuration and seed.
+2. Build canonical date, team, skill, employee, and employee-skill dimensions.
+3. Build project plan/budget and workforce-demand baselines.
+4. Generate labor from employee availability and assignments; apply labor scenarios.
+5. Generate financials that reconcile to labor and project budgets; apply cost scenarios.
+6. Generate milestones and risks with linked schedule/risk scenarios.
+7. Inject controlled data-quality defects last so clean baseline reconciliation remains valid.
+8. Write 11 CSV files, manifest/checksums, and quality evidence.
 
-## 8. Acceptance gates
+## 9. Acceptance criteria
 
-- Đúng 24 months, 25 projects, 120 employees, 11 CSV.
-- `FactLabor` trong khoảng 8,000–20,000 rows.
-- Fixed seed + config tạo byte-identical output và identical SHA-256 manifest.
-- Không có orphan foreign key ngoài nullable role-playing date keys.
-- Project budget phase reconcile với approved budget.
-- Valid/deduplicated labor reconcile với financial labor actual.
-- 7 anomalies đạt threshold đã chốt và có cross-table evidence.
-- QA report phân biệt `PASS`, `FAIL` và `EXPECTED_ANOMALY`; expected defects không bị che giấu.
-- DAX catalog ghi business definition, format, sign convention và page usage.
+- Exactly 24 months, 25 projects, 120 employees/contractors, and 11 CSV tables.
+- `FactLabor` contains 8,000–20,000 rows.
+- Fixed seed and configuration produce byte-identical outputs and manifest hashes.
+- No orphan foreign keys outside nullable role-playing date keys.
+- Project monthly budgets reconcile to approved budget.
+- Valid/deduplicated labor cost reconciles to financial labor actuals.
+- All seven anomaly thresholds and cross-table evidence paths validate.
+- QA clearly separates `PASS`, `FAIL`, and `EXPECTED_ANOMALY`.
+- DAX and Streamlit catalogs document definitions, formats, sign conventions, and usage.

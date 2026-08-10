@@ -1,10 +1,10 @@
 # Data dictionary — FORGE RDE/PMO mock dataset
 
-Quy ước type: `int`, `decimal(18,2)`, `text`, `date`, `boolean`. `PK` là primary key vật lý; `BK` là business key; `FK` là foreign key. Tất cả cột non-null trừ khi ghi rõ.
+Type convention: `int`, `decimal(18,2)`, `text`, `date`, and `boolean`. `PK` is a physical primary key, `BK` is a business key, and `FK` is a foreign key. Columns are non-null unless explicitly marked otherwise.
 
 ## `DimDate.csv`
 
-Grain: một calendar date từ 2024-01-01 đến 2025-12-31.
+Grain: one calendar date from 2024-01-01 through 2025-12-31.
 
 | Column | Type/key | Nullable | Definition/rule |
 |---|---|---:|---|
@@ -33,7 +33,7 @@ Grain: một calendar date từ 2024-01-01 đến 2025-12-31.
 
 ## `DimTeam.csv`
 
-Grain: một engineering team.
+Grain: one engineering team.
 
 | Column | Type/key | Nullable | Definition/rule |
 |---|---|---:|---|
@@ -47,21 +47,21 @@ Grain: một engineering team.
 
 ## `DimSkill.csv`
 
-Grain: một workforce skill.
+Grain: one workforce skill.
 
 | Column | Type/key | Nullable | Definition/rule |
 |---|---|---:|---|
 | `SkillKey` | int, PK | No | Stable surrogate key. |
 | `SkillID` | text, BK | No | `SKILL-01`–`SKILL-08`. |
-| `SkillName` | text | No | Software, Data, Systems, Mechanical, QA, Cloud/DevOps, Cybersecurity hoặc PMO. |
+| `SkillName` | text | No | Software, Data, Systems, Mechanical, QA, Cloud/DevOps, Cybersecurity, or PMO. |
 | `SkillFamily` | text | No | Broader skill family. |
-| `SkillCategory` | text | No | Technical, Quality hoặc Program. |
+| `SkillCategory` | text | No | Technical, Quality, or Program. |
 | `AdjacencyGroup` | text | No | Cross-training/skill-adjacency group. |
 | `IsCriticalSkill` | boolean | No | 1 for constrained/critical capability. |
 
 ## `DimProject.csv`
 
-Grain: một FORGE-style RDE project; đúng 25 rows.
+Grain: one FORGE-style RDE project; exactly 25 rows.
 
 | Column | Type/key | Nullable | Definition/rule |
 |---|---|---:|---|
@@ -85,27 +85,27 @@ Grain: một FORGE-style RDE project; đúng 25 rows.
 
 ## `DimEmployee.csv`
 
-Grain: một employee/contractor; đúng 120 rows.
+Grain: one employee or contractor; exactly 120 rows.
 
 | Column | Type/key | Nullable | Definition/rule |
 |---|---|---:|---|
 | `EmployeeKey` | int, PK | No | Stable surrogate key 1–120. |
 | `EmployeeID` | text, BK | No | `EMP-0001`–`EMP-0120`. |
-| `EmployeeName` | text | No | Synthetic label, không phải PII thật. |
+| `EmployeeName` | text | No | Synthetic label; not real personally identifiable information. |
 | `TeamKey` | int, FK | No | → `DimTeam[TeamKey]`. |
 | `PrimarySkillKey` | int, FK | No | → `DimSkill[SkillKey]`. |
 | `Location` | text | No | Synthetic workforce location. |
-| `EmploymentType` | text | No | `Employee` hoặc `Contractor`. |
+| `EmploymentType` | text | No | `Employee` or `Contractor`. |
 | `HireDate` | date | No | Employment effective date. |
-| `ExitDate` | date | Yes | Blank khi chưa exit. |
+| `ExitDate` | date | Yes | Blank until the resource exits. |
 | `StandardLaborRate` | decimal | No | Hourly cost rate in USD. |
 | `UtilizationTarget` | decimal | No | Inherited from team, 0–1 decimal. |
-| `EmploymentStatus` | text | No | `Active` hoặc `Exited` as of data-as-of date. |
+| `EmploymentStatus` | text | No | `Active` or `Exited` as of the data as-of date. |
 | `IsActiveAsOfDate` | boolean | No | Active on 2025-06-30. |
 
 ## `BridgeEmployeeSkill.csv`
 
-Grain: một effective employee–skill association.
+Grain: one effective employee–skill association.
 
 | Column | Type/key | Nullable | Definition/rule |
 |---|---|---:|---|
@@ -122,7 +122,7 @@ Grain: một effective employee–skill association.
 
 ## `FactLabor.csv`
 
-Grain: employee–project–week time entry. Natural key là (`EmployeeKey`, `ProjectKey`, `WeekStartDateKey`); 15 duplicate natural keys được cài cố ý cho A06, trong khi `LaborRecordID` vẫn unique.
+Grain: one employee–project–week time entry. The natural key is (`EmployeeKey`, `ProjectKey`, `WeekStartDateKey`). Fifteen duplicate natural keys are intentionally included for A06, while `LaborRecordID` remains unique.
 
 | Column | Type/key | Nullable | Definition/rule |
 |---|---|---:|---|
@@ -140,7 +140,7 @@ Grain: employee–project–week time entry. Natural key là (`EmployeeKey`, `Pr
 | `OvertimeRateMultiplier` | decimal | No | 1.5 for employees; 1.0 for contractors. |
 | `ActualLaborCost` | decimal | Yes | Calculated cost; blank with missing ProjectHours. |
 | `SubmissionDate` | date | No | Synthetic time-entry submission date. |
-| `SubmissionStatus` | text | No | `On Time` hoặc `Late`. |
+| `SubmissionStatus` | text | No | `On Time` or `Late`. |
 | `TimeEntrySource` | text | No | `SAP-Style Time` mock source label. |
 
 ## `FactFinancial.csv`
@@ -168,7 +168,7 @@ Grain: project–month–cost category. Categories: `Labor`, `Contractor`, `Mate
 
 ## `FactMilestone.csv`
 
-Grain: một milestone của một project; 5–12 milestones/project.
+Grain: one milestone for one project; 5–12 milestones per project.
 
 | Column | Type/key | Nullable | Definition/rule |
 |---|---|---:|---|
@@ -210,14 +210,14 @@ Grain: month–team–skill–location.
 
 ## `FactRiskIssue.csv`
 
-Grain: một risk hoặc issue của một project.
+Grain: one risk or issue for one project.
 
 | Column | Type/key | Nullable | Definition/rule |
 |---|---|---:|---|
 | `RiskIssueKey` | int, PK | No | Stable surrogate key. |
 | `RiskIssueID` | text, BK | No | Deterministic risk/issue ID. |
 | `ProjectKey` | int, FK | No | → `DimProject[ProjectKey]`. |
-| `RecordType` | text | No | `Risk` hoặc `Issue`. |
+| `RecordType` | text | No | `Risk` or `Issue`. |
 | `RiskTitle` | text | No | Synthetic risk/issue description. |
 | `RiskCategory` | text | No | Schedule, Cost, Resource, Technical, Quality, Dependency. |
 | `Probability` | int | No | 1–5. |

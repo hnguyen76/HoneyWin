@@ -1,118 +1,170 @@
-# FORGE RDE/PMO synthetic Power BI dataset
+# HoneyWin RDE / PMO Portfolio Analytics
 
-Bộ deliverable này được xây trực tiếp từ source context
-`honeywell_forge_interview_context.md` (SHA-256 được ghi trong source traceability).
-Đây là mock data cho portfolio/phỏng vấn, không phải dữ liệu nội bộ Honeywell.
+HoneyWin is a reproducible synthetic RDE/PMO analytics portfolio with two
+presentation layers: an interactive Streamlit application and an audited
+Microsoft Power BI implementation. It demonstrates financial control, labor
+utilization, workforce capacity planning, milestone governance, and risk
+management without using confidential or real Honeywell operating data.
 
-## Kết quả mặc định
+[![Streamlit Executive Overview](docs/assets/streamlit/executive-overview.png)](docs/streamlit_gallery.md)
 
-- 24 tháng: 2024-01-01 đến 2025-12-31; data as-of 2025-06-30.
-- 25 FORGE-style RDE projects.
-- 120 employees/contractors.
-- 8,172 raw labor records; 8,145 records sau reject + deduplicate.
-- 11 linked CSV tables, UTF-8 và Power BI-ready.
-- Fixed random seed `20250810` và SHA-256 manifest.
-- 7 controlled business anomalies có cross-table root-cause evidence.
-- QA result: `PASS_WITH_EXPECTED_ANOMALIES`, 50 passed checks, 4 expected warnings, 0 unexpected failures.
-- DAX catalog cho Financial, Labor, Workforce và Governance/Health.
+Review the [interactive dashboard gallery](docs/streamlit_gallery.md), the
+[Power BI gallery](docs/dashboard_gallery.md), or the
+[full realism and optimization audit](quality/full_realism_optimization_report.md).
 
-## Cấu trúc chính
+## Highlights
 
-```text
-config/default.json                 Default scope và fixed seed
-docs/data_specification.md          Grain, keys, rules, sign conventions, anomalies
-docs/data_dictionary.md             Dictionary cho toàn bộ columns của 11 tables
-docs/source_traceability.md         Mapping từ source Markdown đến deliverables
-scripts/generate_data.py            Reproducible standard-library generator
-scripts/validate_data.py            QA, reconciliation và anomaly validation
-scripts/audit_realism.py            Cardinality, outlier, realism, rule và correlation audit
-data/generated/*.csv                11 generated tables
-data/generated/manifest.json        Row counts và SHA-256 checksums
-quality/data_quality_report.md       Human-readable QA report
-quality/data_quality_results.csv     54 machine-readable checks
-quality/anomaly_evidence.csv         Signal/root cause/recommendation/impact
-quality/labor_exceptions.csv         Duplicate, missing và late-entry drill list
-quality/full_realism_optimization_report.md  Full before/after implementation audit
-powerbi/FactLabor_Clean.pq           Power Query reject + deduplicate logic
-powerbi/model_setup.md               Import, types và relationship instructions
-powerbi/measures.dax                 DAX measure definitions
-powerbi/measure_catalog.md           Definition, format, sign convention, page mapping
-scripts/audit_powerbi_live.ps1       Live model/relationship + 70-measure smoke test
-scripts/optimize_powerbi_report.ps1  Reproducible report visual construction pass
-tests/test_pipeline.py               Reproducibility và acceptance tests
-requirements.txt                     Pinned audit/test/Power BI Python dependencies
-```
+- Five aligned analytics experiences: Executive Overview, Financial & Cost,
+  Labor Utilization, Workforce Capacity, and Governance & Risk.
+- Interactive global date/program/project filters plus page-specific team,
+  cost, employment, location, skill, status, and risk filters where supported.
+- Microsoft Fluent-inspired responsive UI with KPI cards, variance views,
+  target bands, accessible conditional colors, Plotly tooltips, and detail tables.
+- Eleven linked CSV tables covering 24 months, 25 projects, and 120 synthetic
+  employees/contractors.
+- Fixed random seed `20250810`, deterministic CSV output, and SHA-256 manifest.
+- Seven controlled business anomalies with cross-table root-cause evidence.
+- Audited Power BI model with 70 DAX measures, 12 semantic tables, and 20 relationships.
+- Automated data, calculation, rendering, startup, link, and reproducibility tests.
 
-## Rebuild và kiểm tra
+## Interactive application
 
-Yêu cầu Python 3.11+. Generator và validator chỉ dùng standard library; realism
-audit, tests và Power BI Python loader dùng các package được pin trong
-`requirements.txt`.
+The Streamlit entry point is [`app.py`](app.py). It loads the committed audited
+data through repository-relative paths, validates manifest row counts, caches
+data loading, applies the same labor cleansing rule as Power BI, and calculates
+all displayed metrics from source frames.
+
+### Local setup
+
+Python 3.11 or later is required.
 
 ```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-python scripts\generate_data.py
-python scripts\validate_data.py
-python scripts\audit_realism.py --label final
-python -m pytest -q
 ```
 
-Chạy lại với cùng `config/default.json` phải tạo byte-identical CSV. Test so sánh toàn bộ file bytes và SHA-256 giữa hai fresh output directories, đồng thời so với manifest đang commit.
+Start the application:
 
-## 11 CSV tables
+```powershell
+python -m streamlit run app.py
+```
+
+Streamlit will print the local URL, normally `http://localhost:8501`. The app
+uses a wide layout and remains usable at narrower browser widths through
+responsive card and chart wrapping.
+
+### Application architecture
+
+```text
+app.py                              Minimal Streamlit entry point
+honeywin_dashboard/data.py          Cached loading, validation, joins, filters
+honeywin_dashboard/metrics.py       Pure audited KPI calculations
+honeywin_dashboard/charts.py        Reusable Plotly business charts
+honeywin_dashboard/filters.py       Navigation and supported filter controls
+honeywin_dashboard/style.py         Fluent tokens, CSS, KPI formatting
+honeywin_dashboard/pages.py         Five page compositions
+.streamlit/config.toml              Deterministic local theme/server settings
+tests/test_streamlit_dashboard.py   Loader, calculation, filter, and render tests
+```
+
+The Power BI theme file is the palette source for the Streamlit application, so
+both presentation layers use the same primary, secondary, good, warning, and bad
+status colors.
+
+## Dataset
+
+Default scope:
+
+- Date range: 2024-01-01 through 2025-12-31; data as of 2025-06-30.
+- 25 FORGE-style synthetic RDE projects.
+- 120 synthetic employees and contractors.
+- 8,172 raw labor records; 8,145 after reject-and-deduplicate cleansing.
+- 11 UTF-8 Power BI-ready CSV tables.
+- 7 deterministic anomaly/root-cause scenarios.
 
 | Table | Rows | Grain |
 |---|---:|---|
-| `DimDate` | 731 | Date |
+| `DimDate` | 731 | Calendar date |
 | `DimProject` | 25 | Project |
-| `DimEmployee` | 120 | Employee/contractor |
+| `DimEmployee` | 120 | Employee or contractor |
 | `DimTeam` | 8 | Engineering team |
-| `DimSkill` | 8 | Skill |
-| `BridgeEmployeeSkill` | 216 | Employee–skill |
-| `FactLabor` | 8,172 | Employee–project–week |
+| `DimSkill` | 8 | Workforce skill |
+| `BridgeEmployeeSkill` | 216 | Employee–skill association |
+| `FactLabor` | 8,172 | Employee–project–week time entry |
 | `FactFinancial` | 1,180 | Project–month–cost category |
-| `FactMilestone` | 201 | Project–milestone |
-| `FactWorkforcePlan` | 768 | Month–team–skill–location |
-| `FactRiskIssue` | 118 | Project–risk/issue |
+| `FactMilestone` | 201 | Project milestone |
+| `FactWorkforcePlan` | 768 | Month–team–skill–location snapshot |
+| `FactRiskIssue` | 118 | Project risk or issue |
 
-## Controlled anomalies
+See the [data specification](docs/data_specification.md) and
+[data dictionary](docs/data_dictionary.md) for grains, keys, definitions, and
+business rules.
 
-| ID | Verified signal | Root cause |
-|---|---|---|
-| A01 | `FORGE-001`: 55% complete, 70% consumed, EAC over exactly $400K. | Critical milestone delayed 42 days; 1,096.5 overtime hours after delay. |
-| A02 | QA utilization 68.09% vs 85% target in Jan–Jun 2025. | 4,721.8 non-project/bench hours with normal available capacity. |
-| A03 | Software −5 FTE, Data −2; Systems +1, Mechanical +3 in Jul–Dec 2025. | Primary/bridge skill profile prevents direct full reallocation. |
-| A04 | `FORGE-004` critical milestone delayed 45 days. | Open critical dependency and $600,230.13 contractor/material commitment. |
-| A05 | `FORGE-009`: labor hours 101% of plan but cost 118%. | 8,657 contractor hours and 1,600.5 overtime hours. |
-| A06 | 15 duplicate extras, 12 incomplete rows, 297 late submissions. | Time-entry process/data validation defects. |
-| A07 | `FORGE-007`: 48% complete vs 68% consumed. | $1,092,374.07 front-loaded material/other spend. |
+## Data refresh and Power BI assets
 
-Observed values are generated, then independently re-read from CSV by `validate_data.py`; they are not copied from generator variables.
+Regenerate and validate the fixed-seed data:
 
-## Power BI workflow
+```powershell
+python scripts\generate_data.py
+python scripts\validate_data.py
+python scripts\audit_realism.py --label final
+python scripts\build_powerbi_model_assets.py
+```
 
-1. Import the folder `data/generated` and apply explicit data types.
-2. Use `powerbi/FactLabor_Clean.pq` or implement the same steps: reject 12 incomplete rows, sort/retain deterministically, then remove 15 duplicate natural-key extras.
-3. Configure one-to-many, single-direction relationships in `powerbi/model_setup.md`; keep role-playing date relationships inactive.
-4. Create an empty table named `Measures`, add formulas from `powerbi/measures.dax`, then apply formats/display folders from the catalog.
-5. Confirm `Labor Cost Reconciliation $ = 0` before building visuals.
+Running the generator again with the same configuration must produce
+byte-identical CSV files and manifest checksums. Restart Streamlit after a data
+refresh; its cached loader will validate the new manifest before rendering.
 
-The workbook `.xlsx` review mentioned as an optional convenience in the source context is not included because the required spreadsheet artifact runtime was unavailable. The requested CSV dataset and all QA/Power BI assets are complete and independently reproducible.
+Power BI source assets are stored under `powerbi/`, including the Fluent theme,
+Power Query cleansing logic, relationship/setup guidance, DAX source, generated
+measure metadata, and TMDL. The local PBIX binary is intentionally excluded from
+Git. See the [Power BI dashboard specification](powerbi/dashboard_spec.md) and
+[measure catalog](powerbi/measure_catalog.md).
 
-## Completed Power BI dashboard
+## Validation
 
-The completed local report contains the optimized 11-table model, 70/70
-live-tested DAX measures, 19 unambiguous relationships, the Microsoft Fluent
-theme, and five report pages with KPI cards, comparison/trend charts, target
-lines, contextual slicers, labels, tooltips, and Fluent status colors. The PBIX
-binary is intentionally excluded from Git; every generated dataset, model asset,
-measure definition, QA result, and reproducible build script is versioned.
+Run the complete automated suite:
 
-[![Executive Overview dashboard](docs/assets/dashboard/executive-overview.png)](docs/dashboard_gallery.md)
+```powershell
+python -m compileall -q app.py honeywin_dashboard scripts tests
+python scripts\validate_data.py
+python scripts\audit_realism.py --label final
+python -m pytest -q
+python scripts\smoke_streamlit.py
+python scripts\check_repo_links.py
+```
 
-Review the [five-page dashboard gallery](docs/dashboard_gallery.md), the
-[dashboard specification](powerbi/dashboard_spec.md), or the
-[full realism and optimization audit](quality/full_realism_optimization_report.md).
+Current audited acceptance results:
 
-Gallery baseline: all slicers are set to **All**, no cross-highlight is active,
-and every screenshot uses the native 1200×675 report canvas.
+- Data QA: 50 PASS, 4 expected anomaly warnings, 0 unexpected failures.
+- Reproducibility and application tests: 19 passed.
+- Realism audit: 0 final artificiality flags, down from 14 at baseline.
+- Referential integrity: 0 orphan keys and 0 impossible-date conditions.
+- Live Power BI model: 12 semantic tables (11 source tables plus `DimLocation`),
+  70/70 DAX measures, 16 active and 4 inactive relationships.
+- Streamlit browser review: five experiences rendered without application errors;
+  1440×1000 wide captures and a 900-pixel responsive overflow check passed.
+
+## Optional Streamlit Community Cloud deployment
+
+This repository hosts source code and preview assets only. No external service
+has been deployed or authorized.
+
+To deploy separately through Streamlit Community Cloud:
+
+1. Merge or select the desired GitHub branch in Streamlit Community Cloud.
+2. Create an app pointing to this repository and set the entry point to `app.py`.
+3. Use a supported Python version and install from `requirements.txt`.
+4. Do not add secrets; this application requires none.
+5. Confirm the health page, all five navigation states, and the committed QA suite
+   after deployment.
+
+A live URL will not exist until that separate hosting step is explicitly completed.
+
+## Data classification
+
+All project, resource, owner, sponsor, risk, financial, and workforce records are
+synthetic interview/demo constructs. They are not external benchmarks, production
+forecasts, or statements about Honeywell performance.

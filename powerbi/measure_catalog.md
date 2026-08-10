@@ -1,17 +1,17 @@
 # Power BI measure catalog
 
-Tạo một empty table tên `Measures`, đặt measures theo display folders dưới đây và dùng công thức trong `measures.dax`. `FactLabor` phải là query đã reject incomplete rows và deduplicate natural key.
+Create an empty table named `Measures`, organize measures under the display folders below, and use the formulas in `measures.dax`. `FactLabor` must be the query after incomplete rows are rejected and the natural key is deduplicated.
 
 ## Financial & Project Cost
 
 | Measure | Business definition | Format | Sign convention / usage |
 |---|---|---|---|
-| `Approved Budget` | Tổng current approved project budget từ dimension. | `$#,##0` | Positive budget; KPI card. |
+| `Approved Budget` | Total current approved project budget from the project dimension. | `$#,##0` | Positive budget; KPI card. |
 | `Baseline Budget` | Original baseline budget. | `$#,##0` | Positive. |
-| `Phased Budget` | Budget được phase ở project–month–category grain. | `$#,##0` | Dùng trend/category, không thay cho approved card. |
+| `Phased Budget` | Budget phased at project–month–category grain. | `$#,##0` | Use for trend/category analysis, not as a replacement for the approved-budget card. |
 | `Actual Cost` | Sum actual labor + material + other. | `$#,##0` | Positive spend. |
 | `Committed Cost` | Open committed cost. | `$#,##0` | Positive exposure. |
-| `Forecast to Complete` | Forecast spend còn lại trong future periods. | `$#,##0` | Positive remaining cost. |
+| `Forecast to Complete` | Remaining forecast spend in future periods. | `$#,##0` | Positive remaining cost. |
 | `EAC` | Actual Cost + Forecast to Complete across the full project timeline. | `$#,##0` | Positive total expected cost; ignores canonical date filter so month axes do not turn EAC into monthly spend. |
 | `Forecast Variance $` | Approved Budget − EAC. | `$#,##0;($#,##0)` | Negative = unfavorable/over budget. |
 | `Forecast Variance %` | Forecast Variance $ / Approved Budget. | `0.0%;(0.0%)` | Negative = unfavorable. |
@@ -75,7 +75,7 @@ FTE metrics use average monthly snapshots across the selected period, avoiding i
 | `Overdue Actions` | Open items with overdue due date. | `#,##0` | >0 requires action. |
 | `Cost Health` | Red >10% EAC over; Amber 3–10%; else Green. | Text | Transparent rule. |
 | `Schedule Health` | Red >30d; Amber 8–30d; else Green. | Text | Transparent rule. |
-| `Labor Health` | Amber when utilization gap <-5pp; else Green. | Text | The source defines utilization as an Amber trigger, not a standalone Red rule. |
+| `Labor Health` | Red below -12pp; Amber below -5pp; otherwise Green. | Text | Uses the documented utilization-gap thresholds. |
 | `Risk Health` | Red if a critical risk has no mitigation started; Amber if overdue; else Green. | Text | Transparent rule. |
 | `Overall Project Health` | Worst of Cost/Schedule/Labor/Risk. | Text | Worst-status-wins; no black box weighting. |
 | `Projects with Budget-Consumption Red Flag` | Count projects whose consumed-progress gap ≥15pp. | `#,##0` | Exception count. |

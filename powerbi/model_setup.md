@@ -42,7 +42,20 @@ Use one-to-many, single-direction relationships. Do not join facts directly.
 | `DimSkill[SkillKey]` | `BridgeEmployeeSkill[SkillKey]` | Yes |
 | `DimSkill[SkillKey]` | `FactWorkforcePlan[SkillKey]` | Yes |
 
-The live model has 19 relationships: 15 active and 4 inactive. The inactive
+### Workforce Capacity location linkage
+
+The live model uses a dedicated location dimension for the `Workforce Capacity`
+slicer rather than the employee location field.
+
+- `DimLocation` is defined as `DISTINCT(FactWorkforcePlan[Location])`
+- Active one-to-many relationship: `DimLocation[Location]` -> `FactWorkforcePlan[Location]`
+- Keep the slicer on the page bound to `DimLocation[Location]`
+- Do not use `DimEmployee[Location]` for the chart/card filter path because the visual measures are calculated from `FactWorkforcePlan`
+
+This is the required link to make the `Location` slicer drive the `Actual FTE`, `Required FTE`, and `Capacity Gap FTE` cards and corresponding chart consistently.
+
+The live model has 20 relationships: 16 active and 4 inactive. The active
+location relationship is the twentieth path. The inactive
 project-team and employee-primary-skill paths prevent ambiguity with the active
 labor/bridge paths. `ActualDateKey` and `ClosedDateKey` remain validated in the
 CSV layer but are not modeled because the Python connector represents their

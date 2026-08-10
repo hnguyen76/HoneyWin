@@ -1,12 +1,12 @@
 ﻿{
     "Database":  "4176efbb-0989-4edb-8b5f-7661fc0b7e0b",
     "RefreshRequested":  false,
-    "TableCount":  11,
+    "TableCount":  12,
     "MeasureCount":  70,
     "MeasurePassCount":  70,
     "MeasureFailCount":  0,
-    "RelationshipCount":  19,
-    "ActiveRelationshipCount":  15,
+    "RelationshipCount":  20,
+    "ActiveRelationshipCount":  16,
     "InactiveRelationshipCount":  4,
     "Tables":  [
                    {
@@ -27,6 +27,13 @@
                        "Name":  "DimEmployee",
                        "Rows":  120,
                        "Columns":  14,
+                       "Measures":  0,
+                       "Partitions":  1
+                   },
+                   {
+                       "Name":  "DimLocation",
+                       "Rows":  4,
+                       "Columns":  2,
                        "Measures":  0,
                        "Partitions":  1
                    },
@@ -88,6 +95,15 @@
                    }
                ],
     "Relationships":  [
+                          {
+                              "Name":  "05e5f940-90c1-51ad-32a4-2798c996397d",
+                              "From":  "FactWorkforcePlan.Location",
+                              "To":  "DimLocation.Location",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
                           {
                               "Name":  "AutoDetected_03217219-c207-41f5-9e43-1f59b132f681",
                               "From":  "BridgeEmployeeSkill.EmployeeKey",

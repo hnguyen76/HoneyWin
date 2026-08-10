@@ -12,7 +12,7 @@ The fixed-seed dataset was regenerated and the open PBIX was refreshed, optimize
 - Reproducibility tests: **7/7 passed**.
 - Realism threshold flags: **0 final, down from 14 baseline**.
 - Integrity: **0 orphan keys, 0 impossible-date conditions, 0 financial/labor/workforce/risk rule failures**.
-- Live model: **11 business tables, 19 relationships (15 active/4 inactive), 70/70 DAX measures evaluated successfully**.
+- Live model: **12 semantic tables (11 source tables plus `DimLocation`), 20 relationships (16 active/4 inactive), 70/70 DAX measures evaluated successfully**.
 - Report: **5 pages, 20 KPI cards, 5 optimized charts, 5 contextual slicers**, Microsoft Fluent theme, no visual error in the final screenshots.
 
 ## Assets inspected
@@ -81,9 +81,9 @@ Project-level correlation review found expected structural relationships without
 - Evaluated every measure against the refreshed live model: **70 PASS / 0 FAIL**.
 - Kept the two explicitly named mock earned-value measures labeled as mock; no unsupported business claim was added.
 - Refined `Labor Health` so `< -12pp` is Red, `-12pp to -5pp` is Amber, and other nonblank results are Green.
-- Disabled Auto Date/Time and removed 13 regenerated local date objects, leaving the intended 11 business tables and one canonical `DimDate`.
+- Disabled Auto Date/Time and removed 13 regenerated local date objects, leaving 11 source/business tables, the intentional `DimLocation`, and one canonical `DimDate`.
 - Persisted `Table.TransformColumnTypes` in every M partition. This fixes the observed refresh defect where Python output silently reverted fact numerics to Text and broke 48 measures.
-- Relationships are single-direction and unambiguous: 15 active plus 4 inactive alternate/role-playing paths. Project-team and employee-primary-skill stay inactive because enabling either creates a second path to labor/bridge facts.
+- Relationships are single-direction and unambiguous: 16 active plus 4 inactive alternate/role-playing paths. The active `DimLocation` path filters workforce snapshots; project-team and employee-primary-skill stay inactive because enabling either creates a second path to labor/bridge facts.
 
 ## Report-page changes
 
@@ -119,7 +119,7 @@ Titles, axes, legends, labels, and default multi-series tooltips use the existin
 
 - `realism_audit_baseline.json/.md` and `realism_audit_final.json/.md`
 - `data_quality_summary.json`, `data_quality_results.csv`, `anomaly_evidence.csv`
-- `powerbi_live_audit.json` — live tables, rows, 19 relationships, and all 70 DAX results
+- `powerbi_live_audit.json` — live tables, rows, 20 relationships, and all 70 DAX results
 - `report_visual_audit.json` — page/visual names and bounds
 - `docs/assets/dashboard/*.png` and `docs/dashboard_gallery.md` — five clean 1200×675 report-canvas screenshots
 - `data/generated/manifest.json` — final row counts and SHA-256 checksums
