@@ -172,6 +172,45 @@ def apply_app_style(tokens: ThemeTokens) -> None:
             font-weight: 650;
             margin: 1.15rem 0 .55rem;
         }}
+        .insight-card {{
+            --insight-color: var(--hw-primary);
+            background: var(--hw-surface);
+            border: 1px solid var(--hw-border);
+            border-left: 4px solid var(--insight-color);
+            border-radius: 6px;
+            box-shadow: 0 1px 2px rgba(0,0,0,.04);
+            height: 100%;
+            min-height: 224px;
+            padding: .9rem 1rem;
+        }}
+        .insight-label, .action-label {{
+            color: var(--insight-color);
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }}
+        .insight-title {{
+            color: var(--hw-text);
+            font-size: .98rem;
+            font-weight: 650;
+            line-height: 1.3;
+            margin: .25rem 0 .45rem;
+        }}
+        .insight-evidence, .insight-action {{
+            color: var(--hw-muted);
+            font-size: .79rem;
+            line-height: 1.45;
+        }}
+        .insight-divider {{
+            border-top: 1px solid var(--hw-border);
+            margin: .7rem 0 .6rem;
+        }}
+        .insight-context {{
+            color: var(--hw-muted);
+            font-size: .73rem;
+            margin: -.25rem 0 .55rem;
+        }}
         .empty-state {{
             background: var(--hw-surface);
             border: 1px dashed #A19F9D;
@@ -278,6 +317,30 @@ def render_signature() -> None:
 
     st.markdown(
         '<div class="dashboard-signature">Created by Hieu Nguyen</div>',
+        unsafe_allow_html=True,
+    )
+
+
+def insight_card(
+    title: str,
+    evidence: str,
+    action: str,
+    tokens: ThemeTokens,
+    tone: str = "primary",
+) -> None:
+    """Render a supported business insight with its recommended corrective action."""
+
+    st.markdown(
+        f"""
+        <div class="insight-card" style="--insight-color:{_tone_color(tokens, tone)}">
+          <div class="insight-label">Business insight</div>
+          <div class="insight-title">{html.escape(title)}</div>
+          <div class="insight-evidence">{html.escape(evidence)}</div>
+          <div class="insight-divider"></div>
+          <div class="action-label">Corrective action</div>
+          <div class="insight-action">{html.escape(action)}</div>
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 

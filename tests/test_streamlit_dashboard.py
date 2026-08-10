@@ -9,8 +9,16 @@ import pytest
 from streamlit.testing.v1 import AppTest
 
 from honeywin_dashboard.data import FilterSelection, apply_global_filters, load_dashboard_data
+from honeywin_dashboard.insights import (
+    executive_insights,
+    financial_insights,
+    governance_insights,
+    labor_insights,
+    workforce_insights,
+)
 from honeywin_dashboard.metrics import (
     financial_summary,
+    governance_summary,
     labor_summary,
     project_health_counts,
     project_health_table,
@@ -114,6 +122,29 @@ def test_dashboard_creator_signature_is_rendered() -> None:
     app.run()
     assert not app.exception
     assert any("Created by Hieu Nguyen" in element.value for element in app.markdown)
+
+
+def test_business_insights_are_data_driven_and_actionable(full_context) -> None:
+    health = project_health_table(full_context)
+    insight_groups = [
+        executive_insights(financial_summary(full_context), health),
+        financial_insights(financial_summary(full_context), health, full_context.financial),
+        labor_insights(labor_summary(full_context.labor), full_context.labor),
+        workforce_insights(workforce_summary(full_context.workforce), full_context.workforce),
+        governance_insights(
+            governance_summary(full_context.projects, full_context.milestones, full_context.risks),
+            full_context.milestones,
+            full_context.risks,
+        ),
+    ]
+    assert [len(group) for group in insight_groups] == [3, 3, 2, 2, 2]
+    for group in insight_groups:
+        for insight in group:
+            assert insight.title
+            assert insight.evidence
+            assert insight.action
+            assert insight.tone in {"primary", "good", "warning", "bad"}
+            assert "nan" not in insight.evidence.lower()
 
 
 def test_repository_markdown_links_resolve() -> None:

@@ -22,6 +22,8 @@ Review the [interactive dashboard gallery](docs/streamlit_gallery.md), the
   cost, employment, location, skill, status, and risk filters where supported.
 - Microsoft Fluent-inspired responsive UI with KPI cards, variance views,
   target bands, accessible conditional colors, Plotly tooltips, and detail tables.
+- Filter-aware business insight and corrective-action cards that identify the
+  highest financial, labor, capacity, schedule, and risk exposures from the data.
 - Eleven linked CSV tables covering 24 months, 25 projects, and 120 synthetic
   employees/contractors.
 - Fixed random seed `20250810`, deterministic CSV output, and SHA-256 manifest.
