@@ -1,0 +1,3437 @@
+{
+  "label": "baseline",
+  "generated_at": "2026-08-10",
+  "data_dir": "data/generated",
+  "tables": {
+    "DimDate": {
+      "rows": 731,
+      "columns": 22,
+      "exact_duplicate_rows": 0,
+      "primary_key_duplicates": 0,
+      "natural_key_duplicate_extras": 0,
+      "columns_profile": {
+        "DateKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 731,
+          "distinct_ratio": 1.0,
+          "top_value": "20240101",
+          "top_count": 1,
+          "top_ratio": 0.0013679890560875513,
+          "numeric": {
+            "min": 20240101,
+            "q1": 20240701.5,
+            "median": 20241231.0,
+            "mean": 20245660.88235294,
+            "q3": 20250701.5,
+            "max": 20251231,
+            "std": 5012.49259649676,
+            "iqr_outliers": 0
+          }
+        },
+        "Date": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 731,
+          "distinct_ratio": 1.0,
+          "top_value": "2024-01-01",
+          "top_count": 1,
+          "top_ratio": 0.0013679890560875513
+        },
+        "DayOfWeekName": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 7,
+          "distinct_ratio": 0.009575923392612859,
+          "top_value": "Monday",
+          "top_count": 105,
+          "top_ratio": 0.1436388508891929
+        },
+        "DayOfWeekNumber": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 7,
+          "distinct_ratio": 0.009575923392612859,
+          "top_value": "1",
+          "top_count": 105,
+          "top_ratio": 0.1436388508891929,
+          "numeric": {
+            "min": 1,
+            "q1": 2.0,
+            "median": 4.0,
+            "mean": 3.991792065663475,
+            "q3": 6.0,
+            "max": 7,
+            "std": 2.0006670407456864,
+            "iqr_outliers": 0
+          }
+        },
+        "WeekStartDate": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 105,
+          "distinct_ratio": 0.1436388508891929,
+          "top_value": "2024-01-01",
+          "top_count": 7,
+          "top_ratio": 0.009575923392612859
+        },
+        "WeekEndDate": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 105,
+          "distinct_ratio": 0.1436388508891929,
+          "top_value": "2024-01-07",
+          "top_count": 7,
+          "top_ratio": 0.009575923392612859
+        },
+        "WeekOfYear": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 52,
+          "distinct_ratio": 0.07113543091655267,
+          "top_value": "1",
+          "top_count": 17,
+          "top_ratio": 0.023255813953488372,
+          "numeric": {
+            "min": 1,
+            "q1": 13.0,
+            "median": 26.0,
+            "mean": 26.3953488372093,
+            "q3": 39.0,
+            "max": 52,
+            "std": 15.065962769788003,
+            "iqr_outliers": 0
+          }
+        },
+        "MonthNumber": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 12,
+          "distinct_ratio": 0.016415868673050615,
+          "top_value": "1",
+          "top_count": 62,
+          "top_ratio": 0.08481532147742818,
+          "numeric": {
+            "min": 1,
+            "q1": 4.0,
+            "median": 7.0,
+            "mean": 6.519835841313269,
+            "q3": 10.0,
+            "max": 12,
+            "std": 3.4495508897595615,
+            "iqr_outliers": 0
+          }
+        },
+        "MonthName": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 12,
+          "distinct_ratio": 0.016415868673050615,
+          "top_value": "January",
+          "top_count": 62,
+          "top_ratio": 0.08481532147742818
+        },
+        "MonthStartDate": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 24,
+          "distinct_ratio": 0.03283173734610123,
+          "top_value": "2024-01-01",
+          "top_count": 31,
+          "top_ratio": 0.04240766073871409
+        },
+        "YearMonth": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 24,
+          "distinct_ratio": 0.03283173734610123,
+          "top_value": "2024-01",
+          "top_count": 31,
+          "top_ratio": 0.04240766073871409
+        },
+        "CalendarQuarter": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 4,
+          "distinct_ratio": 0.005471956224350205,
+          "top_value": "Q3",
+          "top_count": 184,
+          "top_ratio": 0.25170998632010944
+        },
+        "CalendarYear": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.0027359781121751026,
+          "top_value": "2024",
+          "top_count": 366,
+          "top_ratio": 0.5006839945280438,
+          "numeric": {
+            "min": 2024,
+            "q1": 2024.0,
+            "median": 2024.0,
+            "mean": 2024.4993160054719,
+            "q3": 2025.0,
+            "max": 2025,
+            "std": 0.4999995321512668,
+            "iqr_outliers": 0
+          }
+        },
+        "FiscalMonthNumber": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 12,
+          "distinct_ratio": 0.016415868673050615,
+          "top_value": "1",
+          "top_count": 62,
+          "top_ratio": 0.08481532147742818,
+          "numeric": {
+            "min": 1,
+            "q1": 4.0,
+            "median": 7.0,
+            "mean": 6.519835841313269,
+            "q3": 10.0,
+            "max": 12,
+            "std": 3.4495508897595615,
+            "iqr_outliers": 0
+          }
+        },
+        "FiscalQuarter": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 4,
+          "distinct_ratio": 0.005471956224350205,
+          "top_value": "Q3",
+          "top_count": 184,
+          "top_ratio": 0.25170998632010944
+        },
+        "FiscalYear": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.0027359781121751026,
+          "top_value": "2024",
+          "top_count": 366,
+          "top_ratio": 0.5006839945280438,
+          "numeric": {
+            "min": 2024,
+            "q1": 2024.0,
+            "median": 2024.0,
+            "mean": 2024.4993160054719,
+            "q3": 2025.0,
+            "max": 2025,
+            "std": 0.4999995321512668,
+            "iqr_outliers": 0
+          }
+        },
+        "IsWeekend": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.0027359781121751026,
+          "top_value": "0",
+          "top_count": 523,
+          "top_ratio": 0.7154582763337893,
+          "numeric": {
+            "min": 0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 0.28454172366621067,
+            "q3": 1.0,
+            "max": 1,
+            "std": 0.45119589000707044,
+            "iqr_outliers": 0
+          }
+        },
+        "IsHoliday": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.0027359781121751026,
+          "top_value": "0",
+          "top_count": 723,
+          "top_ratio": 0.9890560875512996,
+          "numeric": {
+            "min": 0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 0.01094391244870041,
+            "q3": 0.0,
+            "max": 1,
+            "std": 0.10403914277336002,
+            "iqr_outliers": 0
+          }
+        },
+        "HolidayName": {
+          "dtype": "str",
+          "nulls": 723,
+          "null_ratio": 0.9890560875512996,
+          "distinct": 4,
+          "distinct_ratio": 0.5,
+          "top_value": "New Year's Day",
+          "top_count": 2,
+          "top_ratio": 0.25
+        },
+        "IsWorkingDay": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.0027359781121751026,
+          "top_value": "1",
+          "top_count": 515,
+          "top_ratio": 0.7045143638850889,
+          "numeric": {
+            "min": 0,
+            "q1": 0.0,
+            "median": 1.0,
+            "mean": 0.7045143638850889,
+            "q3": 1.0,
+            "max": 1,
+            "std": 0.4562607532592272,
+            "iqr_outliers": 0
+          }
+        },
+        "WorkingHours": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.0027359781121751026,
+          "top_value": "8.0",
+          "top_count": 515,
+          "top_ratio": 0.7045143638850889,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 8.0,
+            "mean": 5.636114911080711,
+            "q3": 8.0,
+            "max": 8.0,
+            "std": 3.6500860260738177,
+            "iqr_outliers": 0
+          }
+        },
+        "PeriodType": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.0027359781121751026,
+          "top_value": "Actual",
+          "top_count": 547,
+          "top_ratio": 0.7482900136798906
+        }
+      },
+      "roundness": {}
+    },
+    "DimProject": {
+      "rows": 25,
+      "columns": 17,
+      "exact_duplicate_rows": 0,
+      "primary_key_duplicates": 0,
+      "natural_key_duplicate_extras": 0,
+      "columns_profile": {
+        "ProjectKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 25,
+          "distinct_ratio": 1.0,
+          "top_value": "1",
+          "top_count": 1,
+          "top_ratio": 0.04,
+          "numeric": {
+            "min": 1,
+            "q1": 7.0,
+            "median": 13.0,
+            "mean": 13.0,
+            "q3": 19.0,
+            "max": 25,
+            "std": 7.211102550927978,
+            "iqr_outliers": 0
+          }
+        },
+        "ProjectID": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 25,
+          "distinct_ratio": 1.0,
+          "top_value": "FORGE-001",
+          "top_count": 1,
+          "top_ratio": 0.04
+        },
+        "ProjectName": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 25,
+          "distinct_ratio": 1.0,
+          "top_value": "Connected Asset Insights",
+          "top_count": 1,
+          "top_ratio": 0.04
+        },
+        "Program": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 5,
+          "distinct_ratio": 0.2,
+          "top_value": "Connected Operations",
+          "top_count": 5,
+          "top_ratio": 0.2
+        },
+        "ProjectManager": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 9,
+          "distinct_ratio": 0.36,
+          "top_value": "Project Manager 01",
+          "top_count": 3,
+          "top_ratio": 0.12
+        },
+        "Sponsor": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 5,
+          "distinct_ratio": 0.2,
+          "top_value": "RDE Sponsor 01",
+          "top_count": 5,
+          "top_ratio": 0.2
+        },
+        "PrimaryTeamKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 0.32,
+          "top_value": "1",
+          "top_count": 4,
+          "top_ratio": 0.16,
+          "numeric": {
+            "min": 1,
+            "q1": 2.0,
+            "median": 4.0,
+            "mean": 4.36,
+            "q3": 6.0,
+            "max": 8,
+            "std": 2.3474241201793937,
+            "iqr_outliers": 0
+          }
+        },
+        "StartDate": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 9,
+          "distinct_ratio": 0.36,
+          "top_value": "2024-07-01",
+          "top_count": 5,
+          "top_ratio": 0.2
+        },
+        "PlannedEndDate": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 19,
+          "distinct_ratio": 0.76,
+          "top_value": "2025-10-31",
+          "top_count": 2,
+          "top_ratio": 0.08
+        },
+        "ForecastEndDate": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 20,
+          "distinct_ratio": 0.8,
+          "top_value": "2025-12-31",
+          "top_count": 4,
+          "top_ratio": 0.16
+        },
+        "ActualEndDate": {
+          "dtype": "str",
+          "nulls": 18,
+          "null_ratio": 0.72,
+          "distinct": 5,
+          "distinct_ratio": 0.7142857142857143,
+          "top_value": "2025-02-25",
+          "top_count": 2,
+          "top_ratio": 0.2857142857142857
+        },
+        "ProjectStatus": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 5,
+          "distinct_ratio": 0.2,
+          "top_value": "Active",
+          "top_count": 12,
+          "top_ratio": 0.48
+        },
+        "Priority": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 3,
+          "distinct_ratio": 0.12,
+          "top_value": "High",
+          "top_count": 15,
+          "top_ratio": 0.6
+        },
+        "PercentComplete": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 17,
+          "distinct_ratio": 0.68,
+          "top_value": "100.0",
+          "top_count": 7,
+          "top_ratio": 0.28,
+          "numeric": {
+            "min": 0.0,
+            "q1": 47.86,
+            "median": 62.0,
+            "mean": 65.22399999999999,
+            "q3": 100.0,
+            "max": 100.0,
+            "std": 30.878833786268547,
+            "iqr_outliers": 0
+          }
+        },
+        "ApprovedBudget": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 22,
+          "distinct_ratio": 0.88,
+          "top_value": "2800000.0",
+          "top_count": 3,
+          "top_ratio": 0.12,
+          "numeric": {
+            "min": 1500000.0,
+            "q1": 2500000.0,
+            "median": 3000000.0,
+            "mean": 3296000.0,
+            "q3": 3950000.0,
+            "max": 5500000.0,
+            "std": 1083043.8587610384,
+            "iqr_outliers": 0
+          }
+        },
+        "BaselineBudget": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 25,
+          "distinct_ratio": 1.0,
+          "top_value": "2800000.0",
+          "top_count": 1,
+          "top_ratio": 0.04,
+          "numeric": {
+            "min": 1498703.19,
+            "q1": 2500000.0,
+            "median": 2810977.06,
+            "mean": 3183459.9612000003,
+            "q3": 3885688.16,
+            "max": 5206024.97,
+            "std": 1053194.7334313523,
+            "iqr_outliers": 0
+          }
+        },
+        "BudgetClass": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 4,
+          "distinct_ratio": 0.16,
+          "top_value": "Medium",
+          "top_count": 12,
+          "top_ratio": 0.48
+        }
+      },
+      "roundness": {
+        "BaselineBudget": {
+          "nonzero": 25,
+          "integer_ratio": 0.16,
+          "multiple_5_ratio": 0.16,
+          "multiple_1000_ratio": 0.16
+        },
+        "ApprovedBudget": {
+          "nonzero": 25,
+          "integer_ratio": 1.0,
+          "multiple_5_ratio": 1.0,
+          "multiple_1000_ratio": 1.0
+        },
+        "PercentComplete": {
+          "nonzero": 23,
+          "integer_ratio": 0.5652173913043478,
+          "multiple_5_ratio": 0.391304347826087,
+          "multiple_1000_ratio": 0.0
+        }
+      }
+    },
+    "DimEmployee": {
+      "rows": 120,
+      "columns": 13,
+      "exact_duplicate_rows": 0,
+      "primary_key_duplicates": 0,
+      "natural_key_duplicate_extras": 0,
+      "columns_profile": {
+        "EmployeeKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 120,
+          "distinct_ratio": 1.0,
+          "top_value": "1",
+          "top_count": 1,
+          "top_ratio": 0.008333333333333333,
+          "numeric": {
+            "min": 1,
+            "q1": 30.75,
+            "median": 60.5,
+            "mean": 60.5,
+            "q3": 90.25,
+            "max": 120,
+            "std": 34.63981331743384,
+            "iqr_outliers": 0
+          }
+        },
+        "EmployeeID": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 120,
+          "distinct_ratio": 1.0,
+          "top_value": "EMP-0001",
+          "top_count": 1,
+          "top_ratio": 0.008333333333333333
+        },
+        "EmployeeName": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 120,
+          "distinct_ratio": 1.0,
+          "top_value": "RDE Resource 001",
+          "top_count": 1,
+          "top_ratio": 0.008333333333333333
+        },
+        "TeamKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 0.06666666666666667,
+          "top_value": "1",
+          "top_count": 25,
+          "top_ratio": 0.20833333333333334,
+          "numeric": {
+            "min": 1,
+            "q1": 2.0,
+            "median": 4.0,
+            "mean": 3.7916666666666665,
+            "q3": 5.0,
+            "max": 8,
+            "std": 2.1090907730320403,
+            "iqr_outliers": 0
+          }
+        },
+        "PrimarySkillKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 0.06666666666666667,
+          "top_value": "1",
+          "top_count": 25,
+          "top_ratio": 0.20833333333333334,
+          "numeric": {
+            "min": 1,
+            "q1": 2.0,
+            "median": 4.0,
+            "mean": 3.7916666666666665,
+            "q3": 5.0,
+            "max": 8,
+            "std": 2.1090907730320403,
+            "iqr_outliers": 0
+          }
+        },
+        "Location": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 4,
+          "distinct_ratio": 0.03333333333333333,
+          "top_value": "Charlotte, NC",
+          "top_count": 40,
+          "top_ratio": 0.3333333333333333
+        },
+        "EmploymentType": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.016666666666666666,
+          "top_value": "Employee",
+          "top_count": 96,
+          "top_ratio": 0.8
+        },
+        "HireDate": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 113,
+          "distinct_ratio": 0.9416666666666667,
+          "top_value": "2023-04-23",
+          "top_count": 2,
+          "top_ratio": 0.016666666666666666
+        },
+        "ExitDate": {
+          "dtype": "float64",
+          "nulls": 120,
+          "null_ratio": 1.0,
+          "distinct": 0,
+          "distinct_ratio": null,
+          "top_value": null,
+          "top_count": 0,
+          "top_ratio": null,
+          "numeric": {}
+        },
+        "StandardLaborRate": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 117,
+          "distinct_ratio": 0.975,
+          "top_value": "87.96",
+          "top_count": 2,
+          "top_ratio": 0.016666666666666666,
+          "numeric": {
+            "min": 65.97,
+            "q1": 84.19,
+            "median": 94.87,
+            "mean": 97.52241666666667,
+            "q3": 103.56,
+            "max": 150.09,
+            "std": 18.428710571453145,
+            "iqr_outliers": 9
+          }
+        },
+        "UtilizationTarget": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 4,
+          "distinct_ratio": 0.03333333333333333,
+          "top_value": "0.85",
+          "top_count": 73,
+          "top_ratio": 0.6083333333333333,
+          "numeric": {
+            "min": 0.75,
+            "q1": 0.82,
+            "median": 0.85,
+            "mean": 0.8305,
+            "q3": 0.85,
+            "max": 0.85,
+            "std": 0.02822085517249018,
+            "iqr_outliers": 7
+          }
+        },
+        "EmploymentStatus": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 1,
+          "distinct_ratio": 0.008333333333333333,
+          "top_value": "Active",
+          "top_count": 120,
+          "top_ratio": 1.0
+        },
+        "IsActiveAsOfDate": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 1,
+          "distinct_ratio": 0.008333333333333333,
+          "top_value": "1",
+          "top_count": 120,
+          "top_ratio": 1.0,
+          "numeric": {
+            "min": 1,
+            "q1": 1.0,
+            "median": 1.0,
+            "mean": 1.0,
+            "q3": 1.0,
+            "max": 1,
+            "std": 0.0,
+            "iqr_outliers": 0
+          }
+        }
+      },
+      "roundness": {}
+    },
+    "DimTeam": {
+      "rows": 8,
+      "columns": 7,
+      "exact_duplicate_rows": 0,
+      "primary_key_duplicates": 0,
+      "natural_key_duplicate_extras": 0,
+      "columns_profile": {
+        "TeamKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 1.0,
+          "top_value": "1",
+          "top_count": 1,
+          "top_ratio": 0.125,
+          "numeric": {
+            "min": 1,
+            "q1": 2.75,
+            "median": 4.5,
+            "mean": 4.5,
+            "q3": 6.25,
+            "max": 8,
+            "std": 2.29128784747792,
+            "iqr_outliers": 0
+          }
+        },
+        "TeamID": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 1.0,
+          "top_value": "TEAM-01",
+          "top_count": 1,
+          "top_ratio": 0.125
+        },
+        "TeamName": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 1.0,
+          "top_value": "Software Engineering",
+          "top_count": 1,
+          "top_ratio": 0.125
+        },
+        "TeamLeader": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 1.0,
+          "top_value": "Software RDE Leader",
+          "top_count": 1,
+          "top_ratio": 0.125
+        },
+        "EngineeringFunction": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 1.0,
+          "top_value": "Software RDE",
+          "top_count": 1,
+          "top_ratio": 0.125
+        },
+        "UtilizationTarget": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 4,
+          "distinct_ratio": 0.5,
+          "top_value": "0.85",
+          "top_count": 5,
+          "top_ratio": 0.625,
+          "numeric": {
+            "min": 0.75,
+            "q1": 0.815,
+            "median": 0.85,
+            "mean": 0.8275,
+            "q3": 0.85,
+            "max": 0.85,
+            "std": 0.03418698582794335,
+            "iqr_outliers": 1
+          }
+        },
+        "ActiveFlag": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 1,
+          "distinct_ratio": 0.125,
+          "top_value": "1",
+          "top_count": 8,
+          "top_ratio": 1.0,
+          "numeric": {
+            "min": 1,
+            "q1": 1.0,
+            "median": 1.0,
+            "mean": 1.0,
+            "q3": 1.0,
+            "max": 1,
+            "std": 0.0,
+            "iqr_outliers": 0
+          }
+        }
+      },
+      "roundness": {}
+    },
+    "DimSkill": {
+      "rows": 8,
+      "columns": 7,
+      "exact_duplicate_rows": 0,
+      "primary_key_duplicates": 0,
+      "natural_key_duplicate_extras": 0,
+      "columns_profile": {
+        "SkillKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 1.0,
+          "top_value": "1",
+          "top_count": 1,
+          "top_ratio": 0.125,
+          "numeric": {
+            "min": 1,
+            "q1": 2.75,
+            "median": 4.5,
+            "mean": 4.5,
+            "q3": 6.25,
+            "max": 8,
+            "std": 2.29128784747792,
+            "iqr_outliers": 0
+          }
+        },
+        "SkillID": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 1.0,
+          "top_value": "SKILL-01",
+          "top_count": 1,
+          "top_ratio": 0.125
+        },
+        "SkillName": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 1.0,
+          "top_value": "Software",
+          "top_count": 1,
+          "top_ratio": 0.125
+        },
+        "SkillFamily": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 1.0,
+          "top_value": "Digital Engineering",
+          "top_count": 1,
+          "top_ratio": 0.125
+        },
+        "SkillCategory": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 3,
+          "distinct_ratio": 0.375,
+          "top_value": "Technical",
+          "top_count": 6,
+          "top_ratio": 0.75
+        },
+        "AdjacencyGroup": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 5,
+          "distinct_ratio": 0.625,
+          "top_value": "Digital",
+          "top_count": 4,
+          "top_ratio": 0.5
+        },
+        "IsCriticalSkill": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.25,
+          "top_value": "1",
+          "top_count": 5,
+          "top_ratio": 0.625,
+          "numeric": {
+            "min": 0,
+            "q1": 0.0,
+            "median": 1.0,
+            "mean": 0.625,
+            "q3": 1.0,
+            "max": 1,
+            "std": 0.4841229182759271,
+            "iqr_outliers": 0
+          }
+        }
+      },
+      "roundness": {}
+    },
+    "BridgeEmployeeSkill": {
+      "rows": 205,
+      "columns": 10,
+      "exact_duplicate_rows": 0,
+      "primary_key_duplicates": 0,
+      "natural_key_duplicate_extras": 0,
+      "columns_profile": {
+        "EmployeeSkillKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 205,
+          "distinct_ratio": 1.0,
+          "top_value": "1",
+          "top_count": 1,
+          "top_ratio": 0.004878048780487805,
+          "numeric": {
+            "min": 1,
+            "q1": 52.0,
+            "median": 103.0,
+            "mean": 103.0,
+            "q3": 154.0,
+            "max": 205,
+            "std": 59.177698502053964,
+            "iqr_outliers": 0
+          }
+        },
+        "EmployeeKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 120,
+          "distinct_ratio": 0.5853658536585366,
+          "top_value": "11",
+          "top_count": 3,
+          "top_ratio": 0.014634146341463415,
+          "numeric": {
+            "min": 1,
+            "q1": 29.0,
+            "median": 59.0,
+            "mean": 59.69268292682927,
+            "q3": 92.0,
+            "max": 120,
+            "std": 34.78152292100423,
+            "iqr_outliers": 0
+          }
+        },
+        "SkillKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 0.03902439024390244,
+          "top_value": "1",
+          "top_count": 42,
+          "top_ratio": 0.2048780487804878,
+          "numeric": {
+            "min": 1,
+            "q1": 2.0,
+            "median": 4.0,
+            "mean": 3.8780487804878048,
+            "q3": 6.0,
+            "max": 8,
+            "std": 2.0952341035884214,
+            "iqr_outliers": 0
+          }
+        },
+        "ProficiencyLevel": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 5,
+          "distinct_ratio": 0.024390243902439025,
+          "top_value": "3",
+          "top_count": 58,
+          "top_ratio": 0.28292682926829266,
+          "numeric": {
+            "min": 1,
+            "q1": 2.0,
+            "median": 3.0,
+            "mean": 3.1414634146341465,
+            "q3": 4.0,
+            "max": 5,
+            "std": 1.1705690943977087,
+            "iqr_outliers": 0
+          }
+        },
+        "ProficiencyCategory": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 4,
+          "distinct_ratio": 0.01951219512195122,
+          "top_value": "Advanced",
+          "top_count": 115,
+          "top_ratio": 0.5609756097560976
+        },
+        "IsPrimarySkill": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.00975609756097561,
+          "top_value": "1",
+          "top_count": 120,
+          "top_ratio": 0.5853658536585366,
+          "numeric": {
+            "min": 0,
+            "q1": 0.0,
+            "median": 1.0,
+            "mean": 0.5853658536585366,
+            "q3": 1.0,
+            "max": 1,
+            "std": 0.49265877748107695,
+            "iqr_outliers": 0
+          }
+        },
+        "IsCertified": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.00975609756097561,
+          "top_value": "0",
+          "top_count": 155,
+          "top_ratio": 0.7560975609756098,
+          "numeric": {
+            "min": 0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 0.24390243902439024,
+            "q3": 0.0,
+            "max": 1,
+            "std": 0.4294345576014392,
+            "iqr_outliers": 0
+          }
+        },
+        "CertificationName": {
+          "dtype": "str",
+          "nulls": 155,
+          "null_ratio": 0.7560975609756098,
+          "distinct": 8,
+          "distinct_ratio": 0.16,
+          "top_value": "Mock Mechanical Certification",
+          "top_count": 10,
+          "top_ratio": 0.2
+        },
+        "EffectiveDate": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 174,
+          "distinct_ratio": 0.848780487804878,
+          "top_value": "2023-07-10",
+          "top_count": 3,
+          "top_ratio": 0.014634146341463415
+        },
+        "ExpirationDate": {
+          "dtype": "float64",
+          "nulls": 205,
+          "null_ratio": 1.0,
+          "distinct": 0,
+          "distinct_ratio": null,
+          "top_value": null,
+          "top_count": 0,
+          "top_ratio": null,
+          "numeric": {}
+        }
+      },
+      "roundness": {}
+    },
+    "FactLabor": {
+      "rows": 9495,
+      "columns": 16,
+      "exact_duplicate_rows": 0,
+      "primary_key_duplicates": 0,
+      "natural_key_duplicate_extras": 15,
+      "columns_profile": {
+        "LaborRecordID": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 9495,
+          "distinct_ratio": 1.0,
+          "top_value": "LAB-000001",
+          "top_count": 1,
+          "top_ratio": 0.00010531858873091101
+        },
+        "WeekStartDateKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 79,
+          "distinct_ratio": 0.00832016850974197,
+          "top_value": "20240401",
+          "top_count": 122,
+          "top_ratio": 0.012848867825171143,
+          "numeric": {
+            "min": 20240101,
+            "q1": 20240513.0,
+            "median": 20240930.0,
+            "mean": 20243860.105529226,
+            "q3": 20250217.0,
+            "max": 20250630,
+            "std": 4571.148023620013,
+            "iqr_outliers": 0
+          }
+        },
+        "EmployeeKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 120,
+          "distinct_ratio": 0.01263823064770932,
+          "top_value": "13",
+          "top_count": 80,
+          "top_ratio": 0.00842548709847288,
+          "numeric": {
+            "min": 1,
+            "q1": 31.0,
+            "median": 61.0,
+            "mean": 60.513849394418116,
+            "q3": 91.0,
+            "max": 120,
+            "std": 34.64086706882651,
+            "iqr_outliers": 0
+          }
+        },
+        "ProjectKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 23,
+          "distinct_ratio": 0.002422327540810953,
+          "top_value": "22",
+          "top_count": 1085,
+          "top_ratio": 0.11427066877303844,
+          "numeric": {
+            "min": 1,
+            "q1": 7.0,
+            "median": 12.0,
+            "mean": 12.613902053712481,
+            "q3": 19.0,
+            "max": 25,
+            "std": 7.504652339242809,
+            "iqr_outliers": 0
+          }
+        },
+        "ScheduledHours": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.00021063717746182202,
+          "top_value": "40.0",
+          "top_count": 8775,
+          "top_ratio": 0.9241706161137441,
+          "numeric": {
+            "min": 32.0,
+            "q1": 40.0,
+            "median": 40.0,
+            "mean": 39.39336492890995,
+            "q3": 40.0,
+            "max": 40.0,
+            "std": 2.1177994379175646,
+            "iqr_outliers": 0
+          }
+        },
+        "AvailableHours": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 4,
+          "distinct_ratio": 0.00042127435492364404,
+          "top_value": "40.0",
+          "top_count": 7540,
+          "top_ratio": 0.794102159031069,
+          "numeric": {
+            "min": 16.0,
+            "q1": 40.0,
+            "median": 40.0,
+            "mean": 37.89447077409163,
+            "q3": 40.0,
+            "max": 40.0,
+            "std": 4.502252197685973,
+            "iqr_outliers": 0
+          }
+        },
+        "ProjectHours": {
+          "dtype": "float64",
+          "nulls": 12,
+          "null_ratio": 0.001263823064770932,
+          "distinct": 71,
+          "distinct_ratio": 0.007487082146999895,
+          "top_value": "33.0",
+          "top_count": 650,
+          "top_ratio": 0.0685437097964779,
+          "numeric": {
+            "min": 11.0,
+            "q1": 29.5,
+            "median": 32.5,
+            "mean": 31.80349045660656,
+            "q3": 34.5,
+            "max": 47.5,
+            "std": 5.021324918813984,
+            "iqr_outliers": 812
+          }
+        },
+        "NonProjectHours": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 26,
+          "distinct_ratio": 0.002738283307003686,
+          "top_value": "6.5",
+          "top_count": 863,
+          "top_ratio": 0.0908899420747762,
+          "numeric": {
+            "min": 0.5,
+            "q1": 5.0,
+            "median": 6.5,
+            "mean": 6.700263296471827,
+            "q3": 8.0,
+            "max": 13.0,
+            "std": 2.376301491275133,
+            "iqr_outliers": 343
+          }
+        },
+        "OvertimeHours": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 6,
+          "distinct_ratio": 0.000631911532385466,
+          "top_value": "0.0",
+          "top_count": 8397,
+          "top_ratio": 0.8843601895734597,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 0.6081095313322802,
+            "q3": 0.0,
+            "max": 10.0,
+            "std": 1.8322709995828437,
+            "iqr_outliers": 0
+          }
+        },
+        "PTOHours": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 3,
+          "distinct_ratio": 0.000315955766192733,
+          "top_value": "0.0",
+          "top_count": 8157,
+          "top_ratio": 0.859083728278041,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 1.4988941548183254,
+            "q3": 0.0,
+            "max": 16.0,
+            "std": 3.9609964968276006,
+            "iqr_outliers": 0
+          }
+        },
+        "StandardLaborRate": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 117,
+          "distinct_ratio": 0.012322274881516588,
+          "top_value": "87.96",
+          "top_count": 158,
+          "top_ratio": 0.01664033701948394,
+          "numeric": {
+            "min": 65.97,
+            "q1": 84.23,
+            "median": 94.9,
+            "mean": 97.53672669826224,
+            "q3": 103.56,
+            "max": 150.09,
+            "std": 18.436286546898923,
+            "iqr_outliers": 713
+          }
+        },
+        "OvertimeRateMultiplier": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.00021063717746182202,
+          "top_value": "1.5",
+          "top_count": 7594,
+          "top_ratio": 0.7997893628225382,
+          "numeric": {
+            "min": 1.0,
+            "q1": 1.5,
+            "median": 1.5,
+            "mean": 1.3998946814112692,
+            "q3": 1.5,
+            "max": 1.5,
+            "std": 0.20007894563050393,
+            "iqr_outliers": 0
+          }
+        },
+        "ActualLaborCost": {
+          "dtype": "float64",
+          "nulls": 12,
+          "null_ratio": 0.001263823064770932,
+          "distinct": 2948,
+          "distinct_ratio": 0.31087208689233364,
+          "top_value": "1781.19",
+          "top_count": 24,
+          "top_ratio": 0.002530844669408415,
+          "numeric": {
+            "min": 743.71,
+            "q1": 2588.88,
+            "median": 2984.85,
+            "mean": 3135.6966698302226,
+            "q3": 3511.31,
+            "max": 6904.14,
+            "std": 880.4349567213097,
+            "iqr_outliers": 489
+          }
+        },
+        "SubmissionDate": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 384,
+          "distinct_ratio": 0.04044233807266982,
+          "top_value": "2024-01-14",
+          "top_count": 56,
+          "top_ratio": 0.005897840968931017
+        },
+        "SubmissionStatus": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.00021063717746182202,
+          "top_value": "On Time",
+          "top_count": 9130,
+          "top_ratio": 0.9615587151132174
+        },
+        "TimeEntrySource": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 1,
+          "distinct_ratio": 0.00010531858873091101,
+          "top_value": "SAP-Style Time",
+          "top_count": 9495,
+          "top_ratio": 1.0
+        }
+      },
+      "roundness": {
+        "ScheduledHours": {
+          "nonzero": 9495,
+          "integer_ratio": 1.0,
+          "multiple_5_ratio": 0.9241706161137441,
+          "multiple_1000_ratio": 0.0
+        },
+        "AvailableHours": {
+          "nonzero": 9495,
+          "integer_ratio": 1.0,
+          "multiple_5_ratio": 0.794102159031069,
+          "multiple_1000_ratio": 0.0
+        },
+        "ProjectHours": {
+          "nonzero": 9483,
+          "integer_ratio": 0.5036380892122746,
+          "multiple_5_ratio": 0.08689233364968892,
+          "multiple_1000_ratio": 0.0
+        },
+        "NonProjectHours": {
+          "nonzero": 9495,
+          "integer_ratio": 0.5035281727224855,
+          "multiple_5_ratio": 0.09236440231700896,
+          "multiple_1000_ratio": 0.0
+        },
+        "OvertimeHours": {
+          "nonzero": 1098,
+          "integer_ratio": 1.0,
+          "multiple_5_ratio": 0.042805100182149364,
+          "multiple_1000_ratio": 0.0
+        },
+        "PTOHours": {
+          "nonzero": 1338,
+          "integer_ratio": 1.0,
+          "multiple_5_ratio": 0.0,
+          "multiple_1000_ratio": 0.0
+        }
+      }
+    },
+    "FactFinancial": {
+      "rows": 1196,
+      "columns": 16,
+      "exact_duplicate_rows": 0,
+      "primary_key_duplicates": 0,
+      "natural_key_duplicate_extras": 0,
+      "columns_profile": {
+        "FinancialRecordID": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 1196,
+          "distinct_ratio": 1.0,
+          "top_value": "FIN-000001",
+          "top_count": 1,
+          "top_ratio": 0.0008361204013377926
+        },
+        "MonthStartDateKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 24,
+          "distinct_ratio": 0.020066889632107024,
+          "top_value": "20250101",
+          "top_count": 72,
+          "top_ratio": 0.06020066889632107,
+          "numeric": {
+            "min": 20240101,
+            "q1": 20241001.0,
+            "median": 20250301.0,
+            "mean": 20247006.68561873,
+            "q3": 20250701.0,
+            "max": 20251201,
+            "std": 4725.7496917056515,
+            "iqr_outliers": 0
+          }
+        },
+        "FiscalMonth": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 24,
+          "distinct_ratio": 0.020066889632107024,
+          "top_value": "2025-01",
+          "top_count": 72,
+          "top_ratio": 0.06020066889632107
+        },
+        "ProjectKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 25,
+          "distinct_ratio": 0.020903010033444816,
+          "top_value": "4",
+          "top_count": 72,
+          "top_ratio": 0.06020066889632107,
+          "numeric": {
+            "min": 1,
+            "q1": 6.0,
+            "median": 13.0,
+            "mean": 12.755852842809364,
+            "q3": 19.0,
+            "max": 25,
+            "std": 7.459405693670206,
+            "iqr_outliers": 0
+          }
+        },
+        "CostCategory": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 4,
+          "distinct_ratio": 0.0033444816053511705,
+          "top_value": "Labor",
+          "top_count": 299,
+          "top_ratio": 0.25
+        },
+        "PeriodType": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.0016722408026755853,
+          "top_value": "Actual",
+          "top_count": 864,
+          "top_ratio": 0.7224080267558528
+        },
+        "BudgetAmount": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 628,
+          "distinct_ratio": 0.5250836120401338,
+          "top_value": "95210.65",
+          "top_count": 4,
+          "top_ratio": 0.0033444816053511705,
+          "numeric": {
+            "min": 2845.72,
+            "q1": 30313.25,
+            "median": 55589.905,
+            "mean": 68896.32107023412,
+            "q3": 91086.9025,
+            "max": 468793.59,
+            "std": 54563.304374128566,
+            "iqr_outliers": 47
+          }
+        },
+        "ActualLaborCost": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 403,
+          "distinct_ratio": 0.33695652173913043,
+          "top_value": "0.0",
+          "top_count": 782,
+          "top_ratio": 0.6538461538461539,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 24821.040994983276,
+            "q3": 27738.684999999998,
+            "max": 496816.41,
+            "std": 55287.84828387498,
+            "iqr_outliers": 152
+          }
+        },
+        "ActualMaterialCost": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 194,
+          "distinct_ratio": 0.16220735785953178,
+          "top_value": "0.0",
+          "top_count": 1003,
+          "top_ratio": 0.8386287625418061,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 15958.211045150501,
+            "q3": 0.0,
+            "max": 538490.72,
+            "std": 54488.52085998568,
+            "iqr_outliers": 0
+          }
+        },
+        "ActualOtherCost": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 194,
+          "distinct_ratio": 0.16220735785953178,
+          "top_value": "0.0",
+          "top_count": 1003,
+          "top_ratio": 0.8386287625418061,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 6981.717382943144,
+            "q3": 0.0,
+            "max": 235589.69,
+            "std": 23838.728008023518,
+            "iqr_outliers": 0
+          }
+        },
+        "ActualCostAmount": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 789,
+          "distinct_ratio": 0.6596989966555183,
+          "top_value": "0.0",
+          "top_count": 396,
+          "top_ratio": 0.3311036789297659,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 21268.510000000002,
+            "mean": 47760.96942307692,
+            "q3": 65602.8325,
+            "max": 538490.72,
+            "std": 72335.41856953481,
+            "iqr_outliers": 76
+          }
+        },
+        "CommittedCost": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 317,
+          "distinct_ratio": 0.26505016722408026,
+          "top_value": "0.0",
+          "top_count": 880,
+          "top_ratio": 0.7357859531772575,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 8489.207065217392,
+            "q3": 8780.68,
+            "max": 150102.69,
+            "std": 19727.499906153025,
+            "iqr_outliers": 169
+          }
+        },
+        "ForecastToComplete": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 74,
+          "distinct_ratio": 0.061872909698996656,
+          "top_value": "0.0",
+          "top_count": 880,
+          "top_ratio": 0.7357859531772575,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 23282.106697324416,
+            "q3": 23333.33,
+            "max": 399960.42,
+            "std": 53505.23523403342,
+            "iqr_outliers": 182
+          }
+        },
+        "EAC": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 862,
+          "distinct_ratio": 0.7207357859531772,
+          "top_value": "0.0",
+          "top_count": 80,
+          "top_ratio": 0.06688963210702341,
+          "numeric": {
+            "min": 0.0,
+            "q1": 22435.525,
+            "median": 50786.965,
+            "mean": 71043.07612040134,
+            "q3": 93628.795,
+            "max": 538490.72,
+            "std": 76624.21944090264,
+            "iqr_outliers": 69
+          }
+        },
+        "PlannedLaborHours": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 321,
+          "distinct_ratio": 0.2683946488294314,
+          "top_value": "0.0",
+          "top_count": 598,
+          "top_ratio": 0.5,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 15.175,
+            "mean": 398.05991638795984,
+            "q3": 598.385,
+            "max": 5208.82,
+            "std": 644.4497753089936,
+            "iqr_outliers": 80
+          }
+        },
+        "ActualLaborHours": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 373,
+          "distinct_ratio": 0.31187290969899667,
+          "top_value": "0.0",
+          "top_count": 782,
+          "top_ratio": 0.6538461538461539,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 251.77759197324414,
+            "q3": 227.25,
+            "max": 5406.0,
+            "std": 576.8371910103083,
+            "iqr_outliers": 211
+          }
+        }
+      },
+      "roundness": {
+        "BudgetAmount": {
+          "nonzero": 1196,
+          "integer_ratio": 0.004180602006688963,
+          "multiple_5_ratio": 0.0016722408026755853,
+          "multiple_1000_ratio": 0.0
+        },
+        "ActualCostAmount": {
+          "nonzero": 800,
+          "integer_ratio": 0.01125,
+          "multiple_5_ratio": 0.00125,
+          "multiple_1000_ratio": 0.0
+        },
+        "ForecastToComplete": {
+          "nonzero": 316,
+          "integer_ratio": 0.04430379746835443,
+          "multiple_5_ratio": 0.0379746835443038,
+          "multiple_1000_ratio": 0.0379746835443038
+        },
+        "EAC": {
+          "nonzero": 1116,
+          "integer_ratio": 0.02060931899641577,
+          "multiple_5_ratio": 0.011648745519713262,
+          "multiple_1000_ratio": 0.010752688172043012
+        },
+        "CommittedCost": {
+          "nonzero": 316,
+          "integer_ratio": 0.012658227848101266,
+          "multiple_5_ratio": 0.006329113924050633,
+          "multiple_1000_ratio": 0.0
+        }
+      }
+    },
+    "FactMilestone": {
+      "rows": 198,
+      "columns": 16,
+      "exact_duplicate_rows": 0,
+      "primary_key_duplicates": 0,
+      "natural_key_duplicate_extras": 0,
+      "columns_profile": {
+        "MilestoneKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 198,
+          "distinct_ratio": 1.0,
+          "top_value": "1",
+          "top_count": 1,
+          "top_ratio": 0.005050505050505051,
+          "numeric": {
+            "min": 1,
+            "q1": 50.25,
+            "median": 99.5,
+            "mean": 99.5,
+            "q3": 148.75,
+            "max": 198,
+            "std": 57.15694766751166,
+            "iqr_outliers": 0
+          }
+        },
+        "ProjectKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 25,
+          "distinct_ratio": 0.12626262626262627,
+          "top_value": "18",
+          "top_count": 12,
+          "top_ratio": 0.06060606060606061,
+          "numeric": {
+            "min": 1,
+            "q1": 7.0,
+            "median": 14.0,
+            "mean": 13.141414141414142,
+            "q3": 19.0,
+            "max": 25,
+            "std": 7.418935779558558,
+            "iqr_outliers": 0
+          }
+        },
+        "MilestoneSequence": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 12,
+          "distinct_ratio": 0.06060606060606061,
+          "top_value": "1",
+          "top_count": 25,
+          "top_ratio": 0.12626262626262627,
+          "numeric": {
+            "min": 1,
+            "q1": 2.25,
+            "median": 4.0,
+            "mean": 4.787878787878788,
+            "q3": 7.0,
+            "max": 12,
+            "std": 2.78804347339672,
+            "iqr_outliers": 0
+          }
+        },
+        "MilestoneName": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 12,
+          "distinct_ratio": 0.06060606060606061,
+          "top_value": "Concept Approval",
+          "top_count": 25,
+          "top_ratio": 0.12626262626262627
+        },
+        "PlannedDateKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 169,
+          "distinct_ratio": 0.8535353535353535,
+          "top_value": "20250228",
+          "top_count": 3,
+          "top_ratio": 0.015151515151515152,
+          "numeric": {
+            "min": 20240125,
+            "q1": 20241116.5,
+            "median": 20250411.5,
+            "mean": 20247531.595959596,
+            "q3": 20250810.75,
+            "max": 20251229,
+            "std": 4579.148116529426,
+            "iqr_outliers": 0
+          }
+        },
+        "ForecastDateKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 175,
+          "distinct_ratio": 0.8838383838383839,
+          "top_value": "20241212",
+          "top_count": 3,
+          "top_ratio": 0.015151515151515152,
+          "numeric": {
+            "min": 20240123,
+            "q1": 20241118.75,
+            "median": 20250415.5,
+            "mean": 20247588.257575758,
+            "q3": 20250816.75,
+            "max": 20251231,
+            "std": 4562.736910059839,
+            "iqr_outliers": 0
+          }
+        },
+        "ActualDateKey": {
+          "dtype": "float64",
+          "nulls": 70,
+          "null_ratio": 0.35353535353535354,
+          "distinct": 112,
+          "distinct_ratio": 0.875,
+          "top_value": "20241212.0",
+          "top_count": 3,
+          "top_ratio": 0.0234375,
+          "numeric": {
+            "min": 20240123.0,
+            "q1": 20240911.0,
+            "median": 20250110.0,
+            "mean": 20245757.3203125,
+            "q3": 20250406.25,
+            "max": 20250628.0,
+            "std": 4764.807752767933,
+            "iqr_outliers": 0
+          }
+        },
+        "PlannedDate": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 169,
+          "distinct_ratio": 0.8535353535353535,
+          "top_value": "2025-02-28",
+          "top_count": 3,
+          "top_ratio": 0.015151515151515152
+        },
+        "ForecastDate": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 175,
+          "distinct_ratio": 0.8838383838383839,
+          "top_value": "2024-12-12",
+          "top_count": 3,
+          "top_ratio": 0.015151515151515152
+        },
+        "ActualDate": {
+          "dtype": "str",
+          "nulls": 70,
+          "null_ratio": 0.35353535353535354,
+          "distinct": 112,
+          "distinct_ratio": 0.875,
+          "top_value": "2024-12-12",
+          "top_count": 3,
+          "top_ratio": 0.0234375
+        },
+        "CompletionPercent": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 6,
+          "distinct_ratio": 0.030303030303030304,
+          "top_value": "100.0",
+          "top_count": 128,
+          "top_ratio": 0.6464646464646465,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 100.0,
+            "mean": 65.71378787878788,
+            "q3": 100.0,
+            "max": 100.0,
+            "std": 46.9758201319159,
+            "iqr_outliers": 0
+          }
+        },
+        "ScheduleVarianceDays": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 9,
+          "distinct_ratio": 0.045454545454545456,
+          "top_value": "0",
+          "top_count": 42,
+          "top_ratio": 0.21212121212121213,
+          "numeric": {
+            "min": -4,
+            "q1": -2.0,
+            "median": 0.0,
+            "mean": 2.7373737373737375,
+            "q3": 8.0,
+            "max": 45,
+            "std": 6.47073576848668,
+            "iqr_outliers": 2
+          }
+        },
+        "ScheduleStatus": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 4,
+          "distinct_ratio": 0.020202020202020204,
+          "top_value": "On Time",
+          "top_count": 76,
+          "top_ratio": 0.3838383838383838
+        },
+        "IsCritical": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.010101010101010102,
+          "top_value": "0",
+          "top_count": 148,
+          "top_ratio": 0.7474747474747475,
+          "numeric": {
+            "min": 0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 0.25252525252525254,
+            "q3": 0.75,
+            "max": 1,
+            "std": 0.4344608720728599,
+            "iqr_outliers": 0
+          }
+        },
+        "MilestoneOwner": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 12,
+          "distinct_ratio": 0.06060606060606061,
+          "top_value": "Milestone Owner 07",
+          "top_count": 18,
+          "top_ratio": 0.09090909090909091
+        },
+        "LastUpdatedDate": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 1,
+          "distinct_ratio": 0.005050505050505051,
+          "top_value": "2025-06-30",
+          "top_count": 198,
+          "top_ratio": 1.0
+        }
+      },
+      "roundness": {
+        "CompletionPercent": {
+          "nonzero": 132,
+          "integer_ratio": 0.9772727272727273,
+          "multiple_5_ratio": 0.9772727272727273,
+          "multiple_1000_ratio": 0.0
+        },
+        "ScheduleVarianceDays": {
+          "nonzero": 156,
+          "integer_ratio": 1.0,
+          "multiple_5_ratio": 0.14102564102564102,
+          "multiple_1000_ratio": 0.0
+        }
+      }
+    },
+    "FactWorkforcePlan": {
+      "rows": 768,
+      "columns": 12,
+      "exact_duplicate_rows": 0,
+      "primary_key_duplicates": 0,
+      "natural_key_duplicate_extras": 0,
+      "columns_profile": {
+        "WorkforcePlanRecordID": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 768,
+          "distinct_ratio": 1.0,
+          "top_value": "WFP-000001",
+          "top_count": 1,
+          "top_ratio": 0.0013020833333333333
+        },
+        "MonthStartDateKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 24,
+          "distinct_ratio": 0.03125,
+          "top_value": "20240101",
+          "top_count": 32,
+          "top_ratio": 0.041666666666666664,
+          "numeric": {
+            "min": 20240101,
+            "q1": 20240676.0,
+            "median": 20245651.0,
+            "mean": 20245651.0,
+            "q3": 20250626.0,
+            "max": 20251201,
+            "std": 5011.902499716716,
+            "iqr_outliers": 0
+          }
+        },
+        "TeamKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 0.010416666666666666,
+          "top_value": "1",
+          "top_count": 96,
+          "top_ratio": 0.125,
+          "numeric": {
+            "min": 1,
+            "q1": 2.75,
+            "median": 4.5,
+            "mean": 4.5,
+            "q3": 6.25,
+            "max": 8,
+            "std": 2.29128784747792,
+            "iqr_outliers": 0
+          }
+        },
+        "SkillKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 8,
+          "distinct_ratio": 0.010416666666666666,
+          "top_value": "1",
+          "top_count": 96,
+          "top_ratio": 0.125,
+          "numeric": {
+            "min": 1,
+            "q1": 2.75,
+            "median": 4.5,
+            "mean": 4.5,
+            "q3": 6.25,
+            "max": 8,
+            "std": 2.29128784747792,
+            "iqr_outliers": 0
+          }
+        },
+        "Location": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 4,
+          "distinct_ratio": 0.005208333333333333,
+          "top_value": "Atlanta, GA",
+          "top_count": 192,
+          "top_ratio": 0.25
+        },
+        "RequiredFTE": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 210,
+          "distinct_ratio": 0.2734375,
+          "top_value": "0.24",
+          "top_count": 82,
+          "top_ratio": 0.10677083333333333,
+          "numeric": {
+            "min": 0.2,
+            "q1": 0.24,
+            "median": 1.465,
+            "mean": 3.8435677083333335,
+            "q3": 6.9,
+            "max": 15.29,
+            "std": 4.2342198809962515,
+            "iqr_outliers": 0
+          }
+        },
+        "ActualFTE": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 9,
+          "distinct_ratio": 0.01171875,
+          "top_value": "0.0",
+          "top_count": 384,
+          "top_ratio": 0.5,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 1.5,
+            "mean": 3.75,
+            "q3": 6.5,
+            "max": 13.0,
+            "std": 4.315669125408017,
+            "iqr_outliers": 0
+          }
+        },
+        "OpenDemandFTE": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 61,
+          "distinct_ratio": 0.07942708333333333,
+          "top_value": "0.0",
+          "top_count": 220,
+          "top_ratio": 0.2864583333333333,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 0.22,
+            "mean": 0.21401041666666668,
+            "q3": 0.25,
+            "max": 2.29,
+            "std": 0.2995692391721148,
+            "iqr_outliers": 40
+          }
+        },
+        "ContractorFTE": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 5,
+          "distinct_ratio": 0.006510416666666667,
+          "top_value": "0.0",
+          "top_count": 480,
+          "top_ratio": 0.625,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 0.75,
+            "q3": 1.25,
+            "max": 4.0,
+            "std": 1.118033988749895,
+            "iqr_outliers": 24
+          }
+        },
+        "CapacityGapFTE": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 130,
+          "distinct_ratio": 0.16927083333333334,
+          "top_value": "-0.24",
+          "top_count": 88,
+          "top_ratio": 0.11458333333333333,
+          "numeric": {
+            "min": -2.29,
+            "q1": -0.25,
+            "median": -0.22,
+            "mean": -0.09356770833333335,
+            "q3": 0.07,
+            "max": 1.71,
+            "std": 0.472483223466451,
+            "iqr_outliers": 74
+          }
+        },
+        "AvailableCapacityHours": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 9,
+          "distinct_ratio": 0.01171875,
+          "top_value": "0.0",
+          "top_count": 384,
+          "top_ratio": 0.5,
+          "numeric": {
+            "min": 0.0,
+            "q1": 0.0,
+            "median": 240.0,
+            "mean": 600.0,
+            "q3": 1040.0,
+            "max": 2080.0,
+            "std": 690.5070600652828,
+            "iqr_outliers": 0
+          }
+        },
+        "RequiredCapacityHours": {
+          "dtype": "float64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 210,
+          "distinct_ratio": 0.2734375,
+          "top_value": "38.4",
+          "top_count": 82,
+          "top_ratio": 0.10677083333333333,
+          "numeric": {
+            "min": 32.0,
+            "q1": 38.4,
+            "median": 234.39999999999998,
+            "mean": 614.9708333333333,
+            "q3": 1104.0,
+            "max": 2446.4,
+            "std": 677.4751809594004,
+            "iqr_outliers": 0
+          }
+        }
+      },
+      "roundness": {
+        "RequiredFTE": {
+          "nonzero": 768,
+          "integer_ratio": 0.009114583333333334,
+          "multiple_5_ratio": 0.0,
+          "multiple_1000_ratio": 0.0
+        },
+        "ActualFTE": {
+          "nonzero": 384,
+          "integer_ratio": 1.0,
+          "multiple_5_ratio": 0.0,
+          "multiple_1000_ratio": 0.0
+        },
+        "OpenDemandFTE": {
+          "nonzero": 548,
+          "integer_ratio": 0.0,
+          "multiple_5_ratio": 0.0,
+          "multiple_1000_ratio": 0.0
+        },
+        "ContractorFTE": {
+          "nonzero": 288,
+          "integer_ratio": 1.0,
+          "multiple_5_ratio": 0.0,
+          "multiple_1000_ratio": 0.0
+        }
+      }
+    },
+    "FactRiskIssue": {
+      "rows": 120,
+      "columns": 21,
+      "exact_duplicate_rows": 0,
+      "primary_key_duplicates": 0,
+      "natural_key_duplicate_extras": 0,
+      "columns_profile": {
+        "RiskIssueKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 120,
+          "distinct_ratio": 1.0,
+          "top_value": "1",
+          "top_count": 1,
+          "top_ratio": 0.008333333333333333,
+          "numeric": {
+            "min": 1,
+            "q1": 30.75,
+            "median": 60.5,
+            "mean": 60.5,
+            "q3": 90.25,
+            "max": 120,
+            "std": 34.63981331743384,
+            "iqr_outliers": 0
+          }
+        },
+        "RiskIssueID": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 120,
+          "distinct_ratio": 1.0,
+          "top_value": "RI-001-01",
+          "top_count": 1,
+          "top_ratio": 0.008333333333333333
+        },
+        "ProjectKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 25,
+          "distinct_ratio": 0.20833333333333334,
+          "top_value": "1",
+          "top_count": 7,
+          "top_ratio": 0.058333333333333334,
+          "numeric": {
+            "min": 1,
+            "q1": 6.0,
+            "median": 13.0,
+            "mean": 13.133333333333333,
+            "q3": 20.0,
+            "max": 25,
+            "std": 7.684327484490031,
+            "iqr_outliers": 0
+          }
+        },
+        "RecordType": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.016666666666666666,
+          "top_value": "Risk",
+          "top_count": 89,
+          "top_ratio": 0.7416666666666667
+        },
+        "RiskTitle": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 6,
+          "distinct_ratio": 0.05,
+          "top_value": "Delivery sequence may miss planned milestone",
+          "top_count": 23,
+          "top_ratio": 0.19166666666666668
+        },
+        "RiskCategory": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 6,
+          "distinct_ratio": 0.05,
+          "top_value": "Schedule",
+          "top_count": 23,
+          "top_ratio": 0.19166666666666668
+        },
+        "Probability": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 5,
+          "distinct_ratio": 0.041666666666666664,
+          "top_value": "2",
+          "top_count": 38,
+          "top_ratio": 0.31666666666666665,
+          "numeric": {
+            "min": 1,
+            "q1": 2.0,
+            "median": 3.0,
+            "mean": 3.0833333333333335,
+            "q3": 4.0,
+            "max": 5,
+            "std": 1.339050243850303,
+            "iqr_outliers": 0
+          }
+        },
+        "Impact": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 5,
+          "distinct_ratio": 0.041666666666666664,
+          "top_value": "5",
+          "top_count": 28,
+          "top_ratio": 0.23333333333333334,
+          "numeric": {
+            "min": 1,
+            "q1": 2.0,
+            "median": 3.0,
+            "mean": 3.158333333333333,
+            "q3": 4.0,
+            "max": 5,
+            "std": 1.3904186020364113,
+            "iqr_outliers": 0
+          }
+        },
+        "RiskScore": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 14,
+          "distinct_ratio": 0.11666666666666667,
+          "top_value": "4",
+          "top_count": 16,
+          "top_ratio": 0.13333333333333333,
+          "numeric": {
+            "min": 1,
+            "q1": 4.0,
+            "median": 8.0,
+            "mean": 9.8,
+            "q3": 15.0,
+            "max": 25,
+            "std": 6.362127526752876,
+            "iqr_outliers": 0
+          }
+        },
+        "RiskSeverity": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 4,
+          "distinct_ratio": 0.03333333333333333,
+          "top_value": "Medium",
+          "top_count": 40,
+          "top_ratio": 0.3333333333333333
+        },
+        "Owner": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 10,
+          "distinct_ratio": 0.08333333333333333,
+          "top_value": "Risk Owner 07",
+          "top_count": 15,
+          "top_ratio": 0.125
+        },
+        "IdentifiedDateKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 98,
+          "distinct_ratio": 0.8166666666666667,
+          "top_value": "20250701",
+          "top_count": 6,
+          "top_ratio": 0.05,
+          "numeric": {
+            "min": 20240219,
+            "q1": 20241015.75,
+            "median": 20250128.5,
+            "mean": 20246728.883333333,
+            "q3": 20250413.5,
+            "max": 20250701,
+            "std": 4613.686812415376,
+            "iqr_outliers": 0
+          }
+        },
+        "DueDateKey": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 107,
+          "distinct_ratio": 0.8916666666666667,
+          "top_value": "20250515",
+          "top_count": 2,
+          "top_ratio": 0.016666666666666666,
+          "numeric": {
+            "min": 20240528,
+            "q1": 20241230.0,
+            "median": 20250410.0,
+            "mean": 20248058.466666665,
+            "q3": 20250623.5,
+            "max": 20251026,
+            "std": 4181.710222172529,
+            "iqr_outliers": 0
+          }
+        },
+        "ClosedDateKey": {
+          "dtype": "float64",
+          "nulls": 94,
+          "null_ratio": 0.7833333333333333,
+          "distinct": 22,
+          "distinct_ratio": 0.8461538461538461,
+          "top_value": "20250630.0",
+          "top_count": 5,
+          "top_ratio": 0.19230769230769232,
+          "numeric": {
+            "min": 20241103.0,
+            "q1": 20250164.75,
+            "median": 20250415.5,
+            "mean": 20248678.115384616,
+            "q3": 20250588.25,
+            "max": 20250630.0,
+            "std": 3672.3242726656736,
+            "iqr_outliers": 5
+          }
+        },
+        "IdentifiedDate": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 98,
+          "distinct_ratio": 0.8166666666666667,
+          "top_value": "2025-07-01",
+          "top_count": 6,
+          "top_ratio": 0.05
+        },
+        "DueDate": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 107,
+          "distinct_ratio": 0.8916666666666667,
+          "top_value": "2025-05-15",
+          "top_count": 2,
+          "top_ratio": 0.016666666666666666
+        },
+        "ClosedDate": {
+          "dtype": "str",
+          "nulls": 94,
+          "null_ratio": 0.7833333333333333,
+          "distinct": 22,
+          "distinct_ratio": 0.8461538461538461,
+          "top_value": "2025-06-30",
+          "top_count": 5,
+          "top_ratio": 0.19230769230769232
+        },
+        "RiskStatus": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 4,
+          "distinct_ratio": 0.03333333333333333,
+          "top_value": "Monitoring",
+          "top_count": 39,
+          "top_ratio": 0.325
+        },
+        "MitigationStatus": {
+          "dtype": "str",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 3,
+          "distinct_ratio": 0.025,
+          "top_value": "Completed",
+          "top_count": 44,
+          "top_ratio": 0.36666666666666664
+        },
+        "IsCritical": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.016666666666666666,
+          "top_value": "0",
+          "top_count": 108,
+          "top_ratio": 0.9,
+          "numeric": {
+            "min": 0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 0.1,
+            "q3": 0.0,
+            "max": 1,
+            "std": 0.30000000000000004,
+            "iqr_outliers": 0
+          }
+        },
+        "IsOverdue": {
+          "dtype": "int64",
+          "nulls": 0,
+          "null_ratio": 0.0,
+          "distinct": 2,
+          "distinct_ratio": 0.016666666666666666,
+          "top_value": "0",
+          "top_count": 62,
+          "top_ratio": 0.5166666666666667,
+          "numeric": {
+            "min": 0,
+            "q1": 0.0,
+            "median": 0.0,
+            "mean": 0.48333333333333334,
+            "q3": 1.0,
+            "max": 1,
+            "std": 0.49972214501883166,
+            "iqr_outliers": 0
+          }
+        }
+      },
+      "roundness": {
+        "RiskScore": {
+          "nonzero": 120,
+          "integer_ratio": 1.0,
+          "multiple_5_ratio": 0.4,
+          "multiple_1000_ratio": 0.0
+        }
+      }
+    }
+  },
+  "integrity": {
+    "DimProject.PrimaryTeamKey->DimTeam.TeamKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "DimEmployee.TeamKey->DimTeam.TeamKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "DimEmployee.PrimarySkillKey->DimSkill.SkillKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "BridgeEmployeeSkill.EmployeeKey->DimEmployee.EmployeeKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "BridgeEmployeeSkill.SkillKey->DimSkill.SkillKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactLabor.WeekStartDateKey->DimDate.DateKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactLabor.EmployeeKey->DimEmployee.EmployeeKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactLabor.ProjectKey->DimProject.ProjectKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactFinancial.MonthStartDateKey->DimDate.DateKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactFinancial.ProjectKey->DimProject.ProjectKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactMilestone.ProjectKey->DimProject.ProjectKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactMilestone.PlannedDateKey->DimDate.DateKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactMilestone.ForecastDateKey->DimDate.DateKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactMilestone.ActualDateKey->DimDate.DateKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactWorkforcePlan.MonthStartDateKey->DimDate.DateKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactWorkforcePlan.TeamKey->DimTeam.TeamKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactWorkforcePlan.SkillKey->DimSkill.SkillKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactRiskIssue.ProjectKey->DimProject.ProjectKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactRiskIssue.IdentifiedDateKey->DimDate.DateKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactRiskIssue.DueDateKey->DimDate.DateKey": {
+      "orphans": 0,
+      "sample": []
+    },
+    "FactRiskIssue.ClosedDateKey->DimDate.DateKey": {
+      "orphans": 0,
+      "sample": []
+    }
+  },
+  "dates": {
+    "coverage": {
+      "DimDate.Date": {
+        "min": "2024-01-01T00:00:00",
+        "max": "2025-12-31T00:00:00",
+        "invalid": 0
+      },
+      "DimDate.MonthStartDate": {
+        "min": "2024-01-01T00:00:00",
+        "max": "2025-12-01T00:00:00",
+        "invalid": 0
+      },
+      "DimProject.StartDate": {
+        "min": "2024-01-01T00:00:00",
+        "max": "2025-07-01T00:00:00",
+        "invalid": 0
+      },
+      "DimProject.PlannedEndDate": {
+        "min": "2024-08-31T00:00:00",
+        "max": "2025-12-29T00:00:00",
+        "invalid": 0
+      },
+      "DimProject.ForecastEndDate": {
+        "min": "2024-09-21T00:00:00",
+        "max": "2025-12-31T00:00:00",
+        "invalid": 0
+      },
+      "DimProject.ActualEndDate": {
+        "min": "2024-08-28T00:00:00",
+        "max": "2025-05-28T00:00:00",
+        "invalid": 0
+      },
+      "DimEmployee.HireDate": {
+        "min": "2022-01-03T00:00:00",
+        "max": "2023-12-20T00:00:00",
+        "invalid": 0
+      },
+      "DimEmployee.ExitDate": {
+        "min": null,
+        "max": null,
+        "invalid": 0
+      },
+      "FactLabor.SubmissionDate": {
+        "min": "2024-01-07T00:00:00",
+        "max": "2025-07-15T00:00:00",
+        "invalid": 0
+      },
+      "FactMilestone.PlannedDate": {
+        "min": "2024-01-25T00:00:00",
+        "max": "2025-12-29T00:00:00",
+        "invalid": 0
+      },
+      "FactMilestone.ForecastDate": {
+        "min": "2024-01-23T00:00:00",
+        "max": "2025-12-31T00:00:00",
+        "invalid": 0
+      },
+      "FactMilestone.ActualDate": {
+        "min": "2024-01-23T00:00:00",
+        "max": "2025-06-28T00:00:00",
+        "invalid": 0
+      },
+      "FactMilestone.LastUpdatedDate": {
+        "min": "2025-06-30T00:00:00",
+        "max": "2025-06-30T00:00:00",
+        "invalid": 0
+      },
+      "FactRiskIssue.IdentifiedDate": {
+        "min": "2024-02-19T00:00:00",
+        "max": "2025-07-01T00:00:00",
+        "invalid": 0
+      },
+      "FactRiskIssue.DueDate": {
+        "min": "2024-05-28T00:00:00",
+        "max": "2025-10-26T00:00:00",
+        "invalid": 0
+      },
+      "FactRiskIssue.ClosedDate": {
+        "min": "2024-11-03T00:00:00",
+        "max": "2025-06-30T00:00:00",
+        "invalid": 0
+      }
+    },
+    "invalid_dates": [],
+    "impossible_dates": {
+      "project_end_before_start": 0,
+      "project_forecast_before_start": 0,
+      "project_actual_before_start": 0,
+      "milestone_variance_mismatch": 0,
+      "milestone_actual_before_project_start": 0,
+      "risk_due_before_identified": 0,
+      "risk_closed_before_identified": 1
+    }
+  },
+  "business": {
+    "financial": {
+      "component_failures_gt_0_02": 0,
+      "eac_failures_gt_0_02": 0,
+      "project_budget_failures_gt_0_02": 0,
+      "labor_reconciliation_failures_gt_0_05": 0,
+      "approved_budget": 82400000.0,
+      "actual_cost": 57122119.42999999,
+      "eac": 84967519.04,
+      "eac_variance": -2567519.0400000066
+    },
+    "labor": {
+      "clean_rows": 9468,
+      "missing_rows": 12,
+      "natural_duplicate_extras": 15,
+      "hours_reconciliation_failures_gt_0_02": 0,
+      "cost_reconciliation_failures_gt_0_02": 0,
+      "utilization": 0.8392586399108138,
+      "overtime_ratio": 0.019174697634877096,
+      "late_submission_ratio": 0.038441284886782515
+    },
+    "workforce": {
+      "open_demand_formula_failures_gt_0_02": 0,
+      "capacity_gap_formula_failures_gt_0_02": 0,
+      "available_hours_formula_failures_gt_0_02": 0,
+      "monthly_actual_min": 120.0,
+      "monthly_actual_max": 120.0,
+      "monthly_actual_std": 0.0,
+      "monthly_required_std": 2.6662722364546507,
+      "zero_actual_positive_demand_rows": 384
+    },
+    "milestones": {
+      "rows": 198,
+      "distinct_names": 12,
+      "distinct_variances": 9,
+      "fractional_completion_rows": 4,
+      "same_last_updated_ratio": 1.0
+    },
+    "risk": {
+      "rows": 120,
+      "distinct_titles": 6,
+      "overdue_ratio": 0.48333333333333334,
+      "status_counts": {
+        "Monitoring": 39,
+        "Open": 37,
+        "Closed": 26,
+        "Mitigated": 18
+      },
+      "score_mismatch": 0,
+      "severity_mismatch": 0,
+      "closed_status_missing_date": 0,
+      "open_status_has_closed_date": 0
+    }
+  },
+  "correlations": {
+    "project_rows": 25,
+    "strongest_pairs": [
+      {
+        "left": "ApprovedBudget",
+        "right": "EAC",
+        "pearson": 0.9768
+      },
+      {
+        "left": "PercentComplete",
+        "right": "BudgetConsumedPct",
+        "pearson": 0.9258
+      },
+      {
+        "left": "PercentComplete",
+        "right": "ActualCost",
+        "pearson": 0.8429
+      },
+      {
+        "left": "Committed",
+        "right": "BudgetConsumedPct",
+        "pearson": -0.8134
+      },
+      {
+        "left": "ActualCost",
+        "right": "BudgetConsumedPct",
+        "pearson": 0.812
+      },
+      {
+        "left": "PercentComplete",
+        "right": "Committed",
+        "pearson": -0.8104
+      },
+      {
+        "left": "AvgDelay",
+        "right": "MaxDelay",
+        "pearson": 0.7905
+      },
+      {
+        "left": "AvgRiskScore",
+        "right": "MaxRiskScore",
+        "pearson": 0.7736
+      },
+      {
+        "left": "ProjectHours",
+        "right": "BudgetConsumedPct",
+        "pearson": 0.7235
+      },
+      {
+        "left": "ActualCost",
+        "right": "Committed",
+        "pearson": -0.6246
+      },
+      {
+        "left": "PercentComplete",
+        "right": "ProjectHours",
+        "pearson": 0.5823
+      },
+      {
+        "left": "ActualCost",
+        "right": "ProjectHours",
+        "pearson": 0.5338
+      },
+      {
+        "left": "Committed",
+        "right": "ProjectHours",
+        "pearson": -0.5297
+      },
+      {
+        "left": "EAC",
+        "right": "Committed",
+        "pearson": 0.4741
+      },
+      {
+        "left": "ProjectHours",
+        "right": "OvertimeHours",
+        "pearson": 0.4614
+      },
+      {
+        "left": "Committed",
+        "right": "AvgRiskScore",
+        "pearson": 0.4412
+      },
+      {
+        "left": "ApprovedBudget",
+        "right": "Committed",
+        "pearson": 0.4403
+      },
+      {
+        "left": "ApprovedBudget",
+        "right": "ActualCost",
+        "pearson": 0.3913
+      },
+      {
+        "left": "OvertimeHours",
+        "right": "MaxDelay",
+        "pearson": 0.3829
+      },
+      {
+        "left": "ActualCost",
+        "right": "EAC",
+        "pearson": 0.3825
+      }
+    ],
+    "matrix": {
+      "ApprovedBudget": {
+        "ApprovedBudget": 1.0,
+        "PercentComplete": 0.0016,
+        "ActualCost": 0.3913,
+        "EAC": 0.9768,
+        "Committed": 0.4403,
+        "ProjectHours": 0.0263,
+        "OvertimeHours": -0.1147,
+        "AvgDelay": -0.146,
+        "MaxDelay": -0.0553,
+        "AvgRiskScore": 0.125,
+        "MaxRiskScore": 0.2037,
+        "RiskCount": 0.0989,
+        "BudgetConsumedPct": -0.0933,
+        "EACVariancePct": -0.2617
+      },
+      "PercentComplete": {
+        "ApprovedBudget": 0.0016,
+        "PercentComplete": 1.0,
+        "ActualCost": 0.8429,
+        "EAC": -0.0221,
+        "Committed": -0.8104,
+        "ProjectHours": 0.5823,
+        "OvertimeHours": -0.0638,
+        "AvgDelay": -0.07,
+        "MaxDelay": 0.042,
+        "AvgRiskScore": -0.3097,
+        "MaxRiskScore": -0.1154,
+        "RiskCount": 0.0828,
+        "BudgetConsumedPct": 0.9258,
+        "EACVariancePct": -0.0305
+      },
+      "ActualCost": {
+        "ApprovedBudget": 0.3913,
+        "PercentComplete": 0.8429,
+        "ActualCost": 1.0,
+        "EAC": 0.3825,
+        "Committed": -0.6246,
+        "ProjectHours": 0.5338,
+        "OvertimeHours": 0.102,
+        "AvgDelay": -0.0352,
+        "MaxDelay": 0.0665,
+        "AvgRiskScore": -0.2823,
+        "MaxRiskScore": -0.0728,
+        "RiskCount": 0.0809,
+        "BudgetConsumedPct": 0.812,
+        "EACVariancePct": -0.0489
+      },
+      "EAC": {
+        "ApprovedBudget": 0.9768,
+        "PercentComplete": -0.0221,
+        "ActualCost": 0.3825,
+        "EAC": 1.0,
+        "Committed": 0.4741,
+        "ProjectHours": 0.0779,
+        "OvertimeHours": -0.0493,
+        "AvgDelay": -0.0904,
+        "MaxDelay": 0.0119,
+        "AvgRiskScore": 0.1776,
+        "MaxRiskScore": 0.2337,
+        "RiskCount": 0.0629,
+        "BudgetConsumedPct": -0.0614,
+        "EACVariancePct": -0.0582
+      },
+      "Committed": {
+        "ApprovedBudget": 0.4403,
+        "PercentComplete": -0.8104,
+        "ActualCost": -0.6246,
+        "EAC": 0.4741,
+        "Committed": 1.0,
+        "ProjectHours": -0.5297,
+        "OvertimeHours": -0.1782,
+        "AvgDelay": 0.0454,
+        "MaxDelay": 0.0312,
+        "AvgRiskScore": 0.4412,
+        "MaxRiskScore": 0.3139,
+        "RiskCount": -0.0165,
+        "BudgetConsumedPct": -0.8134,
+        "EACVariancePct": 0.0154
+      },
+      "ProjectHours": {
+        "ApprovedBudget": 0.0263,
+        "PercentComplete": 0.5823,
+        "ActualCost": 0.5338,
+        "EAC": 0.0779,
+        "Committed": -0.5297,
+        "ProjectHours": 1.0,
+        "OvertimeHours": 0.4614,
+        "AvgDelay": 0.0764,
+        "MaxDelay": 0.2506,
+        "AvgRiskScore": 0.2102,
+        "MaxRiskScore": 0.246,
+        "RiskCount": -0.2735,
+        "BudgetConsumedPct": 0.7235,
+        "EACVariancePct": 0.2596
+      },
+      "OvertimeHours": {
+        "ApprovedBudget": -0.1147,
+        "PercentComplete": -0.0638,
+        "ActualCost": 0.102,
+        "EAC": -0.0493,
+        "Committed": -0.1782,
+        "ProjectHours": 0.4614,
+        "OvertimeHours": 1.0,
+        "AvgDelay": 0.1572,
+        "MaxDelay": 0.3829,
+        "AvgRiskScore": 0.3112,
+        "MaxRiskScore": 0.2775,
+        "RiskCount": -0.0892,
+        "BudgetConsumedPct": 0.2574,
+        "EACVariancePct": 0.2326
+      },
+      "AvgDelay": {
+        "ApprovedBudget": -0.146,
+        "PercentComplete": -0.07,
+        "ActualCost": -0.0352,
+        "EAC": -0.0904,
+        "Committed": 0.0454,
+        "ProjectHours": 0.0764,
+        "OvertimeHours": 0.1572,
+        "AvgDelay": 1.0,
+        "MaxDelay": 0.7905,
+        "AvgRiskScore": 0.129,
+        "MaxRiskScore": 0.3157,
+        "RiskCount": -0.019,
+        "BudgetConsumedPct": -0.0442,
+        "EACVariancePct": 0.1765
+      },
+      "MaxDelay": {
+        "ApprovedBudget": -0.0553,
+        "PercentComplete": 0.042,
+        "ActualCost": 0.0665,
+        "EAC": 0.0119,
+        "Committed": 0.0312,
+        "ProjectHours": 0.2506,
+        "OvertimeHours": 0.3829,
+        "AvgDelay": 0.7905,
+        "MaxDelay": 1.0,
+        "AvgRiskScore": 0.2463,
+        "MaxRiskScore": 0.3801,
+        "RiskCount": 0.1716,
+        "BudgetConsumedPct": 0.0918,
+        "EACVariancePct": 0.2396
+      },
+      "AvgRiskScore": {
+        "ApprovedBudget": 0.125,
+        "PercentComplete": -0.3097,
+        "ActualCost": -0.2823,
+        "EAC": 0.1776,
+        "Committed": 0.4412,
+        "ProjectHours": 0.2102,
+        "OvertimeHours": 0.3112,
+        "AvgDelay": 0.129,
+        "MaxDelay": 0.2463,
+        "AvgRiskScore": 1.0,
+        "MaxRiskScore": 0.7736,
+        "RiskCount": -0.0392,
+        "BudgetConsumedPct": -0.2007,
+        "EACVariancePct": 0.2174
+      },
+      "MaxRiskScore": {
+        "ApprovedBudget": 0.2037,
+        "PercentComplete": -0.1154,
+        "ActualCost": -0.0728,
+        "EAC": 0.2337,
+        "Committed": 0.3139,
+        "ProjectHours": 0.246,
+        "OvertimeHours": 0.2775,
+        "AvgDelay": 0.3157,
+        "MaxDelay": 0.3801,
+        "AvgRiskScore": 0.7736,
+        "MaxRiskScore": 1.0,
+        "RiskCount": 0.2969,
+        "BudgetConsumedPct": -0.0969,
+        "EACVariancePct": 0.0202
+      },
+      "RiskCount": {
+        "ApprovedBudget": 0.0989,
+        "PercentComplete": 0.0828,
+        "ActualCost": 0.0809,
+        "EAC": 0.0629,
+        "Committed": -0.0165,
+        "ProjectHours": -0.2735,
+        "OvertimeHours": -0.0892,
+        "AvgDelay": -0.019,
+        "MaxDelay": 0.1716,
+        "AvgRiskScore": -0.0392,
+        "MaxRiskScore": 0.2969,
+        "RiskCount": 1.0,
+        "BudgetConsumedPct": -0.0368,
+        "EACVariancePct": -0.1938
+      },
+      "BudgetConsumedPct": {
+        "ApprovedBudget": -0.0933,
+        "PercentComplete": 0.9258,
+        "ActualCost": 0.812,
+        "EAC": -0.0614,
+        "Committed": -0.8134,
+        "ProjectHours": 0.7235,
+        "OvertimeHours": 0.2574,
+        "AvgDelay": -0.0442,
+        "MaxDelay": 0.0918,
+        "AvgRiskScore": -0.2007,
+        "MaxRiskScore": -0.0969,
+        "RiskCount": -0.0368,
+        "BudgetConsumedPct": 1.0,
+        "EACVariancePct": 0.2431
+      },
+      "EACVariancePct": {
+        "ApprovedBudget": -0.2617,
+        "PercentComplete": -0.0305,
+        "ActualCost": -0.0489,
+        "EAC": -0.0582,
+        "Committed": 0.0154,
+        "ProjectHours": 0.2596,
+        "OvertimeHours": 0.2326,
+        "AvgDelay": 0.1765,
+        "MaxDelay": 0.2396,
+        "AvgRiskScore": 0.2174,
+        "MaxRiskScore": 0.0202,
+        "RiskCount": -0.1938,
+        "BudgetConsumedPct": 0.2431,
+        "EACVariancePct": 1.0
+      }
+    }
+  },
+  "model": {
+    "measure_count": 70,
+    "duplicate_measure_names": [],
+    "folders": {
+      "01 Financial & Project Cost": 21,
+      "02 Labor Utilization": 16,
+      "03 Workforce & Capacity": 11,
+      "04 Governance & Performance": 22
+    },
+    "unresolved_measure_references": [],
+    "measures_with_division_operator": [],
+    "measure_names": [
+      "Approved Budget",
+      "Baseline Budget",
+      "Phased Budget",
+      "Actual Cost",
+      "Actual Labor Cost",
+      "Actual Material Cost",
+      "Actual Other Cost",
+      "Committed Cost",
+      "Forecast to Complete",
+      "EAC",
+      "Forecast Variance $",
+      "Forecast Variance %",
+      "Budget Consumed %",
+      "Project Completion %",
+      "Budget vs Completion Gap pp",
+      "Earned Value (Mock)",
+      "Cost Performance Index (Mock)",
+      "Monthly Actual + Forecast Spend",
+      "Labor Cost Reconciliation $",
+      "Labor Cost Variance $",
+      "Labor Cost Variance %",
+      "Available Hours",
+      "Project Hours",
+      "Non-Project Hours",
+      "Overtime Hours",
+      "PTO Hours",
+      "Labor Utilization %",
+      "Weighted Utilization Target %",
+      "Utilization Gap pp",
+      "Non-Project / Bench %",
+      "Overtime % of Project Hours",
+      "Contractor Project Hours",
+      "Contractor Project Hours %",
+      "Time Entries",
+      "Late Time Entries",
+      "Time-entry Compliance %",
+      "Employee Utilization Band",
+      "Actual FTE",
+      "Required FTE",
+      "Capacity Gap FTE",
+      "Open Demand FTE",
+      "Contractor FTE",
+      "Contractor FTE %",
+      "Demand Coverage %",
+      "Available Capacity Hours",
+      "Required Capacity Hours",
+      "Capacity Gap Hours",
+      "Hiring / Reallocation Need FTE",
+      "Total Projects",
+      "Active Projects",
+      "Projects At Risk",
+      "Milestones",
+      "On-Time Milestones",
+      "On-Time Milestone %",
+      "Average Schedule Variance Days",
+      "Max Critical Milestone Delay Days",
+      "Open Critical Risks",
+      "Critical Risks without Mitigation",
+      "Overdue Actions",
+      "Average Risk Score",
+      "Cost Health",
+      "Schedule Health",
+      "Labor Health",
+      "Risk Health",
+      "Overall Project Health",
+      "Red Projects",
+      "Amber Projects",
+      "Green Projects",
+      "Projects with Budget-Consumption Red Flag",
+      "Projects with Any Red Flag"
+    ],
+    "relationship_specs_in_apply_script": 14
+  },
+  "artificiality_flags": [
+    {
+      "area": "DimProject",
+      "severity": "Medium",
+      "signal": "Approved budgets on $50K grid",
+      "observed": 1.0,
+      "reason": "Too many round portfolio approvals look hand-authored."
+    },
+    {
+      "area": "DimProject",
+      "severity": "Medium",
+      "signal": "Distinct planned start dates",
+      "observed": 9,
+      "reason": "25 projects share too few launch dates."
+    },
+    {
+      "area": "DimProject",
+      "severity": "Medium",
+      "signal": "Program counts",
+      "observed": {
+        "Connected Operations": 5,
+        "Industrial Analytics": 5,
+        "Digital Reliability": 5,
+        "Automation Platform": 5,
+        "Workforce Enablement": 5
+      },
+      "reason": "Every program has exactly the same project count."
+    },
+    {
+      "area": "DimEmployee",
+      "severity": "Medium",
+      "signal": "Distinct utilization targets",
+      "observed": 4,
+      "reason": "Targets are copied at team level with no role/contractor variation."
+    },
+    {
+      "area": "DimEmployee",
+      "severity": "Low",
+      "signal": "Exit records",
+      "observed": 0,
+      "reason": "A 24-month workforce snapshot has no transitions or inactive resources."
+    },
+    {
+      "area": "FactLabor",
+      "severity": "Medium",
+      "signal": "Hours on 0.5-hour grid",
+      "observed": "over 90%",
+      "reason": "Nearly all time entries use the same half-hour grid."
+    },
+    {
+      "area": "FactLabor",
+      "severity": "Medium",
+      "signal": "Distinct PTO values",
+      "observed": 3,
+      "reason": "PTO is limited to a few exact buckets."
+    },
+    {
+      "area": "FactMilestone",
+      "severity": "Medium",
+      "signal": "Distinct schedule variances",
+      "observed": 9,
+      "reason": "Schedule movement repeats from a short fixed list."
+    },
+    {
+      "area": "FactMilestone",
+      "severity": "Medium",
+      "signal": "In-progress completion rows",
+      "observed": 4,
+      "reason": "Milestones are almost entirely 0% or 100%."
+    },
+    {
+      "area": "FactMilestone",
+      "severity": "Low",
+      "signal": "Same last-updated ratio",
+      "observed": 1.0,
+      "reason": "Every record appears refreshed in one batch."
+    },
+    {
+      "area": "FactRiskIssue",
+      "severity": "Medium",
+      "signal": "Distinct risk titles",
+      "observed": 6,
+      "reason": "Risk register repeats a very small set of generic titles."
+    },
+    {
+      "area": "FactRiskIssue",
+      "severity": "Medium",
+      "signal": "Overdue ratio",
+      "observed": 0.48333333333333334,
+      "reason": "Portfolio-wide overdue share is implausibly high."
+    },
+    {
+      "area": "FactWorkforcePlan",
+      "severity": "Medium",
+      "signal": "Monthly actual FTE standard deviation",
+      "observed": 0.0,
+      "reason": "Workforce is perfectly flat across 24 months."
+    },
+    {
+      "area": "FactWorkforcePlan",
+      "severity": "Medium",
+      "signal": "Tiny demand in zero-staff locations",
+      "observed": 384,
+      "reason": "Demand allocation scatters implausible fractions across empty locations."
+    }
+  ]
+}

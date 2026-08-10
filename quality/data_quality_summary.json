@@ -1,0 +1,33 @@
+{
+  "overall_status": "PASS_WITH_EXPECTED_ANOMALIES",
+  "generated_at": "deterministic-validation-no-runtime-timestamp",
+  "check_counts": {
+    "PASS": 50,
+    "EXPECTED_ANOMALY": 4
+  },
+  "unexpected_failures": [],
+  "table_rows": {
+    "DimDate": 731,
+    "DimProject": 25,
+    "DimEmployee": 120,
+    "DimTeam": 8,
+    "DimSkill": 8,
+    "BridgeEmployeeSkill": 216,
+    "FactLabor": 8172,
+    "FactFinancial": 1180,
+    "FactMilestone": 201,
+    "FactWorkforcePlan": 768,
+    "FactRiskIssue": 118
+  },
+  "clean_labor_rows": 8145,
+  "labor_exception_rows": 339,
+  "validated_anomalies": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A06",
+    "A07"
+  ]
+}

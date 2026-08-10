@@ -1,0 +1,367 @@
+// Create an empty table named Measures, then add the measures below.
+// FactLabor is expected to be the CLEAN query after reject + deduplicate steps.
+
+// -----------------------------------------------------------------------------
+// Financial & Project Cost
+// -----------------------------------------------------------------------------
+
+Approved Budget =
+SUM ( DimProject[ApprovedBudget] )
+
+Baseline Budget =
+SUM ( DimProject[BaselineBudget] )
+
+Phased Budget =
+SUM ( FactFinancial[BudgetAmount] )
+
+Actual Cost =
+SUM ( FactFinancial[ActualCostAmount] )
+
+Actual Labor Cost =
+SUM ( FactFinancial[ActualLaborCost] )
+
+Actual Material Cost =
+SUM ( FactFinancial[ActualMaterialCost] )
+
+Actual Other Cost =
+SUM ( FactFinancial[ActualOtherCost] )
+
+Committed Cost =
+SUM ( FactFinancial[CommittedCost] )
+
+Forecast to Complete =
+SUM ( FactFinancial[ForecastToComplete] )
+
+EAC =
+CALCULATE (
+    [Actual Cost] + [Forecast to Complete],
+    REMOVEFILTERS ( DimDate )
+)
+
+Forecast Variance $ =
+[Approved Budget] - [EAC]
+
+Forecast Variance % =
+DIVIDE ( [Forecast Variance $], [Approved Budget] )
+
+Budget Consumed % =
+DIVIDE ( [Actual Cost], [Approved Budget] )
+
+Project Completion % =
+DIVIDE (
+    SUMX (
+        VALUES ( DimProject[ProjectKey] ),
+        CALCULATE ( MAX ( DimProject[ApprovedBudget] ) )
+            * CALCULATE ( MAX ( DimProject[PercentComplete] ) )
+    ),
+    [Approved Budget] * 100
+)
+
+Budget vs Completion Gap pp =
+[Budget Consumed %] - [Project Completion %]
+
+Earned Value (Mock) =
+SUMX (
+    VALUES ( DimProject[ProjectKey] ),
+    CALCULATE ( MAX ( DimProject[ApprovedBudget] ) )
+        * DIVIDE ( CALCULATE ( MAX ( DimProject[PercentComplete] ) ), 100 )
+)
+
+Cost Performance Index (Mock) =
+DIVIDE ( [Earned Value (Mock)], [Actual Cost] )
+
+Monthly Actual + Forecast Spend =
+SUM ( FactFinancial[EAC] )
+
+Labor Cost Reconciliation $ =
+SUM ( FactLabor[ActualLaborCost] ) - [Actual Labor Cost]
+
+Labor Cost Variance $ =
+CALCULATE (
+    [Phased Budget],
+    FactFinancial[CostCategory] IN { "Labor", "Contractor" },
+    FactFinancial[PeriodType] = "Actual"
+)
+    - CALCULATE (
+        [Actual Labor Cost],
+        FactFinancial[CostCategory] IN { "Labor", "Contractor" },
+        FactFinancial[PeriodType] = "Actual"
+    )
+
+Labor Cost Variance % =
+VAR LaborPlan =
+    CALCULATE (
+        [Phased Budget],
+        FactFinancial[CostCategory] IN { "Labor", "Contractor" },
+        FactFinancial[PeriodType] = "Actual"
+    )
+RETURN
+    DIVIDE ( [Labor Cost Variance $], LaborPlan )
+
+// -----------------------------------------------------------------------------
+// Labor Utilization
+// -----------------------------------------------------------------------------
+
+Available Hours =
+SUM ( FactLabor[AvailableHours] )
+
+Project Hours =
+SUM ( FactLabor[ProjectHours] )
+
+Non-Project Hours =
+SUM ( FactLabor[NonProjectHours] )
+
+Overtime Hours =
+SUM ( FactLabor[OvertimeHours] )
+
+PTO Hours =
+SUM ( FactLabor[PTOHours] )
+
+Labor Utilization % =
+DIVIDE ( [Project Hours], [Available Hours] )
+
+Weighted Utilization Target % =
+DIVIDE (
+    SUMX (
+        FactLabor,
+        FactLabor[AvailableHours] * RELATED ( DimEmployee[UtilizationTarget] )
+    ),
+    [Available Hours]
+)
+
+Utilization Gap pp =
+[Labor Utilization %] - [Weighted Utilization Target %]
+
+Non-Project / Bench % =
+DIVIDE ( [Non-Project Hours], [Available Hours] )
+
+Overtime % of Project Hours =
+DIVIDE ( [Overtime Hours], [Project Hours] )
+
+Contractor Project Hours =
+CALCULATE ( [Project Hours], DimEmployee[EmploymentType] = "Contractor" )
+
+Contractor Project Hours % =
+DIVIDE ( [Contractor Project Hours], [Project Hours] )
+
+Time Entries =
+COUNTROWS ( FactLabor )
+
+Late Time Entries =
+CALCULATE ( [Time Entries], FactLabor[SubmissionStatus] = "Late" )
+
+Time-entry Compliance % =
+1 - DIVIDE ( [Late Time Entries], [Time Entries] )
+
+Employee Utilization Band =
+VAR Utilization = [Labor Utilization %]
+RETURN
+    SWITCH (
+        TRUE (),
+        ISBLANK ( Utilization ), BLANK (),
+        Utilization < 0.60, "<60%",
+        Utilization < 0.75, "60–74%",
+        Utilization < 0.85, "75–84%",
+        Utilization <= 1.00, "85–100%",
+        ">100%"
+    )
+
+// -----------------------------------------------------------------------------
+// Workforce / Capacity Planning
+// FTE measures return the average monthly snapshot over the selected period.
+// -----------------------------------------------------------------------------
+
+Actual FTE =
+AVERAGEX (
+    VALUES ( DimDate[YearMonth] ),
+    CALCULATE ( SUM ( FactWorkforcePlan[ActualFTE] ) )
+)
+
+Required FTE =
+AVERAGEX (
+    VALUES ( DimDate[YearMonth] ),
+    CALCULATE ( SUM ( FactWorkforcePlan[RequiredFTE] ) )
+)
+
+Capacity Gap FTE =
+[Actual FTE] - [Required FTE]
+
+Open Demand FTE =
+AVERAGEX (
+    VALUES ( DimDate[YearMonth] ),
+    CALCULATE ( SUM ( FactWorkforcePlan[OpenDemandFTE] ) )
+)
+
+Contractor FTE =
+AVERAGEX (
+    VALUES ( DimDate[YearMonth] ),
+    CALCULATE ( SUM ( FactWorkforcePlan[ContractorFTE] ) )
+)
+
+Contractor FTE % =
+DIVIDE ( [Contractor FTE], [Actual FTE] )
+
+Demand Coverage % =
+DIVIDE ( [Actual FTE], [Required FTE] )
+
+Available Capacity Hours =
+AVERAGEX (
+    VALUES ( DimDate[YearMonth] ),
+    CALCULATE ( SUM ( FactWorkforcePlan[AvailableCapacityHours] ) )
+)
+
+Required Capacity Hours =
+AVERAGEX (
+    VALUES ( DimDate[YearMonth] ),
+    CALCULATE ( SUM ( FactWorkforcePlan[RequiredCapacityHours] ) )
+)
+
+Capacity Gap Hours =
+[Available Capacity Hours] - [Required Capacity Hours]
+
+Hiring / Reallocation Need FTE =
+MAX ( 0, -[Capacity Gap FTE] )
+
+// -----------------------------------------------------------------------------
+// Governance, Schedule & Risk
+// -----------------------------------------------------------------------------
+
+Total Projects =
+DISTINCTCOUNT ( DimProject[ProjectKey] )
+
+Active Projects =
+CALCULATE (
+    DISTINCTCOUNT ( DimProject[ProjectKey] ),
+    DimProject[ProjectStatus] IN { "Active", "At Risk", "Delayed" }
+)
+
+Projects At Risk =
+CALCULATE (
+    DISTINCTCOUNT ( DimProject[ProjectKey] ),
+    DimProject[ProjectStatus] IN { "At Risk", "Delayed" }
+)
+
+Milestones =
+COUNTROWS ( FactMilestone )
+
+On-Time Milestones =
+CALCULATE ( [Milestones], FactMilestone[ScheduleVarianceDays] <= 0 )
+
+On-Time Milestone % =
+DIVIDE ( [On-Time Milestones], [Milestones] )
+
+Average Schedule Variance Days =
+AVERAGE ( FactMilestone[ScheduleVarianceDays] )
+
+Max Critical Milestone Delay Days =
+CALCULATE (
+    MAX ( FactMilestone[ScheduleVarianceDays] ),
+    FactMilestone[IsCritical] = 1
+)
+
+Open Critical Risks =
+CALCULATE (
+    COUNTROWS ( FactRiskIssue ),
+    FactRiskIssue[IsCritical] = 1,
+    FactRiskIssue[RiskStatus] IN { "Open", "Monitoring" }
+)
+
+Critical Risks without Mitigation =
+CALCULATE (
+    COUNTROWS ( FactRiskIssue ),
+    FactRiskIssue[IsCritical] = 1,
+    FactRiskIssue[RiskStatus] IN { "Open", "Monitoring" },
+    FactRiskIssue[MitigationStatus] = "Not Started"
+)
+
+Overdue Actions =
+CALCULATE ( COUNTROWS ( FactRiskIssue ), FactRiskIssue[IsOverdue] = 1 )
+
+Average Risk Score =
+AVERAGE ( FactRiskIssue[RiskScore] )
+
+Cost Health =
+VAR OverrunPct = DIVIDE ( [EAC] - [Approved Budget], [Approved Budget] )
+RETURN
+    SWITCH (
+        TRUE (),
+        ISBLANK ( [Approved Budget] ), BLANK (),
+        OverrunPct > 0.10, "Red",
+        OverrunPct >= 0.03, "Amber",
+        "Green"
+    )
+
+Schedule Health =
+VAR CriticalDelay = [Max Critical Milestone Delay Days]
+RETURN
+    SWITCH (
+        TRUE (),
+        ISBLANK ( CriticalDelay ), "Green",
+        CriticalDelay > 30, "Red",
+        CriticalDelay >= 8, "Amber",
+        "Green"
+    )
+
+Labor Health =
+VAR Gap = [Utilization Gap pp]
+RETURN
+    SWITCH (
+        TRUE (),
+        ISBLANK ( Gap ), "Green",
+        Gap < -0.12, "Red",
+        Gap < -0.05, "Amber",
+        "Green"
+    )
+
+Risk Health =
+SWITCH (
+    TRUE (),
+    [Critical Risks without Mitigation] > 0, "Red",
+    [Overdue Actions] > 0, "Amber",
+    "Green"
+)
+
+Overall Project Health =
+VAR CostStatus = [Cost Health]
+VAR ScheduleStatus = [Schedule Health]
+VAR LaborStatus = [Labor Health]
+VAR RiskStatus = [Risk Health]
+RETURN
+    SWITCH (
+        TRUE (),
+        "Red" IN { CostStatus, ScheduleStatus, LaborStatus, RiskStatus }, "Red",
+        "Amber" IN { CostStatus, ScheduleStatus, LaborStatus, RiskStatus }, "Amber",
+        "Green"
+    )
+
+Red Projects =
+COUNTROWS (
+    FILTER ( VALUES ( DimProject[ProjectKey] ), [Overall Project Health] = "Red" )
+)
+
+Amber Projects =
+COUNTROWS (
+    FILTER ( VALUES ( DimProject[ProjectKey] ), [Overall Project Health] = "Amber" )
+)
+
+Green Projects =
+COUNTROWS (
+    FILTER ( VALUES ( DimProject[ProjectKey] ), [Overall Project Health] = "Green" )
+)
+
+Projects with Budget-Consumption Red Flag =
+COUNTROWS (
+    FILTER (
+        VALUES ( DimProject[ProjectKey] ),
+        [Budget vs Completion Gap pp] >= 0.15
+    )
+)
+
+Projects with Any Red Flag =
+COUNTROWS (
+    FILTER (
+        VALUES ( DimProject[ProjectKey] ),
+        [Overall Project Health] = "Red"
+            || [Budget vs Completion Gap pp] >= 0.15
+    )
+)

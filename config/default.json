@@ -1,0 +1,15 @@
+{
+  "random_seed": 20250810,
+  "start_date": "2024-01-01",
+  "end_date": "2025-12-31",
+  "data_as_of_date": "2025-06-30",
+  "fiscal_year_start_month": 1,
+  "project_count": 25,
+  "employee_count": 120,
+  "labor_record_min": 8000,
+  "labor_record_max": 20000,
+  "scheduled_hours_per_workday": 8,
+  "standard_monthly_hours_per_fte": 160,
+  "output_directory": "data/generated",
+  "quality_directory": "quality"
+}

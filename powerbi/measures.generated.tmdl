@@ -1,0 +1,485 @@
+createOrReplace
+
+	ref table DimProject
+
+		measure 'Approved Budget' =
+			SUM ( DimProject[ApprovedBudget] )
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Baseline Budget' =
+			SUM ( DimProject[BaselineBudget] )
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Phased Budget' =
+			SUM ( FactFinancial[BudgetAmount] )
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Actual Cost' =
+			SUM ( FactFinancial[ActualCostAmount] )
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Actual Labor Cost' =
+			SUM ( FactFinancial[ActualLaborCost] )
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Actual Material Cost' =
+			SUM ( FactFinancial[ActualMaterialCost] )
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Actual Other Cost' =
+			SUM ( FactFinancial[ActualOtherCost] )
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Committed Cost' =
+			SUM ( FactFinancial[CommittedCost] )
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Forecast to Complete' =
+			SUM ( FactFinancial[ForecastToComplete] )
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'EAC' =
+			CALCULATE (
+			    [Actual Cost] + [Forecast to Complete],
+			    REMOVEFILTERS ( DimDate )
+			)
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Forecast Variance $' =
+			[Approved Budget] - [EAC]
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Forecast Variance %' =
+			DIVIDE ( [Forecast Variance $], [Approved Budget] )
+			formatString: 0.0%;(0.0%)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Budget Consumed %' =
+			DIVIDE ( [Actual Cost], [Approved Budget] )
+			formatString: 0.0%;(0.0%)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Project Completion %' =
+			DIVIDE (
+			    SUMX (
+			        VALUES ( DimProject[ProjectKey] ),
+			        CALCULATE ( MAX ( DimProject[ApprovedBudget] ) )
+			            * CALCULATE ( MAX ( DimProject[PercentComplete] ) )
+			    ),
+			    [Approved Budget] * 100
+			)
+			formatString: 0.0%;(0.0%)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Budget vs Completion Gap pp' =
+			[Budget Consumed %] - [Project Completion %]
+			formatString: 0.0%;(0.0%)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Earned Value (Mock)' =
+			SUMX (
+			    VALUES ( DimProject[ProjectKey] ),
+			    CALCULATE ( MAX ( DimProject[ApprovedBudget] ) )
+			        * DIVIDE ( CALCULATE ( MAX ( DimProject[PercentComplete] ) ), 100 )
+			)
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Cost Performance Index (Mock)' =
+			DIVIDE ( [Earned Value (Mock)], [Actual Cost] )
+			formatString: 0.00x
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Monthly Actual + Forecast Spend' =
+			SUM ( FactFinancial[EAC] )
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Labor Cost Reconciliation $' =
+			SUM ( FactLabor[ActualLaborCost] ) - [Actual Labor Cost]
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Labor Cost Variance $' =
+			CALCULATE (
+			    [Phased Budget],
+			    FactFinancial[CostCategory] IN { "Labor", "Contractor" },
+			    FactFinancial[PeriodType] = "Actual"
+			)
+			    - CALCULATE (
+			        [Actual Labor Cost],
+			        FactFinancial[CostCategory] IN { "Labor", "Contractor" },
+			        FactFinancial[PeriodType] = "Actual"
+			    )
+			formatString: $#,##0;($#,##0)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Labor Cost Variance %' =
+			VAR LaborPlan =
+			    CALCULATE (
+			        [Phased Budget],
+			        FactFinancial[CostCategory] IN { "Labor", "Contractor" },
+			        FactFinancial[PeriodType] = "Actual"
+			    )
+			RETURN
+			    DIVIDE ( [Labor Cost Variance $], LaborPlan )
+			formatString: 0.0%;(0.0%)
+			displayFolder: 01 Financial & Project Cost
+
+		measure 'Available Hours' =
+			SUM ( FactLabor[AvailableHours] )
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 02 Labor Utilization
+
+		measure 'Project Hours' =
+			SUM ( FactLabor[ProjectHours] )
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 02 Labor Utilization
+
+		measure 'Non-Project Hours' =
+			SUM ( FactLabor[NonProjectHours] )
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 02 Labor Utilization
+
+		measure 'Overtime Hours' =
+			SUM ( FactLabor[OvertimeHours] )
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 02 Labor Utilization
+
+		measure 'PTO Hours' =
+			SUM ( FactLabor[PTOHours] )
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 02 Labor Utilization
+
+		measure 'Labor Utilization %' =
+			DIVIDE ( [Project Hours], [Available Hours] )
+			formatString: 0.0%;(0.0%)
+			displayFolder: 02 Labor Utilization
+
+		measure 'Weighted Utilization Target %' =
+			DIVIDE (
+			    SUMX (
+			        FactLabor,
+			        FactLabor[AvailableHours] * RELATED ( DimEmployee[UtilizationTarget] )
+			    ),
+			    [Available Hours]
+			)
+			formatString: 0.0%;(0.0%)
+			displayFolder: 02 Labor Utilization
+
+		measure 'Utilization Gap pp' =
+			[Labor Utilization %] - [Weighted Utilization Target %]
+			formatString: 0.0%;(0.0%)
+			displayFolder: 02 Labor Utilization
+
+		measure 'Non-Project / Bench %' =
+			DIVIDE ( [Non-Project Hours], [Available Hours] )
+			formatString: 0.0%;(0.0%)
+			displayFolder: 02 Labor Utilization
+
+		measure 'Overtime % of Project Hours' =
+			DIVIDE ( [Overtime Hours], [Project Hours] )
+			formatString: 0.0%;(0.0%)
+			displayFolder: 02 Labor Utilization
+
+		measure 'Contractor Project Hours' =
+			CALCULATE ( [Project Hours], DimEmployee[EmploymentType] = "Contractor" )
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 02 Labor Utilization
+
+		measure 'Contractor Project Hours %' =
+			DIVIDE ( [Contractor Project Hours], [Project Hours] )
+			formatString: 0.0%;(0.0%)
+			displayFolder: 02 Labor Utilization
+
+		measure 'Time Entries' =
+			COUNTROWS ( FactLabor )
+			formatString: #,##0
+			displayFolder: 02 Labor Utilization
+
+		measure 'Late Time Entries' =
+			CALCULATE ( [Time Entries], FactLabor[SubmissionStatus] = "Late" )
+			formatString: #,##0
+			displayFolder: 02 Labor Utilization
+
+		measure 'Time-entry Compliance %' =
+			1 - DIVIDE ( [Late Time Entries], [Time Entries] )
+			formatString: 0.0%;(0.0%)
+			displayFolder: 02 Labor Utilization
+
+		measure 'Employee Utilization Band' =
+			VAR Utilization = [Labor Utilization %]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        ISBLANK ( Utilization ), BLANK (),
+			        Utilization < 0.60, "<60%",
+			        Utilization < 0.75, "60–74%",
+			        Utilization < 0.85, "75–84%",
+			        Utilization <= 1.00, "85–100%",
+			        ">100%"
+			    )
+			displayFolder: 02 Labor Utilization
+
+		measure 'Actual FTE' =
+			AVERAGEX (
+			    VALUES ( DimDate[YearMonth] ),
+			    CALCULATE ( SUM ( FactWorkforcePlan[ActualFTE] ) )
+			)
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 03 Workforce & Capacity
+
+		measure 'Required FTE' =
+			AVERAGEX (
+			    VALUES ( DimDate[YearMonth] ),
+			    CALCULATE ( SUM ( FactWorkforcePlan[RequiredFTE] ) )
+			)
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 03 Workforce & Capacity
+
+		measure 'Capacity Gap FTE' =
+			[Actual FTE] - [Required FTE]
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 03 Workforce & Capacity
+
+		measure 'Open Demand FTE' =
+			AVERAGEX (
+			    VALUES ( DimDate[YearMonth] ),
+			    CALCULATE ( SUM ( FactWorkforcePlan[OpenDemandFTE] ) )
+			)
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 03 Workforce & Capacity
+
+		measure 'Contractor FTE' =
+			AVERAGEX (
+			    VALUES ( DimDate[YearMonth] ),
+			    CALCULATE ( SUM ( FactWorkforcePlan[ContractorFTE] ) )
+			)
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 03 Workforce & Capacity
+
+		measure 'Contractor FTE %' =
+			DIVIDE ( [Contractor FTE], [Actual FTE] )
+			formatString: 0.0%;(0.0%)
+			displayFolder: 03 Workforce & Capacity
+
+		measure 'Demand Coverage %' =
+			DIVIDE ( [Actual FTE], [Required FTE] )
+			formatString: 0.0%;(0.0%)
+			displayFolder: 03 Workforce & Capacity
+
+		measure 'Available Capacity Hours' =
+			AVERAGEX (
+			    VALUES ( DimDate[YearMonth] ),
+			    CALCULATE ( SUM ( FactWorkforcePlan[AvailableCapacityHours] ) )
+			)
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 03 Workforce & Capacity
+
+		measure 'Required Capacity Hours' =
+			AVERAGEX (
+			    VALUES ( DimDate[YearMonth] ),
+			    CALCULATE ( SUM ( FactWorkforcePlan[RequiredCapacityHours] ) )
+			)
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 03 Workforce & Capacity
+
+		measure 'Capacity Gap Hours' =
+			[Available Capacity Hours] - [Required Capacity Hours]
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 03 Workforce & Capacity
+
+		measure 'Hiring / Reallocation Need FTE' =
+			MAX ( 0, -[Capacity Gap FTE] )
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 03 Workforce & Capacity
+
+		measure 'Total Projects' =
+			DISTINCTCOUNT ( DimProject[ProjectKey] )
+			formatString: #,##0
+			displayFolder: 04 Governance & Performance
+
+		measure 'Active Projects' =
+			CALCULATE (
+			    DISTINCTCOUNT ( DimProject[ProjectKey] ),
+			    DimProject[ProjectStatus] IN { "Active", "At Risk", "Delayed" }
+			)
+			formatString: #,##0
+			displayFolder: 04 Governance & Performance
+
+		measure 'Projects At Risk' =
+			CALCULATE (
+			    DISTINCTCOUNT ( DimProject[ProjectKey] ),
+			    DimProject[ProjectStatus] IN { "At Risk", "Delayed" }
+			)
+			formatString: #,##0
+			displayFolder: 04 Governance & Performance
+
+		measure 'Milestones' =
+			COUNTROWS ( FactMilestone )
+			formatString: #,##0
+			displayFolder: 04 Governance & Performance
+
+		measure 'On-Time Milestones' =
+			CALCULATE ( [Milestones], FactMilestone[ScheduleVarianceDays] <= 0 )
+			formatString: #,##0
+			displayFolder: 04 Governance & Performance
+
+		measure 'On-Time Milestone %' =
+			DIVIDE ( [On-Time Milestones], [Milestones] )
+			formatString: 0.0%;(0.0%)
+			displayFolder: 04 Governance & Performance
+
+		measure 'Average Schedule Variance Days' =
+			AVERAGE ( FactMilestone[ScheduleVarianceDays] )
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 04 Governance & Performance
+
+		measure 'Max Critical Milestone Delay Days' =
+			CALCULATE (
+			    MAX ( FactMilestone[ScheduleVarianceDays] ),
+			    FactMilestone[IsCritical] = 1
+			)
+			formatString: #,##0
+			displayFolder: 04 Governance & Performance
+
+		measure 'Open Critical Risks' =
+			CALCULATE (
+			    COUNTROWS ( FactRiskIssue ),
+			    FactRiskIssue[IsCritical] = 1,
+			    FactRiskIssue[RiskStatus] IN { "Open", "Monitoring" }
+			)
+			formatString: #,##0
+			displayFolder: 04 Governance & Performance
+
+		measure 'Critical Risks without Mitigation' =
+			CALCULATE (
+			    COUNTROWS ( FactRiskIssue ),
+			    FactRiskIssue[IsCritical] = 1,
+			    FactRiskIssue[RiskStatus] IN { "Open", "Monitoring" },
+			    FactRiskIssue[MitigationStatus] = "Not Started"
+			)
+			formatString: #,##0
+			displayFolder: 04 Governance & Performance
+
+		measure 'Overdue Actions' =
+			CALCULATE ( COUNTROWS ( FactRiskIssue ), FactRiskIssue[IsOverdue] = 1 )
+			formatString: #,##0
+			displayFolder: 04 Governance & Performance
+
+		measure 'Average Risk Score' =
+			AVERAGE ( FactRiskIssue[RiskScore] )
+			formatString: #,##0.0;(#,##0.0)
+			displayFolder: 04 Governance & Performance
+
+		measure 'Cost Health' =
+			VAR OverrunPct = DIVIDE ( [EAC] - [Approved Budget], [Approved Budget] )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        ISBLANK ( [Approved Budget] ), BLANK (),
+			        OverrunPct > 0.10, "Red",
+			        OverrunPct >= 0.03, "Amber",
+			        "Green"
+			    )
+			displayFolder: 04 Governance & Performance
+
+		measure 'Schedule Health' =
+			VAR CriticalDelay = [Max Critical Milestone Delay Days]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        ISBLANK ( CriticalDelay ), "Green",
+			        CriticalDelay > 30, "Red",
+			        CriticalDelay >= 8, "Amber",
+			        "Green"
+			    )
+			displayFolder: 04 Governance & Performance
+
+		measure 'Labor Health' =
+			VAR Gap = [Utilization Gap pp]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        ISBLANK ( Gap ), "Green",
+			        Gap < -0.12, "Red",
+			        Gap < -0.05, "Amber",
+			        "Green"
+			    )
+			displayFolder: 04 Governance & Performance
+
+		measure 'Risk Health' =
+			SWITCH (
+			    TRUE (),
+			    [Critical Risks without Mitigation] > 0, "Red",
+			    [Overdue Actions] > 0, "Amber",
+			    "Green"
+			)
+			displayFolder: 04 Governance & Performance
+
+		measure 'Overall Project Health' =
+			VAR CostStatus = [Cost Health]
+			VAR ScheduleStatus = [Schedule Health]
+			VAR LaborStatus = [Labor Health]
+			VAR RiskStatus = [Risk Health]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        "Red" IN { CostStatus, ScheduleStatus, LaborStatus, RiskStatus }, "Red",
+			        "Amber" IN { CostStatus, ScheduleStatus, LaborStatus, RiskStatus }, "Amber",
+			        "Green"
+			    )
+			displayFolder: 04 Governance & Performance
+
+		measure 'Red Projects' =
+			COUNTROWS (
+			    FILTER ( VALUES ( DimProject[ProjectKey] ), [Overall Project Health] = "Red" )
+			)
+			formatString: #,##0
+			displayFolder: 04 Governance & Performance
+
+		measure 'Amber Projects' =
+			COUNTROWS (
+			    FILTER ( VALUES ( DimProject[ProjectKey] ), [Overall Project Health] = "Amber" )
+			)
+			formatString: #,##0
+			displayFolder: 04 Governance & Performance
+
+		measure 'Green Projects' =
+			COUNTROWS (
+			    FILTER ( VALUES ( DimProject[ProjectKey] ), [Overall Project Health] = "Green" )
+			)
+			formatString: #,##0
+			displayFolder: 04 Governance & Performance
+
+		measure 'Projects with Budget-Consumption Red Flag' =
+			COUNTROWS (
+			    FILTER (
+			        VALUES ( DimProject[ProjectKey] ),
+			        [Budget vs Completion Gap pp] >= 0.15
+			    )
+			)
+			formatString: #,##0
+			displayFolder: 04 Governance & Performance
+
+		measure 'Projects with Any Red Flag' =
+			COUNTROWS (
+			    FILTER (
+			        VALUES ( DimProject[ProjectKey] ),
+			        [Overall Project Health] = "Red"
+			            || [Budget vs Completion Gap pp] >= 0.15
+			    )
+			)
+			formatString: #,##0
+			displayFolder: 04 Governance & Performance

@@ -1,0 +1,119 @@
+RiskIssueKey,RiskIssueID,ProjectKey,RecordType,RiskTitle,RiskCategory,Probability,Impact,RiskScore,RiskSeverity,Owner,IdentifiedDateKey,DueDateKey,ClosedDateKey,IdentifiedDate,DueDate,ClosedDate,RiskStatus,MitigationStatus,IsCritical,IsOverdue
+1,RI-001-01,1,Risk,Rework could consume management reserve — Connected Asset Insights,Cost,5,5,25,Critical,Security Lead,20250301,20250515,,2025-03-01,2025-05-15,,Monitoring,In Progress,1,1
+2,RI-001-02,1,Issue,Defect closure rate may miss the exit criterion — Connected Asset Insights,Quality,3,2,6,Medium,Supplier Manager,20250531,20250716,,2025-05-31,2025-07-16,,Monitoring,In Progress,0,0
+3,RI-001-03,1,Risk,Test environment availability may move the baseline — Connected Asset Insights,Schedule,2,3,6,Medium,Release Manager,20250217,20250501,20250218,2025-02-17,2025-05-01,2025-02-18,Closed,Completed,0,0
+4,RI-001-04,1,Risk,Integration sequence may compress validation,Schedule,5,3,15,High,Technical Lead,20250627,20250903,,2025-06-27,2025-09-03,,Open,In Progress,0,0
+5,RI-001-05,1,Risk,Vendor component readiness is uncertain,Dependency,3,3,9,Medium,Systems Lead,20250515,20250820,,2025-05-15,2025-08-20,,Monitoring,In Progress,0,0
+6,RI-001-06,1,Risk,Technical debt may complicate integration,Technical,3,4,12,High,Security Lead,20241014,20241206,20241227,2024-10-14,2024-12-06,2024-12-27,Closed,Completed,0,0
+7,RI-001-07,1,Risk,Committed spend limits recovery options — Connected Asset Insights,Cost,4,3,12,High,Supplier Manager,20250502,20250727,,2025-05-02,2025-07-27,,Monitoring,In Progress,0,0
+8,RI-002-01,2,Risk,Critical skill coverage is below demand — Predictive Maintenance Engine,Resource,2,4,8,Medium,Data Lead,20240430,20240723,20240804,2024-04-30,2024-07-23,2024-08-04,Closed,Completed,0,0
+9,RI-002-02,2,Risk,Integration sequence may compress validation — Predictive Maintenance Engine,Schedule,4,1,4,Low,Project Manager,20240828,20241202,,2024-08-28,2024-12-02,,Open,Not Started,0,1
+10,RI-002-03,2,Issue,Supplier lead time threatens the next gate — Predictive Maintenance Engine,Schedule,2,2,4,Low,Product Owner,20240415,20240712,,2024-04-15,2024-07-12,,Mitigated,Completed,0,0
+11,RI-002-04,2,Risk,Performance margin may not meet the target — Predictive Maintenance Engine,Technical,3,3,9,Medium,Quality Lead,20240419,20240629,,2024-04-19,2024-06-29,,Mitigated,Completed,0,0
+12,RI-002-05,2,Issue,Competing portfolio priority constrains staffing — Predictive Maintenance Engine,Resource,3,3,9,Medium,Finance Partner,20240122,20240415,,2024-01-22,2024-04-15,,Monitoring,Completed,0,1
+13,RI-002-06,2,Risk,Rework could consume management reserve,Cost,5,1,5,Low,Data Lead,20240418,20240726,,2024-04-18,2024-07-26,,Monitoring,In Progress,0,1
+14,RI-003-01,3,Issue,Specialist rate mix is above plan,Cost,2,2,4,Low,Technical Lead,20240622,20240904,,2024-06-22,2024-09-04,,Monitoring,In Progress,0,1
+15,RI-003-02,3,Risk,Rework could consume management reserve,Cost,3,4,12,High,Systems Lead,20240930,20241225,,2024-09-30,2024-12-25,,Mitigated,Completed,0,0
+16,RI-003-03,3,Risk,Shared engineer availability may delay delivery — Industrial Data Fabric,Resource,2,2,4,Low,Security Lead,20240915,20241228,20241031,2024-09-15,2024-12-28,2024-10-31,Closed,Completed,0,0
+17,RI-003-04,3,Risk,Backfill timing creates a capacity gap — Industrial Data Fabric,Resource,4,3,12,High,Supplier Manager,20240208,20240417,20240411,2024-02-08,2024-04-17,2024-04-11,Closed,Completed,0,0
+18,RI-003-05,3,Risk,Customer test access is not yet confirmed — Industrial Data Fabric,Dependency,4,2,8,Medium,Release Manager,20241007,20241206,20241227,2024-10-07,2024-12-06,2024-12-27,Closed,Completed,0,0
+19,RI-003-06,3,Risk,Material quotation may exceed the estimate,Cost,2,3,6,Medium,Technical Lead,20241128,20250202,20250116,2024-11-28,2025-02-02,2025-01-16,Closed,Completed,0,0
+20,RI-004-01,4,Issue,Platform release timing may create a mismatch,Dependency,5,5,25,Critical,Quality Lead,20250215,20250410,,2025-02-15,2025-04-10,,Open,Not Started,1,1
+21,RI-004-02,4,Risk,Traceability coverage requires remediation,Quality,4,5,20,Critical,Finance Partner,20240827,20241213,,2024-08-27,2024-12-13,,Monitoring,In Progress,1,1
+22,RI-004-03,4,Issue,Supplier lead time threatens the next gate,Schedule,3,3,9,Medium,Data Lead,20250107,20250217,,2025-01-07,2025-02-17,,Mitigated,Completed,0,0
+23,RI-004-04,4,Issue,Supplier lead time threatens the next gate — Secure Edge Gateway,Schedule,4,2,8,Medium,Project Manager,20240916,20250127,,2024-09-16,2025-01-27,,Open,In Progress,0,1
+24,RI-004-05,4,Risk,Platform release timing may create a mismatch,Dependency,3,3,9,Medium,Product Owner,20240819,20241121,20241217,2024-08-19,2024-11-21,2024-12-17,Closed,Completed,0,0
+25,RI-004-06,4,Risk,Platform release timing may create a mismatch — Secure Edge Gateway,Dependency,2,3,6,Medium,Quality Lead,20240608,20241016,20240916,2024-06-08,2024-10-16,2024-09-16,Closed,Completed,0,0
+26,RI-005-01,5,Risk,Shared engineer availability may delay delivery,Resource,2,4,8,Medium,Supplier Manager,20240826,20241215,,2024-08-26,2024-12-15,,Monitoring,In Progress,0,1
+27,RI-005-02,5,Risk,Review capacity is concentrated in one role — Digital Twin Services,Resource,3,4,12,High,Release Manager,20240919,20241119,20241114,2024-09-19,2024-11-19,2024-11-14,Closed,Completed,0,0
+28,RI-005-03,5,Risk,Environment parity is not yet demonstrated — Digital Twin Services,Technical,4,1,4,Low,Technical Lead,20240324,20240530,20240330,2024-03-24,2024-05-30,2024-03-30,Closed,Completed,0,0
+29,RI-006-01,6,Risk,Legacy data quality could require redesign — Operations Reliability Hub,Technical,4,2,8,Medium,Project Manager,20250309,20250524,,2025-03-09,2025-05-24,,Mitigated,Completed,0,0
+30,RI-006-02,6,Risk,External interface decision is blocking delivery — Operations Reliability Hub,Dependency,4,2,8,Medium,Product Owner,20250315,20250515,,2025-03-15,2025-05-15,,Mitigated,Completed,0,0
+31,RI-006-03,6,Risk,Committed spend limits recovery options — Operations Reliability Hub,Cost,4,3,12,High,Quality Lead,20250601,20250805,,2025-06-01,2025-08-05,,Open,Not Started,0,0
+32,RI-006-04,6,Risk,Environment parity is not yet demonstrated — Operations Reliability Hub,Technical,3,2,6,Medium,Finance Partner,20250331,20250604,,2025-03-31,2025-06-04,,Mitigated,Completed,0,0
+33,RI-007-01,7,Risk,Prototype result may require architecture rework — Remote Monitoring Upgrade,Technical,3,2,6,Medium,Systems Lead,20250117,20250330,,2025-01-17,2025-03-30,,Mitigated,Completed,0,0
+34,RI-007-02,7,Risk,Backfill timing creates a capacity gap,Resource,4,2,8,Medium,Security Lead,20241102,20250309,,2024-11-02,2025-03-09,,Mitigated,Completed,0,0
+35,RI-007-03,7,Risk,Specialist rate mix is above plan,Cost,2,3,6,Medium,Supplier Manager,20250519,20250817,,2025-05-19,2025-08-17,,Mitigated,Completed,0,0
+36,RI-008-01,8,Risk,Committed spend limits recovery options,Cost,4,3,12,High,Finance Partner,20250331,20250728,,2025-03-31,2025-07-28,,Open,In Progress,0,0
+37,RI-008-02,8,Risk,Competing portfolio priority constrains staffing — Energy Optimization Analytics,Resource,4,5,20,Critical,Data Lead,20250423,20250623,,2025-04-23,2025-06-23,,Mitigated,Completed,0,0
+38,RI-008-03,8,Risk,Supplier lead time threatens the next gate — Energy Optimization Analytics,Schedule,2,3,6,Medium,Project Manager,20250507,20250723,,2025-05-07,2025-07-23,,Open,Not Started,0,0
+39,RI-009-01,9,Risk,Contractor transition may reduce throughput,Resource,4,5,20,Critical,Release Manager,20241221,20250317,,2024-12-21,2025-03-17,,Monitoring,Completed,1,1
+40,RI-009-02,9,Issue,Interface behavior remains unproven,Technical,3,3,9,Medium,Technical Lead,20241220,20250121,20241226,2024-12-20,2025-01-21,2024-12-26,Closed,Completed,0,0
+41,RI-009-03,9,Issue,Test environment availability may move the baseline,Schedule,1,4,4,Low,Systems Lead,20241209,20250120,,2024-12-09,2025-01-20,,Monitoring,In Progress,0,1
+42,RI-010-01,10,Risk,Prototype result may require architecture rework — Equipment Health Scoring,Technical,2,2,4,Low,Product Owner,20241231,20250518,20250217,2024-12-31,2025-05-18,2025-02-17,Closed,Completed,0,0
+43,RI-010-02,10,Risk,Legacy data quality could require redesign,Technical,3,1,3,Low,Quality Lead,20250129,20250328,,2025-01-29,2025-03-28,,Open,Not Started,0,1
+44,RI-010-03,10,Risk,Pilot readiness depends on unresolved actions — Equipment Health Scoring,Schedule,3,3,9,Medium,Finance Partner,20250211,20250403,,2025-02-11,2025-04-03,,Mitigated,Completed,0,0
+45,RI-011-01,11,Issue,Integration sequence may compress validation — Workflow Automation Studio,Schedule,2,3,6,Medium,Security Lead,20241015,20241214,,2024-10-15,2024-12-14,,Open,Not Started,0,1
+46,RI-011-02,11,Risk,Specialist rate mix is above plan — Workflow Automation Studio,Cost,2,1,2,Low,Supplier Manager,20250220,20250504,,2025-02-20,2025-05-04,,Monitoring,In Progress,0,1
+47,RI-011-03,11,Risk,Pilot readiness depends on unresolved actions,Schedule,4,5,20,Critical,Release Manager,20240911,20250120,20250217,2024-09-11,2025-01-20,2025-02-17,Closed,Completed,0,0
+48,RI-011-04,11,Issue,Prototype result may require architecture rework,Technical,3,5,15,High,Technical Lead,20241015,20250214,,2024-10-15,2025-02-14,,Mitigated,Completed,0,0
+49,RI-011-05,11,Risk,Scope clarification may require a budget change — Workflow Automation Studio,Cost,1,3,3,Low,Systems Lead,20240918,20241201,,2024-09-18,2024-12-01,,Monitoring,Completed,0,1
+50,RI-011-06,11,Risk,Integration sequence may compress validation — Workflow Automation Studio,Schedule,4,4,16,High,Security Lead,20240830,20241217,,2024-08-30,2024-12-17,,Mitigated,Completed,0,0
+51,RI-011-07,11,Risk,Release window has limited recovery float,Schedule,3,3,9,Medium,Supplier Manager,20240821,20241104,20241011,2024-08-21,2024-11-04,2024-10-11,Closed,Completed,0,0
+52,RI-012-01,12,Issue,Scope clarification may require a budget change — RDE Portfolio Telemetry,Cost,2,3,6,Medium,Data Lead,20241026,20250124,,2024-10-26,2025-01-24,,Mitigated,Completed,0,0
+53,RI-012-02,12,Issue,Regression scope may exceed the test window,Quality,3,5,15,High,Project Manager,20241015,20241224,,2024-10-15,2024-12-24,,Mitigated,Completed,0,0
+54,RI-012-03,12,Issue,Committed spend limits recovery options,Cost,5,5,25,Critical,Product Owner,20240427,20240616,,2024-04-27,2024-06-16,,Mitigated,Completed,0,0
+55,RI-012-04,12,Issue,Prototype result may require architecture rework,Technical,2,3,6,Medium,Quality Lead,20240917,20241224,,2024-09-17,2024-12-24,,Mitigated,Completed,0,0
+56,RI-012-05,12,Risk,Prototype result may require architecture rework — RDE Portfolio Telemetry,Technical,5,4,20,Critical,Finance Partner,20241202,20250301,,2024-12-02,2025-03-01,,Monitoring,In Progress,1,1
+57,RI-012-06,12,Risk,Platform release timing may create a mismatch,Dependency,3,3,9,Medium,Data Lead,20240401,20240628,,2024-04-01,2024-06-28,,Mitigated,Completed,0,0
+58,RI-013-01,13,Risk,Technical debt may complicate integration,Technical,4,5,20,Critical,Technical Lead,20250122,20250309,20250320,2025-01-22,2025-03-09,2025-03-20,Closed,Completed,0,0
+59,RI-013-02,13,Issue,Cloud run cost is trending above the baseline,Cost,2,4,8,Medium,Systems Lead,20250125,20250421,20250213,2025-01-25,2025-04-21,2025-02-13,Closed,Not Required,0,0
+60,RI-013-03,13,Issue,Late design decision may affect downstream work,Schedule,3,3,9,Medium,Security Lead,20250613,20250824,,2025-06-13,2025-08-24,,Monitoring,In Progress,0,0
+61,RI-013-04,13,Risk,Contractor transition may reduce throughput — Quality Signal Intelligence,Resource,3,5,15,High,Supplier Manager,20250409,20250531,,2025-04-09,2025-05-31,,Monitoring,In Progress,0,1
+62,RI-013-05,13,Risk,Supplier lead time threatens the next gate — Quality Signal Intelligence,Schedule,3,4,12,High,Release Manager,20250418,20250708,,2025-04-18,2025-07-08,,Monitoring,In Progress,0,0
+63,RI-013-06,13,Risk,Traceability coverage requires remediation,Quality,4,3,12,High,Technical Lead,20250530,20250725,,2025-05-30,2025-07-25,,Monitoring,In Progress,0,0
+64,RI-014-01,14,Issue,Test environment availability may move the baseline — Condition Monitoring Refresh,Schedule,2,5,10,Medium,Quality Lead,20241028,20241214,,2024-10-28,2024-12-14,,Monitoring,In Progress,0,1
+65,RI-014-02,14,Risk,Integration sequence may compress validation,Schedule,4,2,8,Medium,Finance Partner,20250203,20250508,,2025-02-03,2025-05-08,,Mitigated,Completed,0,0
+66,RI-014-03,14,Risk,Integration sequence may compress validation — Condition Monitoring Refresh,Schedule,3,2,6,Medium,Data Lead,20250221,20250521,20250427,2025-02-21,2025-05-21,2025-04-27,Closed,Completed,0,0
+67,RI-014-04,14,Risk,Environment parity is not yet demonstrated,Technical,3,3,9,Medium,Project Manager,20240914,20241222,20241117,2024-09-14,2024-12-22,2024-11-17,Closed,Completed,0,0
+68,RI-014-05,14,Issue,Scope clarification may require a budget change,Cost,2,5,10,Medium,Product Owner,20250102,20250226,,2025-01-02,2025-02-26,,Monitoring,In Progress,0,1
+69,RI-014-06,14,Risk,Shared engineer availability may delay delivery — Condition Monitoring Refresh,Resource,3,2,6,Medium,Quality Lead,20241022,20250101,,2024-10-22,2025-01-01,,Monitoring,In Progress,0,1
+70,RI-015-01,15,Risk,Integration sequence may compress validation,Schedule,1,2,2,Low,Supplier Manager,20250523,20250711,,2025-05-23,2025-07-11,,Open,Not Started,0,0
+71,RI-015-02,15,Risk,Regression scope may exceed the test window — Field Service Decision Support,Quality,3,2,6,Medium,Release Manager,20250427,20250729,,2025-04-27,2025-07-29,,Mitigated,Completed,0,0
+72,RI-015-03,15,Risk,Material quotation may exceed the estimate — Field Service Decision Support,Cost,4,3,12,High,Technical Lead,20250529,20250805,,2025-05-29,2025-08-05,,Open,In Progress,0,0
+73,RI-015-04,15,Issue,Competing portfolio priority constrains staffing,Resource,2,4,8,Medium,Systems Lead,20250511,20250905,,2025-05-11,2025-09-05,,Monitoring,In Progress,0,0
+74,RI-016-01,16,Risk,Committed spend limits recovery options,Cost,1,4,4,Low,Project Manager,20241006,20241117,20241021,2024-10-06,2024-11-17,2024-10-21,Closed,Completed,0,0
+75,RI-016-02,16,Risk,Interface behavior remains unproven,Technical,3,2,6,Medium,Product Owner,20240915,20250109,,2024-09-15,2025-01-09,,Mitigated,Completed,0,0
+76,RI-016-03,16,Issue,Scope clarification may require a budget change — Asset Performance API,Cost,2,2,4,Low,Quality Lead,20250304,20250525,20250513,2025-03-04,2025-05-25,2025-05-13,Closed,Not Required,0,0
+77,RI-017-01,17,Risk,Security approval is on the critical path — Cyber Hardening Release,Dependency,3,2,6,Medium,Systems Lead,20241224,20250314,,2024-12-24,2025-03-14,,Monitoring,Completed,0,1
+78,RI-017-02,17,Risk,Prototype result may require architecture rework,Technical,3,5,15,High,Security Lead,20241024,20250228,,2024-10-24,2025-02-28,,Mitigated,Completed,0,0
+79,RI-017-03,17,Risk,Review capacity is concentrated in one role,Resource,2,2,4,Low,Supplier Manager,20240912,20241130,20241102,2024-09-12,2024-11-30,2024-11-02,Closed,Completed,0,0
+80,RI-017-04,17,Risk,External interface decision is blocking delivery,Dependency,3,4,12,High,Release Manager,20240611,20240914,,2024-06-11,2024-09-14,,Mitigated,Completed,0,0
+81,RI-017-05,17,Risk,Material quotation may exceed the estimate,Cost,2,4,8,Medium,Technical Lead,20241023,20241130,,2024-10-23,2024-11-30,,Monitoring,In Progress,0,1
+82,RI-018-01,18,Issue,Pilot readiness depends on unresolved actions,Schedule,4,2,8,Medium,Finance Partner,20250410,20250722,,2025-04-10,2025-07-22,,Monitoring,In Progress,0,0
+83,RI-018-02,18,Risk,Pilot readiness depends on unresolved actions,Schedule,1,2,2,Low,Data Lead,20250207,20250530,20250406,2025-02-07,2025-05-30,2025-04-06,Closed,Completed,0,0
+84,RI-018-03,18,Risk,Interface behavior remains unproven — Engineering Knowledge Graph,Technical,4,2,8,Medium,Project Manager,20241023,20250211,20250221,2024-10-23,2025-02-11,2025-02-21,Closed,Completed,0,0
+85,RI-019-01,19,Issue,Integration sequence may compress validation — Release Governance Automation,Schedule,4,4,16,High,Release Manager,20241006,20241115,,2024-10-06,2024-11-15,,Monitoring,In Progress,0,1
+86,RI-019-02,19,Risk,Critical skill coverage is below demand,Resource,1,3,3,Low,Technical Lead,20240321,20240610,,2024-03-21,2024-06-10,,Monitoring,In Progress,0,1
+87,RI-019-03,19,Risk,Customer test access is not yet confirmed,Dependency,1,4,4,Low,Systems Lead,20241113,20250112,,2024-11-13,2025-01-12,,Mitigated,Completed,0,0
+88,RI-019-04,19,Risk,Technical debt may complicate integration,Technical,3,4,12,High,Security Lead,20240904,20241224,20241206,2024-09-04,2024-12-24,2024-12-06,Closed,Completed,0,0
+89,RI-020-01,20,Risk,Environment parity is not yet demonstrated — Sensor Diagnostics Platform,Technical,3,3,9,Medium,Product Owner,20250213,20250516,,2025-02-13,2025-05-16,,Monitoring,In Progress,0,1
+90,RI-020-02,20,Issue,Prototype result may require architecture rework — Sensor Diagnostics Platform,Technical,2,3,6,Medium,Quality Lead,20250126,20250403,20250406,2025-01-26,2025-04-03,2025-04-06,Closed,Completed,0,0
+91,RI-020-03,20,Risk,Interface behavior remains unproven — Sensor Diagnostics Platform,Technical,1,2,2,Low,Finance Partner,20250217,20250509,20250516,2025-02-17,2025-05-09,2025-05-16,Closed,Completed,0,0
+92,RI-021-01,21,Issue,Committed spend limits recovery options,Cost,2,3,6,Medium,Security Lead,20241216,20250318,,2024-12-16,2025-03-18,,Open,In Progress,0,1
+93,RI-021-02,21,Risk,Regression scope may exceed the test window,Quality,2,3,6,Medium,Supplier Manager,20250226,20250618,20250325,2025-02-26,2025-06-18,2025-03-25,Closed,Completed,0,0
+94,RI-021-03,21,Issue,Interface behavior remains unproven,Technical,4,4,16,High,Release Manager,20240903,20241020,,2024-09-03,2024-10-20,,Mitigated,Completed,0,0
+95,RI-021-04,21,Risk,Test environment availability may move the baseline — Customer Operations Portal,Schedule,4,3,12,High,Technical Lead,20241221,20250410,,2024-12-21,2025-04-10,,Mitigated,Completed,0,0
+96,RI-022-01,22,Issue,Legacy data quality could require redesign — Model Lifecycle Controls,Technical,3,3,9,Medium,Data Lead,20250627,20251121,,2025-06-27,2025-11-21,,Monitoring,In Progress,0,0
+97,RI-022-02,22,Risk,Upstream data contract remains unresolved,Dependency,3,4,12,High,Project Manager,20250516,20250916,,2025-05-16,2025-09-16,,Monitoring,In Progress,0,0
+98,RI-022-03,22,Risk,Contractor transition may reduce throughput — Model Lifecycle Controls,Resource,3,3,9,Medium,Product Owner,20250429,20250815,,2025-04-29,2025-08-15,,Open,In Progress,0,0
+99,RI-022-04,22,Risk,Review capacity is concentrated in one role,Resource,3,1,3,Low,Quality Lead,20250528,20250806,,2025-05-28,2025-08-06,,Open,Not Started,0,0
+100,RI-022-05,22,Risk,Technical debt may complicate integration,Technical,4,2,8,Medium,Finance Partner,20250524,20250716,,2025-05-24,2025-07-16,,Mitigated,Completed,0,0
+101,RI-022-06,22,Risk,Verification evidence is incomplete,Quality,2,4,8,Medium,Data Lead,20250525,20250916,,2025-05-25,2025-09-16,,Open,In Progress,0,0
+102,RI-022-07,22,Issue,Committed spend limits recovery options — Model Lifecycle Controls,Cost,4,3,12,High,Project Manager,20250629,20250926,,2025-06-29,2025-09-26,,Monitoring,In Progress,0,0
+103,RI-023-01,23,Risk,Security approval is on the critical path,Dependency,2,4,8,Medium,Technical Lead,20250518,20250805,,2025-05-18,2025-08-05,,Open,Not Started,0,0
+104,RI-023-02,23,Risk,Traceability coverage requires remediation — Connected Plant Pilot,Quality,3,4,12,High,Systems Lead,20250525,20250808,,2025-05-25,2025-08-08,,Mitigated,Completed,0,0
+105,RI-023-03,23,Issue,Contractor transition may reduce throughput — Connected Plant Pilot,Resource,3,3,9,Medium,Security Lead,20250616,20250817,,2025-06-16,2025-08-17,,Monitoring,In Progress,0,0
+106,RI-023-04,23,Issue,Verification evidence is incomplete,Quality,3,2,6,Medium,Supplier Manager,20250521,20250719,,2025-05-21,2025-07-19,,Open,Not Started,0,0
+107,RI-024-01,24,Risk,Late design decision may affect downstream work,Schedule,4,2,8,Medium,Quality Lead,20250521,20250722,,2025-05-21,2025-07-22,,Open,Not Started,0,0
+108,RI-024-02,24,Risk,Technical debt may complicate integration — Reliability Benchmarking,Technical,5,3,15,High,Finance Partner,20241022,20241230,,2024-10-22,2024-12-30,,Mitigated,Completed,0,0
+109,RI-024-03,24,Risk,Backfill timing creates a capacity gap,Resource,4,3,12,High,Data Lead,20250613,20250906,,2025-06-13,2025-09-06,,Open,In Progress,0,0
+110,RI-024-04,24,Risk,Late design decision may affect downstream work,Schedule,4,3,12,High,Project Manager,20250109,20250422,,2025-01-09,2025-04-22,,Monitoring,In Progress,0,1
+111,RI-024-05,24,Risk,Field issue recurrence needs containment,Quality,4,3,12,High,Product Owner,20250504,20250628,20250616,2025-05-04,2025-06-28,2025-06-16,Closed,Completed,0,0
+112,RI-024-06,24,Risk,Prototype result may require architecture rework — Reliability Benchmarking,Technical,2,4,8,Medium,Quality Lead,20241130,20250125,,2024-11-30,2025-01-25,,Open,In Progress,0,1
+113,RI-024-07,24,Risk,Test environment availability may move the baseline,Schedule,3,2,6,Medium,Finance Partner,20241122,20241229,,2024-11-22,2024-12-29,,Monitoring,In Progress,0,1
+114,RI-025-01,25,Issue,Competing portfolio priority constrains staffing,Resource,1,3,3,Low,Supplier Manager,20250414,20250829,,2025-04-14,2025-08-29,,Open,In Progress,0,0
+115,RI-025-02,25,Risk,Customer test access is not yet confirmed,Dependency,1,4,4,Low,Release Manager,20250529,20250823,,2025-05-29,2025-08-23,,Mitigated,Completed,0,0
+116,RI-025-03,25,Issue,Specialist rate mix is above plan,Cost,4,4,16,High,Technical Lead,20250411,20250706,,2025-04-11,2025-07-06,,Monitoring,Completed,0,0
+117,RI-025-04,25,Issue,Security approval is on the critical path,Dependency,5,4,20,Critical,Systems Lead,20250420,20250710,,2025-04-20,2025-07-10,,Monitoring,In Progress,1,0
+118,RI-025-05,25,Risk,Specialist rate mix is above plan,Cost,4,3,12,High,Security Lead,20250517,20250829,,2025-05-17,2025-08-29,,Monitoring,In Progress,0,0
