@@ -56,6 +56,7 @@ from .style import (
     load_theme_tokens,
     metric_card,
     page_header,
+    render_signature,
     section_heading,
 )
 
@@ -65,6 +66,18 @@ CHART_CONFIG = {
     "responsive": True,
     "scrollZoom": False,
 }
+
+HEALTH_INDICATORS = {
+    "Green": "🟢",
+    "Amber": "🟠",
+    "Red": "🔴",
+}
+
+
+def _health_indicator(value: object) -> str:
+    """Return a compact colored-dot indicator for a project health status."""
+
+    return HEALTH_INDICATORS.get(str(value), "⚪")
 
 
 def _filter_context(selection: FilterSelection, project_count: int) -> str:
@@ -202,6 +215,7 @@ def _render_executive(
             "MaxRiskScore",
         ]
     ].head(12).copy()
+    table["OverallHealth"] = table["OverallHealth"].map(_health_indicator)
     table["BudgetCompletionGapPP"] = table["BudgetCompletionGap"] * 100
     table = table.drop(columns="BudgetCompletionGap")
     st.dataframe(
@@ -212,7 +226,11 @@ def _render_executive(
             "ProjectID": "Project",
             "ProjectName": "Project name",
             "ProjectStatus": "Status",
-            "OverallHealth": "Health",
+            "OverallHealth": st.column_config.TextColumn(
+                "Health",
+                help="🟢 On track · 🟠 Watch · 🔴 Critical",
+                width="small",
+            ),
             "BudgetConsumedPct": st.column_config.ProgressColumn(
                 "Budget consumed", min_value=0, max_value=1.25, format="percent"
             ),
@@ -225,6 +243,7 @@ def _render_executive(
             "MaxRiskScore": "Max risk score",
         },
     )
+    st.caption("Health: 🟢 On track · 🟠 Watch · 🔴 Critical")
 
 
 def _render_financial(
@@ -604,3 +623,4 @@ def run_dashboard() -> None:
         f"Synthetic interview/demo dataset · Fixed seed {data.manifest['random_seed']} · "
         f"Data as of {data.manifest['data_as_of_date']} · No external data connection"
     )
+    render_signature()

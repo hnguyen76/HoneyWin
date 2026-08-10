@@ -16,6 +16,7 @@ from honeywin_dashboard.metrics import (
     project_health_table,
     workforce_summary,
 )
+from honeywin_dashboard.pages import _health_indicator
 from scripts.check_repo_links import broken_links
 
 
@@ -99,6 +100,20 @@ def test_project_health_matches_audited_red_flag_population(full_context) -> Non
     assert counts["any_red_flag"] == 6
     assert set(health["OverallHealth"]).issubset({"Green", "Amber", "Red"})
     assert pd.api.types.is_bool_dtype(health["AnyRedFlag"])
+
+
+def test_health_indicator_uses_colored_dots_instead_of_status_text() -> None:
+    assert _health_indicator("Green") == "🟢"
+    assert _health_indicator("Amber") == "🟠"
+    assert _health_indicator("Red") == "🔴"
+    assert _health_indicator(None) == "⚪"
+
+
+def test_dashboard_creator_signature_is_rendered() -> None:
+    app = AppTest.from_file("app.py", default_timeout=20)
+    app.run()
+    assert not app.exception
+    assert any("Created by Hieu Nguyen" in element.value for element in app.markdown)
 
 
 def test_repository_markdown_links_resolve() -> None:

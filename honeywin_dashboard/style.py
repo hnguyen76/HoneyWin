@@ -180,6 +180,16 @@ def apply_app_style(tokens: ThemeTokens) -> None:
             padding: 2.2rem;
             text-align: center;
         }}
+        .dashboard-signature {{
+            border-top: 1px solid var(--hw-border);
+            color: var(--hw-muted);
+            font-size: .76rem;
+            font-weight: 600;
+            letter-spacing: .02em;
+            margin-top: 1.2rem;
+            padding-top: .7rem;
+            text-align: right;
+        }}
         header[data-testid="stHeader"], footer {{ display: none; }}
         @media (max-width: 900px) {{
             .page-header {{ align-items: flex-start; flex-direction: column; }}
@@ -261,6 +271,15 @@ def empty_state(message: str) -> None:
 
 def section_heading(title: str) -> None:
     st.markdown(f'<div class="section-heading">{html.escape(title)}</div>', unsafe_allow_html=True)
+
+
+def render_signature() -> None:
+    """Render the dashboard creator signature consistently across all pages."""
+
+    st.markdown(
+        '<div class="dashboard-signature">Created by Hieu Nguyen</div>',
+        unsafe_allow_html=True,
+    )
 
 
 def format_currency(value: float, decimals: int = 1) -> str:
