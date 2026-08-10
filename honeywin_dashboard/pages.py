@@ -37,6 +37,14 @@ from .filters import (
     render_navigation,
     render_page_filters,
 )
+from .insights import (
+    BusinessInsight,
+    executive_insights,
+    financial_insights,
+    governance_insights,
+    labor_insights,
+    workforce_insights,
+)
 from .metrics import (
     financial_summary,
     governance_summary,
@@ -53,6 +61,7 @@ from .style import (
     format_number,
     format_percent,
     format_pp,
+    insight_card,
     load_theme_tokens,
     metric_card,
     page_header,
@@ -112,6 +121,24 @@ def _financial_tone(summary: dict[str, float]) -> str:
     if overrun >= 0.03:
         return "warning"
     return "good"
+
+
+def _render_insights(insights: list[BusinessInsight], tokens: ThemeTokens) -> None:
+    section_heading("Business insights & corrective actions")
+    st.markdown(
+        '<div class="insight-context">Generated from the current filter context. Actions are recommendations, not recorded management decisions.</div>',
+        unsafe_allow_html=True,
+    )
+    columns = st.columns(len(insights))
+    for column, insight in zip(columns, insights):
+        with column:
+            insight_card(
+                insight.title,
+                insight.evidence,
+                insight.action,
+                tokens,
+                insight.tone,
+            )
 
 
 def _render_executive(
@@ -175,6 +202,8 @@ def _render_executive(
             tokens,
             "bad" if health_counts["any_red_flag"] else "good",
         )
+
+    _render_insights(executive_insights(financial, health), tokens)
 
     section_heading("Portfolio trajectory")
     left, right = st.columns([2.25, 1])
@@ -264,6 +293,7 @@ def _render_financial(
         empty_state("No financial records match the selected filters.")
         return
     summary = financial_summary(scoped)
+    health = project_health_table(scoped)
     cards = st.columns(5)
     card_values = (
         (
@@ -301,6 +331,8 @@ def _render_financial(
         with column:
             metric_card(label, value, detail, tokens, tone)
 
+    _render_insights(financial_insights(summary, health, financial), tokens)
+
     section_heading("Spend and plan variance")
     st.plotly_chart(
         monthly_spend_chart(financial, tokens), use_container_width=True, config=CHART_CONFIG
@@ -313,7 +345,6 @@ def _render_financial(
             config=CHART_CONFIG,
         )
     with right:
-        health = project_health_table(scoped)
         st.plotly_chart(
             project_variance_chart(health, tokens),
             use_container_width=True,
@@ -381,6 +412,8 @@ def _render_labor(
     for column, (label, value, detail, tone) in zip(cards, values):
         with column:
             metric_card(label, value, detail, tokens, tone)
+
+    _render_insights(labor_insights(summary, labor), tokens)
 
     section_heading("Utilization trajectory and target performance")
     st.plotly_chart(
@@ -462,6 +495,8 @@ def _render_workforce(
         with column:
             metric_card(label, value, detail, tokens, tone)
 
+    _render_insights(workforce_insights(summary, workforce), tokens)
+
     section_heading("Capacity trajectory and shortage concentration")
     st.plotly_chart(
         workforce_trend_chart(workforce, tokens), use_container_width=True, config=CHART_CONFIG
@@ -523,6 +558,8 @@ def _render_governance(
     for column, (label, value, detail, tone) in zip(cards, values):
         with column:
             metric_card(label, value, detail, tokens, tone)
+
+    _render_insights(governance_insights(summary, data.milestones, risks), tokens)
 
     if risks.empty:
         empty_state("No risk or issue records match the selected risk filters.")
