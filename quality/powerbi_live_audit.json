@@ -1,0 +1,911 @@
+﻿{
+    "Database":  "4176efbb-0989-4edb-8b5f-7661fc0b7e0b",
+    "RefreshRequested":  false,
+    "TableCount":  12,
+    "MeasureCount":  70,
+    "MeasurePassCount":  70,
+    "MeasureFailCount":  0,
+    "RelationshipCount":  20,
+    "ActiveRelationshipCount":  16,
+    "InactiveRelationshipCount":  4,
+    "Tables":  [
+                   {
+                       "Name":  "BridgeEmployeeSkill",
+                       "Rows":  216,
+                       "Columns":  11,
+                       "Measures":  0,
+                       "Partitions":  1
+                   },
+                   {
+                       "Name":  "DimDate",
+                       "Rows":  731,
+                       "Columns":  23,
+                       "Measures":  0,
+                       "Partitions":  1
+                   },
+                   {
+                       "Name":  "DimEmployee",
+                       "Rows":  120,
+                       "Columns":  14,
+                       "Measures":  0,
+                       "Partitions":  1
+                   },
+                   {
+                       "Name":  "DimLocation",
+                       "Rows":  4,
+                       "Columns":  2,
+                       "Measures":  0,
+                       "Partitions":  1
+                   },
+                   {
+                       "Name":  "DimProject",
+                       "Rows":  25,
+                       "Columns":  18,
+                       "Measures":  70,
+                       "Partitions":  1
+                   },
+                   {
+                       "Name":  "DimSkill",
+                       "Rows":  8,
+                       "Columns":  8,
+                       "Measures":  0,
+                       "Partitions":  1
+                   },
+                   {
+                       "Name":  "DimTeam",
+                       "Rows":  8,
+                       "Columns":  8,
+                       "Measures":  0,
+                       "Partitions":  1
+                   },
+                   {
+                       "Name":  "FactFinancial",
+                       "Rows":  1180,
+                       "Columns":  17,
+                       "Measures":  0,
+                       "Partitions":  1
+                   },
+                   {
+                       "Name":  "FactLabor",
+                       "Rows":  8145,
+                       "Columns":  17,
+                       "Measures":  0,
+                       "Partitions":  1
+                   },
+                   {
+                       "Name":  "FactMilestone",
+                       "Rows":  201,
+                       "Columns":  17,
+                       "Measures":  0,
+                       "Partitions":  1
+                   },
+                   {
+                       "Name":  "FactRiskIssue",
+                       "Rows":  118,
+                       "Columns":  22,
+                       "Measures":  0,
+                       "Partitions":  1
+                   },
+                   {
+                       "Name":  "FactWorkforcePlan",
+                       "Rows":  768,
+                       "Columns":  13,
+                       "Measures":  0,
+                       "Partitions":  1
+                   }
+               ],
+    "Relationships":  [
+                          {
+                              "Name":  "05e5f940-90c1-51ad-32a4-2798c996397d",
+                              "From":  "FactWorkforcePlan.Location",
+                              "To":  "DimLocation.Location",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "AutoDetected_03217219-c207-41f5-9e43-1f59b132f681",
+                              "From":  "BridgeEmployeeSkill.EmployeeKey",
+                              "To":  "DimEmployee.EmployeeKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "AutoDetected_74f0de2e-c458-407c-ae39-54cca7856884",
+                              "From":  "BridgeEmployeeSkill.SkillKey",
+                              "To":  "DimSkill.SkillKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "AutoDetected_a4035d4d-a5f4-4c58-ae0a-d58a9bcbf590",
+                              "From":  "FactLabor.EmployeeKey",
+                              "To":  "DimEmployee.EmployeeKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "AutoDetected_c4ae26b7-f3ee-4681-8dd1-8bcbb1e96d5d",
+                              "From":  "DimEmployee.TeamKey",
+                              "To":  "DimTeam.TeamKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "R_DimEmployee_PrimarySkill",
+                              "From":  "DimEmployee.PrimarySkillKey",
+                              "To":  "DimSkill.SkillKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  false
+                          },
+                          {
+                              "Name":  "R_DimProject_Team",
+                              "From":  "DimProject.PrimaryTeamKey",
+                              "To":  "DimTeam.TeamKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  false
+                          },
+                          {
+                              "Name":  "R_FactFinancial_Date",
+                              "From":  "FactFinancial.MonthStartDateKey",
+                              "To":  "DimDate.DateKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "R_FactFinancial_Project",
+                              "From":  "FactFinancial.ProjectKey",
+                              "To":  "DimProject.ProjectKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "R_FactLabor_Date",
+                              "From":  "FactLabor.WeekStartDateKey",
+                              "To":  "DimDate.DateKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "R_FactLabor_Project",
+                              "From":  "FactLabor.ProjectKey",
+                              "To":  "DimProject.ProjectKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "R_FactMilestone_ForecastDate",
+                              "From":  "FactMilestone.ForecastDateKey",
+                              "To":  "DimDate.DateKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  false
+                          },
+                          {
+                              "Name":  "R_FactMilestone_PlannedDate",
+                              "From":  "FactMilestone.PlannedDateKey",
+                              "To":  "DimDate.DateKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "R_FactMilestone_Project",
+                              "From":  "FactMilestone.ProjectKey",
+                              "To":  "DimProject.ProjectKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "R_FactRiskIssue_DueDate",
+                              "From":  "FactRiskIssue.DueDateKey",
+                              "To":  "DimDate.DateKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  false
+                          },
+                          {
+                              "Name":  "R_FactRiskIssue_IdentifiedDate",
+                              "From":  "FactRiskIssue.IdentifiedDateKey",
+                              "To":  "DimDate.DateKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "R_FactRiskIssue_Project",
+                              "From":  "FactRiskIssue.ProjectKey",
+                              "To":  "DimProject.ProjectKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "R_FactWorkforcePlan_Date",
+                              "From":  "FactWorkforcePlan.MonthStartDateKey",
+                              "To":  "DimDate.DateKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "R_FactWorkforcePlan_Skill",
+                              "From":  "FactWorkforcePlan.SkillKey",
+                              "To":  "DimSkill.SkillKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          },
+                          {
+                              "Name":  "R_FactWorkforcePlan_Team",
+                              "From":  "FactWorkforcePlan.TeamKey",
+                              "To":  "DimTeam.TeamKey",
+                              "FromCardinality":  "Many",
+                              "ToCardinality":  "One",
+                              "CrossFilter":  "OneDirection",
+                              "IsActive":  true
+                          }
+                      ],
+    "Measures":  [
+                     {
+                         "Name":  "Active Projects",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "14",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Actual Cost",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "60364049.07",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Actual FTE",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "03 Workforce \u0026 Capacity",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "103.9725",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Actual Labor Cost",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "25365595.41",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Actual Material Cost",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "24757486.38",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Actual Other Cost",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "10240967.28",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Amber Projects",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "16",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Approved Budget",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "79795000",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Available Capacity Hours",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "03 Workforce \u0026 Capacity",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "16635.6",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Available Hours",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "303608",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Average Risk Score",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "9.40677966101695",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Average Schedule Variance Days",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "5.82587064676617",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Baseline Budget",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "76288000",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Budget Consumed %",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "0.756489116736638",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Budget vs Completion Gap pp",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "0.030676603421267",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Capacity Gap FTE",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "03 Workforce \u0026 Capacity",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "-18.9920833333333",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Capacity Gap Hours",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "03 Workforce \u0026 Capacity",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "-3038.73333333333",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Committed Cost",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "7932805.25",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Contractor FTE",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "03 Workforce \u0026 Capacity",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "17.8445833333333",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Contractor FTE %",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "03 Workforce \u0026 Capacity",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "0.171627914432502",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Contractor Project Hours",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "46653.25",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Contractor Project Hours %",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "0.18225064847803",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Cost Health",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "",
+                         "Status":  "PASS",
+                         "Value":  "Green",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Cost Performance Index (Mock)",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "0.00x",
+                         "Status":  "PASS",
+                         "Value":  "0.95944871810767",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Critical Risks without Mitigation",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "1",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Demand Coverage %",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "03 Workforce \u0026 Capacity",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "0.845548345560206",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "EAC",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "81999920.57",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Earned Value (Mock)",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "57916209.5",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Employee Utilization Band",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "",
+                         "Status":  "PASS",
+                         "Value":  "75–84%",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Forecast to Complete",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "21635871.5",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Forecast Variance $",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "-2204920.56999999",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Forecast Variance %",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "-0.0276323149320132",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Green Projects",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "5",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Hiring / Reallocation Need FTE",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "03 Workforce \u0026 Capacity",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "18.9920833333333",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Labor Cost Reconciliation $",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "0",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Labor Cost Variance $",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "8625543.54",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Labor Cost Variance %",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "0.253758591399009",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Labor Health",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "",
+                         "Status":  "PASS",
+                         "Value":  "Green",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Labor Utilization %",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "0.843139838212432",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Late Time Entries",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "297",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Max Critical Milestone Delay Days",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "45",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Milestones",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "201",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Monthly Actual + Forecast Spend",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "81999920.57",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Non-Project / Bench %",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "0.170137150536218",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Non-Project Hours",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "51655",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "On-Time Milestone %",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "0.323383084577114",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "On-Time Milestones",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "65",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Open Critical Risks",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "6",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Open Demand FTE",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "03 Workforce \u0026 Capacity",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "20.08",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Overall Project Health",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "",
+                         "Status":  "PASS",
+                         "Value":  "Red",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Overdue Actions",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "29",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Overtime % of Project Hours",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "0.0157470779423714",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Overtime Hours",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "4031",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Phased Budget",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "$#,##0;($#,##0)",
+                         "Status":  "PASS",
+                         "Value":  "79795000",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Project Completion %",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "01 Financial \u0026 Project Cost",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "0.725812513315371",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Project Hours",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "255984",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Projects At Risk",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "5",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Projects with Any Red Flag",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "6",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Projects with Budget-Consumption Red Flag",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "4",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "PTO Hours",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "10544",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Red Projects",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "4",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Required Capacity Hours",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "03 Workforce \u0026 Capacity",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "19674.3333333333",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Required FTE",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "03 Workforce \u0026 Capacity",
+                         "FormatString":  "#,##0.0;(#,##0.0)",
+                         "Status":  "PASS",
+                         "Value":  "122.964583333333",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Risk Health",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "",
+                         "Status":  "PASS",
+                         "Value":  "Red",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Schedule Health",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "",
+                         "Status":  "PASS",
+                         "Value":  "Red",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Time Entries",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "8145",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Time-entry Compliance %",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "0.96353591160221",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Total Projects",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "04 Governance \u0026 Performance",
+                         "FormatString":  "#,##0",
+                         "Status":  "PASS",
+                         "Value":  "25",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Utilization Gap pp",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "0.0112238149192383",
+                         "Error":  null
+                     },
+                     {
+                         "Name":  "Weighted Utilization Target %",
+                         "Table":  "DimProject",
+                         "DisplayFolder":  "02 Labor Utilization",
+                         "FormatString":  "0.0%;(0.0%)",
+                         "Status":  "PASS",
+                         "Value":  "0.831916023293186",
+                         "Error":  null
+                     }
+                 ]
+}

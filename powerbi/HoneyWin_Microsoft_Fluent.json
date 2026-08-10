@@ -1,0 +1,60 @@
+{
+  "name": "HoneyWin Microsoft Fluent",
+  "dataColors": [
+    "#0078D4",
+    "#00B7C3",
+    "#107C10",
+    "#FFB900",
+    "#D13438",
+    "#5C2D91",
+    "#8764B8",
+    "#498205"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#242424",
+  "tableAccent": "#0078D4",
+  "good": "#107C10",
+  "neutral": "#FFB900",
+  "bad": "#D13438",
+  "maximum": "#0078D4",
+  "center": "#FFB900",
+  "minimum": "#D13438",
+  "null": "#A19F9D",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{"show": true, "color": {"solid": {"color": "#FFFFFF"}}, "transparency": 0}],
+        "border": [{"show": true, "color": {"solid": {"color": "#E1DFDD"}}, "radius": 4}],
+        "visualHeader": [{"show": true, "foreground": {"solid": {"color": "#605E5C"}}, "background": {"solid": {"color": "#FFFFFF"}}}],
+        "title": [{"show": true, "fontFamily": "Segoe UI Semibold", "fontSize": 12, "fontColor": {"solid": {"color": "#242424"}}, "alignment": "left"}],
+        "legend": [{"fontFamily": "Segoe UI", "fontSize": 10, "labelColor": {"solid": {"color": "#424242"}}}],
+        "categoryLabels": [{"fontFamily": "Segoe UI", "fontSize": 10, "color": {"solid": {"color": "#424242"}}}],
+        "labels": [{"fontFamily": "Segoe UI", "fontSize": 10, "color": {"solid": {"color": "#424242"}}}]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [{"color": {"solid": {"color": "#F5F7FA"}}, "transparency": 0}],
+        "outspace": [{"color": {"solid": {"color": "#EDEBE9"}}, "transparency": 0}]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [{"fontFamily": "Segoe UI Semibold", "fontSize": 26, "color": {"solid": {"color": "#0078D4"}}}],
+        "categoryLabels": [{"show": true, "fontFamily": "Segoe UI", "fontSize": 10, "color": {"solid": {"color": "#605E5C"}}}]
+      }
+    },
+    "slicer": {
+      "*": {
+        "selection": [{"selectAllCheckboxEnabled": true, "singleSelect": false}],
+        "header": [{"show": true, "fontFamily": "Segoe UI Semibold", "fontSize": 11, "fontColor": {"solid": {"color": "#242424"}}}]
+      }
+    }
+  },
+  "textClasses": {
+    "callout": {"fontFace": "Segoe UI Semibold", "fontSize": 28, "color": "#0078D4"},
+    "title": {"fontFace": "Segoe UI Semibold", "fontSize": 12, "color": "#242424"},
+    "header": {"fontFace": "Segoe UI Semibold", "fontSize": 11, "color": "#242424"},
+    "label": {"fontFace": "Segoe UI", "fontSize": 10, "color": "#424242"}
+  }
+}

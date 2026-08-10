@@ -1,0 +1,363 @@
+﻿[
+    {
+        "page":  "Executive Overview",
+        "visuals":  [
+                        {
+                            "name":  "Power BI Report",
+                            "x":  2641,
+                            "y":  225,
+                            "width":  1200,
+                            "height":  675
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2657,
+                            "y":  232,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2929,
+                            "y":  233,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "Approved Budget, Actual Cost and EAC by Program",
+                            "x":  3210,
+                            "y":  226,
+                            "width":  616,
+                            "height":  533
+                        },
+                        {
+                            "name":  "Plot area",
+                            "x":  3318,
+                            "y":  326,
+                            "width":  460,
+                            "height":  366
+                        },
+                        {
+                            "name":  "Legend",
+                            "x":  3217,
+                            "y":  263,
+                            "width":  602,
+                            "height":  28
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2657,
+                            "y":  503,
+                            "width":  248,
+                            "height":  127
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2929,
+                            "y":  503,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "Program",
+                            "x":  2657,
+                            "y":  779,
+                            "width":  248,
+                            "height":  105
+                        },
+                        {
+                            "name":  "Formula bar",
+                            "x":  2645,
+                            "y":  229,
+                            "width":  1597,
+                            "height":  28
+                        }
+                    ]
+    },
+    {
+        "page":  "Financial \u0026 Cost",
+        "visuals":  [
+                        {
+                            "name":  "Power BI Report",
+                            "x":  2641,
+                            "y":  225,
+                            "width":  1200,
+                            "height":  675
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2657,
+                            "y":  232,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2929,
+                            "y":  233,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "Monthly Actual + Forecast Spend and Phased Budget by YearMonth",
+                            "x":  3210,
+                            "y":  226,
+                            "width":  615,
+                            "height":  534
+                        },
+                        {
+                            "name":  "Legend",
+                            "x":  3217,
+                            "y":  263,
+                            "width":  601,
+                            "height":  28
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2657,
+                            "y":  503,
+                            "width":  248,
+                            "height":  127
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2929,
+                            "y":  503,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "PeriodType",
+                            "x":  2657,
+                            "y":  779,
+                            "width":  248,
+                            "height":  105
+                        },
+                        {
+                            "name":  "Formula bar",
+                            "x":  2645,
+                            "y":  229,
+                            "width":  1597,
+                            "height":  28
+                        }
+                    ]
+    },
+    {
+        "page":  "Labor Utilization",
+        "visuals":  [
+                        {
+                            "name":  "Power BI Report",
+                            "x":  2641,
+                            "y":  225,
+                            "width":  1200,
+                            "height":  675
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2657,
+                            "y":  232,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2929,
+                            "y":  233,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "Labor Utilization % and Weighted Utilization Target % by YearMonth",
+                            "x":  3210,
+                            "y":  226,
+                            "width":  617,
+                            "height":  471
+                        },
+                        {
+                            "name":  "Legend",
+                            "x":  3217,
+                            "y":  263,
+                            "width":  603,
+                            "height":  28
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2657,
+                            "y":  503,
+                            "width":  248,
+                            "height":  127
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2929,
+                            "y":  503,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "EmploymentType",
+                            "x":  2657,
+                            "y":  779,
+                            "width":  248,
+                            "height":  105
+                        },
+                        {
+                            "name":  "Formula bar",
+                            "x":  2645,
+                            "y":  229,
+                            "width":  1597,
+                            "height":  28
+                        }
+                    ]
+    },
+    {
+        "page":  "Workforce Capacity",
+        "visuals":  [
+                        {
+                            "name":  "Power BI Report",
+                            "x":  2641,
+                            "y":  225,
+                            "width":  1200,
+                            "height":  675
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2657,
+                            "y":  232,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2929,
+                            "y":  233,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "Actual FTE and Required FTE by YearMonth",
+                            "x":  3210,
+                            "y":  226,
+                            "width":  617,
+                            "height":  471
+                        },
+                        {
+                            "name":  "Legend",
+                            "x":  3217,
+                            "y":  263,
+                            "width":  603,
+                            "height":  28
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2657,
+                            "y":  503,
+                            "width":  248,
+                            "height":  127
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2929,
+                            "y":  503,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "Location",
+                            "x":  2657,
+                            "y":  779,
+                            "width":  248,
+                            "height":  105
+                        },
+                        {
+                            "name":  "Formula bar",
+                            "x":  2645,
+                            "y":  229,
+                            "width":  1597,
+                            "height":  28
+                        }
+                    ]
+    },
+    {
+        "page":  "Governance \u0026 Risk",
+        "visuals":  [
+                        {
+                            "name":  "Power BI Report",
+                            "x":  2641,
+                            "y":  225,
+                            "width":  1200,
+                            "height":  675
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2657,
+                            "y":  232,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2933,
+                            "y":  233,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "Open Critical Risks and Overdue Actions by RiskCategory",
+                            "x":  3210,
+                            "y":  226,
+                            "width":  602,
+                            "height":  457
+                        },
+                        {
+                            "name":  "Open Critical Risks and Overdue Actions",
+                            "x":  3422,
+                            "y":  655,
+                            "width":  274,
+                            "height":  21
+                        },
+                        {
+                            "name":  "Plot area",
+                            "x":  3316,
+                            "y":  318,
+                            "width":  470,
+                            "height":  297
+                        },
+                        {
+                            "name":  "Legend",
+                            "x":  3217,
+                            "y":  263,
+                            "width":  588,
+                            "height":  28
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2657,
+                            "y":  504,
+                            "width":  248,
+                            "height":  127
+                        },
+                        {
+                            "name":  "Card",
+                            "x":  2933,
+                            "y":  504,
+                            "width":  248,
+                            "height":  248
+                        },
+                        {
+                            "name":  "RiskSeverity",
+                            "x":  2657,
+                            "y":  779,
+                            "width":  248,
+                            "height":  105
+                        },
+                        {
+                            "name":  "Formula bar",
+                            "x":  2645,
+                            "y":  229,
+                            "width":  1597,
+                            "height":  28
+                        }
+                    ]
+    }
+]

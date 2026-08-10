@@ -1,0 +1,83 @@
+{
+  "dataset": "FORGE RDE PMO synthetic portfolio",
+  "data_classification": "Synthetic / interview portfolio only",
+  "random_seed": 20250810,
+  "start_date": "2024-01-01",
+  "end_date": "2025-12-31",
+  "data_as_of_date": "2025-06-30",
+  "table_count": 11,
+  "files": [
+    {
+      "table": "DimDate",
+      "file": "DimDate.csv",
+      "row_count": 731,
+      "sha256": "50e8ac4c01ccbeaaefa476dc33da7f09265f1588dbca9062c09970ec3693971d"
+    },
+    {
+      "table": "DimProject",
+      "file": "DimProject.csv",
+      "row_count": 25,
+      "sha256": "57d4f82d3aec6c61396194d22a43ee475b0031d61366e3a6ab5364a99df400ce"
+    },
+    {
+      "table": "DimEmployee",
+      "file": "DimEmployee.csv",
+      "row_count": 120,
+      "sha256": "a3a32acdb6a0f0f55b248df23fbd17bb7c19bacf3c22df946a053c0c4d297fff"
+    },
+    {
+      "table": "DimTeam",
+      "file": "DimTeam.csv",
+      "row_count": 8,
+      "sha256": "94b414f524e15288e8e23ec16ffba54489f01a81b094b1ae584606737320f683"
+    },
+    {
+      "table": "DimSkill",
+      "file": "DimSkill.csv",
+      "row_count": 8,
+      "sha256": "176c6d6d7f03041cbd15562d33e956721cdce00999bfd3e03227f6e606661bb5"
+    },
+    {
+      "table": "BridgeEmployeeSkill",
+      "file": "BridgeEmployeeSkill.csv",
+      "row_count": 216,
+      "sha256": "bd3d8b0ef96f1837ca808239d044d615a679b854d0135beeacb2065e00e89785"
+    },
+    {
+      "table": "FactLabor",
+      "file": "FactLabor.csv",
+      "row_count": 8172,
+      "sha256": "c2542cdbf2b230c8415077ef63f5854928e33b5a13fb85e0d6636feff1e3d0f9"
+    },
+    {
+      "table": "FactFinancial",
+      "file": "FactFinancial.csv",
+      "row_count": 1180,
+      "sha256": "c7f7de8433e22126588585da242fb0b8d67b066adce79148795169cf912e01c8"
+    },
+    {
+      "table": "FactMilestone",
+      "file": "FactMilestone.csv",
+      "row_count": 201,
+      "sha256": "3dae11bb1b5f7ba01754e26962bb44ee5da2d04fbb3b71311dd44dfb6edc077c"
+    },
+    {
+      "table": "FactWorkforcePlan",
+      "file": "FactWorkforcePlan.csv",
+      "row_count": 768,
+      "sha256": "30a8434ba0fb35cdf3aa66d4e0182522f7636dbb131da97dd6448518e4e4b78b"
+    },
+    {
+      "table": "FactRiskIssue",
+      "file": "FactRiskIssue.csv",
+      "row_count": 118,
+      "sha256": "50bf67fd52dc157e2670ae2132b68c333555529faae50f832cb2a09733de8df9"
+    }
+  ],
+  "intentional_labor_data_quality": {
+    "base_rows": 8157,
+    "multi_project_split_rows": 169,
+    "missing_rows": 12,
+    "duplicate_rows": 15
+  }
+}

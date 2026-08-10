@@ -1,0 +1,9 @@
+TeamKey,TeamID,TeamName,TeamLeader,EngineeringFunction,UtilizationTarget,ActiveFlag
+1,TEAM-01,Software Engineering,Software RDE Leader,Software RDE,0.85,1
+2,TEAM-02,Data Engineering & Analytics,Data RDE Leader,Data & Analytics,0.85,1
+3,TEAM-03,Systems Engineering,Systems RDE Leader,Systems RDE,0.82,1
+4,TEAM-04,Mechanical Engineering,Mechanical RDE Leader,Mechanical RDE,0.8,1
+5,TEAM-05,Quality Assurance,Quality RDE Leader,Quality Engineering,0.85,1
+6,TEAM-06,Cloud & DevOps,Cloud RDE Leader,Platform Engineering,0.85,1
+7,TEAM-07,Cybersecurity,Cyber RDE Leader,Product Security,0.85,1
+8,TEAM-08,RDE PMO,RDE PMO Leader,Project Management Office,0.75,1
