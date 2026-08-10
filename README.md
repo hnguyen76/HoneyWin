@@ -16,14 +16,14 @@ Review the [interactive dashboard gallery](docs/streamlit_gallery.md), the
 
 ## Highlights
 
-- Five aligned analytics experiences: Executive Overview, Financial & Cost,
-  Labor Utilization, Workforce Capacity, and Governance & Risk.
+- Six interactive pages: five focused analytics experiences plus a centralized
+  Business Insights & Actions hub.
 - Interactive global date/program/project filters plus page-specific team,
   cost, employment, location, skill, status, and risk filters where supported.
 - Microsoft Fluent-inspired responsive UI with KPI cards, variance views,
   target bands, accessible conditional colors, Plotly tooltips, and detail tables.
-- Filter-aware business insight and corrective-action cards that identify the
-  highest financial, labor, capacity, schedule, and risk exposures from the data.
+- A dedicated, filter-aware sixth page consolidates supported financial, labor,
+  capacity, schedule, and risk insights with recommended corrective actions.
 - Eleven linked CSV tables covering 24 months, 25 projects, and 120 synthetic
   employees/contractors.
 - Fixed random seed `20250810`, deterministic CSV output, and SHA-256 manifest.
@@ -68,7 +68,7 @@ honeywin_dashboard/metrics.py       Pure audited KPI calculations
 honeywin_dashboard/charts.py        Reusable Plotly business charts
 honeywin_dashboard/filters.py       Navigation and supported filter controls
 honeywin_dashboard/style.py         Fluent tokens, CSS, KPI formatting
-honeywin_dashboard/pages.py         Five page compositions
+honeywin_dashboard/pages.py         Five analytics views and one insight hub
 .streamlit/config.toml              Deterministic local theme/server settings
 tests/test_streamlit_dashboard.py   Loader, calculation, filter, and render tests
 ```
@@ -143,12 +143,12 @@ python scripts\check_repo_links.py
 Current audited acceptance results:
 
 - Data QA: 50 PASS, 4 expected anomaly warnings, 0 unexpected failures.
-- Reproducibility and application tests: 19 passed.
+- Reproducibility and application tests: 24 passed.
 - Realism audit: 0 final artificiality flags, down from 14 at baseline.
 - Referential integrity: 0 orphan keys and 0 impossible-date conditions.
 - Live Power BI model: 12 semantic tables (11 source tables plus `DimLocation`),
   70/70 DAX measures, 16 active and 4 inactive relationships.
-- Streamlit browser review: five experiences rendered without application errors;
+- Streamlit browser review: six pages rendered without application errors;
   1440×1000 wide captures and a 900-pixel responsive overflow check passed.
 
 ## Optional Streamlit Community Cloud deployment
@@ -162,7 +162,7 @@ To deploy separately through Streamlit Community Cloud:
 2. Create an app pointing to this repository and set the entry point to `app.py`.
 3. Use a supported Python version and install from `requirements.txt`.
 4. Do not add secrets; this application requires none.
-5. Confirm the health page, all five navigation states, and the committed QA suite
+5. Confirm the health page, all six navigation states, and the committed QA suite
    after deployment.
 
 A live URL will not exist until that separate hosting step is explicitly completed.

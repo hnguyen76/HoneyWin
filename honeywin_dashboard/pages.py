@@ -1,4 +1,4 @@
-"""Streamlit page composition for the five Power BI-aligned experiences."""
+"""Streamlit page composition for five analytics views and one insight hub."""
 
 from __future__ import annotations
 
@@ -123,13 +123,17 @@ def _financial_tone(summary: dict[str, float]) -> str:
     return "good"
 
 
-def _render_insights(insights: list[BusinessInsight], tokens: ThemeTokens) -> None:
-    section_heading("Business insights & corrective actions")
-    st.markdown(
-        '<div class="insight-context">Generated from the current filter context. Actions are recommendations, not recorded management decisions.</div>',
-        unsafe_allow_html=True,
-    )
-    columns = st.columns(len(insights))
+def _render_insight_group(
+    title: str,
+    description: str,
+    insights: list[BusinessInsight],
+    tokens: ThemeTokens,
+) -> None:
+    """Render one analytical domain within the centralized insight hub."""
+
+    section_heading(title)
+    st.caption(description)
+    columns = st.columns(min(3, len(insights)))
     for column, insight in zip(columns, insights):
         with column:
             insight_card(
@@ -202,8 +206,6 @@ def _render_executive(
             tokens,
             "bad" if health_counts["any_red_flag"] else "good",
         )
-
-    _render_insights(executive_insights(financial, health), tokens)
 
     section_heading("Portfolio trajectory")
     left, right = st.columns([2.25, 1])
@@ -331,8 +333,6 @@ def _render_financial(
         with column:
             metric_card(label, value, detail, tokens, tone)
 
-    _render_insights(financial_insights(summary, health, financial), tokens)
-
     section_heading("Spend and plan variance")
     st.plotly_chart(
         monthly_spend_chart(financial, tokens), use_container_width=True, config=CHART_CONFIG
@@ -412,8 +412,6 @@ def _render_labor(
     for column, (label, value, detail, tone) in zip(cards, values):
         with column:
             metric_card(label, value, detail, tokens, tone)
-
-    _render_insights(labor_insights(summary, labor), tokens)
 
     section_heading("Utilization trajectory and target performance")
     st.plotly_chart(
@@ -495,8 +493,6 @@ def _render_workforce(
         with column:
             metric_card(label, value, detail, tokens, tone)
 
-    _render_insights(workforce_insights(summary, workforce), tokens)
-
     section_heading("Capacity trajectory and shortage concentration")
     st.plotly_chart(
         workforce_trend_chart(workforce, tokens), use_container_width=True, config=CHART_CONFIG
@@ -558,8 +554,6 @@ def _render_governance(
     for column, (label, value, detail, tone) in zip(cards, values):
         with column:
             metric_card(label, value, detail, tokens, tone)
-
-    _render_insights(governance_insights(summary, data.milestones, risks), tokens)
 
     if risks.empty:
         empty_state("No risk or issue records match the selected risk filters.")
@@ -623,6 +617,95 @@ def _render_governance(
         )
 
 
+def _render_business_insights(
+    data: FilteredData,
+    selection: FilterSelection,
+    page_filters: dict[str, list[object]],
+    tokens: ThemeTokens,
+) -> None:
+    """Render the centralized, filter-aware insight and corrective-action hub."""
+
+    del page_filters
+    page_header(
+        "Business Insights & Corrective Actions",
+        "Cross-functional findings, supporting evidence, and recommended management responses.",
+        _filter_context(selection, len(data.projects)),
+    )
+    if data.projects.empty:
+        empty_state("No projects match the current portfolio filters.")
+        return
+
+    financial = financial_summary(data)
+    health = project_health_table(data)
+    groups: list[tuple[str, str, list[BusinessInsight]]] = [
+        (
+            "Executive priorities",
+            "Portfolio funding, exception concentration, and cost-to-progress signals.",
+            executive_insights(financial, health),
+        ),
+        (
+            "Financial & cost actions",
+            "Forecast exposure, phased-plan variance, and committed-cost follow-up.",
+            financial_insights(financial, health, data.financial),
+        ),
+    ]
+    if not data.labor.empty:
+        groups.append(
+            (
+                "Labor utilization actions",
+                "Target attainment, overtime concentration, and time-entry discipline.",
+                labor_insights(labor_summary(data.labor), data.labor),
+            )
+        )
+    if not data.workforce.empty:
+        groups.append(
+            (
+                "Workforce capacity actions",
+                "Demand coverage and the most constrained team, skill, and location combinations.",
+                workforce_insights(workforce_summary(data.workforce), data.workforce),
+            )
+        )
+    governance = governance_summary(data.projects, data.milestones, data.risks)
+    groups.append(
+        (
+            "Governance & risk actions",
+            "Critical-risk mitigation, overdue actions, and milestone recovery.",
+            governance_insights(governance, data.milestones, data.risks),
+        )
+    )
+
+    all_insights = [insight for _, _, insights in groups for insight in insights]
+    critical_count = sum(insight.tone == "bad" for insight in all_insights)
+    watch_count = sum(insight.tone == "warning" for insight in all_insights)
+    cards = st.columns(4)
+    summary_cards = (
+        ("Recommended Actions", f"{len(all_insights)}", "Current filter context", "primary"),
+        (
+            "Critical Priority",
+            f"{critical_count}",
+            "Immediate management attention",
+            "bad" if critical_count else "good",
+        ),
+        (
+            "Watch Priority",
+            f"{watch_count}",
+            "Review in the next operating cycle",
+            "warning" if watch_count else "good",
+        ),
+        ("Analytics Areas", f"{len(groups)}", "Domains with available evidence", "secondary"),
+    )
+    for column, (label, value, detail, tone) in zip(cards, summary_cards):
+        with column:
+            metric_card(label, value, detail, tokens, tone)
+
+    st.markdown(
+        '<div class="insight-context">Generated from the current filter context. Actions are recommendations, not recorded management decisions.</div>',
+        unsafe_allow_html=True,
+    )
+    for title, description, insights in groups:
+        _render_insight_group(title, description, insights, tokens)
+
+
 def run_dashboard() -> None:
     """Configure and render the Streamlit application."""
 
@@ -654,6 +737,7 @@ def run_dashboard() -> None:
         "Labor Utilization": _render_labor,
         "Workforce Capacity": _render_workforce,
         "Governance & Risk": _render_governance,
+        "Business Insights & Actions": _render_business_insights,
     }
     renderers[page](filtered, selection, page_filters, tokens)
     st.caption(

@@ -18,11 +18,12 @@ PAGE_NAMES = (
     "Labor Utilization",
     "Workforce Capacity",
     "Governance & Risk",
+    "Business Insights & Actions",
 )
 
 
 def render_navigation() -> str:
-    """Render the five-experience navigation control."""
+    """Render the six-page navigation control."""
 
     st.sidebar.markdown("<div class='brand-mark'>HONEYWIN</div>", unsafe_allow_html=True)
     st.sidebar.caption("RDE / PMO portfolio analytics")
@@ -99,6 +100,9 @@ def _multi_filter(label: str, options: Iterable[Any], key: str) -> list[Any]:
 
 def render_page_filters(page: str, data: FilteredData) -> dict[str, list[Any]]:
     """Render filters supported by the selected experience and its data grain."""
+
+    if page == "Business Insights & Actions":
+        return {}
 
     st.sidebar.divider()
     st.sidebar.markdown("### Page filters")

@@ -9,6 +9,7 @@ import pytest
 from streamlit.testing.v1 import AppTest
 
 from honeywin_dashboard.data import FilterSelection, apply_global_filters, load_dashboard_data
+from honeywin_dashboard.filters import PAGE_NAMES
 from honeywin_dashboard.insights import (
     executive_insights,
     financial_insights,
@@ -153,13 +154,7 @@ def test_repository_markdown_links_resolve() -> None:
 
 @pytest.mark.parametrize(
     "page_name",
-    [
-        "Executive Overview",
-        "Financial & Cost",
-        "Labor Utilization",
-        "Workforce Capacity",
-        "Governance & Risk",
-    ],
+    PAGE_NAMES,
 )
 def test_each_streamlit_experience_renders(page_name: str) -> None:
     app = AppTest.from_file("app.py", default_timeout=20)
@@ -168,3 +163,26 @@ def test_each_streamlit_experience_renders(page_name: str) -> None:
     app.sidebar.radio[0].set_value(page_name).run()
     assert not app.exception
     assert app.sidebar.radio[0].value == page_name
+
+
+def test_business_insights_are_exclusive_to_the_sixth_page() -> None:
+    app = AppTest.from_file("app.py", default_timeout=20)
+    app.run()
+    assert not app.exception
+
+    for page_name in PAGE_NAMES[:5]:
+        app.sidebar.radio[0].set_value(page_name).run()
+        assert not app.exception
+        assert not any(
+            "Corrective action" in element.value for element in app.markdown
+        )
+
+    app.sidebar.radio[0].set_value("Business Insights & Actions").run()
+    assert not app.exception
+    assert any(
+        "Generated from the current filter context" in element.value
+        for element in app.markdown
+    )
+    assert sum(
+        "Corrective action" in element.value for element in app.markdown
+    ) == 12
