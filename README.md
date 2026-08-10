@@ -5,7 +5,7 @@ presentation layers: an interactive Streamlit application and an audited
 Microsoft Power BI implementation. It demonstrates financial control, labor
 utilization, workforce capacity planning, milestone governance, and risk
 management without using confidential or real Honeywell operating data.
-
+Dashboard link: https://honeywin-powerbi-dashboard.streamlit.app/
 [![Streamlit Executive Overview](docs/assets/streamlit/executive-overview.png)](docs/streamlit_gallery.md)
 
 Review the [interactive dashboard gallery](docs/streamlit_gallery.md), the
