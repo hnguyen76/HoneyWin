@@ -1,6 +1,6 @@
 # HoneyWin realism audit — final
 
-Generated from fixed-seed assets on `2026-08-10`.
+Generated from fixed-seed assets on `2026-08-11`.
 
 ## Executive summary
 
@@ -8,24 +8,24 @@ Generated from fixed-seed assets on `2026-08-10`.
 - Referential-integrity orphans: 0.
 - Impossible-date conditions: 0.
 - Artificiality signals: 0 (0 medium).
-- Clean labor rows: 8,145; utilization: 84.31%; late submissions: 3.63%.
-- Approved budget: $79,795,000; actual: $60,364,049; EAC: $81,999,921.
+- Clean labor rows: 6,482; utilization: 85.43%; late submissions: 4.09%.
+- Approved budget: $3,070,000,000; actual: $2,865,125,979; EAC: $3,074,824,815.
 
 ## Table profile
 
 | Table | Rows | Columns | Null cells | Exact duplicates | Natural-key extras |
 |---|---:|---:|---:|---:|---:|
-| DimDate | 731 | 22 | 723 | 0 | 0 |
-| DimProject | 25 | 17 | 16 | 0 | 0 |
+| DimDate | 376 | 22 | 372 | 0 | 0 |
+| DimProject | 1,000 | 17 | 588 | 0 | 0 |
 | DimEmployee | 120 | 13 | 117 | 0 | 0 |
 | DimTeam | 8 | 7 | 0 | 0 | 0 |
 | DimSkill | 8 | 7 | 0 | 0 | 0 |
-| BridgeEmployeeSkill | 216 | 10 | 304 | 0 | 0 |
-| FactLabor | 8,172 | 16 | 24 | 0 | 15 |
-| FactFinancial | 1,180 | 16 | 0 | 0 | 0 |
-| FactMilestone | 201 | 16 | 166 | 0 | 0 |
-| FactWorkforcePlan | 768 | 12 | 0 | 0 | 0 |
-| FactRiskIssue | 118 | 21 | 178 | 0 | 0 |
+| BridgeEmployeeSkill | 218 | 10 | 330 | 0 | 0 |
+| FactLabor | 6,509 | 16 | 24 | 0 | 15 |
+| FactFinancial | 26,460 | 16 | 0 | 0 | 0 |
+| FactMilestone | 8,010 | 16 | 2,040 | 0 | 0 |
+| FactWorkforcePlan | 416 | 12 | 0 | 0 | 0 |
+| FactRiskIssue | 5,002 | 21 | 7,674 | 0 | 0 |
 
 ## Artificiality signals
 
@@ -42,18 +42,18 @@ No material artificiality signals breached the audit thresholds.
 
 | Metric A | Metric B | Pearson r |
 |---|---|---:|
-| ApprovedBudget | EAC | 0.980 |
-| AvgDelay | MaxDelay | 0.963 |
-| PercentComplete | BudgetConsumedPct | 0.957 |
-| AvgRiskScore | MaxRiskScore | 0.944 |
-| ActualCost | EAC | 0.810 |
-| PercentComplete | ActualCost | 0.803 |
-| ApprovedBudget | ActualCost | 0.800 |
-| PercentComplete | Committed | -0.767 |
-| Committed | BudgetConsumedPct | -0.752 |
-| ActualCost | BudgetConsumedPct | 0.749 |
-| ProjectHours | BudgetConsumedPct | 0.683 |
-| MaxDelay | MaxRiskScore | 0.643 |
+| ApprovedBudget | EAC | 0.997 |
+| ApprovedBudget | ActualCost | 0.982 |
+| ActualCost | EAC | 0.981 |
+| ProjectHours | OvertimeHours | 0.910 |
+| AvgDelay | MaxDelay | 0.906 |
+| PercentComplete | BudgetConsumedPct | 0.822 |
+| Committed | BudgetConsumedPct | -0.795 |
+| PercentComplete | Committed | -0.765 |
+| AvgRiskScore | MaxRiskScore | 0.752 |
+| AvgDelay | BudgetConsumedPct | 0.380 |
+| PercentComplete | OvertimeHours | -0.376 |
+| EAC | Committed | 0.351 |
 
 ## Semantic-model static audit
 

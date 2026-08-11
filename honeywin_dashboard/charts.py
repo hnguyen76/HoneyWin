@@ -372,7 +372,7 @@ def governance_category_chart(risks: pd.DataFrame, tokens: ThemeTokens) -> go.Fi
         hovertemplate="%{x} overdue<extra></extra>",
     )
     figure.update_layout(barmode="group")
-    figure.update_xaxes(dtick=1, title="Exception count")
+    figure.update_xaxes(rangemode="tozero", tickformat=",d", title="Exception count")
     return _layout(figure, "Open critical risks and overdue actions by category", tokens, height=420, hovermode="y")
 
 

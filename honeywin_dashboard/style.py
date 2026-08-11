@@ -128,6 +128,50 @@ def apply_app_style(tokens: ThemeTokens) -> None:
             padding: .4rem .75rem;
             white-space: nowrap;
         }}
+        .benchmark-strip {{
+            align-items: stretch;
+            background: linear-gradient(100deg, #FFFFFF 0%, #F0F7FC 100%);
+            border: 1px solid #C7E0F4;
+            border-left: 4px solid var(--hw-primary);
+            border-radius: 6px;
+            display: grid;
+            gap: 0;
+            grid-template-columns: 1.45fr repeat(4, minmax(120px, 1fr));
+            margin: .2rem 0 1rem;
+            overflow: hidden;
+        }}
+        .benchmark-intro, .benchmark-item {{
+            padding: .72rem .9rem;
+        }}
+        .benchmark-item {{
+            border-left: 1px solid #DDEBF5;
+        }}
+        .benchmark-eyebrow, .benchmark-label {{
+            color: var(--hw-primary);
+            font-size: .66rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }}
+        .benchmark-title {{
+            color: var(--hw-text);
+            font-size: .88rem;
+            font-weight: 650;
+            line-height: 1.25;
+            margin-top: .16rem;
+        }}
+        .benchmark-value {{
+            color: var(--hw-text);
+            font-size: 1.03rem;
+            font-weight: 650;
+            margin-top: .12rem;
+        }}
+        .benchmark-note {{
+            color: var(--hw-muted);
+            font-size: .66rem;
+            line-height: 1.3;
+            margin-top: .12rem;
+        }}
         .metric-card {{
             background: var(--hw-surface);
             border: 1px solid var(--hw-border);
@@ -233,6 +277,9 @@ def apply_app_style(tokens: ThemeTokens) -> None:
         @media (max-width: 900px) {{
             .page-header {{ align-items: flex-start; flex-direction: column; }}
             .context-badge {{ white-space: normal; }}
+            .benchmark-strip {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
+            .benchmark-intro {{ grid-column: 1 / -1; }}
+            .benchmark-item:nth-child(even) {{ border-left: none; }}
             .metric-card {{ min-height: 104px; }}
             div[data-testid="stHorizontalBlock"] {{ flex-wrap: wrap; }}
             div[data-testid="stHorizontalBlock"] > div[data-testid="stColumn"] {{
@@ -259,6 +306,57 @@ def page_header(title: str, subtitle: str, context: str) -> None:
             <div class="page-subtitle">{html.escape(subtitle)}</div>
           </div>
           <div class="context-badge">{html.escape(context)}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def benchmark_strip(benchmark: dict[str, object]) -> None:
+    """Render the public Honeywell benchmark used to calibrate portfolio scale."""
+
+    if not benchmark:
+        return
+
+    def billions(key: str) -> str:
+        value = float(benchmark.get(key, 0) or 0)
+        return f"${value / 1_000_000_000:.2f}B"
+
+    period_end = str(benchmark.get("period_end", ""))
+    period_label = f"TTM ending {period_end}" if period_end else "Trailing 12 months"
+    values = (
+        ("Net sales", billions("net_sales_usd"), "Public consolidated benchmark"),
+        (
+            "Product / service cost",
+            billions("cost_of_products_and_services_usd"),
+            "Public consolidated benchmark",
+        ),
+        ("Total R&D cost", billions("total_rd_cost_usd"), "Portfolio calibration basis"),
+        (
+            "Synthetic budget",
+            billions("target_portfolio_approved_budget_usd"),
+            "Reconciles to the R&D benchmark",
+        ),
+    )
+    items = "".join(
+        f"""
+        <div class="benchmark-item">
+          <div class="benchmark-label">{html.escape(label)}</div>
+          <div class="benchmark-value">{html.escape(value)}</div>
+          <div class="benchmark-note">{html.escape(note)}</div>
+        </div>
+        """
+        for label, value, note in values
+    )
+    st.markdown(
+        f"""
+        <div class="benchmark-strip">
+          <div class="benchmark-intro">
+            <div class="benchmark-eyebrow">Public filing calibration</div>
+            <div class="benchmark-title">Honeywell consolidated {html.escape(period_label)}</div>
+            <div class="benchmark-note">Benchmark metadata only; project records remain synthetic.</div>
+          </div>
+          {items}
         </div>
         """,
         unsafe_allow_html=True,

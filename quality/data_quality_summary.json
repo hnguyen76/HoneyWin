@@ -2,25 +2,25 @@
   "overall_status": "PASS_WITH_EXPECTED_ANOMALIES",
   "generated_at": "deterministic-validation-no-runtime-timestamp",
   "check_counts": {
-    "PASS": 50,
+    "PASS": 53,
     "EXPECTED_ANOMALY": 4
   },
   "unexpected_failures": [],
   "table_rows": {
-    "DimDate": 731,
-    "DimProject": 25,
+    "DimDate": 376,
+    "DimProject": 1000,
     "DimEmployee": 120,
     "DimTeam": 8,
     "DimSkill": 8,
-    "BridgeEmployeeSkill": 216,
-    "FactLabor": 8172,
-    "FactFinancial": 1180,
-    "FactMilestone": 201,
-    "FactWorkforcePlan": 768,
-    "FactRiskIssue": 118
+    "BridgeEmployeeSkill": 218,
+    "FactLabor": 6509,
+    "FactFinancial": 26460,
+    "FactMilestone": 8010,
+    "FactWorkforcePlan": 416,
+    "FactRiskIssue": 5002
   },
-  "clean_labor_rows": 8145,
-  "labor_exception_rows": 339,
+  "clean_labor_rows": 6482,
+  "labor_exception_rows": 305,
   "validated_anomalies": [
     "A01",
     "A02",

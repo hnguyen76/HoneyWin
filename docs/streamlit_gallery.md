@@ -47,5 +47,6 @@ python -m streamlit run app.py
 ```
 
 The [main README](../README.md) documents setup, architecture, refresh, testing,
-and optional hosting. GitHub stores the source and previews; a live application
-requires a separate Streamlit hosting step.
+and hosting. The deployed dashboard is available at
+[honeywin-powerbi-dashboard.streamlit.app](https://honeywin-powerbi-dashboard.streamlit.app/);
+workspace sharing settings may require Streamlit sign-in.

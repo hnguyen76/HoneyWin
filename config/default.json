@@ -1,15 +1,27 @@
 {
   "random_seed": 20250810,
-  "start_date": "2024-01-01",
-  "end_date": "2025-12-31",
-  "data_as_of_date": "2025-06-30",
+  "start_date": "2025-08-01",
+  "end_date": "2026-08-11",
+  "data_as_of_date": "2026-08-11",
   "fiscal_year_start_month": 1,
-  "project_count": 25,
+  "project_count": 1000,
   "employee_count": 120,
-  "labor_record_min": 8000,
-  "labor_record_max": 20000,
+  "labor_record_min": 6000,
+  "labor_record_max": 15000,
   "scheduled_hours_per_workday": 8,
   "standard_monthly_hours_per_fte": 160,
+  "financial_benchmark": {
+    "basis": "Honeywell consolidated trailing twelve months ending 2026-06-30",
+    "period_start": "2025-07-01",
+    "period_end": "2026-06-30",
+    "currency": "USD",
+    "net_sales_usd": 38057000000,
+    "cost_of_products_and_services_usd": 24162000000,
+    "company_funded_rd_usd": 1953000000,
+    "customer_sponsored_rd_usd": 1117000000,
+    "total_rd_cost_usd": 3070000000,
+    "target_portfolio_approved_budget_usd": 3070000000
+  },
   "output_directory": "data/generated",
   "quality_directory": "quality"
 }

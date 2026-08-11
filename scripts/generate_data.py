@@ -72,6 +72,19 @@ PROJECT_NAMES = [
     "RDE Capacity Planning Modernization",
 ]
 
+PROJECT_NAME_DOMAINS = [
+    "Connected", "Industrial", "Digital", "Autonomous", "Secure",
+    "Predictive", "Intelligent", "Resilient", "Sustainable", "Enterprise",
+]
+PROJECT_NAME_CAPABILITIES = [
+    "Asset", "Operations", "Reliability", "Controls", "Telemetry",
+    "Workflow", "Quality", "Engineering", "Energy", "Service",
+]
+PROJECT_NAME_INITIATIVES = [
+    "Modernization", "Analytics", "Platform", "Optimization", "Integration",
+    "Transformation", "Enablement", "Acceleration", "Orchestration", "Intelligence",
+]
+
 PROGRAMS = [
     "Connected Operations",
     "Industrial Analytics",
@@ -342,11 +355,22 @@ def project_status(start: date, planned_end: date, as_of: date) -> tuple[str, fl
     return "Active", percent, None
 
 
+def project_name(project_key: int) -> str:
+    """Return a deterministic, business-readable name for up to 1,000 projects."""
+    if project_key <= len(PROJECT_NAMES):
+        return PROJECT_NAMES[project_key - 1]
+    index = project_key - len(PROJECT_NAMES) - 1
+    domain = PROJECT_NAME_DOMAINS[(index // 100) % len(PROJECT_NAME_DOMAINS)]
+    capability = PROJECT_NAME_CAPABILITIES[(index // 10) % len(PROJECT_NAME_CAPABILITIES)]
+    initiative = PROJECT_NAME_INITIATIVES[index % len(PROJECT_NAME_INITIATIVES)]
+    return f"{domain} {capability} {initiative}"
+
+
 def build_dim_project(config: dict[str, Any], rng: random.Random) -> list[dict[str, Any]]:
     as_of = parse_date(config["data_as_of_date"])
+    period_start = parse_date(config["start_date"])
     end = parse_date(config["end_date"])
     rows: list[dict[str, Any]] = []
-    used_start_dates: set[date] = set()
     program_team_weights = {
         "Connected Operations": [3, 4, 1, 6],
         "Industrial Analytics": [2, 1, 6, 3],
@@ -354,22 +378,13 @@ def build_dim_project(config: dict[str, Any], rng: random.Random) -> list[dict[s
         "Automation Platform": [1, 6, 7, 3],
         "Workforce Enablement": [8, 2, 5, 1],
     }
+    latest_start = max(period_start, end - timedelta(days=14))
+    launch_window_days = max(0, (latest_start - period_start).days)
     for project_key in range(1, config["project_count"] + 1):
-        if project_key == 2:
-            start = date(2024, 1, 1)
-        elif project_key == 3:
-            start = date(2024, 2, 5)
-        elif project_key in {22, 25}:
-            start = date(2025, rng.randint(7, 10), rng.randint(1, 20))
-        else:
-            start = date(2024, 1, 1) + timedelta(days=rng.randint(0, 500))
-        while start in used_start_dates:
-            start += timedelta(days=1)
-        used_start_dates.add(start)
-        duration_months = rng.randint(8, 17)
-        planned_end = month_end(add_months(start, duration_months - 1))
-        if planned_end > end:
-            planned_end = end - timedelta(days=rng.randint(0, 20))
+        start_offset = round(rng.triangular(0, launch_window_days, launch_window_days * 0.42))
+        start = period_start + timedelta(days=start_offset)
+        duration_days = round(rng.triangular(60, 340, 190))
+        planned_end = min(end, start + timedelta(days=duration_days))
         schedule_variance = max(-7, min(35, round(rng.gauss(8, 10))))
         forecast_end = min(end, planned_end + timedelta(days=schedule_variance))
         forecast_end = max(start, forecast_end)
@@ -389,23 +404,23 @@ def build_dim_project(config: dict[str, Any], rng: random.Random) -> list[dict[s
         program = rng.choices(PROGRAMS, weights=[0.28, 0.24, 0.20, 0.17, 0.11], k=1)[0]
         primary_team = rng.choices(program_team_weights[program], weights=[0.44, 0.28, 0.18, 0.10], k=1)[0]
         if project_key == 1:
-            start, planned_end = date(2024, 10, 1), date(2025, 10, 31)
-            forecast_end = date(2025, 12, 12)
+            start, planned_end = date(2025, 8, 15), date(2026, 6, 30)
+            forecast_end = date(2026, 8, 11)
             status, percent_complete, actual_end = "At Risk", 55.0, None
             approved_budget, baseline_budget, priority = 3_000_000.0, 2_800_000.0, "High"
         elif project_key == 4:
-            start, planned_end = date(2024, 6, 1), date(2025, 10, 15)
-            forecast_end = date(2025, 11, 29)
+            start, planned_end = date(2025, 8, 20), date(2026, 6, 15)
+            forecast_end = date(2026, 7, 30)
             status, percent_complete, actual_end = "Delayed", 62.0, None
             approved_budget, baseline_budget, priority = 3_600_000.0, 3_450_000.0, "High"
         elif project_key == 7:
-            start, planned_end = date(2024, 11, 1), date(2025, 11, 30)
-            forecast_end = date(2025, 12, 14)
+            start, planned_end = date(2025, 9, 1), date(2026, 7, 15)
+            forecast_end = date(2026, 8, 11)
             status, percent_complete, actual_end = "At Risk", 48.0, None
             approved_budget, baseline_budget, priority = 2_500_000.0, 2_500_000.0, "High"
         elif project_key == 9:
-            start, planned_end = date(2024, 7, 1), date(2025, 9, 30)
-            forecast_end = date(2025, 10, 15)
+            start, planned_end = date(2025, 8, 10), date(2026, 7, 1)
+            forecast_end = date(2026, 8, 11)
             status, percent_complete, actual_end = "At Risk", 60.0, None
             approved_budget, baseline_budget, priority = 2_800_000.0, 2_650_000.0, "High"
         if approved_budget < 1_750_000:
@@ -420,7 +435,7 @@ def build_dim_project(config: dict[str, Any], rng: random.Random) -> list[dict[s
             {
                 "ProjectKey": project_key,
                 "ProjectID": f"FORGE-{project_key:03d}",
-                "ProjectName": PROJECT_NAMES[project_key - 1],
+                "ProjectName": project_name(project_key),
                 "Program": program,
                 "ProjectManager": f"Project Manager {rng.choices(range(1, 11), weights=[14, 13, 12, 11, 10, 9, 8, 7, 5, 3], k=1)[0]:02d}",
                 "Sponsor": f"RDE Sponsor {rng.choices(range(1, 7), weights=[25, 21, 18, 15, 12, 9], k=1)[0]:02d}",
@@ -437,6 +452,35 @@ def build_dim_project(config: dict[str, Any], rng: random.Random) -> list[dict[s
                 "BudgetClass": budget_class,
             }
         )
+
+    benchmark = config.get("financial_benchmark", {})
+    target_budget = float(benchmark.get("target_portfolio_approved_budget_usd", 0.0))
+    if target_budget > 0:
+        fixed_keys = {1, 4, 7, 9}
+        fixed_total = sum(row["ApprovedBudget"] for row in rows if row["ProjectKey"] in fixed_keys)
+        scalable = [row for row in rows if row["ProjectKey"] not in fixed_keys]
+        if not scalable or fixed_total >= target_budget:
+            raise ValueError("Financial benchmark target cannot be allocated across the project portfolio")
+        allocations = allocate(
+            target_budget - fixed_total,
+            [row["ApprovedBudget"] for row in scalable],
+        )
+        for row, approved_budget in zip(scalable, allocations, strict=True):
+            baseline_ratio = row["BaselineBudget"] / row["ApprovedBudget"]
+            row["ApprovedBudget"] = approved_budget
+            row["BaselineBudget"] = round2(approved_budget * baseline_ratio)
+        for row in rows:
+            approved_budget = row["ApprovedBudget"]
+            if approved_budget < 1_750_000:
+                row["BudgetClass"] = "Small"
+            elif approved_budget < 3_500_000:
+                row["BudgetClass"] = "Medium"
+            elif approved_budget < 5_000_000:
+                row["BudgetClass"] = "Large"
+            else:
+                row["BudgetClass"] = "Strategic"
+        if abs(sum(row["ApprovedBudget"] for row in rows) - target_budget) > 0.01:
+            raise ValueError("Project approved budgets do not reconcile to the configured benchmark")
     return rows
 
 
@@ -650,14 +694,14 @@ def build_fact_labor(
                 + rng.gauss(0.0, 0.028)
             )
             base_util = 0.64 * employee_utilization[employee["EmployeeKey"]] + 0.36 * utilization_driver
-            if employee["TeamKey"] == 5 and date(2025, 1, 6) <= week_start <= as_of:
+            if employee["TeamKey"] == 5 and date(2026, 2, 2) <= week_start <= date(2026, 7, 27):
                 base_util = 0.678 + rng.gauss(0.0, 0.004)
                 overtime = 0.0
-            if employee["EmployeeKey"] in rate_mix_employees and date(2025, 3, 3) <= week_start <= as_of:
+            if employee["EmployeeKey"] in rate_mix_employees and date(2026, 2, 2) <= week_start <= as_of:
                 project_key = 9
                 base_util = rng.uniform(0.91, 0.965)
                 overtime = round(rng.uniform(3.5, 8.25) * 4) / 4
-            elif employee["EmployeeKey"] in overrun_employees and date(2025, 2, 3) <= week_start <= as_of:
+            elif employee["EmployeeKey"] in overrun_employees and date(2026, 1, 5) <= week_start <= as_of:
                 project_key = 1
                 base_util = rng.uniform(0.885, 0.945)
                 overtime = round(rng.uniform(4.0, 10.0) * 4) / 4
@@ -674,7 +718,7 @@ def build_fact_labor(
                 (project_hours - overtime) * employee["StandardLaborRate"]
                 + overtime * employee["StandardLaborRate"] * multiplier
             )
-            late_probability = 0.028 + (0.025 if week_start >= date(2025, 4, 1) else 0.0) + (0.018 if employee["EmploymentType"] == "Contractor" else 0.0)
+            late_probability = 0.028 + (0.025 if week_start >= date(2026, 2, 1) else 0.0) + (0.018 if employee["EmploymentType"] == "Contractor" else 0.0)
             late = rng.random() < late_probability
             submission_date = week_end + timedelta(days=round(rng.triangular(4, 14, 6)) if late else rng.choices([0, 1, 2, 3], weights=[18, 46, 29, 7], k=1)[0])
             source = rng.choices(
@@ -871,7 +915,7 @@ def build_fact_financial(
         material_weights = []
         budget_by_cell = dict(zip(cells, budget_allocations, strict=True))
         for month, category in material_other_cells:
-            frontload = 1.8 if project_key == 7 and month <= date(2025, 3, 1) else 1.0
+            frontload = 1.8 if project_key == 7 and month <= date(2026, 2, 1) else 1.0
             material_weights.append(max(0.01, budget_by_cell[(month, category)]) * frontload * rng.uniform(0.82, 1.18))
         material_allocations = dict(
             zip(material_other_cells, allocate(residual_actual, material_weights), strict=True)
@@ -896,6 +940,9 @@ def build_fact_financial(
         desired_eac = round2(max(actual_target, desired_eac))
         future_cells = [(month, category) for month, category in cells if month > month_start(as_of)]
         future_total = max(0.0, desired_eac - actual_target)
+        if future_total > 0 and not future_cells:
+            last_month = months[-1]
+            future_cells = [(month, category) for month, category in cells if month == last_month]
         forecast_weights = []
         for month, category in future_cells:
             weight = max(0.01, budget_by_cell[(month, category)]) * rng.uniform(0.92, 1.08)
@@ -956,7 +1003,7 @@ def build_fact_financial(
             actual_cost = round2(actual_labor + actual_material + actual_other)
             forecast = forecast_allocations.get((month, category), 0.0)
             commitment_rate = 0.0
-            if month > month_start(as_of):
+            if forecast > 0:
                 months_ahead = max(1, (month.year - as_of.year) * 12 + month.month - as_of.month)
                 category_commitment = 0.03 if category == "Other" else (0.06 if category == "Labor" else 0.14)
                 commitment_rate = min(0.62, max(0.12, 0.34 - 0.025 * months_ahead + category_commitment + rng.gauss(0.0, 0.045)))
@@ -1027,11 +1074,11 @@ def build_fact_milestone(
                 or name in {"Security Review", "Release Readiness", "System Validation"} and rng.random() < 0.35
             )
             if project_key == 1 and sequence == max(2, milestone_count // 2):
-                planned = date(2025, 2, 28)
+                planned = date(2026, 1, 30)
                 delay = 42
                 critical = 1
             if project_key == 4 and sequence == max(2, milestone_count // 2):
-                planned = date(2025, 4, 15)
+                planned = date(2026, 3, 15)
                 delay = 45
                 critical = 1
             forecast = planned + timedelta(days=delay)
@@ -1173,11 +1220,11 @@ def build_fact_risk_issue(
             if project["ProjectKey"] == 4 and sequence == 1:
                 category, probability, impact = "Dependency", 5, 5
                 record_type = "Issue"
-                identified, due = date(2025, 2, 15), date(2025, 4, 10)
+                identified, due = date(2025, 12, 15), date(2026, 2, 10)
                 status, mitigation = "Open", "Not Started"
             elif project["ProjectKey"] == 1 and sequence == 1:
                 category, probability, impact = "Cost", 5, 5
-                identified, due = date(2025, 3, 1), date(2025, 5, 15)
+                identified, due = date(2026, 1, 1), date(2026, 3, 15)
                 status, mitigation = "Monitoring", "In Progress"
             score = probability * impact
             severity = severity_from_score(score)
@@ -1271,7 +1318,7 @@ def build_fact_workforce_plan(
                     contractor_fte = min(contractor_fte, actual_fte)
                 location_actual.append(round2(actual_fte))
                 location_contractor.append(round2(contractor_fte))
-            if month >= date(2025, 7, 1) and team_key in target_required:
+            if month >= date(2026, 3, 1) and team_key in target_required:
                 required_total = target_required[team_key]
             else:
                 growth = 1.0 + 0.0022 * month_index
@@ -1334,6 +1381,11 @@ def build_manifest(
         "start_date": config["start_date"],
         "end_date": config["end_date"],
         "data_as_of_date": config["data_as_of_date"],
+        "project_count": config["project_count"],
+        "employee_count": config["employee_count"],
+        "labor_record_min": config["labor_record_min"],
+        "labor_record_max": config["labor_record_max"],
+        "financial_benchmark": config.get("financial_benchmark", {}),
         "table_count": len(tables),
         "files": files,
     }

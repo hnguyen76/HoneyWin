@@ -442,7 +442,7 @@ def artificiality_flags(tables: dict[str, pd.DataFrame], business: dict[str, Any
     if budget_round > 0.5:
         add("DimProject", "Approved budgets on $50K grid", budget_round, "Too many round portfolio approvals look hand-authored.")
     if project["StartDate"].nunique() < 15:
-        add("DimProject", "Distinct planned start dates", project["StartDate"].nunique(), "25 projects share too few launch dates.")
+        add("DimProject", "Distinct planned start dates", project["StartDate"].nunique(), "The portfolio shares too few launch dates.")
     if project["Program"].value_counts().nunique() == 1:
         add("DimProject", "Program counts", project["Program"].value_counts().to_dict(), "Every program has exactly the same project count.")
 
@@ -474,7 +474,7 @@ def artificiality_flags(tables: dict[str, pd.DataFrame], business: dict[str, Any
 
     workforce = tables["FactWorkforcePlan"]
     if business["workforce"]["monthly_actual_std"] < 0.05:
-        add("FactWorkforcePlan", "Monthly actual FTE standard deviation", business["workforce"]["monthly_actual_std"], "Workforce is perfectly flat across 24 months.")
+        add("FactWorkforcePlan", "Monthly actual FTE standard deviation", business["workforce"]["monthly_actual_std"], "Workforce is perfectly flat across the simulation window.")
     small_demand = ((workforce["ActualFTE"] == 0) & workforce["RequiredFTE"].between(0.01, 0.49)).sum()
     if small_demand > 50:
         add("FactWorkforcePlan", "Tiny demand in zero-staff locations", int(small_demand), "Demand allocation scatters implausible fractions across empty locations.")

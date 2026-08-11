@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import json
 import tempfile
 import unittest
@@ -31,19 +32,33 @@ class ForgeDataPipelineTests(unittest.TestCase):
         cls.temp_two.cleanup()
 
     def test_default_scope(self) -> None:
-        self.assertEqual(self.config["project_count"], 25)
+        self.assertEqual(self.config["project_count"], 1000)
         self.assertEqual(self.config["employee_count"], 120)
-        self.assertEqual(self.config["start_date"], "2024-01-01")
-        self.assertEqual(self.config["end_date"], "2025-12-31")
+        self.assertEqual(self.config["start_date"], "2025-08-01")
+        self.assertEqual(self.config["end_date"], "2026-08-11")
+        self.assertEqual(self.config["data_as_of_date"], "2026-08-11")
         self.assertEqual(self.manifest_one["table_count"], 11)
 
     def test_required_row_counts(self) -> None:
         rows = {item["table"]: item["row_count"] for item in self.manifest_one["files"]}
-        self.assertEqual(rows["DimDate"], 731)
-        self.assertEqual(rows["DimProject"], 25)
+        self.assertEqual(rows["DimDate"], 376)
+        self.assertEqual(rows["DimProject"], 1000)
         self.assertEqual(rows["DimEmployee"], 120)
-        self.assertGreaterEqual(rows["FactLabor"], 8_000)
-        self.assertLessEqual(rows["FactLabor"], 20_000)
+        self.assertGreaterEqual(rows["FactLabor"], self.config["labor_record_min"])
+        self.assertLessEqual(rows["FactLabor"], self.config["labor_record_max"])
+
+    def test_financial_benchmark_scale(self) -> None:
+        benchmark = self.config["financial_benchmark"]
+        self.assertEqual(benchmark["net_sales_usd"], 38_057_000_000)
+        self.assertEqual(benchmark["cost_of_products_and_services_usd"], 24_162_000_000)
+        self.assertEqual(benchmark["total_rd_cost_usd"], 3_070_000_000)
+        with (self.output_one / "DimProject.csv").open(encoding="utf-8") as handle:
+            approved_total = sum(float(row["ApprovedBudget"]) for row in csv.DictReader(handle))
+        self.assertAlmostEqual(
+            approved_total,
+            benchmark["target_portfolio_approved_budget_usd"],
+            places=2,
+        )
 
     def test_intentional_defects_are_exact(self) -> None:
         defects = self.manifest_one["intentional_labor_data_quality"]

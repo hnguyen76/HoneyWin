@@ -24,12 +24,13 @@ Required analysis areas:
 | Attribute | Default | Rationale / convention |
 |---|---|---|
 | Random seed | `20250810` | The same configuration must produce byte-identical CSV files. |
-| Data range | `2024-01-01`–`2025-12-31` | Exactly 24 calendar months. |
-| Data as-of date | `2025-06-30` | Separates actual and forecast periods for EAC and workforce planning. |
+| Data range | `2025-08-01`–`2026-08-11` | Requested simulation window through the current as-of date. |
+| Data as-of date | `2026-08-11` | Latest synthetic portfolio reporting date. |
 | Fiscal calendar | January–December | The source requires a defined fiscal calendar but does not prescribe a start month. |
-| Projects | 25 | Within the requested 20–30 range. |
+| Projects | 1,000 | Requested portfolio scale. |
 | Employees / contractors | 120 | Within the requested 80–150 range. |
-| Labor fact size | 8,000–20,000 | Active employee–project–week entries plus controlled duplicates. |
+| Labor fact size | 6,000–15,000 | Active employee–project–week entries plus controlled duplicates. |
+| Approved portfolio budget | `$3.070B` | Calibrated to the closest fully reported Honeywell trailing-12-month total R&D cost benchmark. |
 | CSV tables | 11 | Exact required table list. |
 | Business anomalies | 7 | Each has a signal, root cause, drill path, recommendation, and impact. |
 | Hours per FTE per month | 160 | Explicit workforce-capacity assumption. |
@@ -38,23 +39,26 @@ Required analysis areas:
 Assumptions not prescribed by the source are documented here and are never
 presented as real company facts.
 
+The [public financial benchmark](honeywell_financial_benchmark.md) documents the
+Honeywell/SEC sources and derivation used only to calibrate portfolio scale.
+
 ## 3. Model design
 
 ### 3.1 Table grains and expected volume
 
 | Table | Grain | Default rows / range |
 |---|---|---:|
-| `DimDate` | Calendar date | 731 |
-| `DimProject` | RDE project | 25 |
+| `DimDate` | Calendar date | 376 |
+| `DimProject` | RDE project | 1,000 |
 | `DimEmployee` | Employee or contractor | 120 |
 | `DimTeam` | Engineering team | 8 |
 | `DimSkill` | Workforce skill | 8 |
-| `BridgeEmployeeSkill` | Effective employee–skill assignment | 120–360; final 216 |
-| `FactLabor` | Employee–project–week time entry | 8,000–20,000; final 8,172 raw |
-| `FactFinancial` | Project–month–cost category | Up to 2,400; final 1,180 |
-| `FactMilestone` | Project milestone | 125–300; final 201 |
-| `FactWorkforcePlan` | Month–team–skill–location snapshot | Approximately 768 |
-| `FactRiskIssue` | Project risk or issue | Approximately 75–175; final 118 |
+| `BridgeEmployeeSkill` | Effective employee–skill assignment | 120–360; final 218 |
+| `FactLabor` | Employee–project–week time entry | 6,000–15,000; final 6,509 raw |
+| `FactFinancial` | Project–month–cost category | Final 26,460 |
+| `FactMilestone` | Project milestone | Final 8,010 |
+| `FactWorkforcePlan` | Month–team–skill–location snapshot | Final 416 |
+| `FactRiskIssue` | Project risk or issue | Final 5,002 |
 
 ### 3.2 Relationship rules
 
@@ -101,7 +105,7 @@ Surrogate keys are stable integers. Business keys (`ProjectID`, `EmployeeID`,
   Sunday ending the work week.
 - Overtime is included in the numerator but not added to the available-hours
   denominator, so utilization can exceed 100% and must be read with overtime.
-- 169 employee-weeks are validly split across two projects. Scheduled,
+- 176 employee-weeks are validly split across two projects. Scheduled,
   available, PTO, project, non-project, and overtime hours are allocated rather
   than duplicated.
 
@@ -148,8 +152,8 @@ Surrogate keys are stable integers. Business keys (`ProjectID`, `EmployeeID`,
 
 - Project starts use irregular day-level dates. Program, manager, sponsor, and
   team assignments use weighted demand rather than round-robin allocation.
-- Approved budgets use $5,000 approval granularity, project-specific cost mixes,
-  and front-, bell-, or back-loaded monthly phase curves.
+- Approved budgets are benchmark-scaled to exactly $3.070 billion with
+  project-specific cost mixes and front-, bell-, or back-loaded monthly phase curves.
 - Hire/exit timing, locations, contractor mix, rates, and utilization targets
   vary by team; resource names are synthetic pseudonyms.
 - Labor includes persistent employee behavior, seasonality, team demand,
@@ -167,11 +171,11 @@ Surrogate keys are stable integers. Business keys (`ProjectID`, `EmployeeID`,
 | ID | Required signal | Cross-table root cause | Drill path | Recommended action / impact |
 |---|---|---|---|---|
 | `A01` | `FORGE-001`: 55% complete, 70% consumed, EAC $400K above approved budget. | Critical milestone delay increases contractor/overtime and committed cost. | Project → financial month/category → labor employee/week → milestone. | Reforecast, control scope, and replace suitable contractor work with employees. |
-| `A02` | QA utilization near 68% versus an 85% target in Jan–Jun 2025. | Normal availability but low project allocation and high non-project/bench time. | Team → employee → week → project/time mix. | Reallocate QA, improve assignments and demand planning; do not infer individual performance. |
-| `A03` | Jul–Dec 2025: Software 25/30 FTE, Data 12/14; Systems 18/17, Mechanical 22/19. | Skill adjacency prevents excess capacity from filling the full shortage. | Month → skill → team/location → employee-skill bridge. | Cross-train adjacent skills, use short-term contractors, or hire if the gap persists. |
+| `A02` | QA utilization near 68% versus an 85% target in Feb–Jul 2026. | Normal availability but low project allocation and high non-project/bench time. | Team → employee → week → project/time mix. | Reallocate QA, improve assignments and demand planning; do not infer individual performance. |
+| `A03` | Mar–Aug 2026: Software ~25/30 FTE, Data ~12/14; Systems ~18/17, Mechanical ~22/19. | Skill adjacency prevents excess capacity from filling the full shortage. | Month → skill → team/location → employee-skill bridge. | Cross-train adjacent skills, use short-term contractors, or hire if the gap persists. |
 | `A04` | `FORGE-004` has a 45-day critical milestone delay and a later forecast finish. | Open dependency plus higher committed material/contractor cost. | Project → critical milestone → risk category → financial month/category. | Escalate the dependency and assign recovery-plan accountability. |
-| `A05` | `FORGE-009` labor hours are near plan but labor cost is more than 15% unfavorable. | Contractor and overtime rate mix increases after March 2025. | Project → labor cost category → employment type → overtime week. | Change rate mix, cap overtime, and move suitable work to employees. |
-| `A06` | Labor KPIs change before versus after cleansing. | 15 duplicate natural keys, 12 incomplete rows, and 297 late submissions. | QA result → LaborRecordID → employee/project/week. | Deduplicate, reject incomplete rows, validate entry, and follow up on compliance. |
+| `A05` | `FORGE-009` labor hours are near plan but labor cost is more than 15% unfavorable. | Contractor and overtime rate mix increases after February 2026. | Project → labor cost category → employment type → overtime week. | Change rate mix, cap overtime, and move suitable work to employees. |
+| `A06` | Labor KPIs change before versus after cleansing. | 15 duplicate natural keys, 12 incomplete rows, and 266 late submissions. | QA result → LaborRecordID → employee/project/week. | Deduplicate, reject incomplete rows, validate entry, and follow up on compliance. |
 | `A07` | `FORGE-007` is 48% complete but has consumed 68% of budget. | Front-loaded material/other spend and burn ahead of progress. | Project → financial month/category → milestone completion. | Apply a spend gate, review scope, and reforecast early. |
 
 These are deterministic business scenarios, not independent random outliers.
@@ -201,8 +205,9 @@ These are deterministic business scenarios, not independent random outliers.
 
 ## 9. Acceptance criteria
 
-- Exactly 24 months, 25 projects, 120 employees/contractors, and 11 CSV tables.
-- `FactLabor` contains 8,000–20,000 rows.
+- Exactly 376 dates, 1,000 projects, 120 employees/contractors, and 11 CSV tables.
+- `FactLabor` contains 6,000–15,000 rows.
+- Approved project budgets reconcile to the documented $3.070 billion public R&D benchmark scale.
 - Fixed seed and configuration produce byte-identical outputs and manifest hashes.
 - No orphan foreign keys outside nullable role-playing date keys.
 - Project monthly budgets reconcile to approved budget.

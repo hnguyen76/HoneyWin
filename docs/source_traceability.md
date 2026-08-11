@@ -12,7 +12,7 @@
 |---|---|---|
 | 1–2 | FORGE RDE/PMO business purpose; synthetic/interview-only classification; SAP-style analytics flow. | `README.md`, data specification, manifest metadata. |
 | 3 | Utilization numerator/denominator, target gap, segmentation and root-cause framework. | Labor dictionary/rules, generator, QA and DAX labor folder. |
-| 5 | 24–36 months, 20–30 projects, 80–150 people, 8K–20K labor rows and exact 11-table list/grains. | Default config selects 24/25/120; generator produces exactly the 11 named CSVs and 8,172 raw labor rows. |
+| 5 | Original brief: 24–36 months, 20–30 projects, 80–150 people, 8K–20K labor rows and exact 11-table list/grains. | A later user-approved scale override sets 2025-08-01–2026-08-11, 1,000 projects, 120 resources, 6,509 raw labor rows, and the same 11 named CSVs/grains. |
 | 6 | Seven causal anomalies and cross-table drill-through requirements. | Controlled A01–A07 specification, deterministic generation and `quality/anomaly_evidence.csv`. |
 | 7 | Conformed dimensions, star schema, single-direction relationships, canonical date and measure-table rule. | `powerbi/model_setup.md` and DAX measure table instructions. |
 | 8 | Five dashboard page KPI sets, financial/utilization/workforce formulas, sign conventions and health thresholds. | `powerbi/measures.dax`, measure catalog and QA threshold checks. |
@@ -25,7 +25,10 @@
 The source requires these items to be fixed but does not prescribe their exact value. They are therefore stated explicitly instead of being presented as Honeywell facts:
 
 - Calendar-year fiscal calendar (January start).
-- Data range 2024-01-01–2025-12-31 and data as-of 2025-06-30.
+- Data range 2025-08-01–2026-08-11 and data as-of 2026-08-11.
+- Portfolio approved-budget scale is calibrated to the documented $3.070B
+  Honeywell public trailing-12-month total R&D benchmark; all row-level data
+  remains synthetic.
 - Eight-hour workday and 160 hours/FTE/month.
 - Synthetic team, project, resource, location and owner labels.
 - USD as the mock reporting currency.

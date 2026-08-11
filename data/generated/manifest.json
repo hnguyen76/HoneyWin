@@ -2,28 +2,44 @@
   "dataset": "FORGE RDE PMO synthetic portfolio",
   "data_classification": "Synthetic / interview portfolio only",
   "random_seed": 20250810,
-  "start_date": "2024-01-01",
-  "end_date": "2025-12-31",
-  "data_as_of_date": "2025-06-30",
+  "start_date": "2025-08-01",
+  "end_date": "2026-08-11",
+  "data_as_of_date": "2026-08-11",
+  "project_count": 1000,
+  "employee_count": 120,
+  "labor_record_min": 6000,
+  "labor_record_max": 15000,
+  "financial_benchmark": {
+    "basis": "Honeywell consolidated trailing twelve months ending 2026-06-30",
+    "period_start": "2025-07-01",
+    "period_end": "2026-06-30",
+    "currency": "USD",
+    "net_sales_usd": 38057000000,
+    "cost_of_products_and_services_usd": 24162000000,
+    "company_funded_rd_usd": 1953000000,
+    "customer_sponsored_rd_usd": 1117000000,
+    "total_rd_cost_usd": 3070000000,
+    "target_portfolio_approved_budget_usd": 3070000000
+  },
   "table_count": 11,
   "files": [
     {
       "table": "DimDate",
       "file": "DimDate.csv",
-      "row_count": 731,
-      "sha256": "50e8ac4c01ccbeaaefa476dc33da7f09265f1588dbca9062c09970ec3693971d"
+      "row_count": 376,
+      "sha256": "1c67c02f40d8104a64d1993e777773756b124273c1a367d7352a5e79ab4af84a"
     },
     {
       "table": "DimProject",
       "file": "DimProject.csv",
-      "row_count": 25,
-      "sha256": "57d4f82d3aec6c61396194d22a43ee475b0031d61366e3a6ab5364a99df400ce"
+      "row_count": 1000,
+      "sha256": "410edd5c129e706b11a4f9b0802f44d0abda0260229b9b8f6620fe4a9ca9b5d5"
     },
     {
       "table": "DimEmployee",
       "file": "DimEmployee.csv",
       "row_count": 120,
-      "sha256": "a3a32acdb6a0f0f55b248df23fbd17bb7c19bacf3c22df946a053c0c4d297fff"
+      "sha256": "85e27d5a4166901e65ec2e2c9f15f2d4c3250a409c5a6c55846ad11050b53b01"
     },
     {
       "table": "DimTeam",
@@ -40,43 +56,43 @@
     {
       "table": "BridgeEmployeeSkill",
       "file": "BridgeEmployeeSkill.csv",
-      "row_count": 216,
-      "sha256": "bd3d8b0ef96f1837ca808239d044d615a679b854d0135beeacb2065e00e89785"
+      "row_count": 218,
+      "sha256": "7a104be424648f83a1f3d923f9da4c92ab8725ec338b95b896083a597bb1ce15"
     },
     {
       "table": "FactLabor",
       "file": "FactLabor.csv",
-      "row_count": 8172,
-      "sha256": "c2542cdbf2b230c8415077ef63f5854928e33b5a13fb85e0d6636feff1e3d0f9"
+      "row_count": 6509,
+      "sha256": "6b39095b6dcdd1256247c3b1c4b59f8041cb452948f2c926891c706516d67f3d"
     },
     {
       "table": "FactFinancial",
       "file": "FactFinancial.csv",
-      "row_count": 1180,
-      "sha256": "c7f7de8433e22126588585da242fb0b8d67b066adce79148795169cf912e01c8"
+      "row_count": 26460,
+      "sha256": "021ad8bff4c635f386df5407aa98c345200fde8aea019a554bcf9cf82765075f"
     },
     {
       "table": "FactMilestone",
       "file": "FactMilestone.csv",
-      "row_count": 201,
-      "sha256": "3dae11bb1b5f7ba01754e26962bb44ee5da2d04fbb3b71311dd44dfb6edc077c"
+      "row_count": 8010,
+      "sha256": "de7a9936654c90b796e9bd9eb692ca2c3bc5ccdc894e07ce6ef88aa4ceba84e8"
     },
     {
       "table": "FactWorkforcePlan",
       "file": "FactWorkforcePlan.csv",
-      "row_count": 768,
-      "sha256": "30a8434ba0fb35cdf3aa66d4e0182522f7636dbb131da97dd6448518e4e4b78b"
+      "row_count": 416,
+      "sha256": "bf9cde71afed32064256f30afcb7608a397e582c5583a74b8f6678f925eeb0c3"
     },
     {
       "table": "FactRiskIssue",
       "file": "FactRiskIssue.csv",
-      "row_count": 118,
-      "sha256": "50bf67fd52dc157e2670ae2132b68c333555529faae50f832cb2a09733de8df9"
+      "row_count": 5002,
+      "sha256": "3b83cdbc9a7efa7090974e10fd50e0c4fb75d83c2e06764c3e42deec74457fe5"
     }
   ],
   "intentional_labor_data_quality": {
-    "base_rows": 8157,
-    "multi_project_split_rows": 169,
+    "base_rows": 6494,
+    "multi_project_split_rows": 176,
     "missing_rows": 12,
     "duplicate_rows": 15
   }

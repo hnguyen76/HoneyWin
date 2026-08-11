@@ -2,8 +2,9 @@
 
 These screenshots show the final Microsoft Fluent report at its documented
 portfolio baseline: all slicers are set to **All**, no cross-highlight is active,
-and each page is captured from the native 1200×675 report canvas. All names and
-values are synthetic interview/demo data rather than Honeywell operating results.
+and each page is captured as a clean 1078×574 report-canvas view from Power BI
+Desktop with the ribbon and authoring panes excluded. All names and values are
+synthetic interview/demo data rather than Honeywell operating results.
 
 ## Executive Overview
 

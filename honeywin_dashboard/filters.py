@@ -18,19 +18,21 @@ PAGE_NAMES = (
     "Labor Utilization",
     "Workforce Capacity",
     "Governance & Risk",
+    "Business Insights & Actions",
 )
 
 
 def render_navigation() -> str:
-    """Render the five-experience navigation control."""
+    """Render navigation that remains available when the sidebar is collapsed."""
 
     st.sidebar.markdown("<div class='brand-mark'>HONEYWIN</div>", unsafe_allow_html=True)
     st.sidebar.caption("RDE / PMO portfolio analytics")
-    return st.sidebar.radio(
-        "Dashboard",
+    st.sidebar.caption("Use the Dashboard page selector above the report to change views.")
+    return st.selectbox(
+        "Dashboard page",
         PAGE_NAMES,
         key="dashboard_page",
-        help="Choose a portfolio analytics experience.",
+        help="Choose a portfolio analytics experience. This control remains visible when the sidebar is collapsed.",
     )
 
 
@@ -99,6 +101,9 @@ def _multi_filter(label: str, options: Iterable[Any], key: str) -> list[Any]:
 
 def render_page_filters(page: str, data: FilteredData) -> dict[str, list[Any]]:
     """Render filters supported by the selected experience and its data grain."""
+
+    if page == "Business Insights & Actions":
+        return {}
 
     st.sidebar.divider()
     st.sidebar.markdown("### Page filters")
