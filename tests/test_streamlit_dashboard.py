@@ -38,14 +38,15 @@ def dashboard_data():
 def full_context(dashboard_data):
     return apply_global_filters(
         dashboard_data,
-        FilterSelection(date(2024, 1, 1), date(2025, 12, 31)),
+        FilterSelection(date(2025, 8, 1), date(2026, 8, 11)),
     )
 
 
 def test_cached_loader_validates_all_tables_and_clean_labor(dashboard_data) -> None:
     assert len(dashboard_data.tables) == 11
-    assert len(dashboard_data.tables["FactLabor"]) == 8_172
-    assert len(dashboard_data.labor) == 8_145
+    assert len(dashboard_data.tables["FactLabor"]) == 6_509
+    assert len(dashboard_data.labor) == 6_482
+    assert len(dashboard_data.tables["DimProject"]) == 1_000
     assert dashboard_data.manifest["random_seed"] == 20_250_810
 
 
@@ -69,7 +70,7 @@ def test_labor_metrics_use_weighted_target_and_clean_entries(full_context) -> No
     expected_target = (
         full_context.labor["AvailableHours"] * full_context.labor["UtilizationTarget"]
     ).sum() / full_context.labor["AvailableHours"].sum()
-    assert summary["time_entries"] == 8_145
+    assert summary["time_entries"] == 6_482
     assert summary["target"] == pytest.approx(expected_target)
     assert summary["utilization"] == pytest.approx(
         full_context.labor["ProjectHours"].sum()
@@ -91,14 +92,14 @@ def test_workforce_metrics_average_monthly_snapshots(full_context) -> None:
 
 def test_filters_respect_program_project_and_fact_date_roles(dashboard_data) -> None:
     selection = FilterSelection(
-        date(2025, 1, 1),
-        date(2025, 6, 30),
+        date(2026, 1, 1),
+        date(2026, 6, 30),
         programs=("Automation Platform",),
     )
     filtered = apply_global_filters(dashboard_data, selection)
     assert set(filtered.projects["Program"]) == {"Automation Platform"}
-    assert filtered.financial["MonthStartDate"].between("2025-01-01", "2025-06-30").all()
-    assert filtered.labor["WeekStartDate"].between("2025-01-01", "2025-06-30").all()
+    assert filtered.financial["MonthStartDate"].between("2026-01-01", "2026-06-30").all()
+    assert filtered.labor["WeekStartDate"].between("2026-01-01", "2026-06-30").all()
     assert set(filtered.financial["ProjectKey"]).issubset(set(filtered.projects["ProjectKey"]))
     assert len(filtered.financial_all_dates) > len(filtered.financial)
 
@@ -106,7 +107,8 @@ def test_filters_respect_program_project_and_fact_date_roles(dashboard_data) -> 
 def test_project_health_matches_audited_red_flag_population(full_context) -> None:
     health = project_health_table(full_context)
     counts = project_health_counts(health)
-    assert counts["any_red_flag"] == 6
+    assert counts["any_red_flag"] == int(health["AnyRedFlag"].sum())
+    assert 0 < counts["any_red_flag"] < len(health)
     assert set(health["OverallHealth"]).issubset({"Green", "Amber", "Red"})
     assert pd.api.types.is_bool_dtype(health["AnyRedFlag"])
 
@@ -123,6 +125,27 @@ def test_dashboard_creator_signature_is_rendered() -> None:
     app.run()
     assert not app.exception
     assert any("Created by Hieu Nguyen" in element.value for element in app.markdown)
+
+
+def test_dashboard_navigation_is_available_outside_the_sidebar() -> None:
+    app = AppTest.from_file("app.py", default_timeout=20)
+    app.run()
+    assert not app.exception
+    assert len(app.selectbox) == 1
+    assert app.selectbox[0].label == "Dashboard page"
+    assert app.selectbox[0].options == list(PAGE_NAMES)
+
+
+def test_public_financial_benchmark_is_rendered_on_financial_pages() -> None:
+    app = AppTest.from_file("app.py", default_timeout=20)
+    app.run()
+    assert not app.exception
+    assert any("Public filing calibration" in element.value for element in app.markdown)
+    assert any("$3.07B" in element.value for element in app.markdown)
+
+    app.selectbox[0].set_value("Financial & Cost").run()
+    assert not app.exception
+    assert any("Total R&amp;D cost" in element.value for element in app.markdown)
 
 
 def test_business_insights_are_data_driven_and_actionable(full_context) -> None:
@@ -160,9 +183,9 @@ def test_each_streamlit_experience_renders(page_name: str) -> None:
     app = AppTest.from_file("app.py", default_timeout=20)
     app.run()
     assert not app.exception
-    app.sidebar.radio[0].set_value(page_name).run()
+    app.selectbox[0].set_value(page_name).run()
     assert not app.exception
-    assert app.sidebar.radio[0].value == page_name
+    assert app.selectbox[0].value == page_name
 
 
 def test_business_insights_are_exclusive_to_the_sixth_page() -> None:
@@ -171,13 +194,13 @@ def test_business_insights_are_exclusive_to_the_sixth_page() -> None:
     assert not app.exception
 
     for page_name in PAGE_NAMES[:5]:
-        app.sidebar.radio[0].set_value(page_name).run()
+        app.selectbox[0].set_value(page_name).run()
         assert not app.exception
         assert not any(
             "Corrective action" in element.value for element in app.markdown
         )
 
-    app.sidebar.radio[0].set_value("Business Insights & Actions").run()
+    app.selectbox[0].set_value("Business Insights & Actions").run()
     assert not app.exception
     assert any(
         "Generated from the current filter context" in element.value

@@ -10,6 +10,8 @@ Dashboard link: https://honeywin-powerbi-dashboard.streamlit.app/
 
 [![Streamlit Executive Overview](docs/assets/streamlit/executive-overview.png)](docs/streamlit_gallery.md)
 
+[![Power BI Executive Overview](docs/assets/dashboard/executive-overview.png)](docs/dashboard_gallery.md)
+
 Review the [interactive dashboard gallery](docs/streamlit_gallery.md), the
 [Power BI gallery](docs/dashboard_gallery.md), or the
 [full realism and optimization audit](quality/full_realism_optimization_report.md).
@@ -24,11 +26,11 @@ Review the [interactive dashboard gallery](docs/streamlit_gallery.md), the
   target bands, accessible conditional colors, Plotly tooltips, and detail tables.
 - A dedicated, filter-aware sixth page consolidates supported financial, labor,
   capacity, schedule, and risk insights with recommended corrective actions.
-- Eleven linked CSV tables covering 24 months, 25 projects, and 120 synthetic
+- Eleven linked CSV tables covering 2025-08-01 through 2026-08-11, 1,000 projects, and 120 synthetic
   employees/contractors.
 - Fixed random seed `20250810`, deterministic CSV output, and SHA-256 manifest.
 - Seven controlled business anomalies with cross-table root-cause evidence.
-- Audited Power BI model with 70 DAX measures, 12 semantic tables, and 20 relationships.
+- Power BI model assets defining 70 DAX measures, 12 semantic tables, and 20 relationships.
 - Automated data, calculation, rendering, startup, link, and reproducibility tests.
 
 ## Interactive application
@@ -81,30 +83,34 @@ status colors.
 
 Default scope:
 
-- Date range: 2024-01-01 through 2025-12-31; data as of 2025-06-30.
-- 25 FORGE-style synthetic RDE projects.
+- Date range: 2025-08-01 through 2026-08-11; data as of 2026-08-11.
+- 1,000 FORGE-style synthetic RDE projects.
 - 120 synthetic employees and contractors.
-- 8,172 raw labor records; 8,145 after reject-and-deduplicate cleansing.
+- 6,509 raw labor records; 6,482 after reject-and-deduplicate cleansing.
 - 11 UTF-8 Power BI-ready CSV tables.
 - 7 deterministic anomaly/root-cause scenarios.
+- $3.070 billion total approved portfolio budget, calibrated to Honeywell's
+  closest fully reported trailing-12-month total R&D cost benchmark.
 
 | Table | Rows | Grain |
 |---|---:|---|
-| `DimDate` | 731 | Calendar date |
-| `DimProject` | 25 | Project |
+| `DimDate` | 376 | Calendar date |
+| `DimProject` | 1,000 | Project |
 | `DimEmployee` | 120 | Employee or contractor |
 | `DimTeam` | 8 | Engineering team |
 | `DimSkill` | 8 | Workforce skill |
-| `BridgeEmployeeSkill` | 216 | Employee–skill association |
-| `FactLabor` | 8,172 | Employee–project–week time entry |
-| `FactFinancial` | 1,180 | Project–month–cost category |
-| `FactMilestone` | 201 | Project milestone |
-| `FactWorkforcePlan` | 768 | Month–team–skill–location snapshot |
-| `FactRiskIssue` | 118 | Project risk or issue |
+| `BridgeEmployeeSkill` | 218 | Employee–skill association |
+| `FactLabor` | 6,509 | Employee–project–week time entry |
+| `FactFinancial` | 26,460 | Project–month–cost category |
+| `FactMilestone` | 8,010 | Project milestone |
+| `FactWorkforcePlan` | 416 | Month–team–skill–location snapshot |
+| `FactRiskIssue` | 5,002 | Project risk or issue |
 
 See the [data specification](docs/data_specification.md) and
 [data dictionary](docs/data_dictionary.md) for grains, keys, definitions, and
-business rules.
+business rules. The [public financial benchmark](docs/honeywell_financial_benchmark.md)
+documents the SEC/Honeywell sources, derivation, accounting caveats, and how the
+benchmark is used without presenting synthetic records as company actuals.
 
 ## Data refresh and Power BI assets
 
@@ -142,30 +148,29 @@ python scripts\check_repo_links.py
 
 Current audited acceptance results:
 
-- Data QA: 50 PASS, 4 expected anomaly warnings, 0 unexpected failures.
-- Reproducibility and application tests: 24 passed.
+- Data QA: 53 PASS, 4 expected anomaly warnings, 0 unexpected failures.
+- Reproducibility and application tests: 27 passed.
 - Realism audit: 0 final artificiality flags, down from 14 at baseline.
 - Referential integrity: 0 orphan keys and 0 impossible-date conditions.
-- Live Power BI model: 12 semantic tables (11 source tables plus `DimLocation`),
-  70/70 DAX measures, 16 active and 4 inactive relationships.
+- Refreshed local PBIX: all five pages rendered successfully against the
+  1,000-project dataset on 2026-08-11. The last structure audit found 12
+  semantic tables (11 source tables plus `DimLocation`), 70/70 DAX measures,
+  and 16 active plus 4 inactive relationships.
 - Streamlit browser review: six pages rendered without application errors;
   1440×1000 wide captures and a 900-pixel responsive overflow check passed.
 
-## Optional Streamlit Community Cloud deployment
+## Streamlit Community Cloud deployment
 
-This repository hosts source code and preview assets only. No external service
-has been deployed or authorized.
+The dashboard is deployed at
+[honeywin-powerbi-dashboard.streamlit.app](https://honeywin-powerbi-dashboard.streamlit.app/).
+Streamlit Community Cloud currently tracks the
+`agent/honeywin-powerbi-audit-delivery` branch with `app.py` as the entry point,
+so pushes to that branch trigger a redeployment. The application requires no
+secrets. Access may require Streamlit sign-in depending on the workspace sharing
+configuration.
 
-To deploy separately through Streamlit Community Cloud:
-
-1. Merge or select the desired GitHub branch in Streamlit Community Cloud.
-2. Create an app pointing to this repository and set the entry point to `app.py`.
-3. Use a supported Python version and install from `requirements.txt`.
-4. Do not add secrets; this application requires none.
-5. Confirm the health page, all six navigation states, and the committed QA suite
-   after deployment.
-
-A live URL will not exist until that separate hosting step is explicitly completed.
+After a deployment, confirm the health page, all six navigation states, and the
+committed QA suite.
 
 ## Data classification
 

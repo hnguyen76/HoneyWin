@@ -23,15 +23,16 @@ PAGE_NAMES = (
 
 
 def render_navigation() -> str:
-    """Render the six-page navigation control."""
+    """Render navigation that remains available when the sidebar is collapsed."""
 
     st.sidebar.markdown("<div class='brand-mark'>HONEYWIN</div>", unsafe_allow_html=True)
     st.sidebar.caption("RDE / PMO portfolio analytics")
-    return st.sidebar.radio(
-        "Dashboard",
+    st.sidebar.caption("Use the Dashboard page selector above the report to change views.")
+    return st.selectbox(
+        "Dashboard page",
         PAGE_NAMES,
         key="dashboard_page",
-        help="Choose a portfolio analytics experience.",
+        help="Choose a portfolio analytics experience. This control remains visible when the sidebar is collapsed.",
     )
 
 

@@ -56,6 +56,7 @@ from .metrics import (
 from .style import (
     ThemeTokens,
     apply_app_style,
+    benchmark_strip,
     empty_state,
     format_currency,
     format_number,
@@ -158,6 +159,7 @@ def _render_executive(
         "Portfolio performance, forecast exposure, and the projects that require attention.",
         _filter_context(selection, len(projects)),
     )
+    benchmark_strip(data.manifest.get("financial_benchmark", {}))
     if projects.empty:
         empty_state("No projects match the current portfolio filters.")
         return
@@ -291,6 +293,7 @@ def _render_financial(
         "Budget consumption, forecast exposure, cost mix, and project-level variance.",
         _filter_context(selection, len(data.projects)),
     )
+    benchmark_strip(data.manifest.get("financial_benchmark", {}))
     if financial.empty and all_dates.empty:
         empty_state("No financial records match the selected filters.")
         return
@@ -742,6 +745,6 @@ def run_dashboard() -> None:
     renderers[page](filtered, selection, page_filters, tokens)
     st.caption(
         f"Synthetic interview/demo dataset · Fixed seed {data.manifest['random_seed']} · "
-        f"Data as of {data.manifest['data_as_of_date']} · No external data connection"
+        f"Data as of {data.manifest['data_as_of_date']} · Public financial benchmark metadata only"
     )
     render_signature()

@@ -1,26 +1,1001 @@
 ProjectKey,ProjectID,ProjectName,Program,ProjectManager,Sponsor,PrimaryTeamKey,StartDate,PlannedEndDate,ForecastEndDate,ActualEndDate,ProjectStatus,Priority,PercentComplete,ApprovedBudget,BaselineBudget,BudgetClass
-1,FORGE-001,Connected Asset Insights,Digital Reliability,Project Manager 09,RDE Sponsor 02,3,2024-10-01,2025-10-31,2025-12-12,,At Risk,High,55.0,3000000.0,2800000.0,Medium
-2,FORGE-002,Predictive Maintenance Engine,Connected Operations,Project Manager 01,RDE Sponsor 01,3,2024-01-01,2025-02-28,2025-03-11,2025-02-15,Completed,Medium,100.0,3010000.0,2991000.0,Medium
-3,FORGE-003,Industrial Data Fabric,Workforce Enablement,Project Manager 06,RDE Sponsor 05,2,2024-02-05,2025-06-30,2025-07-07,,Active,High,92.0,4140000.0,3926000.0,Large
-4,FORGE-004,Secure Edge Gateway,Connected Operations,Project Manager 06,RDE Sponsor 02,1,2024-06-01,2025-10-15,2025-11-29,,Delayed,High,62.0,3600000.0,3450000.0,Large
-5,FORGE-005,Digital Twin Services,Connected Operations,Project Manager 06,RDE Sponsor 03,4,2024-03-02,2025-01-31,2025-01-29,2025-01-31,Completed,High,100.0,1405000.0,1364000.0,Small
-6,FORGE-006,Operations Reliability Hub,Connected Operations,Project Manager 10,RDE Sponsor 01,4,2025-03-07,2025-12-31,2025-12-31,,Active,Medium,35.38,3395000.0,3291000.0,Medium
-7,FORGE-007,Remote Monitoring Upgrade,Digital Reliability,Project Manager 01,RDE Sponsor 05,5,2024-11-01,2025-11-30,2025-12-14,,At Risk,High,48.0,2500000.0,2500000.0,Medium
-8,FORGE-008,Energy Optimization Analytics,Connected Operations,Project Manager 08,RDE Sponsor 02,3,2025-01-29,2025-12-16,2025-12-27,,Active,Medium,43.56,1500000.0,1390000.0,Small
-9,FORGE-009,Cloud Control Plane,Industrial Analytics,Project Manager 02,RDE Sponsor 06,6,2024-07-01,2025-09-30,2025-10-15,,At Risk,High,60.0,2800000.0,2650000.0,Medium
-10,FORGE-010,Equipment Health Scoring,Automation Platform,Project Manager 02,RDE Sponsor 06,1,2024-10-26,2025-12-14,2025-12-26,,Active,Medium,54.89,5180000.0,5078000.0,Strategic
-11,FORGE-011,Workflow Automation Studio,Automation Platform,Project Manager 06,RDE Sponsor 02,6,2024-07-11,2025-04-30,2025-04-27,2025-04-18,Completed,Medium,100.0,3715000.0,3448000.0,Large
-12,FORGE-012,RDE Portfolio Telemetry,Connected Operations,Project Manager 03,RDE Sponsor 05,3,2024-03-22,2025-03-31,2025-04-18,2025-03-17,Completed,High,100.0,5270000.0,4870000.0,Strategic
-13,FORGE-013,Quality Signal Intelligence,Industrial Analytics,Project Manager 06,RDE Sponsor 01,2,2025-01-22,2025-09-30,2025-10-17,,Active,Medium,58.28,1350000.0,1250000.0,Small
-14,FORGE-014,Condition Monitoring Refresh,Connected Operations,Project Manager 05,RDE Sponsor 02,4,2024-07-31,2025-04-30,2025-05-01,2025-05-03,Completed,Medium,100.0,2155000.0,2024000.0,Medium
-15,FORGE-015,Field Service Decision Support,Digital Reliability,Project Manager 03,RDE Sponsor 04,4,2025-04-22,2025-12-20,2025-12-31,,Active,Medium,26.23,4595000.0,4539000.0,Large
-16,FORGE-016,Asset Performance API,Automation Platform,Project Manager 03,RDE Sponsor 02,7,2024-07-21,2025-06-30,2025-06-28,,Active,High,92.0,5375000.0,5115000.0,Strategic
-17,FORGE-017,Cyber Hardening Release,Automation Platform,Project Manager 01,RDE Sponsor 03,7,2024-05-06,2025-01-31,2025-02-06,2025-01-21,Completed,Low,100.0,1850000.0,1821000.0,Medium
-18,FORGE-018,Engineering Knowledge Graph,Workforce Enablement,Project Manager 02,RDE Sponsor 03,8,2024-10-22,2025-05-31,2025-06-02,2025-06-07,Completed,High,100.0,5490000.0,5160000.0,Strategic
-19,FORGE-019,Release Governance Automation,Automation Platform,Project Manager 04,RDE Sponsor 05,3,2024-03-08,2024-11-30,2024-12-08,2024-11-18,Completed,Medium,100.0,3925000.0,3664000.0,Large
-20,FORGE-020,Sensor Diagnostics Platform,Industrial Analytics,Project Manager 03,RDE Sponsor 02,1,2025-01-20,2025-12-22,2025-12-15,,Active,Medium,44.08,2010000.0,1964000.0,Medium
-21,FORGE-021,Customer Operations Portal,Automation Platform,Project Manager 02,RDE Sponsor 05,1,2024-05-17,2025-05-31,2025-06-16,2025-06-04,Completed,Low,100.0,4245000.0,4217000.0,Large
-22,FORGE-022,Model Lifecycle Controls,Connected Operations,Project Manager 01,RDE Sponsor 05,6,2025-08-16,2025-12-14,2025-12-07,,Planned,Medium,0.0,1910000.0,1883000.0,Medium
-23,FORGE-023,Connected Plant Pilot,Automation Platform,Project Manager 03,RDE Sponsor 02,6,2025-04-01,2025-12-22,2025-12-22,,Active,Medium,31.25,2170000.0,2040000.0,Medium
-24,FORGE-024,Reliability Benchmarking,Digital Reliability,Project Manager 09,RDE Sponsor 01,3,2024-10-14,2025-07-31,2025-08-21,,At Risk,High,82.17,3750000.0,3478000.0,Large
-25,FORGE-025,RDE Capacity Planning Modernization,Automation Platform,Project Manager 06,RDE Sponsor 05,3,2025-08-06,2025-12-26,2025-12-31,,Planned,Medium,0.0,1455000.0,1375000.0,Small
+1,FORGE-001,Connected Asset Insights,Industrial Analytics,Project Manager 03,RDE Sponsor 02,3,2025-08-15,2026-06-30,2026-08-11,,At Risk,High,55.0,3000000.0,2800000.0,Medium
+2,FORGE-002,Predictive Maintenance Engine,Industrial Analytics,Project Manager 01,RDE Sponsor 04,2,2026-04-12,2026-08-11,2026-08-11,,At Risk,High,92.0,1536312.57,1514687.06,Small
+3,FORGE-003,Industrial Data Fabric,Digital Reliability,Project Manager 08,RDE Sponsor 01,5,2026-02-28,2026-08-06,2026-08-11,,Active,Medium,94.89,4969362.94,4585510.06,Large
+4,FORGE-004,Secure Edge Gateway,Industrial Analytics,Project Manager 02,RDE Sponsor 05,6,2025-08-20,2026-06-15,2026-07-30,,Delayed,High,62.0,3600000.0,3450000.0,Large
+5,FORGE-005,Digital Twin Services,Digital Reliability,Project Manager 03,RDE Sponsor 02,5,2026-07-01,2026-08-11,2026-08-11,,Active,Medium,92.0,2284194.93,2203099.25,Medium
+6,FORGE-006,Operations Reliability Hub,Connected Operations,Project Manager 05,RDE Sponsor 02,3,2025-12-11,2026-08-11,2026-08-04,,Active,Medium,92.0,4942331.05,4727878.03,Large
+7,FORGE-007,Remote Monitoring Upgrade,Automation Platform,Project Manager 04,RDE Sponsor 01,7,2025-09-01,2026-07-15,2026-08-11,,At Risk,High,48.0,2500000.0,2500000.0,Medium
+8,FORGE-008,Energy Optimization Analytics,Digital Reliability,Project Manager 01,RDE Sponsor 01,4,2025-12-04,2026-03-19,2026-04-17,2026-03-16,Completed,High,100.0,1121823.55,1101099.1,Small
+9,FORGE-009,Cloud Control Plane,Digital Reliability,Project Manager 02,RDE Sponsor 03,2,2025-08-10,2026-07-01,2026-08-11,,At Risk,High,60.0,2800000.0,2650000.0,Medium
+10,FORGE-010,Equipment Health Scoring,Industrial Analytics,Project Manager 01,RDE Sponsor 01,1,2026-02-21,2026-08-11,2026-08-11,,Active,Medium,92.0,3856550.03,3811496.88,Large
+11,FORGE-011,Workflow Automation Studio,Connected Operations,Project Manager 06,RDE Sponsor 01,3,2025-12-30,2026-08-11,2026-08-06,,Active,Medium,92.0,3090646.4,2822129.6,Medium
+12,FORGE-012,RDE Portfolio Telemetry,Connected Operations,Project Manager 03,RDE Sponsor 02,3,2025-11-08,2026-05-06,2026-05-06,2026-05-07,Completed,Medium,100.0,4595421.76,4223282.7,Large
+13,FORGE-013,Quality Signal Intelligence,Connected Operations,Project Manager 05,RDE Sponsor 02,4,2025-10-27,2026-06-12,2026-06-21,2026-06-15,Completed,Medium,100.0,1941790.96,1823751.7,Medium
+14,FORGE-014,Condition Monitoring Refresh,Connected Operations,Project Manager 03,RDE Sponsor 02,3,2026-05-18,2026-08-11,2026-08-11,,At Risk,Low,92.0,1130834.18,1079473.58,Small
+15,FORGE-015,Field Service Decision Support,Industrial Analytics,Project Manager 02,RDE Sponsor 01,2,2025-10-20,2026-02-25,2026-03-04,2026-02-18,Completed,Medium,100.0,4356640.04,4263830.54,Large
+16,FORGE-016,Asset Performance API,Automation Platform,Project Manager 01,RDE Sponsor 03,7,2025-11-28,2026-07-13,2026-07-06,,Active,Low,95.0,1666966.72,1640835.89,Small
+17,FORGE-017,Cyber Hardening Release,Connected Operations,Project Manager 01,RDE Sponsor 01,4,2026-01-30,2026-04-30,2026-05-16,2026-05-06,Completed,High,100.0,4793655.64,4766623.75,Large
+18,FORGE-018,Engineering Knowledge Graph,Automation Platform,Project Manager 04,RDE Sponsor 05,3,2026-01-06,2026-08-11,2026-08-11,,Active,Medium,92.0,3536672.63,3301495.16,Large
+19,FORGE-019,Release Governance Automation,Industrial Analytics,Project Manager 03,RDE Sponsor 02,1,2026-03-13,2026-08-11,2026-08-08,,Active,Medium,92.0,1811136.81,1769687.91,Medium
+20,FORGE-020,Sensor Diagnostics Platform,Connected Operations,Project Manager 05,RDE Sponsor 04,3,2025-11-30,2026-05-24,2026-05-17,2026-05-10,Completed,High,100.0,4780139.69,4482788.87,Large
+21,FORGE-021,Customer Operations Portal,Connected Operations,Project Manager 01,RDE Sponsor 05,6,2026-01-07,2026-06-12,2026-07-02,2026-06-15,Completed,High,100.0,1721030.5,1696701.8,Small
+22,FORGE-022,Model Lifecycle Controls,Digital Reliability,Project Manager 02,RDE Sponsor 01,3,2026-04-28,2026-08-11,2026-08-11,,Active,Medium,92.0,2135519.52,2122904.64,Medium
+23,FORGE-023,Connected Plant Pilot,Digital Reliability,Project Manager 09,RDE Sponsor 01,3,2026-01-02,2026-06-18,2026-06-30,2026-06-08,Completed,Medium,100.0,3378986.59,3133897.43,Medium
+24,FORGE-024,Reliability Benchmarking,Industrial Analytics,Project Manager 03,RDE Sponsor 04,2,2026-04-15,2026-08-11,2026-08-04,,Active,High,92.0,4933320.42,4559379.24,Large
+25,FORGE-025,RDE Capacity Planning Modernization,Automation Platform,Project Manager 01,RDE Sponsor 05,6,2026-07-03,2026-08-11,2026-08-11,,Active,High,92.0,3288880.28,3207784.6,Medium
+26,FORGE-026,Connected Asset Modernization,Digital Reliability,Project Manager 01,RDE Sponsor 01,5,2026-02-15,2026-04-25,2026-04-21,2026-04-28,Completed,High,100.0,2207604.57,2146332.28,Medium
+27,FORGE-027,Connected Asset Analytics,Connected Operations,Project Manager 06,RDE Sponsor 01,3,2025-12-30,2026-08-11,2026-08-11,,Active,Low,92.0,1157866.07,1145251.19,Small
+28,FORGE-028,Connected Asset Platform,Digital Reliability,Project Manager 09,RDE Sponsor 02,5,2025-12-07,2026-08-11,2026-08-11,,Active,Low,92.0,3518651.37,3268155.83,Large
+29,FORGE-029,Connected Asset Optimization,Workforce Enablement,Project Manager 03,RDE Sponsor 02,2,2025-10-31,2026-04-16,2026-05-04,2026-04-20,Completed,Medium,100.0,3559199.21,3295187.72,Large
+30,FORGE-030,Connected Asset Integration,Workforce Enablement,Project Manager 08,RDE Sponsor 01,8,2025-12-10,2026-05-10,2026-05-17,2026-05-06,Completed,High,100.0,4262028.42,4128671.08,Large
+31,FORGE-031,Connected Asset Transformation,Workforce Enablement,Project Manager 06,RDE Sponsor 02,1,2026-01-24,2026-08-11,2026-08-11,,Active,Medium,92.0,2094971.68,2059830.22,Medium
+32,FORGE-032,Connected Asset Enablement,Connected Operations,Project Manager 03,RDE Sponsor 03,3,2026-04-30,2026-08-11,2026-08-11,,Active,Medium,92.0,4451251.66,4389078.31,Large
+33,FORGE-033,Connected Asset Acceleration,Digital Reliability,Project Manager 03,RDE Sponsor 01,3,2026-04-16,2026-08-11,2026-08-11,,Active,Medium,92.0,1175887.33,1079473.58,Small
+34,FORGE-034,Connected Asset Orchestration,Connected Operations,Project Manager 03,RDE Sponsor 01,3,2025-12-04,2026-05-11,2026-05-14,2026-05-18,Completed,Medium,100.0,2446386.29,2301315.13,Medium
+35,FORGE-035,Connected Asset Intelligence,Digital Reliability,Project Manager 03,RDE Sponsor 03,3,2025-11-19,2026-08-11,2026-08-11,,Active,High,92.0,4460262.3,4323300.71,Large
+36,FORGE-036,Connected Operations Modernization,Digital Reliability,Project Manager 01,RDE Sponsor 04,3,2026-03-12,2026-08-11,2026-08-11,,Active,High,92.0,2153540.79,2040907.9,Medium
+37,FORGE-037,Connected Operations Analytics,Industrial Analytics,Project Manager 02,RDE Sponsor 02,3,2025-10-11,2026-06-23,2026-07-06,2026-06-25,Completed,Medium,100.0,2950981.62,2845557.24,Medium
+38,FORGE-038,Connected Operations Platform,Connected Operations,Project Manager 02,RDE Sponsor 03,3,2026-02-05,2026-08-11,2026-08-11,,Active,Medium,92.0,3000540.09,2740132.86,Medium
+39,FORGE-039,Connected Operations Optimization,Workforce Enablement,Project Manager 05,RDE Sponsor 05,5,2026-01-13,2026-07-06,2026-07-25,2026-06-30,Completed,High,100.0,3514146.05,3354657.88,Large
+40,FORGE-040,Connected Operations Integration,Digital Reliability,Project Manager 02,RDE Sponsor 02,3,2026-01-31,2026-08-11,2026-08-11,,Active,Medium,92.0,3491619.47,3431248.24,Medium
+41,FORGE-041,Connected Operations Transformation,Industrial Analytics,Project Manager 07,RDE Sponsor 05,2,2026-01-05,2026-06-28,2026-07-03,2026-06-26,Completed,Medium,100.0,2063434.48,1944494.15,Medium
+42,FORGE-042,Connected Operations Enablement,Digital Reliability,Project Manager 03,RDE Sponsor 06,5,2025-08-21,2026-03-01,2026-03-03,2026-02-18,Completed,Medium,100.0,3437555.69,3394304.66,Medium
+43,FORGE-043,Connected Operations Acceleration,Industrial Analytics,Project Manager 03,RDE Sponsor 05,1,2026-01-05,2026-06-22,2026-06-16,2026-06-29,Completed,Medium,100.0,3487114.16,3384392.97,Medium
+44,FORGE-044,Connected Operations Orchestration,Connected Operations,Project Manager 03,RDE Sponsor 01,3,2026-05-08,2026-08-11,2026-08-11,,Active,High,92.0,4793655.64,4368353.86,Large
+45,FORGE-045,Connected Operations Intelligence,Workforce Enablement,Project Manager 09,RDE Sponsor 02,8,2026-02-12,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4496304.82,4430527.21,Large
+46,FORGE-046,Connected Reliability Modernization,Connected Operations,Project Manager 08,RDE Sponsor 05,3,2026-01-24,2026-05-03,2026-05-11,2026-04-30,Completed,Medium,100.0,1608397.62,1556135.96,Small
+47,FORGE-047,Connected Reliability Analytics,Digital Reliability,Project Manager 01,RDE Sponsor 03,5,2026-01-07,2026-05-17,2026-05-14,2026-05-10,Completed,Medium,100.0,3518651.37,3469993.96,Large
+48,FORGE-048,Connected Reliability Platform,Connected Operations,Project Manager 01,RDE Sponsor 04,3,2026-04-02,2026-08-11,2026-08-11,,Active,Low,92.0,3622273.62,3328527.05,Large
+49,FORGE-049,Connected Reliability Optimization,Connected Operations,Project Manager 01,RDE Sponsor 01,6,2025-12-25,2026-07-16,2026-07-27,,Active,High,95.0,1991349.43,1891331.43,Medium
+50,FORGE-050,Connected Reliability Integration,Digital Reliability,Project Manager 03,RDE Sponsor 03,4,2026-01-07,2026-08-11,2026-08-11,,Active,Medium,92.0,1869705.91,1708415.62,Medium
+51,FORGE-051,Connected Reliability Transformation,Industrial Analytics,Project Manager 05,RDE Sponsor 04,2,2026-01-24,2026-07-23,2026-07-28,,Active,High,95.0,4361145.36,4138582.78,Large
+52,FORGE-052,Connected Reliability Enablement,Digital Reliability,Project Manager 04,RDE Sponsor 05,2,2026-01-25,2026-07-21,2026-07-22,,Active,High,95.0,4631464.28,4370155.98,Large
+53,FORGE-053,Connected Reliability Acceleration,Workforce Enablement,Project Manager 03,RDE Sponsor 01,5,2025-11-09,2026-03-10,2026-03-19,2026-02-28,Completed,Medium,100.0,3861055.34,3758334.15,Large
+54,FORGE-054,Connected Reliability Orchestration,Workforce Enablement,Project Manager 07,RDE Sponsor 02,8,2026-06-01,2026-08-11,2026-08-11,,Active,Low,92.0,3978193.54,3779058.6,Large
+55,FORGE-055,Connected Reliability Intelligence,Workforce Enablement,Project Manager 02,RDE Sponsor 04,8,2026-03-21,2026-08-11,2026-08-11,,Active,Medium,92.0,2248152.41,2112992.95,Medium
+56,FORGE-056,Connected Controls Modernization,Workforce Enablement,Project Manager 05,RDE Sponsor 06,5,2026-03-21,2026-06-19,2026-06-27,2026-06-11,Completed,Medium,100.0,3320417.49,3035681.55,Medium
+57,FORGE-057,Connected Controls Analytics,Connected Operations,Project Manager 08,RDE Sponsor 05,1,2026-03-20,2026-08-11,2026-08-11,,Active,Low,92.0,3784464.98,3628581.07,Large
+58,FORGE-058,Connected Controls Platform,Digital Reliability,Project Manager 03,RDE Sponsor 04,5,2025-12-07,2026-08-11,2026-08-11,,Active,High,92.0,3712379.93,3589835.35,Large
+59,FORGE-059,Connected Controls Optimization,Digital Reliability,Project Manager 02,RDE Sponsor 02,5,2026-03-21,2026-08-11,2026-08-11,,Active,High,92.0,4771129.06,4701747.2,Large
+60,FORGE-060,Connected Controls Integration,Digital Reliability,Project Manager 07,RDE Sponsor 05,5,2025-10-13,2026-05-02,2026-05-17,2026-05-07,Completed,High,100.0,3266353.7,3193367.59,Medium
+61,FORGE-061,Connected Controls Transformation,Automation Platform,Project Manager 10,RDE Sponsor 02,6,2026-02-05,2026-08-11,2026-08-11,,Active,Medium,92.0,4838708.79,4420615.52,Large
+62,FORGE-062,Connected Controls Enablement,Connected Operations,Project Manager 07,RDE Sponsor 02,3,2025-12-03,2026-07-02,2026-07-16,2026-06-20,Completed,High,100.0,4726075.91,4673814.25,Large
+63,FORGE-063,Connected Controls Acceleration,Workforce Enablement,Project Manager 05,RDE Sponsor 02,8,2026-01-03,2026-08-11,2026-08-11,,At Risk,Medium,92.0,3297890.91,3132996.36,Medium
+64,FORGE-064,Connected Controls Orchestration,Industrial Analytics,Project Manager 09,RDE Sponsor 01,1,2025-12-09,2026-08-11,2026-08-04,,Active,Medium,92.0,2212109.89,2142728.03,Medium
+65,FORGE-065,Connected Controls Intelligence,Workforce Enablement,Project Manager 02,RDE Sponsor 04,8,2025-12-15,2026-06-13,2026-06-19,2026-06-06,Completed,Medium,100.0,4865740.69,4630563.22,Large
+66,FORGE-066,Connected Telemetry Modernization,Connected Operations,Project Manager 07,RDE Sponsor 06,6,2026-01-23,2026-07-23,2026-07-21,,Active,High,95.0,4370155.99,4346728.35,Large
+67,FORGE-067,Connected Telemetry Analytics,Workforce Enablement,Project Manager 04,RDE Sponsor 06,2,2025-12-31,2026-08-11,2026-08-04,,Active,High,92.0,2383311.87,2292304.5,Medium
+68,FORGE-068,Connected Telemetry Platform,Connected Operations,Project Manager 03,RDE Sponsor 02,3,2025-10-12,2026-04-07,2026-04-09,2026-03-30,Completed,Medium,100.0,3419534.43,3183455.9,Medium
+69,FORGE-069,Connected Telemetry Optimization,Industrial Analytics,Project Manager 08,RDE Sponsor 01,6,2026-03-12,2026-08-11,2026-08-04,,Active,Medium,92.0,3424039.74,3388898.28,Medium
+70,FORGE-070,Connected Telemetry Integration,Industrial Analytics,Project Manager 06,RDE Sponsor 05,3,2025-11-19,2026-02-06,2026-03-01,2026-01-26,Completed,High,100.0,1752567.71,1596683.8,Medium
+71,FORGE-071,Connected Telemetry Transformation,Digital Reliability,Project Manager 02,RDE Sponsor 01,3,2026-04-12,2026-08-11,2026-08-11,,Active,High,92.0,2685168.01,2449990.54,Medium
+72,FORGE-072,Connected Telemetry Enablement,Digital Reliability,Project Manager 03,RDE Sponsor 06,3,2026-02-14,2026-08-11,2026-08-11,,Active,High,92.0,4054783.91,3757433.09,Large
+73,FORGE-073,Connected Telemetry Acceleration,Connected Operations,Project Manager 02,RDE Sponsor 01,3,2026-02-21,2026-08-11,2026-08-08,,Active,High,92.0,3180752.71,3138402.74,Medium
+74,FORGE-074,Connected Telemetry Orchestration,Industrial Analytics,Project Manager 03,RDE Sponsor 03,2,2025-11-16,2026-04-19,2026-04-14,2026-04-19,Completed,Medium,100.0,1932780.33,1900342.06,Medium
+75,FORGE-075,Connected Telemetry Intelligence,Digital Reliability,Project Manager 03,RDE Sponsor 03,3,2026-05-13,2026-08-11,2026-08-11,,Active,High,92.0,2743737.11,2688772.26,Medium
+76,FORGE-076,Connected Workflow Modernization,Industrial Analytics,Project Manager 10,RDE Sponsor 03,1,2025-09-28,2026-01-27,2026-02-04,2026-02-01,Completed,Medium,100.0,1139844.81,1108307.6,Small
+77,FORGE-077,Connected Workflow Analytics,Digital Reliability,Project Manager 02,RDE Sponsor 02,3,2026-05-19,2026-08-11,2026-08-07,,Active,Medium,92.0,2887907.2,2719408.4,Medium
+78,FORGE-078,Connected Workflow Platform,Digital Reliability,Project Manager 01,RDE Sponsor 02,3,2025-08-21,2026-01-30,2026-02-16,2026-01-25,Completed,Medium,100.0,1657956.09,1582266.79,Small
+79,FORGE-079,Connected Workflow Optimization,Connected Operations,Project Manager 01,RDE Sponsor 03,6,2026-03-14,2026-07-04,2026-07-11,2026-07-10,Completed,Medium,100.0,3347449.38,3096953.84,Medium
+80,FORGE-080,Connected Workflow Integration,Digital Reliability,Project Manager 09,RDE Sponsor 03,3,2026-02-28,2026-08-11,2026-08-11,,Active,Medium,92.0,3960172.28,3920525.5,Large
+81,FORGE-081,Connected Workflow Transformation,Digital Reliability,Project Manager 01,RDE Sponsor 03,2,2026-05-12,2026-08-11,2026-08-11,,Active,High,92.0,4392682.56,4263830.54,Large
+82,FORGE-082,Connected Workflow Enablement,Industrial Analytics,Project Manager 04,RDE Sponsor 01,2,2025-09-21,2026-04-03,2026-04-17,2026-04-09,Completed,Medium,100.0,2140024.84,1960713.28,Medium
+83,FORGE-083,Connected Workflow Acceleration,Workforce Enablement,Project Manager 04,RDE Sponsor 01,1,2025-12-13,2026-08-11,2026-08-11,,At Risk,High,92.0,4059289.22,3906108.49,Large
+84,FORGE-084,Connected Workflow Orchestration,Connected Operations,Project Manager 03,RDE Sponsor 02,3,2025-11-05,2026-08-06,2026-08-11,,Active,Medium,93.68,3586231.1,3560100.27,Large
+85,FORGE-085,Connected Workflow Intelligence,Connected Operations,Project Manager 02,RDE Sponsor 06,1,2026-05-18,2026-08-11,2026-08-11,,Active,Medium,92.0,1464227.52,1404757.36,Small
+86,FORGE-086,Connected Quality Modernization,Digital Reliability,Project Manager 02,RDE Sponsor 01,3,2026-01-18,2026-08-11,2026-08-11,,At Risk,Medium,92.0,1148855.44,1073166.14,Small
+87,FORGE-087,Connected Quality Analytics,Connected Operations,Project Manager 02,RDE Sponsor 04,3,2025-12-27,2026-08-11,2026-08-04,,Active,Medium,92.0,1495764.73,1453414.76,Small
+88,FORGE-088,Connected Quality Platform,Industrial Analytics,Project Manager 02,RDE Sponsor 01,2,2026-06-03,2026-08-11,2026-08-07,,Active,Medium,92.0,4176427.42,4148494.46,Large
+89,FORGE-089,Connected Quality Optimization,Workforce Enablement,Project Manager 10,RDE Sponsor 01,8,2026-01-22,2026-08-11,2026-08-06,,Active,High,92.0,3252837.75,3230311.17,Medium
+90,FORGE-090,Connected Quality Integration,Industrial Analytics,Project Manager 05,RDE Sponsor 01,1,2026-01-06,2026-06-04,2026-06-25,2026-06-09,Completed,High,100.0,4699044.01,4563884.55,Large
+91,FORGE-091,Connected Quality Transformation,Connected Operations,Project Manager 08,RDE Sponsor 03,6,2026-02-10,2026-08-11,2026-08-11,,At Risk,Medium,92.0,2027391.95,1994052.62,Medium
+92,FORGE-092,Connected Quality Enablement,Digital Reliability,Project Manager 05,RDE Sponsor 01,4,2026-02-12,2026-08-11,2026-08-11,,Active,Medium,92.0,1491259.41,1384933.97,Small
+93,FORGE-093,Connected Quality Acceleration,Automation Platform,Project Manager 06,RDE Sponsor 01,6,2025-10-04,2026-05-07,2026-05-29,2026-05-01,Completed,High,100.0,3342944.06,3275364.33,Medium
+94,FORGE-094,Connected Quality Orchestration,Automation Platform,Project Manager 06,RDE Sponsor 02,6,2026-02-11,2026-08-11,2026-08-04,,Active,Low,92.0,1585871.04,1517390.25,Small
+95,FORGE-095,Connected Quality Intelligence,Automation Platform,Project Manager 04,RDE Sponsor 06,3,2026-06-17,2026-08-11,2026-08-11,,Active,High,92.0,4234996.52,4056586.03,Large
+96,FORGE-096,Connected Engineering Modernization,Automation Platform,Project Manager 08,RDE Sponsor 01,1,2026-03-06,2026-07-29,2026-08-09,,Active,High,95.0,4221480.58,3883581.92,Large
+97,FORGE-097,Connected Engineering Analytics,Industrial Analytics,Project Manager 09,RDE Sponsor 03,1,2025-12-23,2026-08-11,2026-08-11,,Active,Low,92.0,1608397.62,1530005.13,Small
+98,FORGE-098,Connected Engineering Platform,Workforce Enablement,Project Manager 03,RDE Sponsor 04,8,2026-04-20,2026-08-11,2026-08-11,,Active,High,92.0,4834203.48,4535951.6,Large
+99,FORGE-099,Connected Engineering Optimization,Automation Platform,Project Manager 09,RDE Sponsor 03,1,2026-02-07,2026-08-11,2026-08-11,,Active,Medium,92.0,2396827.82,2372499.12,Medium
+100,FORGE-100,Connected Engineering Integration,Digital Reliability,Project Manager 03,RDE Sponsor 01,2,2025-11-14,2026-04-11,2026-05-04,2026-04-05,Completed,High,100.0,3527662.0,3231212.24,Large
+101,FORGE-101,Connected Engineering Transformation,Automation Platform,Project Manager 01,RDE Sponsor 03,1,2025-11-22,2026-04-13,2026-04-21,2026-04-20,Completed,Medium,100.0,1545323.2,1535411.51,Small
+102,FORGE-102,Connected Engineering Enablement,Automation Platform,Project Manager 06,RDE Sponsor 03,6,2026-02-10,2026-08-11,2026-08-11,,Active,Medium,92.0,1302036.16,1252477.69,Small
+103,FORGE-103,Connected Engineering Acceleration,Connected Operations,Project Manager 04,RDE Sponsor 02,1,2026-03-03,2026-08-11,2026-08-07,,Active,Medium,92.0,2842854.05,2680662.69,Medium
+104,FORGE-104,Connected Engineering Orchestration,Industrial Analytics,Project Manager 03,RDE Sponsor 04,2,2026-03-03,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4681022.75,4393583.62,Large
+105,FORGE-105,Connected Engineering Intelligence,Automation Platform,Project Manager 01,RDE Sponsor 05,1,2025-09-28,2026-06-07,2026-05-31,2026-06-04,Completed,Medium,100.0,2049918.53,1936384.58,Medium
+106,FORGE-106,Connected Energy Modernization,Industrial Analytics,Project Manager 08,RDE Sponsor 01,3,2026-01-02,2026-08-11,2026-08-11,,Active,Low,92.0,1572355.09,1463326.46,Small
+107,FORGE-107,Connected Energy Analytics,Industrial Analytics,Project Manager 08,RDE Sponsor 03,2,2025-10-21,2026-04-24,2026-05-16,2026-04-12,Completed,High,100.0,1644440.14,1578662.53,Small
+108,FORGE-108,Connected Energy Platform,Digital Reliability,Project Manager 02,RDE Sponsor 05,2,2025-12-25,2026-08-11,2026-08-10,,Active,Medium,92.0,2775274.32,2637411.67,Medium
+109,FORGE-109,Connected Energy Optimization,Connected Operations,Project Manager 01,RDE Sponsor 01,1,2025-10-27,2026-04-15,2026-04-24,2026-04-07,Completed,High,100.0,4599927.07,4417912.33,Large
+110,FORGE-110,Connected Energy Integration,Digital Reliability,Project Manager 01,RDE Sponsor 05,4,2025-11-28,2026-08-11,2026-08-10,,Active,Low,92.0,3888087.23,3582626.84,Large
+111,FORGE-111,Connected Energy Transformation,Automation Platform,Project Manager 04,RDE Sponsor 05,1,2025-11-18,2026-05-19,2026-05-27,2026-05-16,Completed,High,100.0,4460262.3,4149395.53,Large
+112,FORGE-112,Connected Energy Enablement,Workforce Enablement,Project Manager 06,RDE Sponsor 03,2,2026-02-18,2026-08-11,2026-08-11,,Active,Medium,92.0,1982338.8,1813840.0,Medium
+113,FORGE-113,Connected Energy Acceleration,Automation Platform,Project Manager 02,RDE Sponsor 04,6,2025-11-30,2026-07-13,2026-07-08,,Active,Low,95.0,1648945.45,1598485.92,Small
+114,FORGE-114,Connected Energy Orchestration,Connected Operations,Project Manager 04,RDE Sponsor 05,4,2026-01-20,2026-07-25,2026-07-30,,Active,Medium,95.0,1910253.75,1855288.9,Medium
+115,FORGE-115,Connected Energy Intelligence,Digital Reliability,Project Manager 10,RDE Sponsor 04,3,2025-12-24,2026-08-09,2026-08-11,,At Risk,Medium,92.81,1441700.94,1357001.01,Small
+116,FORGE-116,Connected Service Modernization,Workforce Enablement,Project Manager 06,RDE Sponsor 05,2,2025-10-19,2026-01-30,2026-02-10,2026-02-01,Completed,Low,100.0,1563344.46,1440799.88,Small
+117,FORGE-117,Connected Service Analytics,Automation Platform,Project Manager 04,RDE Sponsor 04,7,2026-01-04,2026-06-27,2026-07-18,2026-06-26,Completed,High,100.0,1824652.76,1766984.72,Medium
+118,FORGE-118,Connected Service Platform,Connected Operations,Project Manager 02,RDE Sponsor 04,4,2026-03-12,2026-07-22,2026-07-18,,Active,High,95.0,4586411.13,4299873.07,Large
+119,FORGE-119,Connected Service Optimization,Automation Platform,Project Manager 03,RDE Sponsor 03,1,2025-12-22,2026-04-27,2026-05-01,2026-04-16,Completed,Low,100.0,4032257.33,3679941.66,Large
+120,FORGE-120,Connected Service Integration,Connected Operations,Project Manager 04,RDE Sponsor 03,6,2026-05-02,2026-08-11,2026-08-11,,At Risk,Medium,92.0,1522796.62,1448008.38,Small
+121,FORGE-121,Connected Service Transformation,Connected Operations,Project Manager 04,RDE Sponsor 02,3,2026-01-31,2026-08-11,2026-08-11,,Active,High,92.0,3131194.24,2971706.07,Medium
+122,FORGE-122,Connected Service Enablement,Industrial Analytics,Project Manager 04,RDE Sponsor 04,6,2026-01-23,2026-07-11,2026-07-18,2026-07-17,Completed,High,100.0,3424039.74,3218597.36,Medium
+123,FORGE-123,Connected Service Acceleration,Connected Operations,Project Manager 01,RDE Sponsor 01,1,2025-11-27,2026-07-31,2026-08-11,,At Risk,High,95.0,2572535.12,2527481.97,Medium
+124,FORGE-124,Connected Service Orchestration,Connected Operations,Project Manager 04,RDE Sponsor 02,4,2026-05-10,2026-08-11,2026-08-11,,Active,Medium,92.0,3667326.78,3590736.42,Large
+125,FORGE-125,Connected Service Intelligence,Industrial Analytics,Project Manager 02,RDE Sponsor 02,3,2026-02-07,2026-07-18,2026-08-01,,Active,High,95.0,4045773.27,3721390.56,Large
+126,FORGE-126,Industrial Asset Modernization,Industrial Analytics,Project Manager 03,RDE Sponsor 06,1,2025-12-07,2026-07-25,2026-08-07,,Active,Low,95.0,2559019.18,2535591.54,Medium
+127,FORGE-127,Industrial Asset Analytics,Automation Platform,Project Manager 09,RDE Sponsor 03,3,2026-04-17,2026-08-11,2026-08-11,,At Risk,High,92.0,1923769.7,1871508.04,Medium
+128,FORGE-128,Industrial Asset Platform,Connected Operations,Project Manager 04,RDE Sponsor 04,4,2025-12-16,2026-07-31,2026-08-11,,Active,Medium,95.0,3108667.66,2841952.99,Medium
+129,FORGE-129,Industrial Asset Optimization,Connected Operations,Project Manager 02,RDE Sponsor 01,3,2026-03-28,2026-08-05,2026-08-11,,Active,Medium,95.0,5041447.99,4971165.07,Strategic
+130,FORGE-130,Industrial Asset Integration,Industrial Analytics,Project Manager 03,RDE Sponsor 01,1,2025-09-29,2026-03-08,2026-03-15,2026-03-02,Completed,High,100.0,4352134.72,4061091.34,Large
+131,FORGE-131,Industrial Asset Transformation,Automation Platform,Project Manager 01,RDE Sponsor 01,1,2025-09-26,2026-07-12,2026-08-02,2026-07-15,Completed,High,100.0,3266353.7,3163632.51,Medium
+132,FORGE-132,Industrial Asset Enablement,Industrial Analytics,Project Manager 06,RDE Sponsor 02,1,2026-03-11,2026-08-11,2026-08-11,,Active,Medium,92.0,1338078.69,1310145.73,Small
+133,FORGE-133,Industrial Asset Acceleration,Workforce Enablement,Project Manager 03,RDE Sponsor 03,2,2026-02-22,2026-06-28,2026-07-11,2026-06-18,Completed,Medium,100.0,2649125.48,2439177.78,Medium
+134,FORGE-134,Industrial Asset Orchestration,Connected Operations,Project Manager 04,RDE Sponsor 02,4,2026-03-28,2026-08-11,2026-08-11,,Active,Medium,92.0,1635429.51,1608397.62,Small
+135,FORGE-135,Industrial Asset Intelligence,Workforce Enablement,Project Manager 07,RDE Sponsor 06,8,2025-12-11,2026-07-02,2026-07-18,2026-06-22,Completed,Medium,100.0,1180392.65,1080374.65,Small
+136,FORGE-136,Industrial Operations Modernization,Workforce Enablement,Project Manager 06,RDE Sponsor 04,8,2026-04-06,2026-08-11,2026-08-11,,Active,Medium,92.0,1369615.9,1296629.79,Small
+137,FORGE-137,Industrial Operations Analytics,Industrial Analytics,Project Manager 02,RDE Sponsor 03,1,2025-10-12,2026-03-25,2026-04-13,2026-03-23,Completed,High,100.0,1477743.47,1361506.33,Small
+138,FORGE-138,Industrial Operations Platform,Digital Reliability,Project Manager 09,RDE Sponsor 01,2,2026-05-03,2026-08-11,2026-08-11,,Active,Low,92.0,3572715.15,3414128.05,Large
+139,FORGE-139,Industrial Operations Optimization,Automation Platform,Project Manager 09,RDE Sponsor 04,6,2025-12-18,2026-08-11,2026-08-11,,Active,Medium,92.0,2959992.25,2895115.71,Medium
+140,FORGE-140,Industrial Operations Integration,Automation Platform,Project Manager 07,RDE Sponsor 01,6,2026-04-08,2026-08-11,2026-08-11,,Active,High,92.0,2356279.98,2293205.56,Medium
+141,FORGE-141,Industrial Operations Transformation,Connected Operations,Project Manager 08,RDE Sponsor 06,4,2026-02-23,2026-08-11,2026-08-11,,Active,High,92.0,3960172.28,3934041.45,Large
+142,FORGE-142,Industrial Operations Enablement,Connected Operations,Project Manager 06,RDE Sponsor 02,3,2026-01-12,2026-04-18,2026-04-12,2026-04-18,Completed,Low,100.0,2149035.47,1989547.3,Medium
+143,FORGE-143,Industrial Operations Acceleration,Connected Operations,Project Manager 10,RDE Sponsor 06,3,2025-08-24,2026-04-08,2026-04-29,2026-04-03,Completed,High,100.0,1824652.76,1664263.53,Medium
+144,FORGE-144,Industrial Operations Orchestration,Connected Operations,Project Manager 04,RDE Sponsor 01,4,2025-10-25,2026-01-31,2026-01-24,2026-01-28,Completed,Medium,100.0,3942151.02,3721390.56,Large
+145,FORGE-145,Industrial Operations Intelligence,Automation Platform,Project Manager 04,RDE Sponsor 05,3,2025-10-25,2026-02-10,2026-02-20,2026-02-03,Completed,Low,100.0,3315912.17,3151017.62,Medium
+146,FORGE-146,Industrial Reliability Modernization,Connected Operations,Project Manager 05,RDE Sponsor 04,4,2026-01-17,2026-05-05,2026-05-07,2026-05-10,Completed,High,100.0,4793655.64,4630563.22,Large
+147,FORGE-147,Industrial Reliability Analytics,Industrial Analytics,Project Manager 05,RDE Sponsor 05,1,2025-10-26,2026-07-06,2026-07-28,2026-06-24,Completed,High,100.0,2671652.06,2567128.74,Medium
+148,FORGE-148,Industrial Reliability Platform,Digital Reliability,Project Manager 01,RDE Sponsor 02,5,2026-03-26,2026-08-11,2026-08-11,,Active,High,92.0,4334113.46,4240402.9,Large
+149,FORGE-149,Industrial Reliability Optimization,Workforce Enablement,Project Manager 06,RDE Sponsor 03,2,2026-04-09,2026-08-11,2026-08-11,,At Risk,High,92.0,4617948.34,4254819.91,Large
+150,FORGE-150,Industrial Reliability Integration,Digital Reliability,Project Manager 08,RDE Sponsor 06,3,2026-06-24,2026-08-11,2026-08-11,,Active,Medium,92.0,2536492.6,2456297.98,Medium
+151,FORGE-151,Industrial Reliability Transformation,Connected Operations,Project Manager 04,RDE Sponsor 06,4,2025-08-21,2026-02-26,2026-03-23,2026-02-14,Completed,High,100.0,2640114.85,2561722.36,Medium
+152,FORGE-152,Industrial Reliability Enablement,Connected Operations,Project Manager 06,RDE Sponsor 05,4,2026-05-14,2026-08-11,2026-08-11,,Active,Medium,92.0,3843034.08,3739411.82,Large
+153,FORGE-153,Industrial Reliability Acceleration,Connected Operations,Project Manager 04,RDE Sponsor 03,1,2026-01-01,2026-04-04,2026-04-16,2026-04-08,Completed,Medium,100.0,3545683.26,3396106.79,Large
+154,FORGE-154,Industrial Reliability Orchestration,Industrial Analytics,Project Manager 02,RDE Sponsor 04,6,2026-02-09,2026-05-30,2026-06-04,2026-06-08,Completed,High,100.0,2559019.18,2384212.94,Medium
+155,FORGE-155,Industrial Reliability Intelligence,Digital Reliability,Project Manager 02,RDE Sponsor 01,3,2026-03-18,2026-08-11,2026-08-11,,At Risk,High,92.0,2351774.66,2243647.09,Medium
+156,FORGE-156,Industrial Controls Modernization,Connected Operations,Project Manager 02,RDE Sponsor 04,4,2025-12-27,2026-07-28,2026-08-07,,Active,Medium,95.0,1932780.33,1784104.92,Medium
+157,FORGE-157,Industrial Controls Analytics,Connected Operations,Project Manager 01,RDE Sponsor 04,4,2025-12-28,2026-06-18,2026-06-11,2026-06-18,Completed,High,100.0,4744097.17,4678319.56,Large
+158,FORGE-158,Industrial Controls Platform,Digital Reliability,Project Manager 09,RDE Sponsor 05,2,2026-04-26,2026-08-11,2026-08-08,,Active,Medium,92.0,2887907.2,2723913.72,Medium
+159,FORGE-159,Industrial Controls Optimization,Digital Reliability,Project Manager 05,RDE Sponsor 03,3,2026-01-14,2026-08-07,2026-08-11,,At Risk,High,93.8,4135879.58,4070101.97,Large
+160,FORGE-160,Industrial Controls Integration,Workforce Enablement,Project Manager 04,RDE Sponsor 05,8,2026-02-22,2026-08-11,2026-08-11,,Active,Medium,92.0,3356460.01,3278968.58,Medium
+161,FORGE-161,Industrial Controls Transformation,Automation Platform,Project Manager 05,RDE Sponsor 05,3,2026-03-14,2026-07-31,2026-08-01,,Active,High,95.0,4838708.79,4668407.87,Large
+162,FORGE-162,Industrial Controls Enablement,Automation Platform,Project Manager 04,RDE Sponsor 01,6,2026-02-23,2026-07-13,2026-07-18,,Active,Medium,95.0,4027752.01,3918723.38,Large
+163,FORGE-163,Industrial Controls Acceleration,Industrial Analytics,Project Manager 02,RDE Sponsor 01,2,2026-01-11,2026-08-11,2026-08-11,,Active,High,92.0,4870246.0,4711658.9,Large
+164,FORGE-164,Industrial Controls Orchestration,Digital Reliability,Project Manager 02,RDE Sponsor 06,3,2026-02-16,2026-08-11,2026-08-11,,Active,Medium,92.0,3797980.92,3733104.38,Large
+165,FORGE-165,Industrial Controls Intelligence,Industrial Analytics,Project Manager 02,RDE Sponsor 01,1,2026-04-02,2026-08-11,2026-08-11,,Active,Medium,92.0,1437195.63,1374121.21,Small
+166,FORGE-166,Industrial Telemetry Modernization,Automation Platform,Project Manager 05,RDE Sponsor 06,1,2025-12-03,2026-05-06,2026-05-19,2026-04-23,Completed,Medium,100.0,4910793.84,4750404.61,Large
+167,FORGE-167,Industrial Telemetry Analytics,Industrial Analytics,Project Manager 07,RDE Sponsor 02,1,2026-03-14,2026-08-07,2026-08-11,,Active,High,94.52,4379166.62,4086321.12,Large
+168,FORGE-168,Industrial Telemetry Platform,Digital Reliability,Project Manager 03,RDE Sponsor 04,5,2026-03-13,2026-08-11,2026-08-11,,Active,Medium,92.0,3059109.19,2861776.37,Medium
+169,FORGE-169,Industrial Telemetry Optimization,Automation Platform,Project Manager 01,RDE Sponsor 03,6,2025-09-26,2026-05-18,2026-05-15,2026-05-26,Completed,Medium,100.0,3311406.86,3023967.73,Medium
+170,FORGE-170,Industrial Telemetry Integration,Connected Operations,Project Manager 10,RDE Sponsor 05,6,2026-01-27,2026-08-11,2026-08-11,,Active,High,92.0,2775274.32,2531086.22,Medium
+171,FORGE-171,Industrial Telemetry Transformation,Connected Operations,Project Manager 02,RDE Sponsor 05,6,2026-06-07,2026-08-11,2026-08-09,,Active,Low,92.0,1220940.49,1113713.98,Small
+172,FORGE-172,Industrial Telemetry Enablement,Industrial Analytics,Project Manager 07,RDE Sponsor 01,1,2025-12-31,2026-08-11,2026-08-11,,Active,High,92.0,4415209.14,4225084.83,Large
+173,FORGE-173,Industrial Telemetry Acceleration,Digital Reliability,Project Manager 05,RDE Sponsor 02,3,2025-12-12,2026-04-18,2026-04-14,2026-04-17,Completed,Medium,100.0,3577220.47,3310505.8,Large
+174,FORGE-174,Industrial Telemetry Orchestration,Industrial Analytics,Project Manager 10,RDE Sponsor 05,1,2025-11-29,2026-04-16,2026-05-01,2026-04-23,Completed,High,100.0,2058929.16,1874211.23,Medium
+175,FORGE-175,Industrial Telemetry Intelligence,Industrial Analytics,Project Manager 01,RDE Sponsor 06,3,2025-08-16,2026-04-13,2026-04-24,2026-04-21,Completed,Medium,100.0,1883221.86,1827355.95,Medium
+176,FORGE-176,Industrial Workflow Modernization,Industrial Analytics,Project Manager 06,RDE Sponsor 04,6,2025-08-28,2026-03-12,2026-03-17,2026-03-09,Completed,Medium,100.0,4775634.38,4698142.95,Large
+177,FORGE-177,Industrial Workflow Analytics,Digital Reliability,Project Manager 09,RDE Sponsor 01,3,2025-10-03,2026-01-26,2026-01-31,2026-01-29,Completed,Low,100.0,1495764.73,1438997.76,Small
+178,FORGE-178,Industrial Workflow Platform,Connected Operations,Project Manager 02,RDE Sponsor 01,6,2025-10-16,2026-02-08,2026-02-24,2026-02-14,Completed,Medium,100.0,2752747.74,2569831.93,Medium
+179,FORGE-179,Industrial Workflow Optimization,Automation Platform,Project Manager 03,RDE Sponsor 05,6,2025-11-17,2026-06-21,2026-07-11,2026-06-30,Completed,High,100.0,4829698.16,4535050.53,Large
+180,FORGE-180,Industrial Workflow Integration,Connected Operations,Project Manager 02,RDE Sponsor 03,1,2026-01-15,2026-07-13,2026-07-19,,Active,Medium,95.0,2829338.1,2792394.51,Medium
+181,FORGE-181,Industrial Workflow Transformation,Digital Reliability,Project Manager 04,RDE Sponsor 03,2,2025-11-20,2026-05-12,2026-06-07,2026-05-18,Completed,High,100.0,4027752.01,3795277.73,Large
+182,FORGE-182,Industrial Workflow Enablement,Connected Operations,Project Manager 06,RDE Sponsor 05,4,2026-01-11,2026-08-11,2026-08-11,,Active,Low,92.0,1216435.17,1202919.22,Small
+183,FORGE-183,Industrial Workflow Acceleration,Automation Platform,Project Manager 06,RDE Sponsor 02,1,2025-10-07,2026-05-26,2026-06-06,2026-05-17,Completed,High,100.0,3604252.36,3476301.4,Large
+184,FORGE-184,Industrial Workflow Orchestration,Industrial Analytics,Project Manager 04,RDE Sponsor 05,6,2026-02-21,2026-08-08,2026-08-11,,Active,Low,93.64,1513785.99,1457019.02,Small
+185,FORGE-185,Industrial Workflow Intelligence,Workforce Enablement,Project Manager 05,RDE Sponsor 02,2,2025-12-06,2026-06-04,2026-06-28,2026-05-24,Completed,Medium,100.0,1712019.87,1691295.42,Small
+186,FORGE-186,Industrial Quality Modernization,Digital Reliability,Project Manager 10,RDE Sponsor 03,5,2026-02-11,2026-07-27,2026-07-20,,Active,Medium,95.0,3324922.8,3293385.59,Medium
+187,FORGE-187,Industrial Quality Analytics,Workforce Enablement,Project Manager 07,RDE Sponsor 02,8,2025-12-26,2026-07-26,2026-08-09,,Active,High,95.0,1121823.55,1028112.99,Small
+188,FORGE-188,Industrial Quality Platform,Workforce Enablement,Project Manager 06,RDE Sponsor 01,2,2026-03-07,2026-06-28,2026-06-23,2026-06-18,Completed,Medium,100.0,3563704.52,3262749.45,Large
+189,FORGE-189,Industrial Quality Optimization,Connected Operations,Project Manager 02,RDE Sponsor 05,3,2025-10-21,2026-05-20,2026-05-18,2026-05-27,Completed,High,100.0,3978193.54,3742115.01,Large
+190,FORGE-190,Industrial Quality Integration,Connected Operations,Project Manager 05,RDE Sponsor 03,4,2026-03-19,2026-08-11,2026-08-11,,Active,Medium,92.0,3288880.28,3058208.13,Medium
+191,FORGE-191,Industrial Quality Transformation,Connected Operations,Project Manager 07,RDE Sponsor 04,6,2026-02-23,2026-08-09,2026-08-11,,At Risk,High,93.1,2495944.76,2366191.68,Medium
+192,FORGE-192,Industrial Quality Enablement,Digital Reliability,Project Manager 01,RDE Sponsor 01,5,2026-03-19,2026-08-11,2026-08-04,,Active,High,92.0,4059289.22,3715984.18,Large
+193,FORGE-193,Industrial Quality Acceleration,Automation Platform,Project Manager 08,RDE Sponsor 04,1,2026-07-25,2026-08-11,2026-08-04,,Active,Medium,92.0,4496304.82,4302576.26,Large
+194,FORGE-194,Industrial Quality Orchestration,Digital Reliability,Project Manager 04,RDE Sponsor 04,3,2025-11-30,2026-05-25,2026-06-03,2026-05-30,Completed,High,100.0,2568029.81,2413046.96,Medium
+195,FORGE-195,Industrial Quality Intelligence,Automation Platform,Project Manager 01,RDE Sponsor 02,7,2026-02-05,2026-06-11,2026-06-16,2026-06-04,Completed,High,100.0,1977833.48,1900342.05,Medium
+196,FORGE-196,Industrial Engineering Modernization,Connected Operations,Project Manager 09,RDE Sponsor 01,1,2026-01-12,2026-08-11,2026-08-11,,Active,Medium,92.0,1486754.1,1427283.94,Small
+197,FORGE-197,Industrial Engineering Analytics,Connected Operations,Project Manager 07,RDE Sponsor 02,3,2026-02-20,2026-07-21,2026-07-28,,Active,Medium,95.0,3973688.23,3807892.62,Large
+198,FORGE-198,Industrial Engineering Platform,Workforce Enablement,Project Manager 01,RDE Sponsor 04,8,2026-06-04,2026-08-11,2026-08-11,,Active,Low,92.0,1432690.31,1416471.17,Small
+199,FORGE-199,Industrial Engineering Optimization,Automation Platform,Project Manager 04,RDE Sponsor 05,1,2025-11-09,2026-07-07,2026-07-18,2026-07-11,Completed,Medium,100.0,1121823.55,1050639.57,Small
+200,FORGE-200,Industrial Engineering Integration,Industrial Analytics,Project Manager 01,RDE Sponsor 02,1,2025-11-26,2026-07-21,2026-07-26,,Active,Medium,95.0,1112812.92,1029915.12,Small
+201,FORGE-201,Industrial Engineering Transformation,Digital Reliability,Project Manager 03,RDE Sponsor 01,4,2025-10-27,2026-04-25,2026-04-23,2026-04-16,Completed,High,100.0,4973868.26,4710757.84,Large
+202,FORGE-202,Industrial Engineering Enablement,Industrial Analytics,Project Manager 03,RDE Sponsor 05,2,2026-03-15,2026-08-11,2026-08-11,,Active,High,92.0,4599927.07,4512523.95,Large
+203,FORGE-203,Industrial Engineering Acceleration,Industrial Analytics,Project Manager 03,RDE Sponsor 01,3,2026-03-28,2026-07-20,2026-08-05,,Active,High,95.0,3036582.61,2919444.41,Medium
+204,FORGE-204,Industrial Engineering Orchestration,Digital Reliability,Project Manager 10,RDE Sponsor 01,5,2026-03-14,2026-07-14,2026-07-13,,Active,Medium,95.0,2149035.47,2097674.87,Medium
+205,FORGE-205,Industrial Engineering Intelligence,Automation Platform,Project Manager 05,RDE Sponsor 02,6,2026-01-22,2026-07-17,2026-07-22,,Active,Low,95.0,1703009.24,1606595.49,Small
+206,FORGE-206,Industrial Energy Modernization,Connected Operations,Project Manager 05,RDE Sponsor 06,4,2025-09-15,2026-03-28,2026-03-21,2026-03-23,Completed,Medium,100.0,2266173.67,2229230.08,Medium
+207,FORGE-207,Industrial Energy Analytics,Automation Platform,Project Manager 01,RDE Sponsor 03,3,2026-03-21,2026-06-16,2026-07-10,2026-06-03,Completed,Medium,100.0,4104342.37,4057487.09,Large
+208,FORGE-208,Industrial Energy Platform,Digital Reliability,Project Manager 01,RDE Sponsor 02,5,2026-01-10,2026-08-11,2026-08-10,,Active,High,92.0,2284194.93,2243647.09,Medium
+209,FORGE-209,Industrial Energy Optimization,Connected Operations,Project Manager 04,RDE Sponsor 05,3,2025-11-24,2026-07-19,2026-08-11,,At Risk,Medium,95.0,2640114.85,2413046.95,Medium
+210,FORGE-210,Industrial Energy Integration,Digital Reliability,Project Manager 01,RDE Sponsor 01,3,2026-05-02,2026-08-11,2026-08-06,,Active,High,92.0,1757073.03,1609298.68,Medium
+211,FORGE-211,Industrial Energy Transformation,Workforce Enablement,Project Manager 01,RDE Sponsor 03,2,2025-11-29,2026-05-01,2026-05-09,2026-04-27,Completed,High,100.0,3446566.32,3396106.79,Medium
+212,FORGE-212,Industrial Energy Enablement,Connected Operations,Project Manager 04,RDE Sponsor 03,3,2025-11-06,2026-08-10,2026-08-11,,Active,High,92.33,2450891.6,2365290.61,Medium
+213,FORGE-213,Industrial Energy Acceleration,Workforce Enablement,Project Manager 06,RDE Sponsor 03,5,2025-10-22,2026-06-15,2026-06-18,2026-06-02,Completed,High,100.0,4811676.9,4726976.97,Large
+214,FORGE-214,Industrial Energy Orchestration,Industrial Analytics,Project Manager 07,RDE Sponsor 03,2,2026-02-01,2026-07-15,2026-07-08,,Active,High,95.0,4816182.22,4595421.76,Large
+215,FORGE-215,Industrial Energy Intelligence,Workforce Enablement,Project Manager 04,RDE Sponsor 05,1,2026-02-13,2026-08-11,2026-08-11,,Active,High,92.0,4518831.4,4247611.41,Large
+216,FORGE-216,Industrial Service Modernization,Connected Operations,Project Manager 07,RDE Sponsor 02,1,2026-05-11,2026-08-11,2026-08-11,,Active,High,92.0,3297890.91,3056406.0,Medium
+217,FORGE-217,Industrial Service Analytics,Connected Operations,Project Manager 02,RDE Sponsor 01,1,2025-10-25,2026-07-19,2026-07-12,,Active,Low,95.0,2004865.38,1955306.91,Medium
+218,FORGE-218,Industrial Service Platform,Industrial Analytics,Project Manager 03,RDE Sponsor 06,2,2025-11-16,2026-05-31,2026-06-17,2026-06-08,Completed,High,100.0,4532347.34,4495403.75,Large
+219,FORGE-219,Industrial Service Optimization,Automation Platform,Project Manager 09,RDE Sponsor 02,1,2026-01-22,2026-06-01,2026-06-02,2026-06-09,Completed,Low,100.0,1130834.18,1054243.82,Small
+220,FORGE-220,Industrial Service Integration,Industrial Analytics,Project Manager 02,RDE Sponsor 01,2,2025-12-05,2026-08-08,2026-08-11,,Active,Medium,93.12,3635789.57,3548386.45,Large
+221,FORGE-221,Industrial Service Transformation,Connected Operations,Project Manager 01,RDE Sponsor 05,4,2025-10-20,2026-03-13,2026-03-26,2026-03-03,Completed,High,100.0,4717065.28,4639573.85,Large
+222,FORGE-222,Industrial Service Enablement,Digital Reliability,Project Manager 04,RDE Sponsor 01,5,2025-11-05,2026-02-14,2026-02-17,2026-02-13,Completed,High,100.0,4969362.94,4691835.51,Large
+223,FORGE-223,Industrial Service Acceleration,Connected Operations,Project Manager 04,RDE Sponsor 05,4,2025-12-24,2026-05-22,2026-06-09,2026-05-13,Completed,Medium,100.0,1554333.83,1450711.57,Small
+224,FORGE-224,Industrial Service Orchestration,Industrial Analytics,Project Manager 09,RDE Sponsor 02,2,2025-11-04,2026-05-28,2026-06-02,2026-05-15,Completed,Low,100.0,3221300.55,2958190.13,Medium
+225,FORGE-225,Industrial Service Intelligence,Connected Operations,Project Manager 08,RDE Sponsor 01,3,2026-03-03,2026-05-19,2026-05-31,2026-05-17,Completed,Medium,100.0,2599567.01,2395926.75,Medium
+226,FORGE-226,Digital Asset Modernization,Connected Operations,Project Manager 03,RDE Sponsor 06,4,2026-01-15,2026-08-11,2026-08-11,,Active,Medium,92.0,2824832.79,2751846.68,Medium
+227,FORGE-227,Digital Asset Analytics,Connected Operations,Project Manager 02,RDE Sponsor 05,3,2025-12-18,2026-08-11,2026-08-11,,Active,Low,92.0,1103802.29,1044332.13,Small
+228,FORGE-228,Digital Asset Platform,Industrial Analytics,Project Manager 02,RDE Sponsor 01,3,2025-09-26,2026-03-09,2026-03-24,2026-03-16,Completed,Medium,100.0,2112992.95,1935483.52,Medium
+229,FORGE-229,Digital Asset Optimization,Workforce Enablement,Project Manager 05,RDE Sponsor 02,8,2025-11-29,2026-08-11,2026-08-11,,Active,Low,92.0,2446386.29,2324742.77,Medium
+230,FORGE-230,Digital Asset Integration,Industrial Analytics,Project Manager 02,RDE Sponsor 04,2,2026-03-06,2026-08-01,2026-08-06,,Active,Medium,95.0,2653630.8,2467110.74,Medium
+231,FORGE-231,Digital Asset Transformation,Digital Reliability,Project Manager 03,RDE Sponsor 03,3,2025-12-22,2026-08-11,2026-08-11,,Active,High,92.0,1820147.44,1775995.35,Medium
+232,FORGE-232,Digital Asset Enablement,Connected Operations,Project Manager 03,RDE Sponsor 04,4,2026-04-02,2026-07-20,2026-07-29,,Active,Medium,95.0,4081815.8,3731302.26,Large
+233,FORGE-233,Digital Asset Acceleration,Connected Operations,Project Manager 03,RDE Sponsor 02,1,2025-12-04,2026-04-16,2026-04-22,2026-04-15,Completed,High,100.0,4374661.3,4114254.07,Large
+234,FORGE-234,Digital Asset Orchestration,Industrial Analytics,Project Manager 03,RDE Sponsor 02,6,2025-10-16,2026-03-14,2026-03-18,2026-03-16,Completed,High,100.0,4234996.52,4053882.84,Large
+235,FORGE-235,Digital Asset Intelligence,Connected Operations,Project Manager 07,RDE Sponsor 03,6,2026-02-11,2026-08-03,2026-08-05,,Active,High,95.0,4910793.84,4741393.98,Large
+236,FORGE-236,Digital Operations Modernization,Workforce Enablement,Project Manager 01,RDE Sponsor 01,2,2026-02-14,2026-08-11,2026-08-11,,At Risk,High,92.0,3185258.02,2972607.13,Medium
+237,FORGE-237,Digital Operations Analytics,Connected Operations,Project Manager 08,RDE Sponsor 03,4,2025-12-12,2026-06-22,2026-07-04,2026-06-18,Completed,High,100.0,3996214.8,3694358.67,Large
+238,FORGE-238,Digital Operations Platform,Industrial Analytics,Project Manager 02,RDE Sponsor 01,6,2026-01-07,2026-07-02,2026-07-14,2026-07-02,Completed,High,100.0,2599567.01,2489637.31,Medium
+239,FORGE-239,Digital Operations Optimization,Workforce Enablement,Project Manager 03,RDE Sponsor 05,5,2026-03-07,2026-08-11,2026-08-11,,Active,Medium,92.0,1626418.88,1570552.97,Small
+240,FORGE-240,Digital Operations Integration,Connected Operations,Project Manager 04,RDE Sponsor 04,4,2025-10-23,2026-05-30,2026-06-10,2026-05-26,Completed,High,100.0,3068119.82,3039285.8,Medium
+241,FORGE-241,Digital Operations Transformation,Automation Platform,Project Manager 04,RDE Sponsor 02,7,2026-01-03,2026-08-11,2026-08-11,,Active,High,92.0,3577220.47,3436654.63,Large
+242,FORGE-242,Digital Operations Enablement,Digital Reliability,Project Manager 01,RDE Sponsor 01,3,2025-11-12,2026-05-24,2026-06-11,2026-05-29,Completed,Medium,100.0,4604432.39,4240402.9,Large
+243,FORGE-243,Digital Operations Acceleration,Automation Platform,Project Manager 01,RDE Sponsor 01,6,2025-12-15,2026-04-28,2026-05-09,2026-04-19,Completed,Low,100.0,2712199.9,2508559.64,Medium
+244,FORGE-244,Digital Operations Orchestration,Automation Platform,Project Manager 05,RDE Sponsor 03,1,2026-05-05,2026-08-11,2026-08-11,,Active,Medium,92.0,3581725.78,3444764.19,Large
+245,FORGE-245,Digital Operations Intelligence,Connected Operations,Project Manager 09,RDE Sponsor 01,3,2026-02-03,2026-06-11,2026-06-21,2026-06-13,Completed,High,100.0,3279869.65,3243827.13,Medium
+246,FORGE-246,Digital Reliability Modernization,Industrial Analytics,Project Manager 01,RDE Sponsor 02,2,2025-10-02,2026-06-07,2026-06-13,2026-06-04,Completed,Medium,100.0,4131374.27,3906108.5,Large
+247,FORGE-247,Digital Reliability Analytics,Connected Operations,Project Manager 05,RDE Sponsor 01,4,2026-04-01,2026-08-11,2026-08-11,,Active,Medium,92.0,2094971.68,2011172.81,Medium
+248,FORGE-248,Digital Reliability Platform,Connected Operations,Project Manager 09,RDE Sponsor 06,6,2025-11-18,2026-07-04,2026-07-20,2026-07-13,Completed,Medium,100.0,4230491.21,4030455.2,Large
+249,FORGE-249,Digital Reliability Optimization,Workforce Enablement,Project Manager 03,RDE Sponsor 02,2,2026-01-05,2026-08-11,2026-08-11,,Active,High,92.0,4329608.15,3995313.74,Large
+250,FORGE-250,Digital Reliability Integration,Digital Reliability,Project Manager 03,RDE Sponsor 01,3,2026-04-05,2026-08-11,2026-08-11,,Active,Medium,92.0,3023066.67,2879797.64,Medium
+251,FORGE-251,Digital Reliability Transformation,Connected Operations,Project Manager 07,RDE Sponsor 06,3,2026-02-17,2026-05-28,2026-06-01,2026-06-06,Completed,High,100.0,1815642.13,1687691.17,Medium
+252,FORGE-252,Digital Reliability Enablement,Connected Operations,Project Manager 10,RDE Sponsor 03,4,2026-04-13,2026-08-11,2026-08-10,,Active,Low,92.0,2279689.62,2236438.59,Medium
+253,FORGE-253,Digital Reliability Acceleration,Connected Operations,Project Manager 08,RDE Sponsor 01,3,2025-08-15,2026-04-20,2026-05-07,2026-04-10,Completed,Low,100.0,1608397.62,1567849.78,Small
+254,FORGE-254,Digital Reliability Orchestration,Digital Reliability,Project Manager 01,RDE Sponsor 01,3,2026-02-08,2026-08-11,2026-08-10,,Active,High,92.0,4194448.68,4007928.62,Large
+255,FORGE-255,Digital Reliability Intelligence,Workforce Enablement,Project Manager 09,RDE Sponsor 03,1,2025-12-01,2026-04-20,2026-04-28,2026-04-27,Completed,Medium,100.0,1396647.79,1309244.67,Small
+256,FORGE-256,Digital Controls Modernization,Automation Platform,Project Manager 10,RDE Sponsor 04,1,2026-05-16,2026-08-11,2026-08-11,,Active,High,92.0,5009910.78,4900882.15,Strategic
+257,FORGE-257,Digital Controls Analytics,Digital Reliability,Project Manager 01,RDE Sponsor 05,3,2026-02-24,2026-08-11,2026-08-11,,Active,High,92.0,1883221.86,1743557.08,Medium
+258,FORGE-258,Digital Controls Platform,Automation Platform,Project Manager 02,RDE Sponsor 06,1,2026-05-16,2026-08-11,2026-08-08,,Active,Medium,92.0,3514146.05,3362767.45,Large
+259,FORGE-259,Digital Controls Optimization,Industrial Analytics,Project Manager 02,RDE Sponsor 05,2,2026-05-03,2026-08-11,2026-08-11,,At Risk,High,92.0,4604432.39,4246710.34,Large
+260,FORGE-260,Digital Controls Integration,Connected Operations,Project Manager 10,RDE Sponsor 04,3,2025-11-12,2026-04-19,2026-04-12,2026-04-24,Completed,High,100.0,2293205.56,2140925.9,Medium
+261,FORGE-261,Digital Controls Transformation,Workforce Enablement,Project Manager 02,RDE Sponsor 03,5,2025-11-19,2026-02-11,2026-02-04,2026-02-17,Completed,Medium,100.0,2405838.45,2393223.57,Medium
+262,FORGE-262,Digital Controls Enablement,Connected Operations,Project Manager 02,RDE Sponsor 04,3,2026-05-26,2026-08-11,2026-08-11,,At Risk,Medium,92.0,3640294.88,3465488.64,Large
+263,FORGE-263,Digital Controls Acceleration,Workforce Enablement,Project Manager 07,RDE Sponsor 05,8,2026-02-09,2026-08-11,2026-08-11,,Active,High,92.0,1923769.7,1824652.76,Medium
+264,FORGE-264,Digital Controls Orchestration,Automation Platform,Project Manager 06,RDE Sponsor 01,6,2025-10-21,2026-05-20,2026-05-16,2026-05-10,Completed,Medium,100.0,2887907.2,2812217.9,Medium
+265,FORGE-265,Digital Controls Intelligence,Digital Reliability,Project Manager 03,RDE Sponsor 02,3,2026-02-04,2026-08-02,2026-08-11,,At Risk,High,95.0,1351594.63,1275004.27,Small
+266,FORGE-266,Digital Telemetry Modernization,Connected Operations,Project Manager 03,RDE Sponsor 02,3,2026-03-22,2026-08-11,2026-08-11,,Active,High,92.0,4550368.6,4361145.35,Large
+267,FORGE-267,Digital Telemetry Analytics,Connected Operations,Project Manager 02,RDE Sponsor 03,3,2026-01-31,2026-08-11,2026-08-11,,At Risk,Medium,92.0,2464407.55,2425661.84,Medium
+268,FORGE-268,Digital Telemetry Platform,Connected Operations,Project Manager 01,RDE Sponsor 06,3,2026-01-21,2026-08-11,2026-08-11,,Active,Medium,92.0,1329068.06,1238961.75,Small
+269,FORGE-269,Digital Telemetry Optimization,Workforce Enablement,Project Manager 09,RDE Sponsor 04,8,2025-11-22,2026-08-11,2026-08-04,,Active,High,92.0,4239501.84,4183635.93,Large
+270,FORGE-270,Digital Telemetry Integration,Connected Operations,Project Manager 03,RDE Sponsor 01,3,2025-11-18,2026-08-08,2026-08-01,,Active,Medium,93.05,4653990.86,4292664.56,Large
+271,FORGE-271,Digital Telemetry Transformation,Connected Operations,Project Manager 04,RDE Sponsor 05,3,2026-02-06,2026-05-28,2026-05-26,2026-05-25,Completed,High,100.0,4712559.96,4377364.49,Large
+272,FORGE-272,Digital Telemetry Enablement,Connected Operations,Project Manager 05,RDE Sponsor 01,4,2026-04-26,2026-08-11,2026-08-11,,Active,Low,92.0,2869885.94,2797800.89,Medium
+273,FORGE-273,Digital Telemetry Acceleration,Connected Operations,Project Manager 04,RDE Sponsor 04,6,2025-10-18,2026-05-06,2026-05-07,2026-05-03,Completed,High,100.0,3721390.56,3661920.4,Large
+274,FORGE-274,Digital Telemetry Orchestration,Industrial Analytics,Project Manager 01,RDE Sponsor 05,1,2025-12-23,2026-04-27,2026-05-15,2026-04-16,Completed,Low,100.0,1585871.04,1552531.71,Small
+275,FORGE-275,Digital Telemetry Intelligence,Connected Operations,Project Manager 07,RDE Sponsor 01,1,2026-03-06,2026-07-24,2026-07-24,,Active,Medium,95.0,3514146.05,3384392.97,Large
+276,FORGE-276,Digital Workflow Modernization,Workforce Enablement,Project Manager 07,RDE Sponsor 06,5,2026-05-27,2026-08-11,2026-08-09,,Active,Medium,92.0,4811676.9,4512523.95,Large
+277,FORGE-277,Digital Workflow Analytics,Automation Platform,Project Manager 06,RDE Sponsor 02,1,2025-11-04,2026-06-17,2026-06-30,2026-06-26,Completed,Low,100.0,2437375.66,2304919.39,Medium
+278,FORGE-278,Digital Workflow Platform,Connected Operations,Project Manager 06,RDE Sponsor 04,3,2026-01-22,2026-06-05,2026-06-09,2026-05-30,Completed,Low,100.0,2802306.21,2767164.75,Medium
+279,FORGE-279,Digital Workflow Optimization,Industrial Analytics,Project Manager 05,RDE Sponsor 01,6,2025-12-05,2026-06-18,2026-07-08,2026-06-12,Completed,High,100.0,4910793.84,4496304.82,Large
+280,FORGE-280,Digital Workflow Integration,Workforce Enablement,Project Manager 06,RDE Sponsor 04,5,2025-12-18,2026-04-20,2026-04-28,2026-04-19,Completed,Low,100.0,2464407.55,2289601.31,Medium
+281,FORGE-281,Digital Workflow Transformation,Connected Operations,Project Manager 08,RDE Sponsor 01,3,2025-11-07,2026-03-19,2026-03-14,2026-03-10,Completed,Medium,100.0,2969002.88,2718507.34,Medium
+282,FORGE-282,Digital Workflow Enablement,Industrial Analytics,Project Manager 01,RDE Sponsor 02,1,2026-02-03,2026-06-08,2026-06-10,2026-06-06,Completed,Medium,100.0,2171562.05,2151738.66,Medium
+283,FORGE-283,Digital Workflow Acceleration,Digital Reliability,Project Manager 08,RDE Sponsor 01,5,2026-02-03,2026-08-11,2026-08-11,,Active,High,92.0,4744097.17,4339519.84,Large
+284,FORGE-284,Digital Workflow Orchestration,Digital Reliability,Project Manager 05,RDE Sponsor 01,2,2026-01-04,2026-04-23,2026-04-16,2026-04-20,Completed,High,100.0,3464587.58,3208685.66,Medium
+285,FORGE-285,Digital Workflow Intelligence,Industrial Analytics,Project Manager 02,RDE Sponsor 05,2,2025-11-15,2026-04-03,2026-04-04,2026-03-20,Completed,Medium,100.0,3374481.27,3221300.54,Medium
+286,FORGE-286,Digital Quality Modernization,Industrial Analytics,Project Manager 02,RDE Sponsor 01,1,2026-06-18,2026-08-11,2026-08-11,,Active,High,92.0,2752747.74,2619390.4,Medium
+287,FORGE-287,Digital Quality Analytics,Workforce Enablement,Project Manager 09,RDE Sponsor 02,2,2025-12-17,2026-08-11,2026-08-11,,Active,Medium,92.0,3644800.2,3503333.29,Large
+288,FORGE-288,Digital Quality Platform,Automation Platform,Project Manager 01,RDE Sponsor 01,1,2026-03-14,2026-08-11,2026-08-11,,At Risk,High,92.0,1693998.61,1584068.91,Small
+289,FORGE-289,Digital Quality Optimization,Connected Operations,Project Manager 03,RDE Sponsor 01,4,2026-02-12,2026-08-11,2026-08-11,,At Risk,Medium,92.0,2383311.87,2309424.7,Medium
+290,FORGE-290,Digital Quality Integration,Connected Operations,Project Manager 02,RDE Sponsor 03,3,2026-02-04,2026-07-28,2026-08-04,,Active,High,95.0,1545323.2,1511082.8,Small
+291,FORGE-291,Digital Quality Transformation,Digital Reliability,Project Manager 04,RDE Sponsor 01,2,2025-12-22,2026-04-11,2026-04-23,2026-04-01,Completed,High,100.0,4744097.17,4557577.11,Large
+292,FORGE-292,Digital Quality Enablement,Industrial Analytics,Project Manager 08,RDE Sponsor 01,1,2025-09-21,2026-04-06,2026-05-04,2026-04-14,Completed,High,100.0,2135519.52,2042710.02,Medium
+293,FORGE-293,Digital Quality Acceleration,Workforce Enablement,Project Manager 04,RDE Sponsor 04,8,2026-02-10,2026-07-23,2026-07-22,,Active,Medium,95.0,2712199.9,2516669.21,Medium
+294,FORGE-294,Digital Quality Orchestration,Industrial Analytics,Project Manager 01,RDE Sponsor 02,6,2026-02-11,2026-08-11,2026-08-11,,Active,High,92.0,3910613.81,3825913.88,Large
+295,FORGE-295,Digital Quality Intelligence,Automation Platform,Project Manager 05,RDE Sponsor 01,1,2025-11-25,2026-05-08,2026-05-11,2026-04-26,Completed,High,100.0,1130834.18,1038024.68,Small
+296,FORGE-296,Digital Engineering Modernization,Industrial Analytics,Project Manager 09,RDE Sponsor 06,2,2025-11-11,2026-07-12,2026-07-15,2026-07-21,Completed,Medium,100.0,3428545.06,3168137.83,Medium
+297,FORGE-297,Digital Engineering Analytics,Industrial Analytics,Project Manager 05,RDE Sponsor 03,1,2025-08-18,2025-12-24,2026-01-02,2025-12-29,Completed,Medium,100.0,1928275.01,1915660.13,Medium
+298,FORGE-298,Digital Engineering Platform,Digital Reliability,Project Manager 08,RDE Sponsor 04,4,2025-12-03,2026-08-04,2026-08-11,,Active,High,94.64,2509460.71,2378806.56,Medium
+299,FORGE-299,Digital Engineering Optimization,Industrial Analytics,Project Manager 07,RDE Sponsor 05,3,2025-12-21,2026-06-28,2026-07-17,2026-06-30,Completed,Medium,100.0,1238961.75,1179491.59,Small
+300,FORGE-300,Digital Engineering Integration,Industrial Analytics,Project Manager 01,RDE Sponsor 05,2,2026-01-15,2026-07-07,2026-07-09,2026-07-13,Completed,High,100.0,4361145.36,3985402.05,Large
+301,FORGE-301,Digital Engineering Transformation,Industrial Analytics,Project Manager 09,RDE Sponsor 03,2,2025-11-07,2026-05-09,2026-06-09,2026-04-26,Completed,Medium,100.0,3730401.19,3646602.32,Large
+302,FORGE-302,Digital Engineering Enablement,Digital Reliability,Project Manager 04,RDE Sponsor 01,3,2026-04-13,2026-08-11,2026-08-11,,At Risk,High,92.0,4798160.95,4367452.79,Large
+303,FORGE-303,Digital Engineering Acceleration,Automation Platform,Project Manager 03,RDE Sponsor 06,6,2026-06-18,2026-08-11,2026-08-11,,Active,High,92.0,2978013.51,2945575.24,Medium
+304,FORGE-304,Digital Engineering Orchestration,Connected Operations,Project Manager 05,RDE Sponsor 05,4,2026-01-11,2026-08-11,2026-08-04,,Active,Low,92.0,3825012.82,3602450.24,Large
+305,FORGE-305,Digital Engineering Intelligence,Connected Operations,Project Manager 10,RDE Sponsor 03,3,2026-02-16,2026-08-11,2026-08-11,,At Risk,Low,92.0,1739051.76,1684987.97,Small
+306,FORGE-306,Digital Energy Modernization,Connected Operations,Project Manager 03,RDE Sponsor 04,3,2026-03-01,2026-07-21,2026-08-11,,At Risk,Medium,95.0,5032437.36,4971165.07,Strategic
+307,FORGE-307,Digital Energy Analytics,Workforce Enablement,Project Manager 04,RDE Sponsor 03,8,2025-10-20,2026-05-17,2026-05-13,2026-05-08,Completed,High,100.0,4789150.32,4443142.09,Large
+308,FORGE-308,Digital Energy Platform,Industrial Analytics,Project Manager 06,RDE Sponsor 01,2,2025-09-12,2025-12-12,2025-12-21,2025-12-02,Completed,High,100.0,4861235.37,4818885.4,Large
+309,FORGE-309,Digital Energy Optimization,Connected Operations,Project Manager 02,RDE Sponsor 06,3,2025-12-06,2026-04-26,2026-04-22,2026-04-13,Completed,High,100.0,2320237.46,2112992.95,Medium
+310,FORGE-310,Digital Energy Integration,Industrial Analytics,Project Manager 09,RDE Sponsor 04,6,2025-12-11,2026-03-29,2026-03-27,2026-04-04,Completed,Low,100.0,2757253.06,2623895.72,Medium
+311,FORGE-311,Digital Energy Transformation,Industrial Analytics,Project Manager 09,RDE Sponsor 04,1,2026-04-28,2026-07-25,2026-08-05,,Active,High,95.0,3293385.59,3056406.0,Medium
+312,FORGE-312,Digital Energy Enablement,Workforce Enablement,Project Manager 06,RDE Sponsor 01,5,2026-04-18,2026-08-11,2026-08-11,,Active,Medium,92.0,3473598.21,3291583.47,Medium
+313,FORGE-313,Digital Energy Acceleration,Industrial Analytics,Project Manager 01,RDE Sponsor 06,2,2025-10-24,2026-08-11,2026-08-11,,Active,High,92.0,4523336.71,4226886.95,Large
+314,FORGE-314,Digital Energy Orchestration,Connected Operations,Project Manager 02,RDE Sponsor 02,6,2025-08-21,2026-01-12,2026-01-30,2026-01-03,Completed,Medium,100.0,4401693.19,4355738.97,Large
+315,FORGE-315,Digital Energy Intelligence,Digital Reliability,Project Manager 04,RDE Sponsor 04,2,2026-06-03,2026-08-11,2026-08-11,,Active,High,92.0,2531987.28,2463506.49,Medium
+316,FORGE-316,Digital Service Modernization,Connected Operations,Project Manager 01,RDE Sponsor 02,6,2025-11-13,2026-02-07,2026-02-21,2026-02-13,Completed,High,100.0,4676517.44,4525138.84,Large
+317,FORGE-317,Digital Service Analytics,Workforce Enablement,Project Manager 10,RDE Sponsor 06,5,2025-12-18,2026-07-16,2026-08-03,,At Risk,Low,95.0,3500630.1,3236618.61,Large
+318,FORGE-318,Digital Service Platform,Digital Reliability,Project Manager 07,RDE Sponsor 04,2,2026-03-22,2026-08-11,2026-08-11,,Active,High,92.0,3131194.24,3032077.3,Medium
+319,FORGE-319,Digital Service Optimization,Industrial Analytics,Project Manager 01,RDE Sponsor 04,1,2026-02-03,2026-07-25,2026-08-02,,Active,Medium,95.0,1572355.09,1454315.83,Small
+320,FORGE-320,Digital Service Integration,Industrial Analytics,Project Manager 02,RDE Sponsor 02,3,2026-03-15,2026-08-11,2026-08-11,,Active,Medium,92.0,3946656.33,3839429.82,Large
+321,FORGE-321,Digital Service Transformation,Workforce Enablement,Project Manager 04,RDE Sponsor 04,8,2025-12-03,2026-05-03,2026-05-08,2026-05-08,Completed,Medium,100.0,1653450.77,1553432.77,Small
+322,FORGE-322,Digital Service Enablement,Industrial Analytics,Project Manager 03,RDE Sponsor 02,2,2025-12-06,2026-06-13,2026-06-25,2026-06-09,Completed,Low,100.0,1347089.32,1275004.27,Small
+323,FORGE-323,Digital Service Acceleration,Automation Platform,Project Manager 07,RDE Sponsor 03,1,2025-12-27,2026-06-27,2026-06-29,2026-06-17,Completed,High,100.0,1356099.95,1311947.86,Small
+324,FORGE-324,Digital Service Orchestration,Automation Platform,Project Manager 07,RDE Sponsor 03,6,2025-11-24,2026-04-16,2026-05-06,2026-04-25,Completed,Medium,100.0,2806811.53,2591457.45,Medium
+325,FORGE-325,Digital Service Intelligence,Connected Operations,Project Manager 04,RDE Sponsor 03,4,2026-05-16,2026-08-11,2026-08-11,,Active,High,92.0,1982338.8,1874211.23,Medium
+326,FORGE-326,Autonomous Asset Modernization,Industrial Analytics,Project Manager 09,RDE Sponsor 01,1,2026-06-02,2026-08-11,2026-08-11,,Active,High,92.0,2432870.34,2281491.74,Medium
+327,FORGE-327,Autonomous Asset Analytics,Digital Reliability,Project Manager 02,RDE Sponsor 04,3,2026-05-14,2026-08-11,2026-08-11,,Active,Low,92.0,1171382.02,1109208.67,Small
+328,FORGE-328,Autonomous Asset Platform,Industrial Analytics,Project Manager 06,RDE Sponsor 04,2,2026-03-14,2026-08-11,2026-08-11,,At Risk,High,92.0,3870065.97,3558298.14,Large
+329,FORGE-329,Autonomous Asset Optimization,Industrial Analytics,Project Manager 07,RDE Sponsor 05,6,2026-03-08,2026-08-11,2026-08-11,,Active,Medium,92.0,1937285.64,1874211.22,Medium
+330,FORGE-330,Autonomous Asset Integration,Industrial Analytics,Project Manager 03,RDE Sponsor 04,6,2025-09-13,2026-03-07,2026-03-29,2026-03-14,Completed,Medium,100.0,1265993.64,1232654.31,Small
+331,FORGE-331,Autonomous Asset Transformation,Connected Operations,Project Manager 01,RDE Sponsor 05,3,2025-12-06,2026-07-12,2026-07-18,2026-07-13,Completed,Low,100.0,1666966.72,1653450.77,Small
+332,FORGE-332,Autonomous Asset Enablement,Connected Operations,Project Manager 07,RDE Sponsor 06,4,2026-02-19,2026-08-11,2026-08-06,,Active,Low,92.0,1387637.16,1265092.58,Small
+333,FORGE-333,Autonomous Asset Acceleration,Digital Reliability,Project Manager 03,RDE Sponsor 02,3,2025-12-29,2026-06-12,2026-06-20,2026-06-03,Completed,High,100.0,2959992.25,2933861.42,Medium
+334,FORGE-334,Autonomous Asset Orchestration,Industrial Analytics,Project Manager 01,RDE Sponsor 06,1,2025-11-06,2026-06-26,2026-07-09,2026-06-14,Completed,High,100.0,1549828.51,1518291.3,Small
+335,FORGE-335,Autonomous Asset Intelligence,Automation Platform,Project Manager 01,RDE Sponsor 01,7,2025-10-26,2026-08-11,2026-08-11,,Active,Low,92.0,1256983.01,1175887.33,Small
+336,FORGE-336,Autonomous Operations Modernization,Industrial Analytics,Project Manager 02,RDE Sponsor 01,2,2025-09-01,2026-02-05,2026-02-14,2026-02-06,Completed,Medium,100.0,4599927.07,4483689.93,Large
+337,FORGE-337,Autonomous Operations Analytics,Workforce Enablement,Project Manager 07,RDE Sponsor 03,5,2026-06-11,2026-08-11,2026-08-09,,Active,Medium,92.0,2009370.69,1958010.09,Medium
+338,FORGE-338,Autonomous Operations Platform,Connected Operations,Project Manager 04,RDE Sponsor 05,1,2026-01-11,2026-06-24,2026-07-16,2026-07-01,Completed,High,100.0,1437195.63,1335375.5,Small
+339,FORGE-339,Autonomous Operations Optimization,Connected Operations,Project Manager 06,RDE Sponsor 06,4,2026-01-09,2026-08-11,2026-08-11,,Active,Medium,92.0,1585871.04,1493061.54,Small
+340,FORGE-340,Autonomous Operations Integration,Connected Operations,Project Manager 03,RDE Sponsor 01,3,2026-02-11,2026-08-11,2026-08-07,,Active,Medium,92.0,2685168.01,2503153.27,Medium
+341,FORGE-341,Autonomous Operations Transformation,Industrial Analytics,Project Manager 06,RDE Sponsor 04,2,2025-10-31,2026-03-17,2026-04-05,2026-03-17,Completed,Medium,100.0,1157866.07,1119120.36,Small
+342,FORGE-342,Autonomous Operations Enablement,Automation Platform,Project Manager 03,RDE Sponsor 05,1,2025-11-06,2026-07-28,2026-08-11,,Active,High,95.0,2351774.66,2155342.91,Medium
+343,FORGE-343,Autonomous Operations Acceleration,Workforce Enablement,Project Manager 02,RDE Sponsor 04,8,2026-01-01,2026-03-13,2026-04-06,2026-03-08,Completed,Medium,100.0,4942331.05,4621552.59,Large
+344,FORGE-344,Autonomous Operations Orchestration,Connected Operations,Project Manager 02,RDE Sponsor 03,1,2025-12-26,2026-04-14,2026-04-21,2026-04-04,Completed,High,100.0,1288520.22,1275004.27,Small
+345,FORGE-345,Autonomous Operations Intelligence,Connected Operations,Project Manager 03,RDE Sponsor 03,4,2026-05-19,2026-08-11,2026-08-11,,Active,Medium,92.0,3392502.53,3108667.66,Medium
+346,FORGE-346,Autonomous Reliability Modernization,Industrial Analytics,Project Manager 07,RDE Sponsor 01,2,2026-04-06,2026-07-09,2026-07-19,2026-07-14,Completed,Medium,100.0,3883581.92,3801585.18,Large
+347,FORGE-347,Autonomous Reliability Analytics,Digital Reliability,Project Manager 04,RDE Sponsor 01,5,2026-03-04,2026-08-11,2026-08-04,,Active,Medium,92.0,3906108.5,3702468.24,Large
+348,FORGE-348,Autonomous Reliability Platform,Industrial Analytics,Project Manager 06,RDE Sponsor 04,2,2026-02-17,2026-08-11,2026-08-11,,Active,Medium,92.0,2450891.6,2257163.04,Medium
+349,FORGE-349,Autonomous Reliability Optimization,Workforce Enablement,Project Manager 02,RDE Sponsor 04,5,2026-03-31,2026-08-11,2026-08-11,,At Risk,High,92.0,2928455.04,2829338.1,Medium
+350,FORGE-350,Autonomous Reliability Integration,Automation Platform,Project Manager 09,RDE Sponsor 01,1,2026-03-10,2026-08-11,2026-08-09,,Active,Medium,92.0,1491259.41,1391241.41,Small
+351,FORGE-351,Autonomous Reliability Transformation,Digital Reliability,Project Manager 03,RDE Sponsor 03,3,2026-02-07,2026-08-11,2026-08-11,,At Risk,High,92.0,4482788.87,4433230.4,Large
+352,FORGE-352,Autonomous Reliability Enablement,Automation Platform,Project Manager 02,RDE Sponsor 05,6,2026-02-06,2026-06-12,2026-06-14,2026-06-03,Completed,High,100.0,3437555.69,3394304.66,Medium
+353,FORGE-353,Autonomous Reliability Acceleration,Connected Operations,Project Manager 08,RDE Sponsor 01,4,2026-04-04,2026-08-11,2026-08-11,,Active,Medium,92.0,1126328.86,1036222.55,Small
+354,FORGE-354,Autonomous Reliability Orchestration,Digital Reliability,Project Manager 10,RDE Sponsor 02,2,2026-01-09,2026-08-11,2026-08-11,,Active,Medium,92.0,1698503.92,1582266.78,Small
+355,FORGE-355,Autonomous Reliability Intelligence,Automation Platform,Project Manager 01,RDE Sponsor 01,6,2025-12-19,2026-07-10,2026-07-03,2026-07-15,Completed,Medium,100.0,1342584.0,1316453.17,Small
+356,FORGE-356,Autonomous Controls Modernization,Connected Operations,Project Manager 04,RDE Sponsor 02,1,2025-10-31,2026-07-03,2026-07-23,2026-07-09,Completed,Medium,100.0,1306541.48,1273202.15,Small
+357,FORGE-357,Autonomous Controls Analytics,Industrial Analytics,Project Manager 08,RDE Sponsor 02,3,2026-03-15,2026-07-23,2026-08-08,,Active,High,95.0,3320417.49,3273562.21,Medium
+358,FORGE-358,Autonomous Controls Platform,Industrial Analytics,Project Manager 07,RDE Sponsor 03,6,2025-11-04,2026-04-29,2026-05-16,2026-05-02,Completed,Medium,100.0,1252477.7,1238961.75,Small
+359,FORGE-359,Autonomous Controls Optimization,Industrial Analytics,Project Manager 07,RDE Sponsor 04,1,2025-12-07,2026-07-04,2026-07-09,2026-06-20,Completed,High,100.0,4198954.0,3888988.3,Large
+360,FORGE-360,Autonomous Controls Integration,Connected Operations,Project Manager 09,RDE Sponsor 04,3,2026-01-27,2026-08-11,2026-08-11,,Active,Medium,92.0,3865560.66,3761938.4,Large
+361,FORGE-361,Autonomous Controls Transformation,Industrial Analytics,Project Manager 01,RDE Sponsor 04,2,2026-04-19,2026-08-11,2026-08-11,,At Risk,High,92.0,1117318.23,1073166.14,Small
+362,FORGE-362,Autonomous Controls Enablement,Industrial Analytics,Project Manager 09,RDE Sponsor 02,1,2026-02-15,2026-08-11,2026-08-11,,Active,High,92.0,3608757.68,3526760.94,Large
+363,FORGE-363,Autonomous Controls Acceleration,Automation Platform,Project Manager 08,RDE Sponsor 03,1,2026-01-16,2026-06-21,2026-06-14,2026-06-23,Completed,Low,100.0,3676337.41,3587132.16,Large
+364,FORGE-364,Autonomous Controls Orchestration,Industrial Analytics,Project Manager 07,RDE Sponsor 05,2,2026-01-28,2026-08-11,2026-08-11,,Active,Medium,92.0,3099657.03,3041988.99,Medium
+365,FORGE-365,Autonomous Controls Intelligence,Industrial Analytics,Project Manager 03,RDE Sponsor 05,3,2026-04-22,2026-08-11,2026-08-11,,Active,High,92.0,4216975.26,4116056.19,Large
+366,FORGE-366,Autonomous Telemetry Modernization,Industrial Analytics,Project Manager 05,RDE Sponsor 02,6,2026-04-25,2026-08-11,2026-08-11,,Active,Low,92.0,3270859.02,3023967.73,Medium
+367,FORGE-367,Autonomous Telemetry Analytics,Digital Reliability,Project Manager 02,RDE Sponsor 04,2,2025-09-24,2026-06-14,2026-06-11,2026-06-06,Completed,Medium,100.0,1986844.11,1891331.42,Medium
+368,FORGE-368,Autonomous Telemetry Platform,Digital Reliability,Project Manager 01,RDE Sponsor 04,3,2026-03-16,2026-08-11,2026-08-11,,Active,Medium,92.0,2896917.83,2683365.88,Medium
+369,FORGE-369,Autonomous Telemetry Optimization,Workforce Enablement,Project Manager 01,RDE Sponsor 01,8,2025-12-02,2026-08-06,2026-08-08,,Active,High,93.86,2586051.07,2440078.85,Medium
+370,FORGE-370,Autonomous Telemetry Integration,Industrial Analytics,Project Manager 09,RDE Sponsor 04,2,2026-01-06,2026-07-21,2026-07-31,,Active,Medium,95.0,2752747.74,2722111.59,Medium
+371,FORGE-371,Autonomous Telemetry Transformation,Connected Operations,Project Manager 03,RDE Sponsor 03,6,2025-12-17,2026-05-30,2026-06-16,2026-05-16,Completed,High,100.0,4343124.09,4160208.28,Large
+372,FORGE-372,Autonomous Telemetry Enablement,Industrial Analytics,Project Manager 07,RDE Sponsor 02,1,2026-05-23,2026-08-11,2026-08-11,,Active,Medium,92.0,3662821.46,3596142.79,Large
+373,FORGE-373,Autonomous Telemetry Acceleration,Workforce Enablement,Project Manager 03,RDE Sponsor 04,8,2026-04-07,2026-08-11,2026-08-11,,At Risk,Medium,92.0,3892592.55,3688051.23,Large
+374,FORGE-374,Autonomous Telemetry Orchestration,Industrial Analytics,Project Manager 09,RDE Sponsor 01,6,2025-08-31,2026-07-11,2026-07-09,2026-07-20,Completed,Low,100.0,3387997.22,3336636.62,Medium
+375,FORGE-375,Autonomous Telemetry Intelligence,Industrial Analytics,Project Manager 01,RDE Sponsor 04,2,2026-01-02,2026-08-03,2026-08-11,,At Risk,High,95.0,2261668.36,2087763.18,Medium
+376,FORGE-376,Autonomous Workflow Modernization,Connected Operations,Project Manager 07,RDE Sponsor 01,3,2026-02-26,2026-06-21,2026-06-24,2026-06-07,Completed,Medium,100.0,1428185.0,1401153.11,Small
+377,FORGE-377,Autonomous Workflow Analytics,Industrial Analytics,Project Manager 02,RDE Sponsor 01,2,2025-10-12,2026-04-12,2026-04-20,2026-04-02,Completed,Medium,100.0,3266353.7,3206883.54,Medium
+378,FORGE-378,Autonomous Workflow Platform,Connected Operations,Project Manager 01,RDE Sponsor 01,1,2026-03-01,2026-08-11,2026-08-11,,At Risk,High,92.0,2572535.12,2487835.19,Medium
+379,FORGE-379,Autonomous Workflow Optimization,Digital Reliability,Project Manager 05,RDE Sponsor 02,3,2026-06-07,2026-08-11,2026-08-11,,Active,Medium,92.0,2806811.53,2694178.64,Medium
+380,FORGE-380,Autonomous Workflow Integration,Connected Operations,Project Manager 01,RDE Sponsor 05,3,2025-12-08,2026-05-17,2026-05-30,2026-05-16,Completed,Medium,100.0,3982698.86,3795277.74,Large
+381,FORGE-381,Autonomous Workflow Transformation,Connected Operations,Project Manager 04,RDE Sponsor 03,4,2026-01-14,2026-08-11,2026-08-10,,Active,High,92.0,4563884.55,4489997.38,Large
+382,FORGE-382,Autonomous Workflow Enablement,Industrial Analytics,Project Manager 09,RDE Sponsor 02,3,2026-01-25,2026-08-11,2026-08-04,,Active,High,92.0,4244007.15,4140384.89,Large
+383,FORGE-383,Autonomous Workflow Acceleration,Industrial Analytics,Project Manager 01,RDE Sponsor 04,1,2026-02-28,2026-06-13,2026-07-01,2026-06-08,Completed,Medium,100.0,2856370.0,2669849.94,Medium
+384,FORGE-384,Autonomous Workflow Orchestration,Industrial Analytics,Project Manager 01,RDE Sponsor 01,1,2025-12-29,2026-06-09,2026-06-15,2026-06-06,Completed,Medium,100.0,3505135.42,3236618.62,Large
+385,FORGE-385,Autonomous Workflow Intelligence,Automation Platform,Project Manager 08,RDE Sponsor 01,6,2025-11-26,2026-04-09,2026-04-23,2026-04-02,Completed,Low,100.0,1486754.1,1447107.32,Small
+386,FORGE-386,Autonomous Quality Modernization,Connected Operations,Project Manager 06,RDE Sponsor 04,3,2025-09-08,2025-12-22,2026-01-09,2025-12-21,Completed,High,100.0,4158406.16,3908811.68,Large
+387,FORGE-387,Autonomous Quality Analytics,Connected Operations,Project Manager 09,RDE Sponsor 05,3,2026-02-09,2026-08-11,2026-08-11,,Active,Medium,92.0,4189943.37,3990808.43,Large
+388,FORGE-388,Autonomous Quality Platform,Connected Operations,Project Manager 03,RDE Sponsor 01,6,2026-07-07,2026-08-11,2026-08-11,,Active,High,92.0,3185258.02,3069921.94,Medium
+389,FORGE-389,Autonomous Quality Optimization,Industrial Analytics,Project Manager 01,RDE Sponsor 01,1,2025-09-28,2026-05-02,2026-05-18,2026-05-05,Completed,High,100.0,4766623.75,4373760.24,Large
+390,FORGE-390,Autonomous Quality Integration,Workforce Enablement,Project Manager 04,RDE Sponsor 04,2,2025-12-30,2026-04-08,2026-04-20,2026-04-04,Completed,Medium,100.0,2815822.16,2734726.48,Medium
+391,FORGE-391,Autonomous Quality Transformation,Connected Operations,Project Manager 03,RDE Sponsor 03,3,2025-12-07,2026-06-12,2026-06-24,2026-06-15,Completed,Medium,100.0,2437375.66,2389619.32,Medium
+392,FORGE-392,Autonomous Quality Enablement,Industrial Analytics,Project Manager 02,RDE Sponsor 04,2,2025-10-19,2026-07-30,2026-07-26,,Active,High,95.0,3586231.1,3301495.16,Large
+393,FORGE-393,Autonomous Quality Acceleration,Industrial Analytics,Project Manager 09,RDE Sponsor 03,1,2025-09-18,2026-06-08,2026-06-02,2026-06-16,Completed,High,100.0,4762118.43,4617948.34,Large
+394,FORGE-394,Autonomous Quality Orchestration,Automation Platform,Project Manager 07,RDE Sponsor 05,3,2026-03-17,2026-08-11,2026-08-11,,Active,Medium,92.0,1887727.17,1866101.66,Medium
+395,FORGE-395,Autonomous Quality Intelligence,Automation Platform,Project Manager 01,RDE Sponsor 01,7,2026-03-14,2026-05-29,2026-06-06,2026-06-06,Completed,Medium,100.0,1527301.94,1481347.72,Small
+396,FORGE-396,Autonomous Engineering Modernization,Digital Reliability,Project Manager 01,RDE Sponsor 02,3,2025-12-25,2026-07-25,2026-08-11,,At Risk,High,95.0,4275544.36,4157505.1,Large
+397,FORGE-397,Autonomous Engineering Analytics,Industrial Analytics,Project Manager 07,RDE Sponsor 02,3,2025-10-27,2026-01-17,2026-01-29,2026-01-09,Completed,Medium,100.0,3113172.98,2851864.68,Medium
+398,FORGE-398,Autonomous Engineering Platform,Digital Reliability,Project Manager 03,RDE Sponsor 05,3,2026-03-05,2026-08-11,2026-08-11,,Active,Medium,92.0,2401333.13,2251756.66,Medium
+399,FORGE-399,Autonomous Engineering Optimization,Digital Reliability,Project Manager 01,RDE Sponsor 01,3,2025-12-09,2026-06-06,2026-06-07,2026-05-25,Completed,Low,100.0,1991349.43,1884122.92,Medium
+400,FORGE-400,Autonomous Engineering Integration,Industrial Analytics,Project Manager 01,RDE Sponsor 01,2,2025-11-04,2026-05-12,2026-05-26,2026-05-17,Completed,Medium,100.0,3906108.5,3625877.88,Large
+401,FORGE-401,Autonomous Engineering Transformation,Connected Operations,Project Manager 06,RDE Sponsor 05,3,2026-02-21,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4036762.64,3893493.61,Large
+402,FORGE-402,Autonomous Engineering Enablement,Automation Platform,Project Manager 08,RDE Sponsor 01,6,2026-05-03,2026-08-11,2026-08-04,,Active,Medium,92.0,3586231.1,3469092.9,Large
+403,FORGE-403,Autonomous Engineering Acceleration,Workforce Enablement,Project Manager 07,RDE Sponsor 02,8,2025-12-19,2026-08-11,2026-08-11,,Active,Medium,92.0,2275184.3,2224724.77,Medium
+404,FORGE-404,Autonomous Engineering Orchestration,Digital Reliability,Project Manager 04,RDE Sponsor 04,3,2025-10-30,2026-02-22,2026-02-28,2026-03-02,Completed,Medium,100.0,2284194.93,2193187.56,Medium
+405,FORGE-405,Autonomous Engineering Intelligence,Digital Reliability,Project Manager 01,RDE Sponsor 03,4,2026-01-21,2026-08-11,2026-08-11,,Active,Medium,92.0,1522796.62,1444404.13,Small
+406,FORGE-406,Autonomous Energy Modernization,Industrial Analytics,Project Manager 01,RDE Sponsor 01,1,2025-09-24,2026-03-10,2026-03-09,2026-03-03,Completed,High,100.0,2428365.03,2287799.19,Medium
+407,FORGE-407,Autonomous Energy Analytics,Industrial Analytics,Project Manager 03,RDE Sponsor 02,2,2026-03-13,2026-08-11,2026-08-09,,Active,Medium,92.0,2473418.18,2359884.23,Medium
+408,FORGE-408,Autonomous Energy Platform,Industrial Analytics,Project Manager 08,RDE Sponsor 04,2,2026-01-25,2026-08-07,2026-08-11,,Active,High,93.9,4126868.95,4105243.44,Large
+409,FORGE-409,Autonomous Energy Optimization,Industrial Analytics,Project Manager 05,RDE Sponsor 01,2,2026-01-21,2026-08-11,2026-08-11,,Active,Medium,92.0,2428365.03,2285997.06,Medium
+410,FORGE-410,Autonomous Energy Integration,Industrial Analytics,Project Manager 05,RDE Sponsor 03,6,2025-09-26,2026-04-05,2026-04-07,2026-04-12,Completed,Medium,100.0,4239501.84,4024147.76,Large
+411,FORGE-411,Autonomous Energy Transformation,Automation Platform,Project Manager 05,RDE Sponsor 01,3,2026-03-15,2026-08-11,2026-08-11,,Active,Medium,92.0,3302396.22,3220399.48,Medium
+412,FORGE-412,Autonomous Energy Enablement,Industrial Analytics,Project Manager 05,RDE Sponsor 03,2,2025-12-06,2026-03-07,2026-02-28,2026-03-11,Completed,High,100.0,4334113.46,4109748.75,Large
+413,FORGE-413,Autonomous Energy Acceleration,Automation Platform,Project Manager 03,RDE Sponsor 03,7,2026-01-07,2026-08-11,2026-08-08,,Active,Medium,92.0,3072625.14,2942872.05,Medium
+414,FORGE-414,Autonomous Energy Orchestration,Industrial Analytics,Project Manager 04,RDE Sponsor 01,1,2026-07-12,2026-08-11,2026-08-11,,Active,Medium,92.0,3770949.03,3664623.59,Large
+415,FORGE-415,Autonomous Energy Intelligence,Digital Reliability,Project Manager 04,RDE Sponsor 06,2,2026-01-08,2026-04-22,2026-05-10,2026-04-30,Completed,High,100.0,2820327.47,2735627.54,Medium
+416,FORGE-416,Autonomous Service Modernization,Digital Reliability,Project Manager 04,RDE Sponsor 03,2,2025-12-04,2026-08-02,2026-08-11,,At Risk,High,95.0,4068299.85,4040366.89,Large
+417,FORGE-417,Autonomous Service Analytics,Connected Operations,Project Manager 09,RDE Sponsor 06,3,2026-03-12,2026-07-27,2026-07-28,,Active,High,95.0,1680482.66,1661560.34,Small
+418,FORGE-418,Autonomous Service Platform,Workforce Enablement,Project Manager 02,RDE Sponsor 02,2,2025-09-13,2026-01-08,2026-01-22,2026-01-11,Completed,Medium,100.0,1581365.72,1465128.58,Small
+419,FORGE-419,Autonomous Service Optimization,Industrial Analytics,Project Manager 08,RDE Sponsor 02,1,2026-04-09,2026-08-11,2026-08-11,,Active,High,92.0,2779779.63,2592358.51,Medium
+420,FORGE-420,Autonomous Service Integration,Connected Operations,Project Manager 04,RDE Sponsor 03,3,2025-11-17,2026-07-16,2026-07-23,,Active,High,95.0,3230311.18,3105063.41,Medium
+421,FORGE-421,Autonomous Service Transformation,Automation Platform,Project Manager 09,RDE Sponsor 04,1,2025-12-08,2026-06-07,2026-06-22,2026-06-12,Completed,Medium,100.0,3428545.06,3272661.15,Medium
+422,FORGE-422,Autonomous Service Enablement,Connected Operations,Project Manager 05,RDE Sponsor 05,3,2025-12-21,2026-06-29,2026-07-11,2026-07-03,Completed,High,100.0,3032077.3,2828437.04,Medium
+423,FORGE-423,Autonomous Service Acceleration,Workforce Enablement,Project Manager 04,RDE Sponsor 03,5,2026-04-04,2026-08-11,2026-08-11,,Active,High,92.0,4293565.62,4020543.5,Large
+424,FORGE-424,Autonomous Service Orchestration,Digital Reliability,Project Manager 02,RDE Sponsor 01,5,2026-03-28,2026-08-11,2026-08-04,,Active,Medium,92.0,1820147.44,1771490.03,Medium
+425,FORGE-425,Autonomous Service Intelligence,Connected Operations,Project Manager 07,RDE Sponsor 01,3,2025-11-07,2026-05-03,2026-05-10,2026-04-29,Completed,High,100.0,2802306.21,2751846.68,Medium
+426,FORGE-426,Secure Asset Modernization,Connected Operations,Project Manager 07,RDE Sponsor 06,3,2025-11-14,2026-05-10,2026-05-12,2026-05-11,Completed,Medium,100.0,3279869.65,3087042.15,Medium
+427,FORGE-427,Secure Asset Analytics,Industrial Analytics,Project Manager 02,RDE Sponsor 03,1,2026-03-07,2026-08-11,2026-08-11,,Active,Medium,92.0,1793115.55,1651648.64,Medium
+428,FORGE-428,Secure Asset Platform,Workforce Enablement,Project Manager 05,RDE Sponsor 05,5,2026-01-29,2026-07-19,2026-08-11,,At Risk,High,95.0,3257343.07,3207784.6,Medium
+429,FORGE-429,Secure Asset Optimization,Automation Platform,Project Manager 03,RDE Sponsor 01,6,2026-03-09,2026-07-02,2026-06-28,2026-06-22,Completed,Medium,100.0,1621913.56,1554333.83,Small
+430,FORGE-430,Secure Asset Integration,Workforce Enablement,Project Manager 06,RDE Sponsor 01,5,2025-12-26,2026-05-16,2026-05-30,2026-05-19,Completed,Medium,100.0,1112812.92,1100198.04,Small
+431,FORGE-431,Secure Asset Transformation,Industrial Analytics,Project Manager 10,RDE Sponsor 02,6,2025-12-26,2026-08-11,2026-08-11,,Active,Medium,92.0,3126688.92,3014056.03,Medium
+432,FORGE-432,Secure Asset Enablement,Industrial Analytics,Project Manager 01,RDE Sponsor 06,3,2025-10-21,2026-05-02,2026-05-15,2026-04-18,Completed,Low,100.0,1202919.23,1140745.88,Small
+433,FORGE-433,Secure Asset Acceleration,Automation Platform,Project Manager 04,RDE Sponsor 02,7,2026-03-18,2026-08-11,2026-08-11,,Active,High,92.0,4897277.89,4714362.08,Large
+434,FORGE-434,Secure Asset Orchestration,Digital Reliability,Project Manager 02,RDE Sponsor 01,5,2026-03-08,2026-06-10,2026-06-15,2026-06-01,Completed,Low,100.0,1401153.1,1361506.32,Small
+435,FORGE-435,Secure Asset Intelligence,Automation Platform,Project Manager 10,RDE Sponsor 03,7,2025-09-07,2026-01-27,2026-01-31,2026-01-29,Completed,High,100.0,2063434.48,1885023.99,Medium
+436,FORGE-436,Secure Operations Modernization,Connected Operations,Project Manager 10,RDE Sponsor 05,1,2025-08-14,2026-03-25,2026-03-27,2026-03-18,Completed,Medium,100.0,2869885.94,2851864.68,Medium
+437,FORGE-437,Secure Operations Analytics,Digital Reliability,Project Manager 01,RDE Sponsor 02,3,2026-03-30,2026-08-11,2026-08-11,,At Risk,Medium,92.0,1369615.9,1264191.52,Small
+438,FORGE-438,Secure Operations Platform,Connected Operations,Project Manager 04,RDE Sponsor 02,3,2025-11-22,2026-04-27,2026-05-17,2026-04-29,Completed,High,100.0,3960172.28,3752927.77,Large
+439,FORGE-439,Secure Operations Optimization,Industrial Analytics,Project Manager 03,RDE Sponsor 02,6,2025-12-11,2026-05-14,2026-05-15,2026-05-12,Completed,High,100.0,4383671.93,3994412.68,Large
+440,FORGE-440,Secure Operations Integration,Digital Reliability,Project Manager 04,RDE Sponsor 03,5,2026-01-20,2026-07-18,2026-07-31,,Active,Low,95.0,3131194.24,2868083.82,Medium
+441,FORGE-441,Secure Operations Transformation,Industrial Analytics,Project Manager 04,RDE Sponsor 02,6,2026-01-04,2026-08-11,2026-08-11,,Active,Medium,92.0,4699044.01,4506216.51,Large
+442,FORGE-442,Secure Operations Enablement,Connected Operations,Project Manager 09,RDE Sponsor 01,3,2025-10-30,2026-05-01,2026-04-24,2026-05-04,Completed,Medium,100.0,3032077.3,2862677.44,Medium
+443,FORGE-443,Secure Operations Acceleration,Workforce Enablement,Project Manager 06,RDE Sponsor 01,8,2025-12-28,2026-08-11,2026-08-05,,Active,Medium,92.0,1135339.49,1058749.13,Small
+444,FORGE-444,Secure Operations Orchestration,Connected Operations,Project Manager 08,RDE Sponsor 06,3,2026-03-15,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4275544.36,4197151.87,Large
+445,FORGE-445,Secure Operations Intelligence,Automation Platform,Project Manager 07,RDE Sponsor 04,1,2025-12-22,2026-08-11,2026-08-11,,Active,High,92.0,4861235.37,4798160.95,Large
+446,FORGE-446,Secure Reliability Modernization,Digital Reliability,Project Manager 03,RDE Sponsor 05,5,2025-12-16,2026-08-11,2026-08-11,,Active,Medium,92.0,3806991.56,3483509.91,Large
+447,FORGE-447,Secure Reliability Analytics,Connected Operations,Project Manager 03,RDE Sponsor 01,3,2026-01-06,2026-07-16,2026-07-30,,Active,High,95.0,2405838.45,2201297.13,Medium
+448,FORGE-448,Secure Reliability Platform,Industrial Analytics,Project Manager 02,RDE Sponsor 01,2,2026-01-29,2026-07-31,2026-08-05,,Active,High,95.0,2369795.93,2351774.67,Medium
+449,FORGE-449,Secure Reliability Optimization,Digital Reliability,Project Manager 03,RDE Sponsor 01,2,2026-05-07,2026-08-11,2026-08-11,,Active,Medium,92.0,1558839.15,1457019.02,Small
+450,FORGE-450,Secure Reliability Integration,Industrial Analytics,Project Manager 02,RDE Sponsor 04,6,2026-02-24,2026-08-11,2026-08-04,,Active,High,92.0,2698683.95,2650026.54,Medium
+451,FORGE-451,Secure Reliability Transformation,Industrial Analytics,Project Manager 03,RDE Sponsor 01,2,2026-05-01,2026-08-11,2026-08-11,,At Risk,Medium,92.0,1739051.76,1720129.44,Small
+452,FORGE-452,Secure Reliability Enablement,Connected Operations,Project Manager 01,RDE Sponsor 01,4,2025-09-01,2026-03-02,2026-03-16,2026-03-07,Completed,High,100.0,5045953.3,4975670.38,Strategic
+453,FORGE-453,Secure Reliability Acceleration,Connected Operations,Project Manager 04,RDE Sponsor 04,3,2025-11-03,2026-04-28,2026-05-15,2026-04-28,Completed,Medium,100.0,1130834.18,1060551.26,Small
+454,FORGE-454,Secure Reliability Orchestration,Digital Reliability,Project Manager 09,RDE Sponsor 05,3,2026-03-08,2026-08-11,2026-08-04,,Active,Medium,92.0,3973688.23,3775454.35,Large
+455,FORGE-455,Secure Reliability Intelligence,Digital Reliability,Project Manager 04,RDE Sponsor 01,5,2026-02-15,2026-08-03,2026-08-10,,Active,High,95.0,2743737.11,2711298.84,Medium
+456,FORGE-456,Secure Controls Modernization,Connected Operations,Project Manager 03,RDE Sponsor 03,1,2026-01-13,2026-08-11,2026-08-11,,At Risk,Medium,92.0,2013876.01,1903946.31,Medium
+457,FORGE-457,Secure Controls Analytics,Digital Reliability,Project Manager 01,RDE Sponsor 03,3,2026-03-10,2026-07-11,2026-07-22,2026-07-05,Completed,Medium,100.0,2495944.76,2271580.05,Medium
+458,FORGE-458,Secure Controls Platform,Industrial Analytics,Project Manager 02,RDE Sponsor 04,3,2026-05-10,2026-08-11,2026-08-11,,Active,High,92.0,3978193.54,3670931.03,Large
+459,FORGE-459,Secure Controls Optimization,Workforce Enablement,Project Manager 06,RDE Sponsor 03,8,2026-05-02,2026-08-11,2026-08-11,,Active,High,92.0,4054783.91,3894394.68,Large
+460,FORGE-460,Secure Controls Integration,Digital Reliability,Project Manager 04,RDE Sponsor 02,5,2025-11-22,2026-07-10,2026-07-31,2026-07-03,Completed,Medium,100.0,4631464.28,4594520.69,Large
+461,FORGE-461,Secure Controls Transformation,Digital Reliability,Project Manager 01,RDE Sponsor 03,4,2026-04-08,2026-08-11,2026-08-11,,Active,High,92.0,1824652.76,1663362.47,Medium
+462,FORGE-462,Secure Controls Enablement,Industrial Analytics,Project Manager 03,RDE Sponsor 03,3,2025-11-15,2026-06-23,2026-07-12,2026-06-22,Completed,Medium,100.0,1923769.7,1803027.25,Medium
+463,FORGE-463,Secure Controls Acceleration,Digital Reliability,Project Manager 10,RDE Sponsor 01,2,2026-03-17,2026-08-11,2026-08-11,,Active,High,92.0,1238961.75,1195710.72,Small
+464,FORGE-464,Secure Controls Orchestration,Digital Reliability,Project Manager 04,RDE Sponsor 02,2,2025-08-30,2026-04-05,2026-04-07,2026-04-04,Completed,Medium,100.0,2031897.27,1980536.67,Medium
+465,FORGE-465,Secure Controls Intelligence,Connected Operations,Project Manager 06,RDE Sponsor 01,4,2026-03-29,2026-08-11,2026-08-11,,Active,Medium,92.0,2766263.69,2630203.16,Medium
+466,FORGE-466,Secure Telemetry Modernization,Digital Reliability,Project Manager 06,RDE Sponsor 02,5,2026-06-17,2026-08-11,2026-08-04,,Active,Medium,92.0,1518291.31,1444404.14,Small
+467,FORGE-467,Secure Telemetry Analytics,Digital Reliability,Project Manager 07,RDE Sponsor 01,5,2026-03-14,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4726075.91,4311586.89,Large
+468,FORGE-468,Secure Telemetry Platform,Industrial Analytics,Project Manager 05,RDE Sponsor 05,1,2026-02-01,2026-08-11,2026-08-11,,At Risk,Medium,92.0,3748422.45,3458280.14,Large
+469,FORGE-469,Secure Telemetry Optimization,Digital Reliability,Project Manager 02,RDE Sponsor 03,2,2025-11-18,2026-08-11,2026-08-11,,At Risk,Medium,92.0,3590736.41,3286177.09,Large
+470,FORGE-470,Secure Telemetry Integration,Connected Operations,Project Manager 04,RDE Sponsor 01,6,2026-01-02,2026-07-15,2026-07-17,,Active,High,95.0,4189943.37,3832221.32,Large
+471,FORGE-471,Secure Telemetry Transformation,Workforce Enablement,Project Manager 06,RDE Sponsor 05,2,2026-01-10,2026-04-09,2026-04-06,2026-04-01,Completed,Medium,100.0,3005045.41,2950981.62,Medium
+472,FORGE-472,Secure Telemetry Enablement,Connected Operations,Project Manager 03,RDE Sponsor 04,3,2025-11-22,2026-08-11,2026-08-11,,Active,High,92.0,4843214.11,4676517.44,Large
+473,FORGE-473,Secure Telemetry Acceleration,Industrial Analytics,Project Manager 08,RDE Sponsor 02,1,2026-07-06,2026-08-11,2026-08-11,,Active,Medium,92.0,2824832.79,2795097.71,Medium
+474,FORGE-474,Secure Telemetry Orchestration,Industrial Analytics,Project Manager 01,RDE Sponsor 01,2,2026-03-10,2026-08-11,2026-08-11,,Active,High,92.0,2577040.44,2418453.34,Medium
+475,FORGE-475,Secure Telemetry Intelligence,Industrial Analytics,Project Manager 07,RDE Sponsor 03,2,2026-06-01,2026-08-11,2026-08-11,,Active,Medium,92.0,2356279.98,2203099.25,Medium
+476,FORGE-476,Secure Workflow Modernization,Digital Reliability,Project Manager 03,RDE Sponsor 01,2,2025-12-15,2026-08-11,2026-08-09,,Active,Medium,92.0,1121823.55,1104703.35,Small
+477,FORGE-477,Secure Workflow Analytics,Industrial Analytics,Project Manager 04,RDE Sponsor 04,3,2026-04-26,2026-08-11,2026-08-11,,Active,High,92.0,3401513.16,3310505.79,Medium
+478,FORGE-478,Secure Workflow Platform,Industrial Analytics,Project Manager 10,RDE Sponsor 04,6,2026-03-04,2026-06-16,2026-06-30,2026-06-16,Completed,Medium,100.0,2491439.44,2379707.62,Medium
+479,FORGE-479,Secure Workflow Optimization,Digital Reliability,Project Manager 07,RDE Sponsor 03,2,2025-09-12,2026-03-14,2026-04-05,2026-03-09,Completed,Medium,100.0,5045953.3,4918002.34,Strategic
+480,FORGE-480,Secure Workflow Integration,Workforce Enablement,Project Manager 09,RDE Sponsor 05,1,2026-06-15,2026-08-11,2026-08-10,,Active,High,92.0,2252657.72,2050819.59,Medium
+481,FORGE-481,Secure Workflow Transformation,Automation Platform,Project Manager 01,RDE Sponsor 01,3,2026-05-31,2026-08-11,2026-08-04,,Active,High,92.0,4225985.89,4185438.05,Large
+482,FORGE-482,Secure Workflow Enablement,Connected Operations,Project Manager 09,RDE Sponsor 02,4,2026-03-01,2026-08-11,2026-08-11,,Active,Medium,92.0,1423679.68,1303838.29,Small
+483,FORGE-483,Secure Workflow Acceleration,Industrial Analytics,Project Manager 06,RDE Sponsor 03,2,2026-03-05,2026-08-11,2026-08-11,,Active,Medium,92.0,1216435.17,1145251.19,Small
+484,FORGE-484,Secure Workflow Orchestration,Connected Operations,Project Manager 01,RDE Sponsor 03,3,2025-12-19,2026-08-11,2026-08-04,,Active,High,92.0,4401693.19,4011532.87,Large
+485,FORGE-485,Secure Workflow Intelligence,Workforce Enablement,Project Manager 04,RDE Sponsor 04,8,2025-09-02,2026-05-04,2026-05-13,2026-05-07,Completed,Medium,100.0,3027571.98,2783383.88,Medium
+486,FORGE-486,Secure Quality Modernization,Connected Operations,Project Manager 02,RDE Sponsor 01,6,2026-01-06,2026-08-11,2026-08-07,,Active,Medium,92.0,2171562.05,2056225.97,Medium
+487,FORGE-487,Secure Quality Analytics,Digital Reliability,Project Manager 05,RDE Sponsor 03,3,2025-12-06,2026-04-25,2026-05-05,2026-04-15,Completed,Medium,100.0,2248152.41,2076049.36,Medium
+488,FORGE-488,Secure Quality Platform,Connected Operations,Project Manager 09,RDE Sponsor 01,1,2026-04-23,2026-08-11,2026-08-11,,Active,Medium,92.0,1563344.46,1446206.26,Small
+489,FORGE-489,Secure Quality Optimization,Digital Reliability,Project Manager 02,RDE Sponsor 02,5,2026-02-18,2026-05-26,2026-05-27,2026-05-14,Completed,High,100.0,4811676.9,4591817.51,Large
+490,FORGE-490,Secure Quality Integration,Connected Operations,Project Manager 04,RDE Sponsor 02,4,2025-10-24,2026-03-20,2026-03-31,2026-03-18,Completed,Low,100.0,1675977.35,1557037.02,Small
+491,FORGE-491,Secure Quality Transformation,Workforce Enablement,Project Manager 08,RDE Sponsor 01,2,2025-12-08,2026-08-11,2026-08-11,,Active,Low,92.0,1401153.1,1382230.78,Small
+492,FORGE-492,Secure Quality Enablement,Connected Operations,Project Manager 06,RDE Sponsor 01,1,2026-03-14,2026-08-11,2026-08-11,,Active,Medium,92.0,2495944.76,2349071.48,Medium
+493,FORGE-493,Secure Quality Acceleration,Digital Reliability,Project Manager 03,RDE Sponsor 01,2,2025-11-09,2026-05-08,2026-05-11,2026-05-06,Completed,Medium,100.0,3063614.51,2902324.22,Medium
+494,FORGE-494,Secure Quality Orchestration,Digital Reliability,Project Manager 07,RDE Sponsor 03,2,2026-01-29,2026-08-11,2026-08-11,,Active,High,92.0,1806631.5,1705712.43,Medium
+495,FORGE-495,Secure Quality Intelligence,Automation Platform,Project Manager 05,RDE Sponsor 03,3,2026-04-11,2026-08-11,2026-08-11,,Active,High,92.0,3333933.43,3238420.74,Medium
+496,FORGE-496,Secure Engineering Modernization,Connected Operations,Project Manager 07,RDE Sponsor 01,1,2026-03-05,2026-07-19,2026-08-07,,At Risk,High,95.0,4487294.19,4183635.93,Large
+497,FORGE-497,Secure Engineering Analytics,Connected Operations,Project Manager 05,RDE Sponsor 03,6,2026-05-28,2026-08-11,2026-08-11,,Active,Medium,92.0,3942151.02,3740312.89,Large
+498,FORGE-498,Secure Engineering Platform,Connected Operations,Project Manager 06,RDE Sponsor 04,4,2026-01-02,2026-05-09,2026-05-14,2026-05-06,Completed,High,100.0,4617948.34,4480085.69,Large
+499,FORGE-499,Secure Engineering Optimization,Workforce Enablement,Project Manager 08,RDE Sponsor 02,8,2026-02-09,2026-07-02,2026-07-04,2026-07-02,Completed,High,100.0,2257163.04,2214813.07,Medium
+500,FORGE-500,Secure Engineering Integration,Connected Operations,Project Manager 06,RDE Sponsor 03,1,2026-06-24,2026-08-11,2026-08-11,,Active,High,92.0,1693998.61,1558839.15,Small
+501,FORGE-501,Secure Engineering Transformation,Automation Platform,Project Manager 02,RDE Sponsor 03,3,2025-11-13,2026-02-21,2026-02-19,2026-03-02,Completed,Low,100.0,2545503.23,2345467.22,Medium
+502,FORGE-502,Secure Engineering Enablement,Connected Operations,Project Manager 03,RDE Sponsor 05,4,2026-03-31,2026-08-11,2026-08-11,,Active,Medium,92.0,2676157.38,2445485.23,Medium
+503,FORGE-503,Secure Engineering Acceleration,Connected Operations,Project Manager 03,RDE Sponsor 03,4,2026-01-08,2026-06-12,2026-06-13,2026-06-06,Completed,High,100.0,4762118.43,4699945.08,Large
+504,FORGE-504,Secure Engineering Orchestration,Connected Operations,Project Manager 02,RDE Sponsor 04,3,2026-01-12,2026-06-11,2026-06-09,2026-06-15,Completed,Medium,100.0,2320237.46,2181473.74,Medium
+505,FORGE-505,Secure Engineering Intelligence,Industrial Analytics,Project Manager 04,RDE Sponsor 06,1,2026-05-07,2026-08-11,2026-08-07,,Active,Medium,92.0,5000900.15,4672012.12,Strategic
+506,FORGE-506,Secure Energy Modernization,Connected Operations,Project Manager 01,RDE Sponsor 05,3,2026-03-11,2026-07-23,2026-07-16,,Active,Medium,95.0,4753107.8,4412505.95,Large
+507,FORGE-507,Secure Energy Analytics,Automation Platform,Project Manager 02,RDE Sponsor 03,6,2026-01-08,2026-08-11,2026-08-11,,Active,Medium,92.0,2252657.72,2182374.8,Medium
+508,FORGE-508,Secure Energy Platform,Digital Reliability,Project Manager 03,RDE Sponsor 03,2,2026-04-16,2026-08-11,2026-08-04,,Active,Medium,92.0,2500450.07,2402234.19,Medium
+509,FORGE-509,Secure Energy Optimization,Digital Reliability,Project Manager 01,RDE Sponsor 05,2,2026-04-06,2026-08-11,2026-08-11,,At Risk,High,92.0,2338258.72,2177869.49,Medium
+510,FORGE-510,Secure Energy Integration,Industrial Analytics,Project Manager 08,RDE Sponsor 04,6,2025-10-28,2026-06-09,2026-06-14,2026-06-15,Completed,High,100.0,4126868.95,4050278.59,Large
+511,FORGE-511,Secure Energy Transformation,Digital Reliability,Project Manager 03,RDE Sponsor 04,5,2026-01-03,2026-06-26,2026-06-28,2026-06-16,Completed,High,100.0,4099837.06,4039465.83,Large
+512,FORGE-512,Secure Energy Enablement,Workforce Enablement,Project Manager 04,RDE Sponsor 06,8,2025-12-12,2026-08-11,2026-08-06,,Active,Low,92.0,1784104.92,1705712.43,Medium
+513,FORGE-513,Secure Energy Acceleration,Workforce Enablement,Project Manager 08,RDE Sponsor 04,8,2025-11-09,2026-01-29,2026-02-04,2026-01-29,Completed,High,100.0,4834203.48,4662100.43,Large
+514,FORGE-514,Secure Energy Orchestration,Digital Reliability,Project Manager 05,RDE Sponsor 03,3,2025-12-15,2026-07-21,2026-07-14,,Active,Medium,95.0,4653990.86,4583707.94,Large
+515,FORGE-515,Secure Energy Intelligence,Connected Operations,Project Manager 06,RDE Sponsor 04,3,2025-11-04,2026-07-29,2026-08-11,,Active,Medium,95.0,1964317.54,1835465.52,Medium
+516,FORGE-516,Secure Service Modernization,Industrial Analytics,Project Manager 09,RDE Sponsor 03,2,2025-11-24,2026-03-24,2026-03-20,2026-03-17,Completed,Medium,100.0,1775094.29,1663362.47,Medium
+517,FORGE-517,Secure Service Analytics,Automation Platform,Project Manager 01,RDE Sponsor 04,7,2025-11-23,2026-07-12,2026-07-16,2026-07-13,Completed,High,100.0,2667146.75,2504955.39,Medium
+518,FORGE-518,Secure Service Platform,Automation Platform,Project Manager 01,RDE Sponsor 04,1,2025-12-26,2026-07-10,2026-07-17,2026-07-12,Completed,Low,100.0,2266173.67,2156243.97,Medium
+519,FORGE-519,Secure Service Optimization,Automation Platform,Project Manager 04,RDE Sponsor 03,1,2025-10-26,2026-03-23,2026-04-12,2026-03-27,Completed,High,100.0,1482248.78,1439898.81,Small
+520,FORGE-520,Secure Service Integration,Digital Reliability,Project Manager 02,RDE Sponsor 05,5,2026-06-18,2026-08-11,2026-08-11,,At Risk,Medium,92.0,2748242.42,2731122.22,Medium
+521,FORGE-521,Secure Service Transformation,Connected Operations,Project Manager 04,RDE Sponsor 01,3,2025-12-31,2026-07-10,2026-07-14,2026-07-19,Completed,High,100.0,4523336.71,4194448.68,Large
+522,FORGE-522,Secure Service Enablement,Automation Platform,Project Manager 03,RDE Sponsor 05,7,2025-11-12,2026-02-25,2026-02-27,2026-02-28,Completed,High,100.0,4253017.78,4101639.18,Large
+523,FORGE-523,Secure Service Acceleration,Industrial Analytics,Project Manager 03,RDE Sponsor 05,1,2026-03-22,2026-08-11,2026-08-11,,Active,Medium,92.0,3090646.4,3026670.92,Medium
+524,FORGE-524,Secure Service Orchestration,Automation Platform,Project Manager 07,RDE Sponsor 01,6,2026-02-13,2026-08-11,2026-08-11,,Active,High,92.0,4397187.88,4265632.67,Large
+525,FORGE-525,Secure Service Intelligence,Workforce Enablement,Project Manager 01,RDE Sponsor 02,1,2026-06-14,2026-08-11,2026-08-11,,Active,High,92.0,4681022.75,4568389.86,Large
+526,FORGE-526,Predictive Asset Modernization,Connected Operations,Project Manager 02,RDE Sponsor 04,3,2025-12-30,2026-08-11,2026-08-11,,At Risk,High,92.0,4406198.51,4011532.88,Large
+527,FORGE-527,Predictive Asset Analytics,Digital Reliability,Project Manager 01,RDE Sponsor 01,3,2025-11-12,2026-06-25,2026-06-30,2026-06-26,Completed,Medium,100.0,3662821.46,3449269.51,Large
+528,FORGE-528,Predictive Asset Platform,Connected Operations,Project Manager 06,RDE Sponsor 02,4,2026-03-05,2026-06-23,2026-07-07,2026-06-16,Completed,High,100.0,2058929.16,1948098.4,Medium
+529,FORGE-529,Predictive Asset Optimization,Connected Operations,Project Manager 02,RDE Sponsor 01,3,2025-10-29,2026-07-10,2026-07-28,2026-06-26,Completed,Medium,100.0,1959812.22,1895836.74,Medium
+530,FORGE-530,Predictive Asset Integration,Industrial Analytics,Project Manager 02,RDE Sponsor 01,6,2026-05-16,2026-08-11,2026-08-06,,Active,Medium,92.0,3167236.76,2983419.89,Medium
+531,FORGE-531,Predictive Asset Transformation,Industrial Analytics,Project Manager 04,RDE Sponsor 05,2,2025-09-27,2026-04-07,2026-04-19,2026-04-06,Completed,High,100.0,3870065.97,3702468.24,Large
+532,FORGE-532,Predictive Asset Enablement,Connected Operations,Project Manager 06,RDE Sponsor 05,1,2025-11-27,2026-05-10,2026-05-03,2026-05-12,Completed,Medium,100.0,1612902.93,1578662.53,Small
+533,FORGE-533,Predictive Asset Acceleration,Industrial Analytics,Project Manager 01,RDE Sponsor 04,6,2025-11-13,2026-08-03,2026-08-11,,Active,Medium,94.8,3816002.19,3561001.34,Large
+534,FORGE-534,Predictive Asset Orchestration,Automation Platform,Project Manager 02,RDE Sponsor 02,1,2026-04-05,2026-08-11,2026-08-09,,Active,Low,92.0,1423679.68,1320057.42,Small
+535,FORGE-535,Predictive Asset Intelligence,Connected Operations,Project Manager 01,RDE Sponsor 02,4,2025-09-22,2026-07-17,2026-08-04,,At Risk,High,95.0,5041447.99,4672012.12,Strategic
+536,FORGE-536,Predictive Operations Modernization,Connected Operations,Project Manager 10,RDE Sponsor 01,3,2026-02-27,2026-08-02,2026-08-09,,Active,Medium,95.0,4568389.87,4159307.23,Large
+537,FORGE-537,Predictive Operations Analytics,Connected Operations,Project Manager 08,RDE Sponsor 01,3,2025-12-25,2026-08-11,2026-08-09,,Active,Medium,92.0,3937645.7,3633086.38,Large
+538,FORGE-538,Predictive Operations Platform,Automation Platform,Project Manager 05,RDE Sponsor 01,1,2025-10-21,2026-04-21,2026-04-19,2026-04-24,Completed,Low,100.0,1293025.53,1273202.14,Small
+539,FORGE-539,Predictive Operations Optimization,Digital Reliability,Project Manager 02,RDE Sponsor 05,3,2026-06-14,2026-08-11,2026-08-11,,Active,Medium,92.0,2153540.79,2018381.33,Medium
+540,FORGE-540,Predictive Operations Integration,Industrial Analytics,Project Manager 06,RDE Sponsor 04,1,2025-12-15,2026-06-10,2026-07-01,2026-05-27,Completed,High,100.0,1189403.28,1112812.92,Small
+541,FORGE-541,Predictive Operations Transformation,Industrial Analytics,Project Manager 01,RDE Sponsor 06,1,2025-10-09,2026-04-15,2026-05-01,2026-04-11,Completed,High,100.0,4663001.49,4578301.56,Large
+542,FORGE-542,Predictive Operations Enablement,Workforce Enablement,Project Manager 01,RDE Sponsor 05,8,2025-11-17,2026-08-11,2026-08-11,,Active,High,92.0,4595421.76,4307081.57,Large
+543,FORGE-543,Predictive Operations Acceleration,Automation Platform,Project Manager 08,RDE Sponsor 03,1,2026-01-19,2026-07-19,2026-08-02,,Active,High,95.0,4653990.86,4307982.63,Large
+544,FORGE-544,Predictive Operations Orchestration,Digital Reliability,Project Manager 03,RDE Sponsor 01,2,2026-01-14,2026-08-11,2026-08-05,,Active,High,92.0,4167416.79,4066497.72,Large
+545,FORGE-545,Predictive Operations Intelligence,Connected Operations,Project Manager 05,RDE Sponsor 03,3,2025-12-06,2026-06-05,2026-06-15,2026-05-28,Completed,Low,100.0,1184897.96,1106505.47,Small
+546,FORGE-546,Predictive Reliability Modernization,Connected Operations,Project Manager 04,RDE Sponsor 03,3,2026-03-15,2026-08-11,2026-08-11,,Active,High,92.0,4649485.54,4256622.03,Large
+547,FORGE-547,Predictive Reliability Analytics,Automation Platform,Project Manager 03,RDE Sponsor 03,6,2026-05-19,2026-08-01,2026-07-29,,Active,Medium,95.0,3482608.84,3338438.75,Medium
+548,FORGE-548,Predictive Reliability Platform,Digital Reliability,Project Manager 02,RDE Sponsor 05,3,2025-11-17,2026-08-11,2026-08-11,,Active,High,92.0,3987204.17,3845737.26,Large
+549,FORGE-549,Predictive Reliability Optimization,Digital Reliability,Project Manager 06,RDE Sponsor 06,4,2026-02-27,2026-08-11,2026-08-06,,Active,Medium,92.0,2248152.41,2072445.11,Medium
+550,FORGE-550,Predictive Reliability Integration,Connected Operations,Project Manager 04,RDE Sponsor 03,3,2026-03-22,2026-08-11,2026-08-11,,Active,Medium,92.0,3671832.09,3610559.8,Large
+551,FORGE-551,Predictive Reliability Transformation,Industrial Analytics,Project Manager 09,RDE Sponsor 01,1,2025-11-05,2026-07-08,2026-07-16,2026-07-13,Completed,Medium,100.0,2667146.75,2602270.21,Medium
+552,FORGE-552,Predictive Reliability Enablement,Connected Operations,Project Manager 09,RDE Sponsor 01,1,2025-08-14,2026-02-18,2026-02-24,2026-02-21,Completed,Medium,100.0,1446206.26,1370516.96,Small
+553,FORGE-553,Predictive Reliability Acceleration,Industrial Analytics,Project Manager 01,RDE Sponsor 01,2,2025-12-02,2026-03-16,2026-04-03,2026-03-05,Completed,Medium,100.0,1549828.51,1487655.16,Small
+554,FORGE-554,Predictive Reliability Orchestration,Connected Operations,Project Manager 08,RDE Sponsor 04,1,2025-11-20,2026-05-29,2026-05-22,2026-05-27,Completed,Medium,100.0,1157866.07,1095692.72,Small
+555,FORGE-555,Predictive Reliability Intelligence,Industrial Analytics,Project Manager 02,RDE Sponsor 03,2,2025-11-08,2026-03-31,2026-04-22,2026-04-01,Completed,Medium,100.0,1558839.15,1454315.83,Small
+556,FORGE-556,Predictive Controls Modernization,Industrial Analytics,Project Manager 02,RDE Sponsor 01,2,2025-11-16,2026-04-24,2026-05-10,2026-04-27,Completed,Medium,100.0,4478283.56,4362046.42,Large
+557,FORGE-557,Predictive Controls Analytics,Connected Operations,Project Manager 01,RDE Sponsor 06,3,2026-07-02,2026-08-11,2026-08-11,,Active,Medium,92.0,2896917.83,2855468.93,Medium
+558,FORGE-558,Predictive Controls Platform,Digital Reliability,Project Manager 01,RDE Sponsor 04,5,2026-03-20,2026-08-11,2026-08-11,,Active,Medium,92.0,1293025.53,1264191.51,Small
+559,FORGE-559,Predictive Controls Optimization,Connected Operations,Project Manager 01,RDE Sponsor 05,3,2025-10-07,2026-07-19,2026-07-25,,Active,High,95.0,2712199.9,2500450.07,Medium
+560,FORGE-560,Predictive Controls Integration,Digital Reliability,Project Manager 06,RDE Sponsor 04,3,2026-02-16,2026-08-11,2026-08-11,,Active,High,92.0,2604072.33,2381509.75,Medium
+561,FORGE-561,Predictive Controls Transformation,Connected Operations,Project Manager 03,RDE Sponsor 02,1,2026-03-02,2026-08-11,2026-08-11,,Active,Medium,92.0,2901423.15,2732924.35,Medium
+562,FORGE-562,Predictive Controls Enablement,Industrial Analytics,Project Manager 09,RDE Sponsor 02,1,2026-05-21,2026-08-11,2026-08-06,,Active,High,92.0,3009550.72,2750945.61,Medium
+563,FORGE-563,Predictive Controls Acceleration,Digital Reliability,Project Manager 09,RDE Sponsor 01,2,2025-11-22,2026-05-21,2026-05-28,2026-05-27,Completed,Medium,100.0,4041267.96,3697061.86,Large
+564,FORGE-564,Predictive Controls Orchestration,Connected Operations,Project Manager 03,RDE Sponsor 05,6,2025-10-28,2026-05-24,2026-06-12,2026-06-01,Completed,High,100.0,4541357.97,4498106.94,Large
+565,FORGE-565,Predictive Controls Intelligence,Connected Operations,Project Manager 03,RDE Sponsor 02,3,2026-01-01,2026-08-11,2026-08-04,,Active,Medium,92.0,3446566.32,3225805.86,Medium
+566,FORGE-566,Predictive Telemetry Modernization,Industrial Analytics,Project Manager 02,RDE Sponsor 05,2,2026-04-23,2026-08-11,2026-08-11,,Active,Medium,92.0,1153360.76,1104703.35,Small
+567,FORGE-567,Predictive Telemetry Analytics,Automation Platform,Project Manager 05,RDE Sponsor 04,1,2026-02-01,2026-06-29,2026-07-10,2026-06-20,Completed,Medium,100.0,3005045.41,2868083.82,Medium
+568,FORGE-568,Predictive Telemetry Platform,Digital Reliability,Project Manager 05,RDE Sponsor 01,3,2025-08-20,2025-12-31,2026-01-09,2025-12-17,Completed,High,100.0,4703549.33,4474679.31,Large
+569,FORGE-569,Predictive Telemetry Optimization,Workforce Enablement,Project Manager 01,RDE Sponsor 01,5,2026-01-16,2026-08-11,2026-08-11,,Active,Medium,92.0,1554333.83,1466930.71,Small
+570,FORGE-570,Predictive Telemetry Integration,Digital Reliability,Project Manager 07,RDE Sponsor 05,2,2026-04-02,2026-08-11,2026-08-11,,Active,Medium,92.0,2590556.38,2476121.37,Medium
+571,FORGE-571,Predictive Telemetry Transformation,Connected Operations,Project Manager 05,RDE Sponsor 05,3,2026-06-20,2026-08-11,2026-08-04,,Active,High,92.0,4825192.85,4688231.26,Large
+572,FORGE-572,Predictive Telemetry Enablement,Connected Operations,Project Manager 03,RDE Sponsor 01,1,2025-09-02,2026-06-19,2026-06-18,2026-06-21,Completed,Medium,100.0,3671832.09,3375382.33,Large
+573,FORGE-573,Predictive Telemetry Acceleration,Connected Operations,Project Manager 03,RDE Sponsor 02,4,2025-10-21,2026-01-18,2026-01-31,2026-01-23,Completed,High,100.0,4717065.28,4551269.67,Large
+574,FORGE-574,Predictive Telemetry Orchestration,Digital Reliability,Project Manager 07,RDE Sponsor 02,2,2026-04-02,2026-08-11,2026-08-11,,At Risk,Medium,92.0,1698503.92,1604793.36,Small
+575,FORGE-575,Predictive Telemetry Intelligence,Automation Platform,Project Manager 01,RDE Sponsor 02,1,2026-03-11,2026-08-11,2026-08-11,,At Risk,Low,92.0,1315552.11,1298431.91,Small
+576,FORGE-576,Predictive Workflow Modernization,Connected Operations,Project Manager 01,RDE Sponsor 05,1,2025-11-10,2026-06-27,2026-07-13,2026-06-20,Completed,Medium,100.0,4807171.59,4560280.3,Large
+577,FORGE-577,Predictive Workflow Analytics,Workforce Enablement,Project Manager 05,RDE Sponsor 02,8,2025-10-17,2026-07-04,2026-08-02,2026-06-29,Completed,Medium,100.0,2058929.16,1951702.65,Medium
+578,FORGE-578,Predictive Workflow Platform,Connected Operations,Project Manager 09,RDE Sponsor 06,3,2026-03-28,2026-08-11,2026-08-11,,Active,Low,92.0,3559199.21,3382590.84,Large
+579,FORGE-579,Predictive Workflow Optimization,Industrial Analytics,Project Manager 08,RDE Sponsor 05,2,2026-02-19,2026-08-11,2026-08-11,,Active,Medium,92.0,1874211.23,1749864.52,Medium
+580,FORGE-580,Predictive Workflow Integration,Industrial Analytics,Project Manager 05,RDE Sponsor 01,1,2025-10-15,2026-04-20,2026-05-06,2026-04-06,Completed,Medium,100.0,3622273.62,3355558.95,Large
+581,FORGE-581,Predictive Workflow Transformation,Connected Operations,Project Manager 02,RDE Sponsor 06,3,2025-10-14,2026-08-11,2026-08-11,,Active,Medium,92.0,5045953.3,4804468.39,Strategic
+582,FORGE-582,Predictive Workflow Enablement,Industrial Analytics,Project Manager 06,RDE Sponsor 06,2,2026-02-14,2026-08-11,2026-08-11,,Active,High,92.0,3054603.88,2930257.17,Medium
+583,FORGE-583,Predictive Workflow Acceleration,Digital Reliability,Project Manager 03,RDE Sponsor 04,3,2025-12-18,2026-05-23,2026-06-27,2026-05-21,Completed,High,100.0,4262028.42,4044872.22,Large
+584,FORGE-584,Predictive Workflow Orchestration,Workforce Enablement,Project Manager 09,RDE Sponsor 01,2,2025-11-30,2026-04-10,2026-04-28,2026-04-19,Completed,Medium,100.0,1459722.21,1354297.83,Small
+585,FORGE-585,Predictive Workflow Intelligence,Digital Reliability,Project Manager 01,RDE Sponsor 01,3,2026-05-11,2026-08-11,2026-08-04,,Active,Medium,92.0,1887727.17,1877815.48,Medium
+586,FORGE-586,Predictive Quality Modernization,Workforce Enablement,Project Manager 01,RDE Sponsor 02,2,2026-03-27,2026-06-03,2026-06-17,2026-05-29,Completed,Medium,100.0,1500270.04,1454315.82,Small
+587,FORGE-587,Predictive Quality Analytics,Connected Operations,Project Manager 07,RDE Sponsor 04,3,2025-09-09,2026-05-30,2026-06-20,2026-06-07,Completed,High,100.0,1432690.31,1346188.25,Small
+588,FORGE-588,Predictive Quality Platform,Industrial Analytics,Project Manager 09,RDE Sponsor 01,2,2026-02-25,2026-08-11,2026-08-11,,At Risk,Medium,92.0,1730041.13,1657956.08,Small
+589,FORGE-589,Predictive Quality Optimization,Workforce Enablement,Project Manager 05,RDE Sponsor 05,8,2026-01-09,2026-06-25,2026-07-09,2026-07-03,Completed,Medium,100.0,3978193.54,3753828.83,Large
+590,FORGE-590,Predictive Quality Integration,Industrial Analytics,Project Manager 01,RDE Sponsor 03,1,2025-10-08,2026-07-26,2026-08-02,,Active,High,95.0,4793655.64,4393583.63,Large
+591,FORGE-591,Predictive Quality Transformation,Workforce Enablement,Project Manager 01,RDE Sponsor 03,8,2026-02-09,2026-07-10,2026-07-24,2026-07-12,Completed,Medium,100.0,4667506.81,4393583.63,Large
+592,FORGE-592,Predictive Quality Enablement,Digital Reliability,Project Manager 05,RDE Sponsor 06,3,2026-02-06,2026-08-11,2026-08-11,,At Risk,High,92.0,1365110.58,1357902.08,Small
+593,FORGE-593,Predictive Quality Acceleration,Industrial Analytics,Project Manager 03,RDE Sponsor 04,1,2026-01-12,2026-08-11,2026-08-04,,Active,Medium,92.0,1202919.23,1139844.81,Small
+594,FORGE-594,Predictive Quality Orchestration,Industrial Analytics,Project Manager 07,RDE Sponsor 04,6,2026-06-20,2026-08-11,2026-08-04,,Active,High,92.0,4748602.48,4528743.09,Large
+595,FORGE-595,Predictive Quality Intelligence,Digital Reliability,Project Manager 05,RDE Sponsor 02,4,2026-02-13,2026-08-11,2026-08-11,,Active,Medium,92.0,4072805.17,3831320.26,Large
+596,FORGE-596,Predictive Engineering Modernization,Digital Reliability,Project Manager 07,RDE Sponsor 04,3,2026-02-05,2026-08-11,2026-08-09,,Active,Medium,92.0,2383311.87,2195890.75,Medium
+597,FORGE-597,Predictive Engineering Analytics,Digital Reliability,Project Manager 01,RDE Sponsor 03,3,2026-04-19,2026-08-11,2026-08-04,,Active,High,92.0,2347269.35,2236438.59,Medium
+598,FORGE-598,Predictive Engineering Platform,Automation Platform,Project Manager 01,RDE Sponsor 03,1,2026-01-24,2026-04-23,2026-04-30,2026-04-13,Completed,High,100.0,3014056.04,2972607.14,Medium
+599,FORGE-599,Predictive Engineering Optimization,Industrial Analytics,Project Manager 05,RDE Sponsor 01,2,2025-08-28,2026-04-27,2026-05-09,2026-04-19,Completed,Low,100.0,3014056.04,2748242.43,Medium
+600,FORGE-600,Predictive Engineering Integration,Connected Operations,Project Manager 04,RDE Sponsor 06,3,2026-04-21,2026-08-06,2026-07-30,,Active,Low,95.0,1378626.53,1269597.9,Small
+601,FORGE-601,Predictive Engineering Transformation,Industrial Analytics,Project Manager 06,RDE Sponsor 03,2,2025-10-29,2026-04-22,2026-04-25,2026-04-10,Completed,High,100.0,3793475.61,3511442.86,Large
+602,FORGE-602,Predictive Engineering Enablement,Connected Operations,Project Manager 04,RDE Sponsor 05,4,2025-12-02,2026-05-20,2026-05-29,2026-05-14,Completed,Medium,100.0,1784104.92,1710217.75,Medium
+603,FORGE-603,Predictive Engineering Acceleration,Automation Platform,Project Manager 02,RDE Sponsor 01,7,2026-05-17,2026-08-11,2026-08-11,,Active,High,92.0,3153720.82,2987925.21,Medium
+604,FORGE-604,Predictive Engineering Orchestration,Industrial Analytics,Project Manager 02,RDE Sponsor 04,1,2025-10-20,2026-02-22,2026-02-28,2026-02-21,Completed,Medium,100.0,2887907.2,2650026.54,Medium
+605,FORGE-605,Predictive Engineering Intelligence,Industrial Analytics,Project Manager 07,RDE Sponsor 04,1,2026-01-24,2026-05-25,2026-06-01,2026-05-17,Completed,High,100.0,3536672.63,3377184.46,Large
+606,FORGE-606,Predictive Energy Modernization,Industrial Analytics,Project Manager 02,RDE Sponsor 03,2,2025-12-19,2026-06-18,2026-07-02,2026-06-26,Completed,Medium,100.0,3252837.75,2966299.69,Medium
+607,FORGE-607,Predictive Energy Analytics,Workforce Enablement,Project Manager 01,RDE Sponsor 01,1,2025-12-10,2026-08-11,2026-08-11,,At Risk,High,92.0,3122183.61,3024868.8,Medium
+608,FORGE-608,Predictive Energy Platform,Industrial Analytics,Project Manager 01,RDE Sponsor 01,2,2026-04-03,2026-08-11,2026-08-11,,Active,Low,92.0,1851684.65,1779599.6,Medium
+609,FORGE-609,Predictive Energy Optimization,Connected Operations,Project Manager 03,RDE Sponsor 02,6,2025-11-16,2026-07-30,2026-07-30,,Active,High,95.0,4550368.6,4369254.92,Large
+610,FORGE-610,Predictive Energy Integration,Industrial Analytics,Project Manager 07,RDE Sponsor 01,2,2026-01-19,2026-08-11,2026-08-09,,Active,Medium,92.0,3023066.67,2991529.46,Medium
+611,FORGE-611,Predictive Energy Transformation,Digital Reliability,Project Manager 02,RDE Sponsor 01,2,2025-11-13,2026-02-12,2026-02-24,2026-02-15,Completed,Low,100.0,2824832.79,2655432.93,Medium
+612,FORGE-612,Predictive Energy Enablement,Digital Reliability,Project Manager 10,RDE Sponsor 01,3,2026-05-31,2026-08-11,2026-08-11,,Active,Medium,92.0,1518291.31,1416471.18,Small
+613,FORGE-613,Predictive Energy Acceleration,Digital Reliability,Project Manager 09,RDE Sponsor 01,2,2026-03-30,2026-08-11,2026-08-07,,Active,High,92.0,2459902.24,2249954.54,Medium
+614,FORGE-614,Predictive Energy Orchestration,Connected Operations,Project Manager 04,RDE Sponsor 02,6,2025-12-05,2026-03-14,2026-03-18,2026-03-19,Completed,Low,100.0,3374481.27,3154621.88,Medium
+615,FORGE-615,Predictive Energy Intelligence,Connected Operations,Project Manager 01,RDE Sponsor 02,6,2026-03-13,2026-06-18,2026-06-11,2026-06-13,Completed,Medium,100.0,2712199.9,2648224.42,Medium
+616,FORGE-616,Predictive Service Modernization,Automation Platform,Project Manager 07,RDE Sponsor 06,1,2026-01-03,2026-07-02,2026-07-04,2026-07-03,Completed,Medium,100.0,3784464.98,3646602.33,Large
+617,FORGE-617,Predictive Service Analytics,Industrial Analytics,Project Manager 03,RDE Sponsor 01,6,2025-11-18,2026-07-29,2026-08-03,,Active,Medium,95.0,1256983.01,1165975.64,Small
+618,FORGE-618,Predictive Service Platform,Connected Operations,Project Manager 04,RDE Sponsor 03,1,2026-03-20,2026-08-11,2026-08-11,,At Risk,High,92.0,1648945.45,1530005.12,Small
+619,FORGE-619,Predictive Service Optimization,Connected Operations,Project Manager 07,RDE Sponsor 02,4,2026-07-02,2026-08-11,2026-08-11,,Active,Medium,92.0,1419174.37,1330870.19,Small
+620,FORGE-620,Predictive Service Integration,Digital Reliability,Project Manager 07,RDE Sponsor 06,5,2025-11-28,2026-04-29,2026-05-03,2026-04-18,Completed,Low,100.0,1252477.7,1158767.14,Small
+621,FORGE-621,Predictive Service Transformation,Connected Operations,Project Manager 05,RDE Sponsor 01,4,2026-03-07,2026-08-11,2026-08-11,,Active,Medium,92.0,4843214.11,4799062.02,Large
+622,FORGE-622,Predictive Service Enablement,Automation Platform,Project Manager 01,RDE Sponsor 02,6,2025-12-19,2026-08-11,2026-08-08,,Active,High,92.0,2905928.47,2815822.16,Medium
+623,FORGE-623,Predictive Service Acceleration,Industrial Analytics,Project Manager 04,RDE Sponsor 02,2,2026-03-09,2026-08-11,2026-08-11,,At Risk,Medium,92.0,2306721.51,2149035.47,Medium
+624,FORGE-624,Predictive Service Orchestration,Digital Reliability,Project Manager 05,RDE Sponsor 05,3,2025-08-29,2026-03-23,2026-04-04,2026-03-21,Completed,Medium,100.0,2649125.48,2486934.12,Medium
+625,FORGE-625,Predictive Service Intelligence,Automation Platform,Project Manager 10,RDE Sponsor 05,1,2026-01-16,2026-04-09,2026-04-25,2026-04-07,Completed,Medium,100.0,4329608.15,4260226.29,Large
+626,FORGE-626,Intelligent Asset Modernization,Connected Operations,Project Manager 05,RDE Sponsor 06,3,2026-02-13,2026-07-12,2026-07-16,2026-07-20,Completed,High,100.0,4162911.48,3985402.05,Large
+627,FORGE-627,Intelligent Asset Analytics,Automation Platform,Project Manager 03,RDE Sponsor 02,1,2026-04-07,2026-08-11,2026-08-11,,At Risk,High,92.0,4325102.83,4116056.19,Large
+628,FORGE-628,Intelligent Asset Platform,Digital Reliability,Project Manager 05,RDE Sponsor 01,2,2025-11-12,2026-06-30,2026-07-03,2026-07-04,Completed,Low,100.0,2595061.7,2574337.25,Medium
+629,FORGE-629,Intelligent Asset Optimization,Automation Platform,Project Manager 08,RDE Sponsor 05,6,2026-01-14,2026-08-11,2026-08-11,,Active,Medium,92.0,3482608.84,3236618.62,Medium
+630,FORGE-630,Intelligent Asset Integration,Digital Reliability,Project Manager 02,RDE Sponsor 01,2,2026-02-22,2026-08-11,2026-08-10,,Active,Low,92.0,3153720.82,2899621.03,Medium
+631,FORGE-631,Intelligent Asset Transformation,Industrial Analytics,Project Manager 07,RDE Sponsor 01,2,2026-06-05,2026-08-11,2026-08-11,,Active,Medium,92.0,1635429.51,1618309.31,Small
+632,FORGE-632,Intelligent Asset Enablement,Connected Operations,Project Manager 06,RDE Sponsor 02,4,2026-01-07,2026-06-14,2026-06-29,2026-06-08,Completed,Medium,100.0,4644980.23,4516128.21,Large
+633,FORGE-633,Intelligent Asset Acceleration,Connected Operations,Project Manager 07,RDE Sponsor 05,3,2026-03-02,2026-07-13,2026-07-16,,Active,Medium,95.0,3568209.84,3503333.3,Large
+634,FORGE-634,Intelligent Asset Orchestration,Industrial Analytics,Project Manager 01,RDE Sponsor 03,3,2026-07-03,2026-08-11,2026-08-11,,Active,High,92.0,4784645.01,4415209.14,Large
+635,FORGE-635,Intelligent Asset Intelligence,Connected Operations,Project Manager 02,RDE Sponsor 05,1,2026-06-17,2026-08-11,2026-08-11,,Active,Medium,92.0,3000540.09,2979815.64,Medium
+636,FORGE-636,Intelligent Operations Modernization,Industrial Analytics,Project Manager 07,RDE Sponsor 01,1,2026-04-27,2026-08-11,2026-08-11,,Active,Low,92.0,3829518.13,3688051.22,Large
+637,FORGE-637,Intelligent Operations Analytics,Connected Operations,Project Manager 04,RDE Sponsor 03,3,2025-12-17,2026-06-08,2026-07-03,2026-06-01,Completed,Medium,100.0,2766263.69,2560821.31,Medium
+638,FORGE-638,Intelligent Operations Platform,Digital Reliability,Project Manager 07,RDE Sponsor 05,4,2025-11-12,2026-05-19,2026-05-19,2026-05-05,Completed,High,100.0,3951161.65,3626778.94,Large
+639,FORGE-639,Intelligent Operations Optimization,Industrial Analytics,Project Manager 08,RDE Sponsor 04,2,2025-11-10,2026-02-19,2026-03-05,2026-02-25,Completed,High,100.0,4987384.2,4720669.53,Large
+640,FORGE-640,Intelligent Operations Integration,Connected Operations,Project Manager 01,RDE Sponsor 02,1,2025-11-16,2026-04-12,2026-04-13,2026-04-07,Completed,Medium,100.0,2806811.53,2736528.61,Medium
+641,FORGE-641,Intelligent Operations Transformation,Workforce Enablement,Project Manager 04,RDE Sponsor 04,2,2026-02-16,2026-06-10,2026-06-09,2026-06-08,Completed,High,100.0,1270498.96,1224544.74,Small
+642,FORGE-642,Intelligent Operations Enablement,Digital Reliability,Project Manager 05,RDE Sponsor 04,5,2025-11-11,2026-05-24,2026-05-22,2026-05-15,Completed,Medium,100.0,3415029.11,3132996.36,Medium
+643,FORGE-643,Intelligent Operations Acceleration,Connected Operations,Project Manager 04,RDE Sponsor 01,6,2026-01-22,2026-08-11,2026-08-04,,Active,Medium,92.0,1712019.87,1638132.7,Small
+644,FORGE-644,Intelligent Operations Orchestration,Digital Reliability,Project Manager 05,RDE Sponsor 06,5,2025-10-20,2026-05-20,2026-05-27,2026-05-20,Completed,High,100.0,1748062.39,1629122.06,Small
+645,FORGE-645,Intelligent Operations Intelligence,Connected Operations,Project Manager 01,RDE Sponsor 02,3,2026-03-25,2026-07-02,2026-06-25,2026-06-24,Completed,High,100.0,4225985.89,4150296.59,Large
+646,FORGE-646,Intelligent Reliability Modernization,Automation Platform,Project Manager 05,RDE Sponsor 03,7,2025-11-18,2026-05-31,2026-06-06,2026-05-20,Completed,High,100.0,1247972.38,1147954.38,Small
+647,FORGE-647,Intelligent Reliability Analytics,Digital Reliability,Project Manager 02,RDE Sponsor 02,4,2026-07-04,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4063794.54,3819606.44,Large
+648,FORGE-648,Intelligent Reliability Platform,Industrial Analytics,Project Manager 09,RDE Sponsor 02,2,2026-02-17,2026-08-11,2026-08-11,,At Risk,Medium,92.0,2829338.1,2760857.31,Medium
+649,FORGE-649,Intelligent Reliability Optimization,Industrial Analytics,Project Manager 01,RDE Sponsor 02,2,2026-02-09,2026-05-05,2026-05-18,2026-05-07,Completed,High,100.0,4284554.99,3901603.18,Large
+650,FORGE-650,Intelligent Reliability Integration,Industrial Analytics,Project Manager 09,RDE Sponsor 02,2,2026-01-02,2026-07-12,2026-07-17,2026-07-12,Completed,High,100.0,1401153.1,1350693.57,Small
+651,FORGE-651,Intelligent Reliability Transformation,Connected Operations,Project Manager 07,RDE Sponsor 02,3,2025-12-09,2026-07-18,2026-07-11,,Active,High,95.0,3550188.57,3349251.5,Large
+652,FORGE-652,Intelligent Reliability Enablement,Digital Reliability,Project Manager 04,RDE Sponsor 04,3,2026-01-06,2026-05-15,2026-06-03,2026-05-03,Completed,Medium,100.0,2112992.95,2075148.3,Medium
+653,FORGE-653,Intelligent Reliability Acceleration,Industrial Analytics,Project Manager 01,RDE Sponsor 06,2,2025-12-20,2026-06-28,2026-07-25,2026-07-01,Completed,High,100.0,4982878.89,4769326.94,Large
+654,FORGE-654,Intelligent Reliability Orchestration,Workforce Enablement,Project Manager 01,RDE Sponsor 03,8,2025-12-15,2026-08-11,2026-08-11,,At Risk,Medium,92.0,2279689.62,2239141.78,Medium
+655,FORGE-655,Intelligent Reliability Intelligence,Automation Platform,Project Manager 02,RDE Sponsor 01,3,2026-02-25,2026-08-02,2026-08-11,,Active,High,95.0,3433050.37,3278968.58,Medium
+656,FORGE-656,Intelligent Controls Modernization,Connected Operations,Project Manager 03,RDE Sponsor 01,3,2026-01-10,2026-07-20,2026-08-11,,At Risk,High,95.0,3221300.55,3164533.58,Medium
+657,FORGE-657,Intelligent Controls Analytics,Automation Platform,Project Manager 05,RDE Sponsor 01,7,2026-01-29,2026-06-22,2026-06-19,2026-06-11,Completed,Medium,100.0,4955847.0,4771129.07,Large
+658,FORGE-658,Intelligent Controls Platform,Digital Reliability,Project Manager 03,RDE Sponsor 02,2,2025-11-29,2026-07-27,2026-08-06,,Active,High,95.0,4293565.62,4011532.87,Large
+659,FORGE-659,Intelligent Controls Optimization,Industrial Analytics,Project Manager 08,RDE Sponsor 03,1,2025-11-25,2026-04-01,2026-04-10,2026-04-10,Completed,Medium,100.0,3401513.16,3237519.68,Medium
+660,FORGE-660,Intelligent Controls Integration,Connected Operations,Project Manager 05,RDE Sponsor 05,3,2025-10-19,2026-05-18,2026-06-05,2026-05-04,Completed,Medium,100.0,4131374.27,3834924.51,Large
+661,FORGE-661,Intelligent Controls Transformation,Digital Reliability,Project Manager 09,RDE Sponsor 01,2,2026-03-03,2026-07-19,2026-07-17,,Active,Medium,95.0,3387997.22,3214993.11,Medium
+662,FORGE-662,Intelligent Controls Enablement,Connected Operations,Project Manager 08,RDE Sponsor 03,1,2026-04-16,2026-08-11,2026-08-11,,Active,Medium,92.0,1576860.41,1554333.83,Small
+663,FORGE-663,Intelligent Controls Acceleration,Connected Operations,Project Manager 03,RDE Sponsor 04,3,2026-01-20,2026-06-18,2026-07-11,2026-06-23,Completed,High,100.0,3315912.17,3226706.92,Medium
+664,FORGE-664,Intelligent Controls Orchestration,Digital Reliability,Project Manager 06,RDE Sponsor 02,4,2025-12-29,2026-06-24,2026-06-30,2026-06-15,Completed,High,100.0,4203459.31,3969182.91,Large
+665,FORGE-665,Intelligent Controls Intelligence,Connected Operations,Project Manager 01,RDE Sponsor 04,3,2026-03-01,2026-08-11,2026-08-11,,Active,High,92.0,3428545.06,3231212.24,Medium
+666,FORGE-666,Intelligent Telemetry Modernization,Industrial Analytics,Project Manager 09,RDE Sponsor 06,2,2026-02-28,2026-08-11,2026-08-04,,Active,Medium,92.0,3032077.3,2976211.39,Medium
+667,FORGE-667,Intelligent Telemetry Analytics,Digital Reliability,Project Manager 08,RDE Sponsor 03,2,2025-09-24,2026-02-05,2026-02-07,2026-01-29,Completed,Medium,100.0,3162731.45,3004144.35,Medium
+668,FORGE-668,Intelligent Telemetry Platform,Automation Platform,Project Manager 04,RDE Sponsor 04,3,2026-01-13,2026-08-11,2026-08-11,,Active,High,92.0,3906108.5,3718687.38,Large
+669,FORGE-669,Intelligent Telemetry Optimization,Workforce Enablement,Project Manager 02,RDE Sponsor 01,2,2026-02-14,2026-08-11,2026-08-11,,At Risk,High,92.0,2338258.72,2252657.73,Medium
+670,FORGE-670,Intelligent Telemetry Integration,Industrial Analytics,Project Manager 02,RDE Sponsor 04,6,2025-12-30,2026-05-23,2026-05-28,2026-05-24,Completed,Medium,100.0,2617588.28,2400432.08,Medium
+671,FORGE-671,Intelligent Telemetry Transformation,Automation Platform,Project Manager 01,RDE Sponsor 05,1,2025-11-27,2026-07-08,2026-07-09,2026-06-24,Completed,Medium,100.0,3671832.09,3391601.47,Large
+672,FORGE-672,Intelligent Telemetry Enablement,Industrial Analytics,Project Manager 04,RDE Sponsor 04,1,2025-11-18,2026-04-02,2026-04-10,2026-04-07,Completed,High,100.0,4617948.34,4378265.56,Large
+673,FORGE-673,Intelligent Telemetry Acceleration,Workforce Enablement,Project Manager 03,RDE Sponsor 02,5,2025-10-12,2026-07-26,2026-08-09,,Active,Medium,95.0,3095151.71,2907730.59,Medium
+674,FORGE-674,Intelligent Telemetry Orchestration,Connected Operations,Project Manager 03,RDE Sponsor 05,4,2025-10-29,2026-04-20,2026-05-02,2026-04-26,Completed,Medium,100.0,2450891.6,2322940.64,Medium
+675,FORGE-675,Intelligent Telemetry Intelligence,Automation Platform,Project Manager 02,RDE Sponsor 04,1,2026-03-15,2026-07-31,2026-08-11,,Active,High,95.0,4108847.69,3967380.78,Large
+676,FORGE-676,Intelligent Workflow Modernization,Automation Platform,Project Manager 04,RDE Sponsor 02,7,2026-02-05,2026-05-29,2026-06-05,2026-05-30,Completed,High,100.0,2811316.84,2669849.93,Medium
+677,FORGE-677,Intelligent Workflow Analytics,Automation Platform,Project Manager 04,RDE Sponsor 01,1,2026-06-02,2026-08-11,2026-08-04,,Active,High,92.0,4505315.45,4444944.22,Large
+678,FORGE-678,Intelligent Workflow Platform,Workforce Enablement,Project Manager 05,RDE Sponsor 03,1,2025-12-20,2026-08-11,2026-08-11,,At Risk,High,92.0,3086141.08,2887006.14,Medium
+679,FORGE-679,Intelligent Workflow Optimization,Digital Reliability,Project Manager 02,RDE Sponsor 01,5,2025-10-28,2026-02-17,2026-02-25,2026-02-23,Completed,High,100.0,2369795.93,2245449.22,Medium
+680,FORGE-680,Intelligent Workflow Integration,Digital Reliability,Project Manager 06,RDE Sponsor 03,5,2026-02-11,2026-05-25,2026-05-31,2026-05-24,Completed,Medium,100.0,1572355.09,1478644.53,Small
+681,FORGE-681,Intelligent Workflow Transformation,Digital Reliability,Project Manager 03,RDE Sponsor 01,2,2026-05-25,2026-08-11,2026-08-11,,Active,Medium,92.0,2194088.62,2132816.33,Medium
+682,FORGE-682,Intelligent Workflow Enablement,Workforce Enablement,Project Manager 05,RDE Sponsor 04,2,2026-06-04,2026-08-11,2026-08-11,,Active,High,92.0,1599386.98,1541718.94,Small
+683,FORGE-683,Intelligent Workflow Acceleration,Industrial Analytics,Project Manager 02,RDE Sponsor 02,2,2025-12-29,2026-07-09,2026-07-20,2026-07-05,Completed,High,100.0,3257343.07,3229410.11,Medium
+684,FORGE-684,Intelligent Workflow Orchestration,Connected Operations,Project Manager 08,RDE Sponsor 04,3,2026-01-30,2026-08-11,2026-08-11,,Active,High,92.0,2959992.25,2758154.12,Medium
+685,FORGE-685,Intelligent Workflow Intelligence,Connected Operations,Project Manager 05,RDE Sponsor 02,4,2026-02-12,2026-08-11,2026-08-11,,At Risk,High,92.0,1635429.51,1523697.69,Small
+686,FORGE-686,Intelligent Quality Modernization,Connected Operations,Project Manager 10,RDE Sponsor 02,3,2026-02-09,2026-07-10,2026-07-17,2026-07-09,Completed,High,100.0,4653990.86,4586411.13,Large
+687,FORGE-687,Intelligent Quality Analytics,Workforce Enablement,Project Manager 08,RDE Sponsor 03,8,2025-11-16,2026-06-18,2026-06-24,2026-06-17,Completed,High,100.0,2207604.57,2010271.75,Medium
+688,FORGE-688,Intelligent Quality Platform,Digital Reliability,Project Manager 03,RDE Sponsor 03,3,2025-11-15,2026-06-30,2026-07-11,2026-06-16,Completed,High,100.0,4126868.95,3943953.14,Large
+689,FORGE-689,Intelligent Quality Optimization,Digital Reliability,Project Manager 06,RDE Sponsor 01,3,2026-01-08,2026-08-11,2026-08-11,,Active,High,92.0,3991709.49,3767344.78,Large
+690,FORGE-690,Intelligent Quality Integration,Industrial Analytics,Project Manager 08,RDE Sponsor 03,6,2025-11-12,2026-02-17,2026-03-09,2026-02-10,Completed,Medium,100.0,3369975.96,3224904.8,Medium
+691,FORGE-691,Intelligent Quality Transformation,Connected Operations,Project Manager 06,RDE Sponsor 04,4,2026-01-11,2026-08-11,2026-08-04,,Active,Low,92.0,1459722.21,1401153.11,Small
+692,FORGE-692,Intelligent Quality Enablement,Workforce Enablement,Project Manager 03,RDE Sponsor 02,8,2025-12-02,2026-03-27,2026-04-02,2026-03-13,Completed,High,100.0,3090646.4,2921246.54,Medium
+693,FORGE-693,Intelligent Quality Acceleration,Workforce Enablement,Project Manager 09,RDE Sponsor 02,2,2026-04-14,2026-08-11,2026-08-11,,Active,High,92.0,4784645.01,4427824.03,Large
+694,FORGE-694,Intelligent Quality Orchestration,Automation Platform,Project Manager 02,RDE Sponsor 03,6,2026-06-05,2026-08-11,2026-08-11,,At Risk,Medium,92.0,1865200.6,1813840.0,Medium
+695,FORGE-695,Intelligent Quality Intelligence,Connected Operations,Project Manager 09,RDE Sponsor 03,3,2026-01-01,2026-06-13,2026-06-20,2026-05-30,Completed,Medium,100.0,2752747.74,2736528.6,Medium
+696,FORGE-696,Intelligent Engineering Modernization,Automation Platform,Project Manager 05,RDE Sponsor 01,6,2025-11-21,2026-03-10,2026-03-13,2026-03-18,Completed,Medium,100.0,3081635.77,3027571.98,Medium
+697,FORGE-697,Intelligent Engineering Analytics,Industrial Analytics,Project Manager 04,RDE Sponsor 02,6,2026-06-03,2026-08-11,2026-08-11,,At Risk,High,92.0,4622453.65,4376463.43,Large
+698,FORGE-698,Intelligent Engineering Platform,Automation Platform,Project Manager 04,RDE Sponsor 04,7,2026-01-18,2026-07-26,2026-08-05,,Active,Low,95.0,2730221.16,2492340.5,Medium
+699,FORGE-699,Intelligent Engineering Optimization,Digital Reliability,Project Manager 01,RDE Sponsor 02,3,2026-02-06,2026-08-11,2026-08-11,,Active,Medium,92.0,4216975.26,4152098.72,Large
+700,FORGE-700,Intelligent Engineering Integration,Digital Reliability,Project Manager 04,RDE Sponsor 05,4,2025-12-22,2026-07-24,2026-07-31,,Active,High,95.0,3401513.16,3113172.97,Medium
+701,FORGE-701,Intelligent Engineering Transformation,Connected Operations,Project Manager 01,RDE Sponsor 06,4,2025-12-03,2026-08-11,2026-08-09,,Active,High,92.0,4090826.43,3813299.0,Large
+702,FORGE-702,Intelligent Engineering Enablement,Industrial Analytics,Project Manager 02,RDE Sponsor 06,1,2025-11-19,2026-05-24,2026-06-26,2026-05-20,Completed,High,100.0,1648945.45,1550729.57,Small
+703,FORGE-703,Intelligent Engineering Acceleration,Industrial Analytics,Project Manager 05,RDE Sponsor 06,2,2026-03-23,2026-08-11,2026-08-10,,Active,High,92.0,4419714.46,4161109.35,Large
+704,FORGE-704,Intelligent Engineering Orchestration,Workforce Enablement,Project Manager 08,RDE Sponsor 01,8,2026-03-01,2026-08-11,2026-08-11,,Active,High,92.0,3257343.07,3122183.61,Medium
+705,FORGE-705,Intelligent Engineering Intelligence,Connected Operations,Project Manager 01,RDE Sponsor 03,6,2026-01-16,2026-08-11,2026-08-09,,Active,Medium,92.0,2595061.7,2543701.1,Medium
+706,FORGE-706,Intelligent Energy Modernization,Industrial Analytics,Project Manager 05,RDE Sponsor 06,1,2025-11-05,2026-08-11,2026-08-11,,Active,Medium,92.0,2450891.6,2266173.67,Medium
+707,FORGE-707,Intelligent Energy Analytics,Connected Operations,Project Manager 04,RDE Sponsor 02,1,2025-12-23,2026-05-28,2026-05-24,2026-05-21,Completed,Medium,100.0,2112992.95,1996755.81,Medium
+708,FORGE-708,Intelligent Energy Platform,Automation Platform,Project Manager 08,RDE Sponsor 03,7,2026-01-10,2026-08-11,2026-08-04,,Active,High,92.0,4658496.18,4553071.8,Large
+709,FORGE-709,Intelligent Energy Optimization,Connected Operations,Project Manager 09,RDE Sponsor 02,3,2026-01-18,2026-04-16,2026-05-05,2026-04-09,Completed,Medium,100.0,3739411.82,3453774.82,Large
+710,FORGE-710,Intelligent Energy Integration,Workforce Enablement,Project Manager 04,RDE Sponsor 01,2,2026-01-18,2026-08-11,2026-08-07,,Active,Medium,92.0,2635609.54,2404937.39,Medium
+711,FORGE-711,Intelligent Energy Transformation,Digital Reliability,Project Manager 04,RDE Sponsor 06,5,2025-12-12,2026-07-17,2026-07-28,,Active,High,95.0,1865200.6,1705712.43,Medium
+712,FORGE-712,Intelligent Energy Enablement,Digital Reliability,Project Manager 03,RDE Sponsor 04,3,2025-11-21,2026-07-25,2026-07-23,,Active,High,95.0,3937645.7,3688051.22,Large
+713,FORGE-713,Intelligent Energy Acceleration,Workforce Enablement,Project Manager 06,RDE Sponsor 04,2,2026-06-14,2026-08-11,2026-08-11,,Active,High,92.0,4419714.46,4107045.57,Large
+714,FORGE-714,Intelligent Energy Orchestration,Industrial Analytics,Project Manager 01,RDE Sponsor 01,1,2026-04-06,2026-08-11,2026-08-11,,Active,Medium,92.0,1513785.99,1425481.81,Small
+715,FORGE-715,Intelligent Energy Intelligence,Digital Reliability,Project Manager 06,RDE Sponsor 05,4,2025-12-22,2026-04-28,2026-05-19,2026-04-23,Completed,High,100.0,4356640.04,4130473.2,Large
+716,FORGE-716,Intelligent Service Modernization,Digital Reliability,Project Manager 05,RDE Sponsor 02,2,2025-12-29,2026-08-11,2026-08-11,,Active,High,92.0,4289060.31,4025048.82,Large
+717,FORGE-717,Intelligent Service Analytics,Industrial Analytics,Project Manager 04,RDE Sponsor 01,2,2026-03-16,2026-08-11,2026-08-11,,At Risk,High,92.0,4167416.79,3851143.65,Large
+718,FORGE-718,Intelligent Service Platform,Industrial Analytics,Project Manager 01,RDE Sponsor 01,6,2026-04-23,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4946836.36,4765722.68,Large
+719,FORGE-719,Intelligent Service Optimization,Workforce Enablement,Project Manager 05,RDE Sponsor 04,8,2025-09-09,2026-01-22,2026-01-31,2026-01-24,Completed,High,100.0,2527481.97,2504955.39,Medium
+720,FORGE-720,Intelligent Service Integration,Digital Reliability,Project Manager 09,RDE Sponsor 01,3,2025-12-23,2026-05-13,2026-05-25,2026-05-21,Completed,High,100.0,3320417.49,3058208.13,Medium
+721,FORGE-721,Intelligent Service Transformation,Digital Reliability,Project Manager 01,RDE Sponsor 04,5,2025-11-11,2026-05-29,2026-06-05,2026-05-18,Completed,High,100.0,4221480.58,4045773.28,Large
+722,FORGE-722,Intelligent Service Enablement,Digital Reliability,Project Manager 09,RDE Sponsor 01,2,2026-02-27,2026-08-11,2026-08-11,,Active,High,92.0,2829338.1,2790592.39,Medium
+723,FORGE-723,Intelligent Service Acceleration,Connected Operations,Project Manager 08,RDE Sponsor 05,6,2025-11-22,2026-08-11,2026-08-04,,Active,Medium,92.0,1883221.86,1744458.14,Medium
+724,FORGE-724,Intelligent Service Orchestration,Workforce Enablement,Project Manager 07,RDE Sponsor 03,5,2026-01-27,2026-08-11,2026-08-10,,Active,Medium,92.0,3766443.72,3634888.51,Large
+725,FORGE-725,Intelligent Service Intelligence,Connected Operations,Project Manager 05,RDE Sponsor 02,4,2025-12-04,2026-06-24,2026-07-08,2026-06-18,Completed,Low,100.0,1797620.86,1773292.16,Medium
+726,FORGE-726,Resilient Asset Modernization,Connected Operations,Project Manager 09,RDE Sponsor 01,1,2026-06-17,2026-08-11,2026-08-11,,Active,High,92.0,4212469.95,3921426.57,Large
+727,FORGE-727,Resilient Asset Analytics,Connected Operations,Project Manager 01,RDE Sponsor 01,3,2026-05-13,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4343124.09,4026850.95,Large
+728,FORGE-728,Resilient Asset Platform,Connected Operations,Project Manager 03,RDE Sponsor 01,3,2025-10-27,2026-05-24,2026-06-10,2026-05-11,Completed,Medium,100.0,2085961.05,2030095.14,Medium
+729,FORGE-729,Resilient Asset Optimization,Connected Operations,Project Manager 05,RDE Sponsor 06,1,2026-02-12,2026-07-08,2026-07-20,2026-07-10,Completed,High,100.0,2365290.61,2165254.6,Medium
+730,FORGE-730,Resilient Asset Integration,Connected Operations,Project Manager 09,RDE Sponsor 01,3,2025-12-09,2026-06-07,2026-06-13,2026-06-15,Completed,High,100.0,3374481.27,3109568.72,Medium
+731,FORGE-731,Resilient Asset Transformation,Automation Platform,Project Manager 03,RDE Sponsor 01,3,2025-10-19,2026-06-05,2026-06-28,2026-06-01,Completed,High,100.0,2468912.87,2331050.22,Medium
+732,FORGE-732,Resilient Asset Enablement,Digital Reliability,Project Manager 01,RDE Sponsor 01,4,2025-08-14,2026-01-19,2026-01-16,2026-01-19,Completed,Medium,100.0,1117318.23,1074067.2,Small
+733,FORGE-733,Resilient Asset Acceleration,Automation Platform,Project Manager 05,RDE Sponsor 02,7,2026-05-23,2026-08-11,2026-08-11,,Active,Medium,92.0,4050278.59,3956568.03,Large
+734,FORGE-734,Resilient Asset Orchestration,Automation Platform,Project Manager 06,RDE Sponsor 01,1,2026-01-30,2026-07-24,2026-07-26,,Active,Medium,95.0,1684987.98,1566948.72,Small
+735,FORGE-735,Resilient Asset Intelligence,Digital Reliability,Project Manager 02,RDE Sponsor 02,5,2026-03-25,2026-08-11,2026-08-11,,At Risk,Medium,92.0,2698683.95,2569831.93,Medium
+736,FORGE-736,Resilient Operations Modernization,Connected Operations,Project Manager 10,RDE Sponsor 06,4,2026-01-03,2026-08-11,2026-08-11,,Active,Low,92.0,1504775.36,1477743.47,Small
+737,FORGE-737,Resilient Operations Analytics,Digital Reliability,Project Manager 03,RDE Sponsor 02,3,2026-03-17,2026-08-11,2026-08-04,,Active,High,92.0,4928815.1,4814380.09,Large
+738,FORGE-738,Resilient Operations Platform,Automation Platform,Project Manager 02,RDE Sponsor 01,1,2025-12-02,2026-07-17,2026-07-17,,Active,Medium,95.0,3883581.92,3619570.43,Large
+739,FORGE-739,Resilient Operations Optimization,Automation Platform,Project Manager 01,RDE Sponsor 01,1,2026-01-01,2026-07-01,2026-06-27,2026-06-21,Completed,Medium,100.0,3626778.94,3444764.2,Large
+740,FORGE-740,Resilient Operations Integration,Connected Operations,Project Manager 08,RDE Sponsor 01,3,2026-02-20,2026-08-11,2026-08-11,,Active,Low,92.0,1193908.59,1156965.0,Small
+741,FORGE-741,Resilient Operations Transformation,Industrial Analytics,Project Manager 01,RDE Sponsor 02,1,2026-05-11,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4262028.42,4037663.71,Large
+742,FORGE-742,Resilient Operations Enablement,Digital Reliability,Project Manager 01,RDE Sponsor 06,2,2025-09-20,2026-05-26,2026-06-03,2026-06-02,Completed,Medium,100.0,2266173.67,2234636.46,Medium
+743,FORGE-743,Resilient Operations Acceleration,Connected Operations,Project Manager 02,RDE Sponsor 02,3,2025-10-20,2026-07-05,2026-07-06,2026-07-04,Completed,Low,100.0,2131014.21,2009370.69,Medium
+744,FORGE-744,Resilient Operations Orchestration,Digital Reliability,Project Manager 03,RDE Sponsor 04,2,2025-12-19,2026-08-05,2026-08-11,,At Risk,Medium,94.41,1838168.7,1773292.16,Medium
+745,FORGE-745,Resilient Operations Intelligence,Industrial Analytics,Project Manager 04,RDE Sponsor 04,3,2025-10-13,2026-01-12,2026-01-16,2026-01-11,Completed,Medium,100.0,3126688.92,2963596.5,Medium
+746,FORGE-746,Resilient Reliability Modernization,Digital Reliability,Project Manager 02,RDE Sponsor 04,3,2025-08-21,2026-02-24,2026-03-08,2026-03-03,Completed,Low,100.0,1689493.29,1569651.9,Small
+747,FORGE-747,Resilient Reliability Analytics,Automation Platform,Project Manager 05,RDE Sponsor 03,1,2026-02-03,2026-08-11,2026-08-11,,At Risk,High,92.0,3162731.45,3088844.28,Medium
+748,FORGE-748,Resilient Reliability Platform,Automation Platform,Project Manager 04,RDE Sponsor 02,1,2025-11-30,2026-07-05,2026-07-05,2026-07-04,Completed,Medium,100.0,3527662.0,3390700.41,Large
+749,FORGE-749,Resilient Reliability Optimization,Industrial Analytics,Project Manager 07,RDE Sponsor 03,2,2025-12-01,2026-03-23,2026-03-24,2026-03-31,Completed,Medium,100.0,1311046.8,1246170.26,Small
+750,FORGE-750,Resilient Reliability Integration,Industrial Analytics,Project Manager 02,RDE Sponsor 02,1,2026-05-09,2026-08-11,2026-08-11,,Active,Medium,92.0,3518651.37,3225805.87,Large
+751,FORGE-751,Resilient Reliability Transformation,Workforce Enablement,Project Manager 02,RDE Sponsor 03,8,2025-11-10,2026-05-12,2026-05-15,2026-05-15,Completed,Medium,100.0,1842674.02,1818345.32,Medium
+752,FORGE-752,Resilient Reliability Enablement,Industrial Analytics,Project Manager 01,RDE Sponsor 06,1,2025-11-22,2026-04-25,2026-05-10,2026-04-13,Completed,Medium,100.0,2608577.65,2533789.41,Medium
+753,FORGE-753,Resilient Reliability Acceleration,Connected Operations,Project Manager 03,RDE Sponsor 02,3,2026-04-07,2026-08-11,2026-08-11,,Active,Medium,92.0,1238961.75,1219138.36,Small
+754,FORGE-754,Resilient Reliability Orchestration,Digital Reliability,Project Manager 06,RDE Sponsor 05,5,2025-11-30,2026-06-16,2026-06-23,2026-06-15,Completed,Medium,100.0,2874391.26,2710397.78,Medium
+755,FORGE-755,Resilient Reliability Intelligence,Digital Reliability,Project Manager 01,RDE Sponsor 04,3,2026-01-16,2026-07-11,2026-07-27,2026-07-02,Completed,Medium,100.0,1941790.96,1879617.61,Medium
+756,FORGE-756,Resilient Controls Modernization,Connected Operations,Project Manager 02,RDE Sponsor 03,4,2025-10-17,2026-07-18,2026-07-25,,Active,Medium,95.0,2878896.57,2719408.4,Medium
+757,FORGE-757,Resilient Controls Analytics,Workforce Enablement,Project Manager 08,RDE Sponsor 01,8,2025-12-31,2026-06-21,2026-07-02,2026-06-16,Completed,High,100.0,1581365.72,1542620.01,Small
+758,FORGE-758,Resilient Controls Platform,Connected Operations,Project Manager 08,RDE Sponsor 04,1,2026-01-28,2026-06-07,2026-06-17,2026-06-13,Completed,Medium,100.0,2698683.95,2666245.68,Medium
+759,FORGE-759,Resilient Controls Optimization,Digital Reliability,Project Manager 06,RDE Sponsor 01,2,2025-12-15,2026-07-20,2026-07-25,,Active,High,95.0,4604432.39,4496304.82,Large
+760,FORGE-760,Resilient Controls Integration,Industrial Analytics,Project Manager 07,RDE Sponsor 01,2,2026-03-02,2026-08-11,2026-08-04,,Active,High,92.0,3428545.06,3163632.51,Medium
+761,FORGE-761,Resilient Controls Transformation,Digital Reliability,Project Manager 01,RDE Sponsor 04,3,2025-09-05,2026-03-26,2026-04-01,2026-03-18,Completed,Medium,100.0,1495764.73,1436294.57,Small
+762,FORGE-762,Resilient Controls Enablement,Digital Reliability,Project Manager 01,RDE Sponsor 04,5,2026-07-25,2026-08-11,2026-08-11,,At Risk,High,92.0,2640114.85,2504955.39,Medium
+763,FORGE-763,Resilient Controls Acceleration,Digital Reliability,Project Manager 05,RDE Sponsor 01,2,2025-12-02,2026-07-12,2026-08-06,2026-07-02,Completed,High,100.0,1585871.04,1458821.14,Small
+764,FORGE-764,Resilient Controls Orchestration,Digital Reliability,Project Manager 06,RDE Sponsor 01,5,2026-04-16,2026-08-11,2026-08-11,,At Risk,High,92.0,1333573.37,1286718.09,Small
+765,FORGE-765,Resilient Controls Intelligence,Industrial Analytics,Project Manager 03,RDE Sponsor 05,3,2026-04-09,2026-08-11,2026-08-11,,Active,Medium,92.0,3635789.57,3462785.46,Large
+766,FORGE-766,Resilient Telemetry Modernization,Digital Reliability,Project Manager 02,RDE Sponsor 01,2,2025-12-16,2026-07-22,2026-08-04,,Active,High,95.0,1883221.86,1798521.93,Medium
+767,FORGE-767,Resilient Telemetry Analytics,Connected Operations,Project Manager 05,RDE Sponsor 05,4,2025-12-16,2026-06-09,2026-06-30,2026-06-18,Completed,High,100.0,3676337.41,3354657.89,Large
+768,FORGE-768,Resilient Telemetry Platform,Industrial Analytics,Project Manager 01,RDE Sponsor 04,1,2025-11-14,2026-04-11,2026-04-25,2026-04-13,Completed,Medium,100.0,2428365.03,2319336.4,Medium
+769,FORGE-769,Resilient Telemetry Optimization,Workforce Enablement,Project Manager 08,RDE Sponsor 01,2,2025-12-07,2026-03-19,2026-03-30,2026-03-09,Completed,Low,100.0,1392142.47,1284014.9,Small
+770,FORGE-770,Resilient Telemetry Integration,Digital Reliability,Project Manager 02,RDE Sponsor 04,3,2026-02-12,2026-08-11,2026-08-11,,Active,High,92.0,1865200.6,1810235.75,Medium
+771,FORGE-771,Resilient Telemetry Transformation,Connected Operations,Project Manager 02,RDE Sponsor 01,1,2026-02-27,2026-07-19,2026-07-23,,Active,High,95.0,4149395.53,4116957.26,Large
+772,FORGE-772,Resilient Telemetry Enablement,Digital Reliability,Project Manager 01,RDE Sponsor 02,3,2025-12-22,2026-08-11,2026-08-11,,Active,Medium,92.0,1144350.12,1075869.33,Small
+773,FORGE-773,Resilient Telemetry Acceleration,Connected Operations,Project Manager 08,RDE Sponsor 04,3,2025-11-16,2026-07-21,2026-08-11,,At Risk,High,95.0,1635429.51,1508379.61,Small
+774,FORGE-774,Resilient Telemetry Orchestration,Workforce Enablement,Project Manager 06,RDE Sponsor 06,8,2026-01-08,2026-07-29,2026-08-11,,Active,High,95.0,1414669.05,1307442.54,Small
+775,FORGE-775,Resilient Telemetry Intelligence,Workforce Enablement,Project Manager 01,RDE Sponsor 04,1,2026-02-24,2026-08-11,2026-08-11,,At Risk,Medium,92.0,3703369.3,3583527.91,Large
+776,FORGE-776,Resilient Workflow Modernization,Digital Reliability,Project Manager 06,RDE Sponsor 02,5,2026-02-17,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4748602.48,4507117.57,Large
+777,FORGE-777,Resilient Workflow Analytics,Automation Platform,Project Manager 08,RDE Sponsor 04,7,2026-02-25,2026-08-11,2026-08-11,,Active,High,92.0,4820687.53,4422417.64,Large
+778,FORGE-778,Resilient Workflow Platform,Digital Reliability,Project Manager 07,RDE Sponsor 03,4,2025-12-16,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4216975.26,3861956.4,Large
+779,FORGE-779,Resilient Workflow Optimization,Industrial Analytics,Project Manager 09,RDE Sponsor 01,2,2026-03-13,2026-08-11,2026-08-11,,Active,Medium,92.0,3036582.61,2823030.66,Medium
+780,FORGE-780,Resilient Workflow Integration,Connected Operations,Project Manager 03,RDE Sponsor 03,6,2025-09-01,2026-05-01,2026-05-21,2026-04-25,Completed,High,100.0,3617768.31,3491619.48,Large
+781,FORGE-781,Resilient Workflow Transformation,Digital Reliability,Project Manager 09,RDE Sponsor 02,3,2025-10-30,2026-04-23,2026-05-08,2026-04-09,Completed,Medium,100.0,2257163.04,2095872.75,Medium
+782,FORGE-782,Resilient Workflow Enablement,Automation Platform,Project Manager 10,RDE Sponsor 01,7,2025-12-10,2026-06-16,2026-06-26,2026-06-21,Completed,Medium,100.0,3577220.47,3391601.47,Large
+783,FORGE-783,Resilient Workflow Acceleration,Workforce Enablement,Project Manager 02,RDE Sponsor 05,8,2026-02-08,2026-08-11,2026-08-04,,Active,High,92.0,4852224.74,4637771.72,Large
+784,FORGE-784,Resilient Workflow Orchestration,Connected Operations,Project Manager 03,RDE Sponsor 06,6,2025-12-20,2026-05-11,2026-05-07,2026-05-18,Completed,Medium,100.0,4023246.7,3858352.15,Large
+785,FORGE-785,Resilient Workflow Intelligence,Workforce Enablement,Project Manager 04,RDE Sponsor 05,8,2026-05-18,2026-08-11,2026-08-11,,Active,Medium,92.0,4307081.57,4160208.29,Large
+786,FORGE-786,Resilient Quality Modernization,Workforce Enablement,Project Manager 10,RDE Sponsor 01,5,2025-12-07,2026-08-10,2026-08-11,,Active,Low,92.37,2049918.53,1958911.16,Medium
+787,FORGE-787,Resilient Quality Analytics,Industrial Analytics,Project Manager 04,RDE Sponsor 05,6,2026-01-19,2026-08-11,2026-08-11,,Active,High,92.0,4460262.3,4324201.77,Large
+788,FORGE-788,Resilient Quality Platform,Automation Platform,Project Manager 10,RDE Sponsor 04,1,2026-05-07,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4032257.33,3985402.05,Large
+789,FORGE-789,Resilient Quality Optimization,Connected Operations,Project Manager 04,RDE Sponsor 04,4,2026-01-11,2026-06-04,2026-05-28,2026-06-05,Completed,High,100.0,4433230.4,4339519.84,Large
+790,FORGE-790,Resilient Quality Integration,Digital Reliability,Project Manager 04,RDE Sponsor 02,3,2026-05-30,2026-08-11,2026-08-04,,Active,Low,92.0,2378806.56,2310325.77,Medium
+791,FORGE-791,Resilient Quality Transformation,Automation Platform,Project Manager 03,RDE Sponsor 02,1,2025-10-31,2026-07-28,2026-08-06,,Active,Low,95.0,2473418.18,2358983.17,Medium
+792,FORGE-792,Resilient Quality Enablement,Automation Platform,Project Manager 06,RDE Sponsor 01,7,2026-03-21,2026-08-11,2026-08-11,,Active,Medium,92.0,1360605.27,1275905.34,Small
+793,FORGE-793,Resilient Quality Acceleration,Industrial Analytics,Project Manager 05,RDE Sponsor 02,1,2025-12-12,2026-07-23,2026-08-11,,At Risk,Medium,95.0,4964857.63,4900882.15,Large
+794,FORGE-794,Resilient Quality Orchestration,Industrial Analytics,Project Manager 04,RDE Sponsor 06,2,2026-03-04,2026-08-11,2026-08-11,,At Risk,High,92.0,3162731.45,3003243.28,Medium
+795,FORGE-795,Resilient Quality Intelligence,Workforce Enablement,Project Manager 02,RDE Sponsor 01,2,2025-11-18,2026-08-11,2026-08-11,,Active,Low,92.0,1297530.85,1290322.35,Small
+796,FORGE-796,Resilient Engineering Modernization,Automation Platform,Project Manager 04,RDE Sponsor 05,6,2026-01-07,2026-05-19,2026-05-12,2026-05-06,Completed,High,100.0,3951161.65,3822309.63,Large
+797,FORGE-797,Resilient Engineering Analytics,Industrial Analytics,Project Manager 02,RDE Sponsor 04,2,2025-12-13,2026-08-11,2026-08-11,,Active,High,92.0,2545503.23,2526580.91,Medium
+798,FORGE-798,Resilient Engineering Platform,Automation Platform,Project Manager 08,RDE Sponsor 02,7,2025-12-15,2026-05-17,2026-06-06,2026-05-23,Completed,Medium,100.0,2022886.64,2009370.69,Medium
+799,FORGE-799,Resilient Engineering Optimization,Digital Reliability,Project Manager 07,RDE Sponsor 02,5,2025-10-25,2026-08-11,2026-08-04,,Active,Medium,92.0,4189943.37,3971886.1,Large
+800,FORGE-800,Resilient Engineering Integration,Digital Reliability,Project Manager 07,RDE Sponsor 03,3,2025-11-03,2026-08-11,2026-08-11,,Active,Low,92.0,2658136.12,2577941.5,Medium
+801,FORGE-801,Resilient Engineering Transformation,Connected Operations,Project Manager 05,RDE Sponsor 01,1,2025-12-19,2026-08-11,2026-08-11,,Active,High,92.0,2590556.38,2558118.11,Medium
+802,FORGE-802,Resilient Engineering Enablement,Connected Operations,Project Manager 04,RDE Sponsor 06,4,2026-02-07,2026-08-11,2026-08-11,,Active,Medium,92.0,4978373.57,4579202.62,Large
+803,FORGE-803,Resilient Engineering Acceleration,Industrial Analytics,Project Manager 07,RDE Sponsor 02,2,2025-11-16,2026-06-11,2026-06-15,2026-05-29,Completed,High,100.0,1878716.54,1791313.42,Medium
+804,FORGE-804,Resilient Engineering Orchestration,Connected Operations,Project Manager 07,RDE Sponsor 03,3,2025-12-23,2026-08-11,2026-08-11,,Active,High,92.0,2806811.53,2699585.02,Medium
+805,FORGE-805,Resilient Engineering Intelligence,Connected Operations,Project Manager 06,RDE Sponsor 03,3,2026-01-03,2026-07-31,2026-07-24,,Active,Medium,95.0,3189763.34,3128491.05,Medium
+806,FORGE-806,Resilient Energy Modernization,Digital Reliability,Project Manager 01,RDE Sponsor 01,5,2026-05-06,2026-08-11,2026-08-09,,Active,Medium,92.0,1734546.45,1621913.56,Small
+807,FORGE-807,Resilient Energy Analytics,Digital Reliability,Project Manager 05,RDE Sponsor 01,3,2026-05-11,2026-08-11,2026-08-11,,Active,Medium,92.0,4207964.63,3884482.98,Large
+808,FORGE-808,Resilient Energy Platform,Automation Platform,Project Manager 06,RDE Sponsor 02,6,2026-01-18,2026-08-03,2026-08-02,,Active,High,95.0,3906108.5,3828617.07,Large
+809,FORGE-809,Resilient Energy Optimization,Digital Reliability,Project Manager 05,RDE Sponsor 04,5,2026-04-01,2026-08-11,2026-08-11,,At Risk,Medium,92.0,3766443.72,3588934.29,Large
+810,FORGE-810,Resilient Energy Integration,Industrial Analytics,Project Manager 05,RDE Sponsor 02,2,2026-02-24,2026-08-11,2026-08-11,,Active,Medium,92.0,2360785.3,2288700.25,Medium
+811,FORGE-811,Resilient Energy Transformation,Digital Reliability,Project Manager 06,RDE Sponsor 01,5,2026-01-25,2026-08-11,2026-08-04,,Active,Medium,92.0,4708054.65,4465668.68,Large
+812,FORGE-812,Resilient Energy Enablement,Workforce Enablement,Project Manager 03,RDE Sponsor 01,2,2025-11-25,2026-07-07,2026-07-06,2026-06-23,Completed,High,100.0,2347269.35,2301315.13,Medium
+813,FORGE-813,Resilient Energy Acceleration,Digital Reliability,Project Manager 10,RDE Sponsor 05,5,2026-02-01,2026-08-11,2026-08-11,,Active,High,92.0,4563884.55,4178229.55,Large
+814,FORGE-814,Resilient Energy Orchestration,Automation Platform,Project Manager 04,RDE Sponsor 05,1,2026-01-04,2026-05-25,2026-06-14,2026-06-02,Completed,Medium,100.0,4667506.81,4295367.75,Large
+815,FORGE-815,Resilient Energy Intelligence,Connected Operations,Project Manager 01,RDE Sponsor 02,4,2025-12-29,2026-08-11,2026-08-11,,Active,High,92.0,3279869.65,2996034.78,Medium
+816,FORGE-816,Resilient Service Modernization,Industrial Analytics,Project Manager 04,RDE Sponsor 02,1,2026-03-24,2026-08-11,2026-08-09,,Active,Medium,92.0,3874571.29,3572715.15,Large
+817,FORGE-817,Resilient Service Analytics,Connected Operations,Project Manager 04,RDE Sponsor 01,3,2026-04-28,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4077310.48,4032257.33,Large
+818,FORGE-818,Resilient Service Platform,Connected Operations,Project Manager 04,RDE Sponsor 05,1,2026-01-15,2026-08-11,2026-08-04,,Active,Medium,92.0,3550188.57,3408721.67,Large
+819,FORGE-819,Resilient Service Optimization,Connected Operations,Project Manager 03,RDE Sponsor 04,1,2026-03-17,2026-08-11,2026-08-11,,Active,Medium,92.0,2694178.64,2566227.68,Medium
+820,FORGE-820,Resilient Service Integration,Digital Reliability,Project Manager 03,RDE Sponsor 01,3,2026-06-11,2026-08-11,2026-08-11,,Active,Medium,92.0,2094971.68,1966119.66,Medium
+821,FORGE-821,Resilient Service Transformation,Automation Platform,Project Manager 05,RDE Sponsor 04,3,2025-11-21,2026-07-04,2026-07-14,2026-07-11,Completed,Medium,100.0,1437195.63,1339880.82,Small
+822,FORGE-822,Resilient Service Enablement,Connected Operations,Project Manager 01,RDE Sponsor 01,3,2025-12-26,2026-07-03,2026-07-23,2026-07-02,Completed,Medium,100.0,3099657.03,2943773.12,Medium
+823,FORGE-823,Resilient Service Acceleration,Industrial Analytics,Project Manager 04,RDE Sponsor 03,2,2026-05-15,2026-08-11,2026-08-09,,Active,Medium,92.0,4189943.37,3975490.35,Large
+824,FORGE-824,Resilient Service Orchestration,Automation Platform,Project Manager 02,RDE Sponsor 03,7,2025-12-20,2026-06-15,2026-07-16,2026-06-08,Completed,High,100.0,3428545.06,3273562.21,Medium
+825,FORGE-825,Resilient Service Intelligence,Digital Reliability,Project Manager 07,RDE Sponsor 03,5,2026-04-12,2026-07-09,2026-07-20,2026-06-25,Completed,Low,100.0,1567849.78,1475040.28,Small
+826,FORGE-826,Sustainable Asset Modernization,Digital Reliability,Project Manager 03,RDE Sponsor 04,3,2026-02-06,2026-08-11,2026-08-11,,Active,High,92.0,4735086.54,4648584.48,Large
+827,FORGE-827,Sustainable Asset Analytics,Digital Reliability,Project Manager 07,RDE Sponsor 02,3,2025-08-27,2026-06-27,2026-07-11,2026-06-19,Completed,High,100.0,4667506.81,4480986.75,Large
+828,FORGE-828,Sustainable Asset Platform,Digital Reliability,Project Manager 06,RDE Sponsor 05,3,2026-04-11,2026-08-11,2026-08-11,,At Risk,High,92.0,2103982.32,1919264.39,Medium
+829,FORGE-829,Sustainable Asset Optimization,Digital Reliability,Project Manager 01,RDE Sponsor 03,3,2025-11-20,2026-08-11,2026-08-05,,Active,Medium,92.0,3527662.0,3473598.21,Large
+830,FORGE-830,Sustainable Asset Integration,Connected Operations,Project Manager 02,RDE Sponsor 06,3,2025-11-30,2026-06-04,2026-07-08,2026-05-27,Completed,High,100.0,1459722.21,1363308.46,Small
+831,FORGE-831,Sustainable Asset Transformation,Automation Platform,Project Manager 09,RDE Sponsor 05,1,2025-11-09,2026-02-19,2026-03-05,2026-02-25,Completed,Medium,100.0,2085961.05,2052621.72,Medium
+832,FORGE-832,Sustainable Asset Enablement,Connected Operations,Project Manager 08,RDE Sponsor 01,4,2026-05-11,2026-08-11,2026-08-10,,Active,Medium,92.0,4284554.99,3901603.18,Large
+833,FORGE-833,Sustainable Asset Acceleration,Digital Reliability,Project Manager 05,RDE Sponsor 03,3,2026-03-17,2026-08-11,2026-08-11,,At Risk,High,92.0,1572355.09,1486754.1,Small
+834,FORGE-834,Sustainable Asset Orchestration,Connected Operations,Project Manager 10,RDE Sponsor 02,3,2026-07-01,2026-08-11,2026-08-11,,Active,High,92.0,4685528.07,4324201.77,Large
+835,FORGE-835,Sustainable Asset Intelligence,Digital Reliability,Project Manager 04,RDE Sponsor 02,4,2026-03-05,2026-08-11,2026-08-11,,At Risk,High,92.0,4780139.69,4373760.24,Large
+836,FORGE-836,Sustainable Operations Modernization,Automation Platform,Project Manager 01,RDE Sponsor 04,1,2026-01-15,2026-06-11,2026-06-04,2026-06-07,Completed,Medium,100.0,4910793.84,4635068.53,Large
+837,FORGE-837,Sustainable Operations Analytics,Digital Reliability,Project Manager 09,RDE Sponsor 05,5,2026-01-10,2026-05-20,2026-06-13,2026-05-26,Completed,High,100.0,4550368.6,4459361.23,Large
+838,FORGE-838,Sustainable Operations Platform,Industrial Analytics,Project Manager 02,RDE Sponsor 01,1,2025-12-19,2026-06-24,2026-06-20,2026-06-23,Completed,High,100.0,1941790.96,1812938.94,Medium
+839,FORGE-839,Sustainable Operations Optimization,Automation Platform,Project Manager 04,RDE Sponsor 02,6,2026-01-04,2026-08-11,2026-08-11,,At Risk,High,92.0,2441880.97,2408541.64,Medium
+840,FORGE-840,Sustainable Operations Integration,Digital Reliability,Project Manager 03,RDE Sponsor 04,5,2026-01-14,2026-04-30,2026-04-28,2026-04-30,Completed,Medium,100.0,4424219.77,4366551.73,Large
+841,FORGE-841,Sustainable Operations Transformation,Connected Operations,Project Manager 02,RDE Sponsor 04,1,2025-10-15,2026-05-12,2026-05-15,2026-04-30,Completed,Low,100.0,3856550.03,3579923.66,Large
+842,FORGE-842,Sustainable Operations Enablement,Connected Operations,Project Manager 02,RDE Sponsor 01,1,2026-03-15,2026-08-11,2026-08-11,,Active,High,92.0,4108847.69,3762839.46,Large
+843,FORGE-843,Sustainable Operations Acceleration,Connected Operations,Project Manager 01,RDE Sponsor 01,4,2025-12-17,2026-07-24,2026-08-11,,At Risk,Medium,95.0,1964317.54,1899441.0,Medium
+844,FORGE-844,Sustainable Operations Orchestration,Workforce Enablement,Project Manager 04,RDE Sponsor 02,8,2025-12-30,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4518831.4,4408000.64,Large
+845,FORGE-845,Sustainable Operations Intelligence,Automation Platform,Project Manager 02,RDE Sponsor 02,6,2026-02-17,2026-08-11,2026-08-06,,Active,Medium,92.0,1829158.07,1785005.98,Medium
+846,FORGE-846,Sustainable Reliability Modernization,Connected Operations,Project Manager 02,RDE Sponsor 01,1,2025-12-27,2026-08-01,2026-08-11,,Active,Medium,95.0,4446746.35,4270137.98,Large
+847,FORGE-847,Sustainable Reliability Analytics,Workforce Enablement,Project Manager 03,RDE Sponsor 02,8,2025-12-24,2026-06-11,2026-06-20,2026-06-08,Completed,High,100.0,3433050.37,3159127.19,Medium
+848,FORGE-848,Sustainable Reliability Platform,Workforce Enablement,Project Manager 03,RDE Sponsor 04,8,2025-10-14,2026-06-02,2026-06-08,2026-06-02,Completed,High,100.0,3140204.87,2960893.32,Medium
+849,FORGE-849,Sustainable Reliability Optimization,Workforce Enablement,Project Manager 02,RDE Sponsor 06,1,2026-03-10,2026-08-11,2026-08-11,,At Risk,High,92.0,2716705.22,2536492.6,Medium
+850,FORGE-850,Sustainable Reliability Integration,Industrial Analytics,Project Manager 08,RDE Sponsor 03,2,2025-11-21,2026-07-14,2026-07-07,,Active,Medium,95.0,1392142.47,1361506.33,Small
+851,FORGE-851,Sustainable Reliability Transformation,Digital Reliability,Project Manager 01,RDE Sponsor 01,3,2026-01-12,2026-08-11,2026-08-11,,Active,High,92.0,4149395.53,3916921.25,Large
+852,FORGE-852,Sustainable Reliability Enablement,Automation Platform,Project Manager 05,RDE Sponsor 02,3,2026-02-27,2026-07-01,2026-07-02,2026-06-19,Completed,Medium,100.0,4063794.54,4026850.95,Large
+853,FORGE-853,Sustainable Reliability Acceleration,Industrial Analytics,Project Manager 05,RDE Sponsor 02,1,2025-12-25,2026-03-25,2026-04-11,2026-03-15,Completed,Medium,100.0,3036582.61,2915840.16,Medium
+854,FORGE-854,Sustainable Reliability Orchestration,Automation Platform,Project Manager 08,RDE Sponsor 03,6,2025-10-08,2026-05-08,2026-05-29,2026-05-17,Completed,Medium,100.0,2347269.35,2221120.52,Medium
+855,FORGE-855,Sustainable Reliability Intelligence,Connected Operations,Project Manager 01,RDE Sponsor 03,6,2025-12-09,2026-04-28,2026-05-07,2026-05-01,Completed,High,100.0,4207964.63,3934942.51,Large
+856,FORGE-856,Sustainable Controls Modernization,Industrial Analytics,Project Manager 03,RDE Sponsor 03,2,2026-01-19,2026-08-11,2026-08-11,,Active,Medium,92.0,1162371.39,1129933.12,Small
+857,FORGE-857,Sustainable Controls Analytics,Connected Operations,Project Manager 06,RDE Sponsor 03,6,2026-02-02,2026-08-11,2026-08-11,,Active,Medium,92.0,2590556.38,2367993.8,Medium
+858,FORGE-858,Sustainable Controls Platform,Digital Reliability,Project Manager 08,RDE Sponsor 01,4,2026-02-17,2026-08-11,2026-08-11,,Active,Medium,92.0,3230311.18,3059109.19,Medium
+859,FORGE-859,Sustainable Controls Optimization,Connected Operations,Project Manager 06,RDE Sponsor 04,3,2026-03-03,2026-08-11,2026-08-11,,At Risk,High,92.0,3126688.92,2995133.71,Medium
+860,FORGE-860,Sustainable Controls Integration,Connected Operations,Project Manager 03,RDE Sponsor 01,3,2026-03-23,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4149395.53,3798881.99,Large
+861,FORGE-861,Sustainable Controls Transformation,Digital Reliability,Project Manager 06,RDE Sponsor 04,5,2025-09-12,2026-04-11,2026-05-07,2026-04-03,Completed,High,100.0,4104342.37,3801585.17,Large
+862,FORGE-862,Sustainable Controls Enablement,Industrial Analytics,Project Manager 05,RDE Sponsor 02,3,2026-03-20,2026-08-11,2026-08-08,,Active,High,92.0,1166876.7,1108307.6,Small
+863,FORGE-863,Sustainable Controls Acceleration,Connected Operations,Project Manager 07,RDE Sponsor 03,4,2025-12-15,2026-04-12,2026-04-07,2026-04-19,Completed,High,100.0,2824832.79,2692376.52,Medium
+864,FORGE-864,Sustainable Controls Orchestration,Industrial Analytics,Project Manager 09,RDE Sponsor 02,2,2026-03-16,2026-08-11,2026-08-08,,Active,Medium,92.0,3365470.64,3149215.5,Medium
+865,FORGE-865,Sustainable Controls Intelligence,Connected Operations,Project Manager 08,RDE Sponsor 05,1,2025-10-31,2026-05-26,2026-05-29,2026-05-12,Completed,High,100.0,4919804.47,4528743.09,Large
+866,FORGE-866,Sustainable Telemetry Modernization,Industrial Analytics,Project Manager 05,RDE Sponsor 01,2,2026-03-18,2026-06-06,2026-06-13,2026-06-04,Completed,Low,100.0,3892592.55,3678139.53,Large
+867,FORGE-867,Sustainable Telemetry Analytics,Workforce Enablement,Project Manager 01,RDE Sponsor 01,8,2026-02-09,2026-08-11,2026-08-11,,At Risk,High,92.0,5041447.99,4704450.39,Strategic
+868,FORGE-868,Sustainable Telemetry Platform,Digital Reliability,Project Manager 03,RDE Sponsor 06,5,2025-12-30,2026-06-11,2026-06-20,2026-06-06,Completed,Low,100.0,2045413.21,1898539.93,Medium
+869,FORGE-869,Sustainable Telemetry Optimization,Industrial Analytics,Project Manager 04,RDE Sponsor 02,2,2025-11-28,2026-07-31,2026-08-11,,Active,High,95.0,4180932.74,4020543.51,Large
+870,FORGE-870,Sustainable Telemetry Integration,Workforce Enablement,Project Manager 03,RDE Sponsor 01,2,2026-04-03,2026-08-11,2026-08-11,,Active,High,92.0,3036582.61,2919444.41,Medium
+871,FORGE-871,Sustainable Telemetry Transformation,Connected Operations,Project Manager 09,RDE Sponsor 04,3,2026-01-30,2026-07-06,2026-07-08,2026-06-27,Completed,Medium,100.0,3329428.12,3069020.89,Medium
+872,FORGE-872,Sustainable Telemetry Enablement,Digital Reliability,Project Manager 05,RDE Sponsor 04,5,2026-05-07,2026-08-11,2026-08-11,,Active,High,92.0,4780139.69,4510721.83,Large
+873,FORGE-873,Sustainable Telemetry Acceleration,Industrial Analytics,Project Manager 02,RDE Sponsor 03,6,2025-11-11,2026-06-30,2026-07-17,2026-06-30,Completed,Medium,100.0,2987024.14,2775274.31,Medium
+874,FORGE-874,Sustainable Telemetry Orchestration,Connected Operations,Project Manager 01,RDE Sponsor 04,4,2025-12-23,2026-06-27,2026-07-22,2026-06-16,Completed,High,100.0,4149395.53,3996214.8,Large
+875,FORGE-875,Sustainable Telemetry Intelligence,Industrial Analytics,Project Manager 04,RDE Sponsor 01,6,2026-04-18,2026-08-11,2026-08-11,,Active,Medium,92.0,3050098.56,2959992.25,Medium
+876,FORGE-876,Sustainable Workflow Modernization,Workforce Enablement,Project Manager 03,RDE Sponsor 03,8,2026-03-17,2026-08-11,2026-08-11,,Active,Low,92.0,1626418.88,1499368.98,Small
+877,FORGE-877,Sustainable Workflow Analytics,Industrial Analytics,Project Manager 01,RDE Sponsor 02,2,2025-09-25,2026-02-05,2026-02-28,2026-02-01,Completed,High,100.0,5032437.36,4736888.67,Strategic
+878,FORGE-878,Sustainable Workflow Platform,Connected Operations,Project Manager 05,RDE Sponsor 03,3,2026-05-29,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4460262.3,4279148.62,Large
+879,FORGE-879,Sustainable Workflow Optimization,Connected Operations,Project Manager 03,RDE Sponsor 02,1,2026-01-26,2026-06-12,2026-07-14,2026-06-04,Completed,High,100.0,3766443.72,3655612.96,Large
+880,FORGE-880,Sustainable Workflow Integration,Connected Operations,Project Manager 09,RDE Sponsor 06,4,2025-12-19,2026-07-17,2026-07-12,,Active,Low,95.0,3234816.49,3103261.28,Medium
+881,FORGE-881,Sustainable Workflow Transformation,Industrial Analytics,Project Manager 02,RDE Sponsor 02,2,2025-12-08,2026-08-11,2026-08-11,,Active,Low,92.0,3374481.27,3282572.83,Medium
+882,FORGE-882,Sustainable Workflow Enablement,Automation Platform,Project Manager 07,RDE Sponsor 06,1,2026-01-21,2026-08-11,2026-08-11,,Active,High,92.0,4897277.89,4630563.22,Large
+883,FORGE-883,Sustainable Workflow Acceleration,Workforce Enablement,Project Manager 03,RDE Sponsor 03,2,2026-02-03,2026-08-11,2026-08-11,,Active,Medium,92.0,1923769.7,1821949.57,Medium
+884,FORGE-884,Sustainable Workflow Orchestration,Industrial Analytics,Project Manager 02,RDE Sponsor 04,2,2025-11-18,2026-08-11,2026-08-11,,Active,Medium,92.0,2613082.96,2379707.62,Medium
+885,FORGE-885,Sustainable Workflow Intelligence,Workforce Enablement,Project Manager 07,RDE Sponsor 04,8,2025-11-15,2026-06-28,2026-08-02,2026-07-05,Completed,Medium,100.0,2149035.47,2088664.24,Medium
+886,FORGE-886,Sustainable Quality Modernization,Industrial Analytics,Project Manager 02,RDE Sponsor 02,1,2025-12-21,2026-05-29,2026-06-10,2026-05-17,Completed,High,100.0,1811136.81,1725535.82,Medium
+887,FORGE-887,Sustainable Quality Analytics,Connected Operations,Project Manager 01,RDE Sponsor 06,4,2026-02-27,2026-08-11,2026-08-11,,Active,High,92.0,4834203.48,4644079.17,Large
+888,FORGE-888,Sustainable Quality Platform,Digital Reliability,Project Manager 01,RDE Sponsor 04,3,2025-09-27,2026-06-18,2026-07-01,2026-06-20,Completed,Medium,100.0,2428365.03,2236438.59,Medium
+889,FORGE-889,Sustainable Quality Optimization,Industrial Analytics,Project Manager 04,RDE Sponsor 02,3,2026-02-28,2026-08-11,2026-08-11,,Active,Medium,92.0,2694178.64,2584248.94,Medium
+890,FORGE-890,Sustainable Quality Integration,Automation Platform,Project Manager 02,RDE Sponsor 02,7,2026-04-30,2026-08-11,2026-08-11,,Active,Medium,92.0,2464407.55,2268876.86,Medium
+891,FORGE-891,Sustainable Quality Transformation,Automation Platform,Project Manager 06,RDE Sponsor 05,6,2025-12-22,2026-06-21,2026-06-28,2026-06-10,Completed,High,100.0,3451071.63,3372679.14,Medium
+892,FORGE-892,Sustainable Quality Enablement,Connected Operations,Project Manager 03,RDE Sponsor 01,4,2026-01-03,2026-07-08,2026-07-06,2026-07-04,Completed,Low,100.0,2770769.0,2709496.71,Medium
+893,FORGE-893,Sustainable Quality Acceleration,Connected Operations,Project Manager 01,RDE Sponsor 05,3,2026-02-10,2026-08-11,2026-08-11,,Active,High,92.0,3964677.6,3721390.57,Large
+894,FORGE-894,Sustainable Quality Orchestration,Digital Reliability,Project Manager 01,RDE Sponsor 02,2,2026-01-30,2026-08-07,2026-08-11,,Active,Medium,93.95,3946656.33,3641195.94,Large
+895,FORGE-895,Sustainable Quality Intelligence,Industrial Analytics,Project Manager 03,RDE Sponsor 01,1,2025-10-01,2026-03-09,2026-03-21,2026-03-12,Completed,Medium,100.0,2040907.9,1981437.74,Medium
+896,FORGE-896,Sustainable Engineering Modernization,Connected Operations,Project Manager 09,RDE Sponsor 02,1,2026-04-16,2026-08-11,2026-08-11,,Active,Medium,92.0,2189583.31,2071544.05,Medium
+897,FORGE-897,Sustainable Engineering Analytics,Automation Platform,Project Manager 02,RDE Sponsor 05,6,2026-01-28,2026-07-03,2026-07-06,2026-06-27,Completed,Low,100.0,1184897.96,1162371.38,Small
+898,FORGE-898,Sustainable Engineering Platform,Workforce Enablement,Project Manager 06,RDE Sponsor 01,8,2026-04-09,2026-08-11,2026-08-11,,At Risk,High,92.0,3523156.68,3491619.47,Large
+899,FORGE-899,Sustainable Engineering Optimization,Connected Operations,Project Manager 04,RDE Sponsor 01,3,2026-02-23,2026-08-11,2026-08-11,,Active,Medium,92.0,1405658.42,1304739.35,Small
+900,FORGE-900,Sustainable Engineering Integration,Industrial Analytics,Project Manager 03,RDE Sponsor 01,1,2026-02-05,2026-08-11,2026-08-05,,Active,Medium,92.0,4572895.18,4391781.5,Large
+901,FORGE-901,Sustainable Engineering Transformation,Automation Platform,Project Manager 04,RDE Sponsor 02,6,2025-12-26,2026-08-11,2026-08-11,,Active,Medium,92.0,4536852.66,4423318.71,Large
+902,FORGE-902,Sustainable Engineering Enablement,Industrial Analytics,Project Manager 10,RDE Sponsor 03,2,2025-12-23,2026-05-26,2026-05-26,2026-05-25,Completed,Medium,100.0,1743557.08,1621012.5,Small
+903,FORGE-903,Sustainable Engineering Acceleration,Workforce Enablement,Project Manager 02,RDE Sponsor 05,5,2025-12-28,2026-05-19,2026-05-19,2026-05-05,Completed,Medium,100.0,3680842.72,3386195.09,Large
+904,FORGE-904,Sustainable Engineering Orchestration,Digital Reliability,Project Manager 01,RDE Sponsor 05,5,2025-12-17,2026-04-19,2026-04-25,2026-04-23,Completed,High,100.0,3721390.56,3441159.94,Large
+905,FORGE-905,Sustainable Engineering Intelligence,Connected Operations,Project Manager 04,RDE Sponsor 02,3,2025-12-23,2026-04-29,2026-04-22,2026-04-22,Completed,High,100.0,4126868.95,3755630.96,Large
+906,FORGE-906,Sustainable Energy Modernization,Digital Reliability,Project Manager 05,RDE Sponsor 05,2,2026-03-30,2026-08-11,2026-08-11,,Active,Medium,92.0,4090826.43,3847539.4,Large
+907,FORGE-907,Sustainable Energy Analytics,Connected Operations,Project Manager 01,RDE Sponsor 01,3,2026-01-31,2026-06-29,2026-07-12,2026-07-05,Completed,High,100.0,4473778.24,4218777.39,Large
+908,FORGE-908,Sustainable Energy Platform,Connected Operations,Project Manager 02,RDE Sponsor 02,3,2026-05-02,2026-08-11,2026-08-11,,At Risk,High,92.0,2595061.7,2414849.08,Medium
+909,FORGE-909,Sustainable Energy Optimization,Digital Reliability,Project Manager 05,RDE Sponsor 03,5,2026-06-16,2026-08-11,2026-08-11,,Active,High,92.0,4131374.27,4100738.12,Large
+910,FORGE-910,Sustainable Energy Integration,Workforce Enablement,Project Manager 06,RDE Sponsor 03,5,2026-04-17,2026-08-11,2026-08-11,,Active,Medium,92.0,1189403.28,1113713.98,Small
+911,FORGE-911,Sustainable Energy Transformation,Digital Reliability,Project Manager 02,RDE Sponsor 01,3,2026-03-15,2026-08-11,2026-08-11,,At Risk,High,92.0,3816002.19,3765542.66,Large
+912,FORGE-912,Sustainable Energy Enablement,Automation Platform,Project Manager 06,RDE Sponsor 01,6,2026-02-21,2026-08-11,2026-08-11,,Active,Medium,92.0,2500450.07,2336456.59,Medium
+913,FORGE-913,Sustainable Energy Acceleration,Connected Operations,Project Manager 01,RDE Sponsor 02,1,2026-02-27,2026-08-11,2026-08-10,,Active,High,92.0,3928635.07,3653810.83,Large
+914,FORGE-914,Sustainable Energy Orchestration,Workforce Enablement,Project Manager 05,RDE Sponsor 01,2,2026-04-05,2026-08-11,2026-08-11,,At Risk,High,92.0,4550368.6,4144890.21,Large
+915,FORGE-915,Sustainable Energy Intelligence,Automation Platform,Project Manager 03,RDE Sponsor 05,6,2025-12-24,2026-04-30,2026-05-02,2026-05-03,Completed,Medium,100.0,3910613.81,3863758.53,Large
+916,FORGE-916,Sustainable Service Modernization,Digital Reliability,Project Manager 06,RDE Sponsor 01,2,2025-09-18,2026-03-13,2026-04-06,2026-03-21,Completed,Medium,100.0,4928815.1,4645881.29,Large
+917,FORGE-917,Sustainable Service Analytics,Connected Operations,Project Manager 05,RDE Sponsor 06,6,2026-02-05,2026-08-11,2026-08-11,,Active,Medium,92.0,3568209.84,3383491.91,Large
+918,FORGE-918,Sustainable Service Platform,Digital Reliability,Project Manager 02,RDE Sponsor 06,3,2025-11-04,2026-08-11,2026-08-08,,Active,Medium,92.0,1423679.68,1345287.19,Small
+919,FORGE-919,Sustainable Service Optimization,Connected Operations,Project Manager 08,RDE Sponsor 03,4,2025-12-07,2026-05-19,2026-05-12,2026-05-20,Completed,Medium,100.0,3005045.41,2872589.14,Medium
+920,FORGE-920,Sustainable Service Integration,Digital Reliability,Project Manager 05,RDE Sponsor 01,5,2025-10-01,2026-06-04,2026-06-06,2026-06-12,Completed,High,100.0,4464767.61,4326003.89,Large
+921,FORGE-921,Sustainable Service Transformation,Industrial Analytics,Project Manager 01,RDE Sponsor 04,1,2026-03-24,2026-08-06,2026-08-04,,Active,Medium,95.0,3095151.71,2885204.01,Medium
+922,FORGE-922,Sustainable Service Enablement,Connected Operations,Project Manager 01,RDE Sponsor 05,3,2026-04-17,2026-08-11,2026-08-11,,Active,Medium,92.0,3743917.14,3566407.71,Large
+923,FORGE-923,Sustainable Service Acceleration,Connected Operations,Project Manager 01,RDE Sponsor 02,1,2026-02-23,2026-06-27,2026-06-21,2026-06-14,Completed,Medium,100.0,1139844.81,1046134.25,Small
+924,FORGE-924,Sustainable Service Orchestration,Industrial Analytics,Project Manager 06,RDE Sponsor 01,2,2026-01-18,2026-04-29,2026-05-04,2026-04-28,Completed,High,100.0,4482788.87,4144890.21,Large
+925,FORGE-925,Sustainable Service Intelligence,Digital Reliability,Project Manager 10,RDE Sponsor 05,3,2026-05-09,2026-08-11,2026-08-09,,Active,Medium,92.0,3626778.94,3473598.21,Large
+926,FORGE-926,Enterprise Asset Modernization,Automation Platform,Project Manager 03,RDE Sponsor 01,1,2026-02-24,2026-07-07,2026-07-10,2026-07-03,Completed,High,100.0,3770949.03,3625877.87,Large
+927,FORGE-927,Enterprise Asset Analytics,Connected Operations,Project Manager 05,RDE Sponsor 05,3,2025-10-12,2026-05-05,2026-04-28,2026-05-14,Completed,High,100.0,3374481.27,3138402.74,Medium
+928,FORGE-928,Enterprise Asset Platform,Workforce Enablement,Project Manager 09,RDE Sponsor 02,1,2025-12-27,2026-07-18,2026-07-25,,Active,High,95.0,4644980.23,4561181.36,Large
+929,FORGE-929,Enterprise Asset Optimization,Digital Reliability,Project Manager 02,RDE Sponsor 04,5,2025-10-05,2026-01-01,2025-12-26,2025-12-21,Completed,High,100.0,2315732.14,2224724.77,Medium
+930,FORGE-930,Enterprise Asset Integration,Connected Operations,Project Manager 06,RDE Sponsor 04,4,2026-01-26,2026-08-11,2026-08-11,,Active,Medium,92.0,1117318.23,1063254.44,Small
+931,FORGE-931,Enterprise Asset Transformation,Automation Platform,Project Manager 01,RDE Sponsor 02,1,2026-03-07,2026-08-11,2026-08-11,,Active,Medium,92.0,3586231.1,3461884.39,Large
+932,FORGE-932,Enterprise Asset Enablement,Workforce Enablement,Project Manager 06,RDE Sponsor 02,8,2026-03-27,2026-08-11,2026-08-11,,At Risk,High,92.0,3397007.85,3176247.39,Medium
+933,FORGE-933,Enterprise Asset Acceleration,Connected Operations,Project Manager 02,RDE Sponsor 02,4,2026-01-03,2026-06-03,2026-06-30,2026-06-05,Completed,Medium,100.0,2140024.84,2017480.26,Medium
+934,FORGE-934,Enterprise Asset Orchestration,Industrial Analytics,Project Manager 08,RDE Sponsor 03,2,2026-02-15,2026-06-23,2026-06-29,2026-06-25,Completed,Medium,100.0,5027932.04,4577400.5,Strategic
+935,FORGE-935,Enterprise Asset Intelligence,Connected Operations,Project Manager 02,RDE Sponsor 02,3,2025-08-29,2026-01-17,2026-01-18,2026-01-07,Completed,Medium,100.0,4401693.19,4230491.2,Large
+936,FORGE-936,Enterprise Operations Modernization,Automation Platform,Project Manager 04,RDE Sponsor 02,1,2026-01-05,2026-06-14,2026-06-21,2026-06-12,Completed,Low,100.0,2212109.89,2110289.76,Medium
+937,FORGE-937,Enterprise Operations Analytics,Connected Operations,Project Manager 07,RDE Sponsor 01,3,2026-01-21,2026-08-11,2026-08-11,,Active,High,92.0,4960352.31,4698142.95,Large
+938,FORGE-938,Enterprise Operations Platform,Automation Platform,Project Manager 07,RDE Sponsor 04,1,2025-12-06,2026-05-03,2026-05-11,2026-05-01,Completed,Medium,100.0,2131014.21,2112992.95,Medium
+939,FORGE-939,Enterprise Operations Optimization,Industrial Analytics,Project Manager 02,RDE Sponsor 06,2,2026-04-11,2026-08-11,2026-08-11,,Active,High,92.0,2513966.02,2346368.29,Medium
+940,FORGE-940,Enterprise Operations Integration,Industrial Analytics,Project Manager 02,RDE Sponsor 03,2,2025-09-28,2026-03-29,2026-03-22,2026-04-06,Completed,High,100.0,4234996.52,4193547.62,Large
+941,FORGE-941,Enterprise Operations Transformation,Workforce Enablement,Project Manager 01,RDE Sponsor 03,2,2026-04-12,2026-08-11,2026-08-11,,Active,Medium,92.0,2122003.58,2021985.58,Medium
+942,FORGE-942,Enterprise Operations Enablement,Industrial Analytics,Project Manager 01,RDE Sponsor 01,1,2025-12-24,2026-08-11,2026-08-11,,At Risk,High,92.0,1847179.33,1737249.63,Medium
+943,FORGE-943,Enterprise Operations Acceleration,Industrial Analytics,Project Manager 06,RDE Sponsor 04,2,2025-11-30,2026-08-11,2026-08-11,,Active,Medium,92.0,1518291.31,1401153.11,Small
+944,FORGE-944,Enterprise Operations Orchestration,Industrial Analytics,Project Manager 06,RDE Sponsor 03,2,2025-09-17,2026-04-02,2026-04-04,2026-03-22,Completed,High,100.0,4771129.06,4564785.61,Large
+945,FORGE-945,Enterprise Operations Intelligence,Industrial Analytics,Project Manager 01,RDE Sponsor 01,6,2026-05-02,2026-08-11,2026-08-10,,Active,Low,92.0,1509280.68,1484951.98,Small
+946,FORGE-946,Enterprise Reliability Modernization,Connected Operations,Project Manager 04,RDE Sponsor 01,3,2025-12-22,2026-08-11,2026-08-11,,Active,High,92.0,2987024.14,2886105.07,Medium
+947,FORGE-947,Enterprise Reliability Analytics,Connected Operations,Project Manager 08,RDE Sponsor 02,1,2026-02-24,2026-05-13,2026-05-08,2026-05-10,Completed,Low,100.0,2450891.6,2365290.61,Medium
+948,FORGE-948,Enterprise Reliability Platform,Industrial Analytics,Project Manager 10,RDE Sponsor 02,2,2026-03-29,2026-07-07,2026-07-20,2026-06-30,Completed,Low,100.0,1108307.6,1060551.26,Small
+949,FORGE-949,Enterprise Reliability Optimization,Digital Reliability,Project Manager 08,RDE Sponsor 02,3,2026-01-29,2026-08-11,2026-08-11,,Active,High,92.0,4820687.53,4623354.71,Large
+950,FORGE-950,Enterprise Reliability Integration,Connected Operations,Project Manager 05,RDE Sponsor 02,4,2025-12-15,2026-07-23,2026-08-11,,At Risk,High,95.0,1198413.91,1116417.17,Small
+951,FORGE-951,Enterprise Reliability Transformation,Automation Platform,Project Manager 01,RDE Sponsor 01,1,2026-03-18,2026-08-11,2026-08-11,,Active,Medium,92.0,3924129.76,3792574.55,Large
+952,FORGE-952,Enterprise Reliability Enablement,Automation Platform,Project Manager 02,RDE Sponsor 03,6,2025-11-03,2026-04-13,2026-04-25,2026-04-20,Completed,Medium,100.0,1405658.42,1292124.47,Small
+953,FORGE-953,Enterprise Reliability Acceleration,Workforce Enablement,Project Manager 04,RDE Sponsor 01,2,2026-04-14,2026-08-11,2026-08-11,,Active,Medium,92.0,2270678.99,2232834.34,Medium
+954,FORGE-954,Enterprise Reliability Orchestration,Industrial Analytics,Project Manager 07,RDE Sponsor 04,2,2025-09-12,2026-01-19,2026-01-20,2026-01-18,Completed,High,100.0,4325102.83,4009730.75,Large
+955,FORGE-955,Enterprise Reliability Intelligence,Automation Platform,Project Manager 02,RDE Sponsor 03,6,2026-01-13,2026-08-11,2026-08-07,,Active,High,92.0,3545683.26,3369975.96,Large
+956,FORGE-956,Enterprise Controls Modernization,Connected Operations,Project Manager 01,RDE Sponsor 06,4,2025-10-11,2026-06-01,2026-06-05,2026-06-04,Completed,Medium,100.0,2613082.96,2489637.32,Medium
+957,FORGE-957,Enterprise Controls Analytics,Automation Platform,Project Manager 04,RDE Sponsor 01,1,2026-06-03,2026-08-11,2026-08-11,,Active,High,92.0,2027391.95,2016579.19,Medium
+958,FORGE-958,Enterprise Controls Platform,Automation Platform,Project Manager 07,RDE Sponsor 01,6,2026-04-24,2026-08-11,2026-08-11,,At Risk,High,92.0,3721390.56,3606054.48,Large
+959,FORGE-959,Enterprise Controls Optimization,Automation Platform,Project Manager 06,RDE Sponsor 03,7,2026-06-13,2026-08-11,2026-08-11,,Active,Medium,92.0,4419714.46,4273742.24,Large
+960,FORGE-960,Enterprise Controls Integration,Digital Reliability,Project Manager 09,RDE Sponsor 02,5,2026-03-04,2026-08-11,2026-08-04,,Active,Medium,92.0,1459722.21,1329969.12,Small
+961,FORGE-961,Enterprise Controls Transformation,Workforce Enablement,Project Manager 04,RDE Sponsor 02,8,2025-12-09,2026-04-07,2026-03-31,2026-04-04,Completed,Medium,100.0,3806991.56,3548386.45,Large
+962,FORGE-962,Enterprise Controls Enablement,Connected Operations,Project Manager 01,RDE Sponsor 02,3,2025-08-03,2026-05-06,2026-04-29,2026-05-06,Completed,Medium,100.0,2401333.13,2273382.17,Medium
+963,FORGE-963,Enterprise Controls Acceleration,Connected Operations,Project Manager 04,RDE Sponsor 01,4,2025-11-14,2026-05-23,2026-05-25,2026-05-10,Completed,High,100.0,3806991.56,3508739.68,Large
+964,FORGE-964,Enterprise Controls Orchestration,Workforce Enablement,Project Manager 04,RDE Sponsor 02,8,2026-06-03,2026-08-11,2026-08-11,,Active,Low,92.0,2099477.0,1953504.78,Medium
+965,FORGE-965,Enterprise Controls Intelligence,Digital Reliability,Project Manager 04,RDE Sponsor 05,2,2026-06-19,2026-08-11,2026-08-04,,Active,Medium,92.0,3221300.55,2998737.97,Medium
+966,FORGE-966,Enterprise Telemetry Modernization,Workforce Enablement,Project Manager 08,RDE Sponsor 01,8,2026-04-21,2026-08-11,2026-08-11,,At Risk,High,92.0,3523156.68,3354657.88,Large
+967,FORGE-967,Enterprise Telemetry Analytics,Connected Operations,Project Manager 10,RDE Sponsor 03,3,2026-02-19,2026-08-05,2026-08-11,,Active,High,95.0,4906288.53,4819786.47,Large
+968,FORGE-968,Enterprise Telemetry Platform,Workforce Enablement,Project Manager 03,RDE Sponsor 01,8,2026-03-20,2026-07-16,2026-07-17,,Active,High,95.0,2464407.55,2334654.47,Medium
+969,FORGE-969,Enterprise Telemetry Optimization,Connected Operations,Project Manager 09,RDE Sponsor 03,3,2025-12-22,2026-04-07,2026-04-23,2026-03-29,Completed,Low,100.0,1775094.29,1670570.97,Medium
+970,FORGE-970,Enterprise Telemetry Integration,Workforce Enablement,Project Manager 02,RDE Sponsor 01,8,2026-04-21,2026-08-11,2026-08-11,,Active,High,92.0,4892772.58,4688231.26,Large
+971,FORGE-971,Enterprise Telemetry Transformation,Digital Reliability,Project Manager 01,RDE Sponsor 03,3,2026-02-25,2026-08-02,2026-07-28,,Active,Medium,95.0,1680482.66,1543521.07,Small
+972,FORGE-972,Enterprise Telemetry Enablement,Workforce Enablement,Project Manager 02,RDE Sponsor 05,5,2026-03-16,2026-08-11,2026-08-11,,Active,Medium,92.0,4793655.64,4370155.99,Large
+973,FORGE-973,Enterprise Telemetry Acceleration,Automation Platform,Project Manager 02,RDE Sponsor 02,3,2025-12-18,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4437735.72,4337717.72,Large
+974,FORGE-974,Enterprise Telemetry Orchestration,Industrial Analytics,Project Manager 03,RDE Sponsor 01,2,2025-11-23,2026-06-14,2026-06-22,2026-06-10,Completed,Medium,100.0,1509280.68,1448909.45,Small
+975,FORGE-975,Enterprise Telemetry Intelligence,Connected Operations,Project Manager 02,RDE Sponsor 02,4,2026-04-16,2026-08-11,2026-08-11,,At Risk,Medium,92.0,4807171.59,4533248.41,Large
+976,FORGE-976,Enterprise Workflow Modernization,Workforce Enablement,Project Manager 05,RDE Sponsor 05,2,2026-03-06,2026-08-11,2026-08-08,,Active,Medium,92.0,4910793.84,4683725.94,Large
+977,FORGE-977,Enterprise Workflow Analytics,Industrial Analytics,Project Manager 07,RDE Sponsor 04,1,2026-06-05,2026-08-11,2026-08-11,,Active,High,92.0,1229951.12,1136240.56,Small
+978,FORGE-978,Enterprise Workflow Platform,Automation Platform,Project Manager 04,RDE Sponsor 02,1,2026-01-08,2026-08-11,2026-08-11,,Active,Medium,92.0,3442061.0,3361866.39,Medium
+979,FORGE-979,Enterprise Workflow Optimization,Digital Reliability,Project Manager 04,RDE Sponsor 03,3,2025-11-26,2026-06-11,2026-06-15,2026-06-14,Completed,Medium,100.0,1585871.04,1472337.09,Small
+980,FORGE-980,Enterprise Workflow Integration,Connected Operations,Project Manager 05,RDE Sponsor 05,3,2025-12-13,2026-05-13,2026-05-19,2026-05-06,Completed,High,100.0,5005405.47,4747701.43,Strategic
+981,FORGE-981,Enterprise Workflow Transformation,Industrial Analytics,Project Manager 01,RDE Sponsor 06,1,2026-01-14,2026-07-29,2026-08-08,,Active,High,95.0,3766443.72,3624075.75,Large
+982,FORGE-982,Enterprise Workflow Enablement,Industrial Analytics,Project Manager 06,RDE Sponsor 01,6,2026-02-24,2026-06-26,2026-07-03,2026-06-26,Completed,High,100.0,4059289.22,4038564.77,Large
+983,FORGE-983,Enterprise Workflow Acceleration,Industrial Analytics,Project Manager 07,RDE Sponsor 01,1,2026-05-10,2026-08-11,2026-08-11,,Active,High,92.0,4554873.92,4408000.64,Large
+984,FORGE-984,Enterprise Workflow Orchestration,Automation Platform,Project Manager 05,RDE Sponsor 05,6,2026-06-15,2026-08-11,2026-08-11,,At Risk,High,92.0,3856550.03,3756532.03,Large
+985,FORGE-985,Enterprise Workflow Intelligence,Industrial Analytics,Project Manager 01,RDE Sponsor 02,1,2026-02-14,2026-08-11,2026-08-11,,Active,High,92.0,4045773.27,3970083.97,Large
+986,FORGE-986,Enterprise Quality Modernization,Workforce Enablement,Project Manager 01,RDE Sponsor 01,8,2026-03-28,2026-08-11,2026-08-11,,At Risk,Medium,92.0,1950801.59,1780500.67,Medium
+987,FORGE-987,Enterprise Quality Analytics,Digital Reliability,Project Manager 06,RDE Sponsor 06,3,2026-02-28,2026-08-11,2026-08-11,,Active,High,92.0,4672012.12,4316092.2,Large
+988,FORGE-988,Enterprise Quality Platform,Connected Operations,Project Manager 06,RDE Sponsor 03,3,2025-10-31,2026-05-20,2026-05-20,2026-05-08,Completed,Medium,100.0,4036762.64,3928635.07,Large
+989,FORGE-989,Enterprise Quality Optimization,Digital Reliability,Project Manager 03,RDE Sponsor 02,2,2025-12-17,2026-05-25,2026-06-17,2026-05-11,Completed,Medium,100.0,2112992.95,2073346.17,Medium
+990,FORGE-990,Enterprise Quality Integration,Automation Platform,Project Manager 04,RDE Sponsor 04,1,2026-03-06,2026-08-11,2026-08-11,,Active,Medium,92.0,2788790.26,2659037.18,Medium
+991,FORGE-991,Enterprise Quality Transformation,Industrial Analytics,Project Manager 10,RDE Sponsor 03,2,2025-11-12,2026-05-20,2026-06-03,2026-05-25,Completed,Medium,100.0,4041267.96,3699765.05,Large
+992,FORGE-992,Enterprise Quality Enablement,Workforce Enablement,Project Manager 07,RDE Sponsor 03,2,2026-02-04,2026-05-27,2026-06-15,2026-06-02,Completed,Medium,100.0,2685168.01,2626598.91,Medium
+993,FORGE-993,Enterprise Quality Acceleration,Connected Operations,Project Manager 01,RDE Sponsor 01,4,2026-02-06,2026-08-11,2026-08-11,,Active,High,92.0,4532347.34,4249413.53,Large
+994,FORGE-994,Enterprise Quality Orchestration,Industrial Analytics,Project Manager 01,RDE Sponsor 01,6,2026-01-15,2026-08-11,2026-08-11,,Active,Low,92.0,2671652.06,2471616.05,Medium
+995,FORGE-995,Enterprise Quality Intelligence,Workforce Enablement,Project Manager 04,RDE Sponsor 01,2,2025-12-22,2026-07-07,2026-07-15,2026-07-12,Completed,Medium,100.0,3969182.91,3797980.92,Large
+996,FORGE-996,Enterprise Engineering Modernization,Automation Platform,Project Manager 07,RDE Sponsor 01,6,2026-03-22,2026-08-11,2026-08-11,,Active,Low,92.0,1495764.73,1402955.23,Small
+997,FORGE-997,Enterprise Engineering Analytics,Industrial Analytics,Project Manager 03,RDE Sponsor 04,2,2025-12-14,2026-08-11,2026-08-11,,At Risk,Medium,92.0,3297890.91,3006847.53,Medium
+998,FORGE-998,Enterprise Engineering Platform,Workforce Enablement,Project Manager 07,RDE Sponsor 03,5,2025-12-12,2026-07-09,2026-07-26,2026-07-11,Completed,Medium,100.0,3649305.51,3460983.32,Large
+999,FORGE-999,Enterprise Engineering Optimization,Connected Operations,Project Manager 02,RDE Sponsor 01,3,2025-10-04,2026-03-27,2026-04-09,2026-03-14,Completed,High,100.0,4572895.18,4468371.86,Large
+1000,FORGE-1000,Enterprise Engineering Integration,Connected Operations,Project Manager 07,RDE Sponsor 05,3,2025-11-25,2026-08-11,2026-08-11,,Active,High,92.0,4086321.11,3874571.28,Large

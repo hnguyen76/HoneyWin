@@ -4,7 +4,7 @@ Type convention: `int`, `decimal(18,2)`, `text`, `date`, and `boolean`. `PK` is 
 
 ## `DimDate.csv`
 
-Grain: one calendar date from 2024-01-01 through 2025-12-31.
+Grain: one calendar date from 2025-08-01 through 2026-08-11.
 
 | Column | Type/key | Nullable | Definition/rule |
 |---|---|---:|---|
@@ -29,7 +29,7 @@ Grain: one calendar date from 2024-01-01 through 2025-12-31.
 | `HolidayName` | text | Yes | Holiday label; blank otherwise. |
 | `IsWorkingDay` | boolean | No | 1 when weekday and not holiday. |
 | `WorkingHours` | decimal | No | 8 for working day, otherwise 0. |
-| `PeriodType` | text | No | `Actual` through 2025-06-30, else `Forecast`. |
+| `PeriodType` | text | No | `Actual` through 2026-08-11, else `Forecast`. |
 
 ## `DimTeam.csv`
 
@@ -61,12 +61,12 @@ Grain: one workforce skill.
 
 ## `DimProject.csv`
 
-Grain: one FORGE-style RDE project; exactly 25 rows.
+Grain: one FORGE-style RDE project; exactly 1,000 rows.
 
 | Column | Type/key | Nullable | Definition/rule |
 |---|---|---:|---|
-| `ProjectKey` | int, PK | No | Stable surrogate key 1–25. |
-| `ProjectID` | text, BK | No | `FORGE-001`–`FORGE-025`. |
+| `ProjectKey` | int, PK | No | Stable surrogate key 1–1,000. |
+| `ProjectID` | text, BK | No | `FORGE-001`–`FORGE-1000`. |
 | `ProjectName` | text | No | Synthetic project name. |
 | `Program` | text | No | Portfolio program grouping. |
 | `ProjectManager` | text | No | Synthetic PM label. |
@@ -78,7 +78,7 @@ Grain: one FORGE-style RDE project; exactly 25 rows.
 | `ActualEndDate` | date | Yes | Populated only for completed project. |
 | `ProjectStatus` | text | No | `Completed`, `Active`, `At Risk`, `Delayed`, `Planned`. |
 | `Priority` | text | No | `High`, `Medium`, `Low`. |
-| `PercentComplete` | decimal | No | 0–100 as of 2025-06-30. |
+| `PercentComplete` | decimal | No | 0–100 as of 2026-08-11. |
 | `ApprovedBudget` | decimal | No | Current approved budget; reconciles to financial budget. |
 | `BaselineBudget` | decimal | No | Original baseline before approved changes. |
 | `BudgetClass` | text | No | `Small`, `Medium`, `Large`, `Strategic`. |
@@ -101,7 +101,7 @@ Grain: one employee or contractor; exactly 120 rows.
 | `StandardLaborRate` | decimal | No | Hourly cost rate in USD. |
 | `UtilizationTarget` | decimal | No | Inherited from team, 0–1 decimal. |
 | `EmploymentStatus` | text | No | `Active` or `Exited` as of the data as-of date. |
-| `IsActiveAsOfDate` | boolean | No | Active on 2025-06-30. |
+| `IsActiveAsOfDate` | boolean | No | Active on 2026-08-11. |
 
 ## `BridgeEmployeeSkill.csv`
 

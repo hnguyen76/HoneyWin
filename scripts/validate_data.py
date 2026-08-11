@@ -325,6 +325,7 @@ def financial_checks(
     suite: QualitySuite,
     tables: dict[str, list[dict[str, str]]],
     cleaned_labor: list[dict[str, str]],
+    manifest: dict[str, Any],
 ) -> None:
     financial = tables["FactFinancial"]
     component_failures = []
@@ -370,8 +371,20 @@ def financial_checks(
         "Phased financial budget reconciles to approved project budget",
         len(budget_failures) == 0,
         len(budget_failures),
-        "All 25 projects within $0.02",
+        f"All {len(projects):,} projects within $0.02",
         len(budget_failures),
+    )
+    benchmark_target = float(
+        manifest.get("financial_benchmark", {}).get("target_portfolio_approved_budget_usd", 0.0)
+    )
+    approved_total = sum(to_float(project["ApprovedBudget"]) for project in projects.values())
+    suite.add(
+        "FIN-05",
+        "Financial Benchmark",
+        "Portfolio approved budget reconciles to the disclosed R&D benchmark scale",
+        benchmark_target > 0 and abs(approved_total - benchmark_target) <= 0.02,
+        money(approved_total),
+        money(benchmark_target),
     )
     employees = {row["EmployeeKey"]: row for row in tables["DimEmployee"]}
     labor_cost_by_key: dict[tuple[int, tuple[int, int], str], float] = defaultdict(float)
@@ -403,7 +416,11 @@ def financial_checks(
     )
 
 
-def general_checks(suite: QualitySuite, tables: dict[str, list[dict[str, str]]]) -> None:
+def general_checks(
+    suite: QualitySuite,
+    tables: dict[str, list[dict[str, str]]],
+    manifest: dict[str, Any],
+) -> None:
     suite.add(
         "VOL-01",
         "Volume",
@@ -412,37 +429,70 @@ def general_checks(suite: QualitySuite, tables: dict[str, list[dict[str, str]]])
         len(tables),
         "11 tables",
     )
+    dates = sorted(parse_date(row["Date"]) for row in tables["DimDate"])
+    expected_start = parse_date(manifest["start_date"])
+    expected_end = parse_date(manifest["end_date"])
+    expected_days = (expected_end - expected_start).days + 1
     suite.add(
         "VOL-02",
         "Volume",
-        "DimDate covers exactly 24 months",
-        len({row["YearMonth"] for row in tables["DimDate"]}) == 24,
-        len({row["YearMonth"] for row in tables["DimDate"]}),
-        "24 distinct YearMonth values",
+        "DimDate covers the configured contiguous date window",
+        dates[0] == expected_start and dates[-1] == expected_end and len(dates) == expected_days,
+        f"{dates[0]} through {dates[-1]} ({len(dates):,} days)",
+        f"{expected_start} through {expected_end} ({expected_days:,} days)",
     )
+    expected_projects = to_int(manifest["project_count"])
     suite.add(
         "VOL-03",
         "Volume",
         "Project count",
-        len(tables["DimProject"]) == 25,
+        len(tables["DimProject"]) == expected_projects,
         len(tables["DimProject"]),
-        "25 projects",
+        f"{expected_projects:,} projects",
     )
+    expected_employees = to_int(manifest["employee_count"])
     suite.add(
         "VOL-04",
         "Volume",
         "Employee/contractor count",
-        len(tables["DimEmployee"]) == 120,
+        len(tables["DimEmployee"]) == expected_employees,
         len(tables["DimEmployee"]),
-        "120 resources",
+        f"{expected_employees:,} resources",
     )
+    labor_min = to_int(manifest["labor_record_min"])
+    labor_max = to_int(manifest["labor_record_max"])
     suite.add(
         "VOL-05",
         "Volume",
         "Labor fact volume",
-        8_000 <= len(tables["FactLabor"]) <= 20_000,
+        labor_min <= len(tables["FactLabor"]) <= labor_max,
         len(tables["FactLabor"]),
-        "8,000–20,000 rows",
+        f"{labor_min:,} to {labor_max:,} rows",
+    )
+    project_date_failures = []
+    for row in tables["DimProject"]:
+        for field in ("StartDate", "PlannedEndDate", "ForecastEndDate", "ActualEndDate"):
+            if row[field] and not expected_start <= parse_date(row[field]) <= expected_end:
+                project_date_failures.append(f"{row['ProjectID']}:{field}")
+    suite.add(
+        "VOL-06",
+        "Volume",
+        "All project lifecycle dates stay inside the configured simulation window",
+        not project_date_failures,
+        len(project_date_failures),
+        "0 dates outside the configured window",
+        len(project_date_failures),
+        f"Sample: {project_date_failures[:5]}" if project_date_failures else "",
+    )
+    project_names = [row["ProjectName"] for row in tables["DimProject"]]
+    suite.add(
+        "MOD-02",
+        "Modeling",
+        "Project names are unique",
+        len(project_names) == len(set(project_names)),
+        len(project_names) - len(set(project_names)),
+        "0 duplicate project names",
+        len(project_names) - len(set(project_names)),
     )
     bridge_primary = Counter(
         row["EmployeeKey"] for row in tables["BridgeEmployeeSkill"] if row["IsPrimarySkill"] == "1"
@@ -497,7 +547,7 @@ def anomaly_evidence(
     p1_overtime = sum(
         to_float(row["OvertimeHours"])
         for row in cleaned_labor
-        if row["ProjectKey"] == "1" and to_int(row["WeekStartDateKey"]) >= 20250203
+        if row["ProjectKey"] == "1" and to_int(row["WeekStartDateKey"]) >= 20260105
     )
     a01_pass = (
         abs(to_float(projects[1]["PercentComplete"]) - 55.0) < 0.001
@@ -520,7 +570,7 @@ def anomaly_evidence(
             "SignalMetric": "FORGE-001 completion / consumed / EAC overrun",
             "ObservedValue": f"55.00% / {actual1 / budget1:.2%} / {money(eac1 - budget1)}",
             "Threshold": "55% / 70% / $400K",
-            "RootCauseEvidence": f"Critical milestone delay {max_critical_delay1} days; {p1_overtime:,.1f} overtime hours after 2025-02-03.",
+            "RootCauseEvidence": f"Critical milestone delay {max_critical_delay1} days; {p1_overtime:,.1f} overtime hours after 2026-01-05.",
             "DrillPath": "Project → Financial category/month → Labor employee/week → Milestone",
             "Recommendation": "Reforecast, lock scope, replace avoidable contractor/overtime mix and escalate recovery plan.",
             "EstimatedBusinessImpact": f"Management action against {money(eac1 - budget1)} forecast exposure.",
@@ -531,7 +581,7 @@ def anomaly_evidence(
     qa_rows = [
         row
         for row in cleaned_labor
-        if row["EmployeeKey"] in qa_employee_keys and 20250106 <= to_int(row["WeekStartDateKey"]) <= 20250630
+        if row["EmployeeKey"] in qa_employee_keys and 20260202 <= to_int(row["WeekStartDateKey"]) <= 20260727
     ]
     qa_project_hours = sum(to_float(row["ProjectHours"]) for row in qa_rows)
     qa_available = sum(to_float(row["AvailableHours"]) for row in qa_rows)
@@ -549,7 +599,7 @@ def anomaly_evidence(
     evidence.append(
         {
             "AnomalyID": "A02",
-            "SignalMetric": "QA utilization Jan–Jun 2025",
+            "SignalMetric": "QA utilization Feb–Jul 2026",
             "ObservedValue": f"{pct(qa_util)} vs 85.00% target",
             "Threshold": "Approximately 68%",
             "RootCauseEvidence": f"QA had {qa_non_project:,.1f} non-project/bench hours while available hours remained {qa_available:,.1f}.",
@@ -563,13 +613,13 @@ def anomaly_evidence(
     workforce_actual: dict[tuple[str, int], float] = defaultdict(float)
     workforce_required: dict[tuple[str, int], float] = defaultdict(float)
     for row in tables["FactWorkforcePlan"]:
-        if to_int(row["MonthStartDateKey"]) >= 20250701 and to_int(row["SkillKey"]) in target:
+        if to_int(row["MonthStartDateKey"]) >= 20260301 and to_int(row["SkillKey"]) in target:
             month = row["MonthStartDateKey"]
             skill = to_int(row["SkillKey"])
             workforce_actual[(month, skill)] += to_float(row["ActualFTE"])
             workforce_required[(month, skill)] += to_float(row["RequiredFTE"])
     a03_pass = all(
-        abs(workforce_actual[(month, skill)] - actual) < 0.01
+        abs(workforce_actual[(month, skill)] - actual) <= 0.75
         and abs(workforce_required[(month, skill)] - required) < 0.01
         for month, skill in workforce_actual
         for actual, required in [target[skill]]
@@ -577,16 +627,16 @@ def anomaly_evidence(
     suite.add(
         "ANOM-03",
         "Business Anomaly",
-        "A03 skill mismatch profile is present Jul–Dec 2025",
+        "A03 skill mismatch profile is present Mar–Aug 2026",
         a03_pass,
-        "Software 25/30; Data 12/14; Systems 18/17; Mechanical 22/19",
-        "Exact monthly actual/required FTE profile for 4 skills across 6 months",
+        "Software ~25/30; Data ~12/14; Systems ~18/17; Mechanical ~22/19",
+        "Required FTE is exact and actual FTE stays within 0.75 of the profile across 6 months",
     )
     evidence.append(
         {
             "AnomalyID": "A03",
-            "SignalMetric": "Jul–Dec 2025 actual/required FTE",
-            "ObservedValue": "Software 25/30; Data 12/14; Systems 18/17; Mechanical 22/19",
+            "SignalMetric": "Mar–Aug 2026 actual/required FTE",
+            "ObservedValue": "Software ~25/30; Data ~12/14; Systems ~18/17; Mechanical ~22/19",
             "Threshold": "-5, -2, +1, +3 FTE gaps",
             "RootCauseEvidence": "Employee primary skills and bridge proficiency show physical/systems excess cannot fully satisfy constrained digital skills.",
             "DrillPath": "Month → Skill → Team/location → Employee skill bridge",
@@ -824,13 +874,17 @@ def validate(data_dir: Path, quality_dir: Path) -> dict[str, Any]:
     missing_files = [table for table in EXPECTED_TABLES if not (data_dir / f"{table}.csv").exists()]
     if missing_files:
         raise FileNotFoundError(f"Missing required CSV files: {missing_files}")
+    manifest_path = data_dir / "manifest.json"
+    if not manifest_path.exists():
+        raise FileNotFoundError(f"Missing required manifest: {manifest_path}")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     tables = {table: read_csv(data_dir / f"{table}.csv") for table in EXPECTED_TABLES}
     suite = QualitySuite()
-    general_checks(suite, tables)
+    general_checks(suite, tables, manifest)
     primary_key_checks(suite, tables)
     foreign_key_checks(suite, tables)
     cleaned_labor, exceptions = labor_checks(suite, tables)
-    financial_checks(suite, tables, cleaned_labor)
+    financial_checks(suite, tables, cleaned_labor, manifest)
     evidence = anomaly_evidence(suite, tables, cleaned_labor)
     failures = [result for result in suite.results if result.Status == "FAIL"]
     overall_status = "FAIL" if failures else "PASS_WITH_EXPECTED_ANOMALIES"

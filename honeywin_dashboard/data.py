@@ -71,6 +71,7 @@ class DashboardData:
 class FilteredData:
     """Frames filtered by the global project and date context."""
 
+    manifest: dict[str, object]
     projects: pd.DataFrame
     financial: pd.DataFrame
     financial_all_dates: pd.DataFrame
@@ -227,6 +228,7 @@ def apply_global_filters(data: DashboardData, selection: FilterSelection) -> Fil
     workforce = data.workforce[data.workforce["MonthStartDate"].between(start, end)].copy()
 
     return FilteredData(
+        manifest=data.manifest,
         projects=projects,
         financial=financial,
         financial_all_dates=financial_all_dates,
