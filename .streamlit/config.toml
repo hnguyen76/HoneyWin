@@ -4,6 +4,13 @@ backgroundColor = "#F5F7FA"
 secondaryBackgroundColor = "#FFFFFF"
 textColor = "#242424"
 font = "sans-serif"
+headingFont = "sans-serif"
+baseRadius = "small"
+buttonRadius = "small"
+borderColor = "#E1DFDD"
+dataframeBorderColor = "#E1DFDD"
+dataframeHeaderBackgroundColor = "#F5F7FA"
+showWidgetBorder = true
 
 [browser]
 gatherUsageStats = false

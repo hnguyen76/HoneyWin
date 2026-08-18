@@ -6,7 +6,6 @@ import html
 import json
 import math
 from dataclasses import dataclass
-from pathlib import Path
 
 import streamlit as st
 
@@ -19,6 +18,7 @@ class ThemeTokens:
     secondary: str
     good: str
     warning: str
+    warning_text: str
     bad: str
     purple: str
     background: str
@@ -41,6 +41,9 @@ def load_theme_tokens() -> ThemeTokens:
         secondary=colors[1],
         good=theme["good"],
         warning=theme["neutral"],
+        # theme["neutral"] (#FFB900) is ~1.7:1 against a white card, well under the
+        # 4.5:1 WCAG text minimum; this darker amber is for text only, accents keep the brand gold.
+        warning_text="#A16207",
         bad=theme["bad"],
         purple=colors[5],
         background="#F5F7FA",
@@ -63,6 +66,7 @@ def apply_app_style(tokens: ThemeTokens) -> None:
             --hw-secondary: {tokens.secondary};
             --hw-good: {tokens.good};
             --hw-warning: {tokens.warning};
+            --hw-warning-text: {tokens.warning_text};
             --hw-bad: {tokens.bad};
             --hw-bg: {tokens.background};
             --hw-surface: {tokens.surface};
@@ -197,7 +201,7 @@ def apply_app_style(tokens: ThemeTokens) -> None:
             margin-top: .2rem;
         }}
         .metric-detail {{
-            color: var(--metric-color, var(--hw-muted));
+            color: var(--metric-text-color, var(--metric-color, var(--hw-muted)));
             font-size: .73rem;
             font-weight: 600;
             margin-top: .35rem;
@@ -228,7 +232,7 @@ def apply_app_style(tokens: ThemeTokens) -> None:
             padding: .9rem 1rem;
         }}
         .insight-label, .action-label {{
-            color: var(--insight-color);
+            color: var(--insight-text-color, var(--insight-color));
             font-size: .68rem;
             font-weight: 700;
             letter-spacing: .08em;
@@ -374,6 +378,12 @@ def _tone_color(tokens: ThemeTokens, tone: str) -> str:
     }.get(tone, tokens.primary)
 
 
+def _tone_text_color(tokens: ThemeTokens, tone: str) -> str:
+    """Like _tone_color, but swaps warning for a WCAG-legible variant for on-card text."""
+
+    return tokens.warning_text if tone == "warning" else _tone_color(tokens, tone)
+
+
 def metric_card(
     label: str,
     value: str,
@@ -385,9 +395,13 @@ def metric_card(
     """Render an accessible KPI card with a conditional Fluent accent."""
 
     title = html.escape(tooltip or f"{label}: {value}. {detail}")
+    style = (
+        f"--metric-color:{_tone_color(tokens, tone)};"
+        f"--metric-text-color:{_tone_text_color(tokens, tone)}"
+    )
     st.markdown(
         f"""
-        <div class="metric-card" style="--metric-color:{_tone_color(tokens, tone)}" title="{title}">
+        <div class="metric-card" style="{style}" title="{title}">
           <div class="metric-label">{html.escape(label)}</div>
           <div class="metric-value">{html.escape(value)}</div>
           <div class="metric-detail">{html.escape(detail)}</div>
@@ -428,9 +442,13 @@ def insight_card(
 ) -> None:
     """Render a supported business insight with its recommended corrective action."""
 
+    style = (
+        f"--insight-color:{_tone_color(tokens, tone)};"
+        f"--insight-text-color:{_tone_text_color(tokens, tone)}"
+    )
     st.markdown(
         f"""
-        <div class="insight-card" style="--insight-color:{_tone_color(tokens, tone)}">
+        <div class="insight-card" style="{style}">
           <div class="insight-label">Business insight</div>
           <div class="insight-title">{html.escape(title)}</div>
           <div class="insight-evidence">{html.escape(evidence)}</div>

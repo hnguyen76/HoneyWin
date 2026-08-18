@@ -52,10 +52,19 @@ def render_global_filters(data: DashboardData) -> FilterSelection:
         key="global_date_range",
         help="Uses the primary date role for each fact table. EAC remains a full-horizon measure.",
     )
-    if isinstance(selected_dates, (tuple, list)) and len(selected_dates) == 2:
-        start_date, end_date = selected_dates
+    if isinstance(selected_dates, (tuple, list)):
+        if len(selected_dates) == 2:
+            start_date, end_date = selected_dates
+        elif len(selected_dates) == 1:
+            # User has only picked a start date so far; reflect that instead of
+            # silently narrowing to minimum_date for both ends.
+            start_date = end_date = selected_dates[0]
+        else:
+            start_date, end_date = minimum_date, maximum_date
+    elif isinstance(selected_dates, date):
+        start_date = end_date = selected_dates
     else:
-        start_date = end_date = selected_dates if isinstance(selected_dates, date) else minimum_date
+        start_date, end_date = minimum_date, maximum_date
 
     programs = sorted(data.projects["Program"].dropna().unique().tolist())
     selected_programs = st.sidebar.multiselect(

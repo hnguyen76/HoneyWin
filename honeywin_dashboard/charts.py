@@ -335,7 +335,11 @@ def workforce_heatmap(workforce: pd.DataFrame, tokens: ThemeTokens) -> go.Figure
             z=pivot.values,
             x=pivot.columns,
             y=pivot.index,
-            colorscale=[[0, tokens.bad], [0.5, "#FFFFFF"], [1, tokens.good]],
+            # Blue-white-orange instead of red-white-green: a continuous color field is the
+            # hardest place for red/green colorblindness, so this heatmap avoids that hue pair
+            # even though the bar charts elsewhere keep it (their gap sign is also encoded in
+            # bar position/length).
+            colorscale=[[0, tokens.primary], [0.5, "#FFFFFF"], [1, "#CA5010"]],
             zmid=0,
             colorbar={"title": "Gap FTE"},
             hovertemplate="<b>%{y} · %{x}</b><br>Average gap: %{z:+.2f} FTE<extra></extra>",

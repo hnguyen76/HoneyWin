@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from dataclasses import replace
 
-import numpy as np
 import pandas as pd
 import streamlit as st
 
@@ -204,7 +203,7 @@ def _render_executive(
         metric_card(
             "Projects with Any Red Flag",
             f"{health_counts['any_red_flag']}",
-            f"{health_counts['red']} red · {health_counts['amber']} amber",
+            f"Overall health: {health_counts['red']} red · {health_counts['amber']} amber · {health_counts['green']} green",
             tokens,
             "bad" if health_counts["any_red_flag"] else "good",
         )
@@ -216,19 +215,19 @@ def _render_executive(
             program_financial_chart(
                 projects, scoped.financial, scoped.financial_all_dates, tokens
             ),
-            use_container_width=True,
+            width="stretch",
             config=CHART_CONFIG,
         )
     with right:
         st.plotly_chart(
             project_status_chart(projects, tokens),
-            use_container_width=True,
+            width="stretch",
             config=CHART_CONFIG,
         )
 
     st.plotly_chart(
         monthly_spend_chart(scoped.financial, tokens),
-        use_container_width=True,
+        width="stretch",
         config=CHART_CONFIG,
     )
 
@@ -254,7 +253,7 @@ def _render_executive(
     st.dataframe(
         table,
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
         column_config={
             "ProjectID": "Project",
             "ProjectName": "Project name",
@@ -338,19 +337,19 @@ def _render_financial(
 
     section_heading("Spend and plan variance")
     st.plotly_chart(
-        monthly_spend_chart(financial, tokens), use_container_width=True, config=CHART_CONFIG
+        monthly_spend_chart(financial, tokens), width="stretch", config=CHART_CONFIG
     )
     left, right = st.columns([1, 1.15])
     with left:
         st.plotly_chart(
             cost_category_chart(financial, tokens),
-            use_container_width=True,
+            width="stretch",
             config=CHART_CONFIG,
         )
     with right:
         st.plotly_chart(
             project_variance_chart(health, tokens),
-            use_container_width=True,
+            width="stretch",
             config=CHART_CONFIG,
         )
 
@@ -371,7 +370,7 @@ def _render_financial(
     st.dataframe(
         detail,
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
         column_config={
             "ProjectID": "Project",
             "ProjectName": "Project name",
@@ -418,16 +417,16 @@ def _render_labor(
 
     section_heading("Utilization trajectory and target performance")
     st.plotly_chart(
-        labor_trend_chart(labor, tokens), use_container_width=True, config=CHART_CONFIG
+        labor_trend_chart(labor, tokens), width="stretch", config=CHART_CONFIG
     )
     left, right = st.columns([1.15, 1])
     with left:
         st.plotly_chart(
-            team_utilization_chart(labor, tokens), use_container_width=True, config=CHART_CONFIG
+            team_utilization_chart(labor, tokens), width="stretch", config=CHART_CONFIG
         )
     with right:
         st.plotly_chart(
-            overtime_trend_chart(labor, tokens), use_container_width=True, config=CHART_CONFIG
+            overtime_trend_chart(labor, tokens), width="stretch", config=CHART_CONFIG
         )
 
     section_heading("Resource-level utilization exceptions")
@@ -448,7 +447,7 @@ def _render_labor(
     st.dataframe(
         employee,
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
         column_config={
             "EmployeeID": "Resource",
             "EmployeeName": "Resource name",
@@ -498,16 +497,16 @@ def _render_workforce(
 
     section_heading("Capacity trajectory and shortage concentration")
     st.plotly_chart(
-        workforce_trend_chart(workforce, tokens), use_container_width=True, config=CHART_CONFIG
+        workforce_trend_chart(workforce, tokens), width="stretch", config=CHART_CONFIG
     )
     left, right = st.columns([1, 1.1])
     with left:
         st.plotly_chart(
-            workforce_gap_chart(workforce, tokens), use_container_width=True, config=CHART_CONFIG
+            workforce_gap_chart(workforce, tokens), width="stretch", config=CHART_CONFIG
         )
     with right:
         st.plotly_chart(
-            workforce_heatmap(workforce, tokens), use_container_width=True, config=CHART_CONFIG
+            workforce_heatmap(workforce, tokens), width="stretch", config=CHART_CONFIG
         )
 
     section_heading("Average monthly capacity by team, skill, and location")
@@ -522,7 +521,7 @@ def _render_workforce(
     st.dataframe(
         detail,
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
         column_config={
             "TeamName": "Team",
             "SkillName": "Skill",
@@ -566,20 +565,20 @@ def _render_governance(
         with left:
             st.plotly_chart(
                 governance_category_chart(risks, tokens),
-                use_container_width=True,
+                width="stretch",
                 config=CHART_CONFIG,
             )
         with right:
             st.plotly_chart(
                 risk_matrix_chart(risks, tokens),
-                use_container_width=True,
+                width="stretch",
                 config=CHART_CONFIG,
             )
 
     if not data.milestones.empty:
         st.plotly_chart(
             milestone_delay_chart(data.milestones, tokens),
-            use_container_width=True,
+            width="stretch",
             config=CHART_CONFIG,
         )
 
@@ -603,7 +602,7 @@ def _render_governance(
         st.dataframe(
             detail,
             hide_index=True,
-            use_container_width=True,
+            width="stretch",
             column_config={
                 "RiskIssueID": "Risk / issue",
                 "ProjectID": "Project",
@@ -714,6 +713,7 @@ def run_dashboard() -> None:
 
     st.set_page_config(
         page_title="HoneyWin Portfolio Analytics",
+        page_icon="📊",
         layout="wide",
         initial_sidebar_state="expanded",
     )
